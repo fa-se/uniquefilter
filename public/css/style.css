@@ -21,7 +21,7 @@ button {
 }
 
 main {
-    padding: 3em 0;
+    padding: 8em 0;
     text-align: center;
 }
 
@@ -32,4 +32,43 @@ main {
 #authorize-poe-button {
     display: block;
     margin: auto;
+}
+
+#league-select, #uniquestash-select, #filter-select {
+    flex: 1;
+    margin: 20px;
+}
+#update-filter-button {
+    margin: auto;
+}
+
+.requires-authorization{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto;
+    align-items: center
+}
+
+#info{
+    color: white;
+    display: block;
+}
+
+#rate-limit-info{
+    color: red;
+    display: none;
+}
+#rate-limit-info-time{
+    display:inline;
+}
+
+
+
+/* Inserting this collapsed row between two flex items will make
+ * the flex item that comes after it break to a new row */
+.break {
+    flex-basis: 100%;
+    height: 0;
 }

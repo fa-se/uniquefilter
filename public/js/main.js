@@ -1,4 +1,8 @@
 "use strict";
+import poeApi from "./poe-api-interface.js";
+import {Filter} from "./filter.js"
+
+window.debugAvoidRateLimit = false; // flag to avoid running into poe api rate limit, for example by using stale data
 
 if (document.readyState !== "loading") {
     main();
@@ -7,63 +11,102 @@ if (document.readyState !== "loading") {
 }
 
 async function main() {
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // save authorization data if user got redirected during authorization
-    if (urlParams.has("access_token")) {
-        setPoeAccessData(
-            urlParams.get("access_token"),
-            Date.now().valueOf() + 1000 * Number(urlParams.get("expires_in")),
-            urlParams.get("refresh_token")
-        );
-        window.location.search = '';
+    if(!poeApi.isReady()){
+        return;
     }
+    setupEventListeners();
 
-    // if this client is not yet authorized, prepare the authorization button to direct the user to the pathofexile website
-    if (!isAuthorized()) {
-        let authorizationButton = document.getElementById(
-            "authorize-poe-button"
-        );
+    let selectedLeague = document.getElementById('league-select').value;
+    let accountStashes = await poeApi.getAccountStashes(selectedLeague);
+    let uniqueStashes = accountStashes.getAllUniqueStashes();
+    fillStashSelect(uniqueStashes);
+    await fillFilterSelect();
+    // manually trigger change event
+    selectValueChanged();
 
-        let state = self.crypto.randomUUID();
-        authorizationButton.addEventListener("click", function () {
-            let url = new URL("https://www.pathofexile.com/oauth/authorize");
-            url.searchParams.set("client_id", "uniquefilter");
-            url.searchParams.set("response_type", "code");
-            url.searchParams.set("scope", "account:profile account:stashes account:item_filter")
-            url.searchParams.set("redirect_uri", "https://uniquefilter.dev/oauth2callback");
-            url.searchParams.set("state", state);
-            url.searchParams.set("prompt", "consent");
-            window.location = url.toString();
+    function setupEventListeners() {
+        let leagueSelect = document.getElementById('league-select');
+        let stashSelect = document.getElementById('uniquestash-select');
+        let filterSelect = document.getElementById('filter-select');
+        let updateFilterButton = document.getElementById('update-filter-button');
+
+        leagueSelect.addEventListener('change', (event) => {
+            poeApi.getAccountStashes(event.target.value)
+                .then((accountStashes) => {
+                    let uniqueStashes = accountStashes.getAllUniqueStashes();
+                    fillStashSelect(uniqueStashes);
+                });
         });
-    } else {
-        // hide authorization button
-        document.getElementById("authorize-poe-button").style.display = "none";
-    }
-}
 
-function isAuthorized() {
-    let accessData = getPoeAccessData();
-    return (accessData.token != null && !accessTokenExpired());
-}
-
-function getPoeAccessData() {
-    return {
-        token: window.localStorage.getItem("poe-access-token"),
-        expiry: Number(window.localStorage.getItem("poe-access-token-expiry")),
-        refreshToken: window.localStorage.getItem("poe-refresh-token"),
+        updateFilterButton.addEventListener('click', updateFilter);
+        stashSelect.addEventListener('change', selectValueChanged);
+        filterSelect.addEventListener('change', selectValueChanged);
     };
+
+    async function updateFilter(){
+        let updateFilterButton = document.getElementById('update-filter-button');
+        updateFilterButton.disabled = true;
+        let info = document.getElementById('info');
+        info.innerText = "loading stash tab contents...";
+
+        let stashSelect = document.getElementById('uniquestash-select');
+        let selectedStash = uniqueStashes[stashSelect.value];
+        let filterSelect = document.getElementById('filter-select');
+        let selectedFilter = filterSelect.value;
+        let containedUniques = await selectedStash.getContainedUniques();
+        let missingUniques = containedUniques.getMissingUniques();
+        console.log(missingUniques); // print because the list itself might be useful to users
+        info.innerText = "updating filter...";
+        let filter = new Filter(await poeApi.getItemFilter(selectedFilter));
+        let result = await filter.updateRulesForMissingUniques(missingUniques);
+
+        if(result.error){
+            console.log(result);
+            info.innerText = result.error.message;
+        }
+        else{
+            info.innerText = "filter successfully updated";
+        }
+
+        updateFilterButton.disabled = false;
+        };
+    }
+
+function fillStashSelect(uniqueStashes){
+    let stashSelect = document.getElementById('uniquestash-select');
+    let options = [];
+
+    Object.values(uniqueStashes).forEach(stash => {
+        let option = document.createElement('option');
+        option.value = stash.id;
+        option.innerHTML = stash.name;
+        options.push(option);
+    });
+    stashSelect.replaceChildren(... options);
 }
 
-function setPoeAccessData(token, expiry, refreshToken) {
-    window.localStorage.setItem("poe-access-token", token);
-    window.localStorage.setItem("poe-access-token-expiry", expiry);
-    window.localStorage.setItem("poe-refresh-token", refreshToken);
+async function fillFilterSelect(){
+    let filterSelect = document.getElementById('filter-select');
+    let filters = await poeApi.getAccountItemFilters();
+
+    let options = [];
+    for(let filter of filters){
+        let option = document.createElement('option');
+        option.value = filter.id;
+        option.innerHTML = filter.filter_name;
+        options.push(option);
+    }
+
+    filterSelect.replaceChildren(... options);
 }
 
-function accessTokenExpired() {
-    const expiry = getPoeAccessData().expiry;
-    const expiryValid = expiry !== null && expiry !== undefined && expiry > 0;
-    // If the expiry date is invalid, the token cannot have expired
-    return expiryValid && getPoeAccessData().expiry < Date.now().valueOf();
+function selectValueChanged(){
+    let stashSelect = document.getElementById('uniquestash-select');
+    let filterSelect = document.getElementById('filter-select');
+    let updateFilterButton = document.getElementById('update-filter-button');
+
+    let isStashSelected = stashSelect.value !== '';
+    let isFilterSelected = filterSelect.value !== '';
+    updateFilterButton.disabled = (!isStashSelected || !isFilterSelected);
 }
+

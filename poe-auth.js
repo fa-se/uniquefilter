@@ -1,6 +1,6 @@
-import querystring from 'querystring';
 import got from 'got';
 import secrets from './secrets.js'
+import * as querystring from "querystring";
 
 const client_id = "uniquefilter";
 
@@ -14,7 +14,6 @@ export default {
     requestTokenCallback: function (url, res) {
         let urlParameters = url.searchParams;
         return new Promise(async (resolve, reject) => {
-            console.log(secrets.client_secret);
             try {
                 const response = await got.post('https://pathofexile.com/oauth/token', {
                     form: {
