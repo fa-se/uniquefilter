@@ -5,6 +5,7 @@ import fs from 'fs';
 import { URL } from 'url';
 
 import poeAuth from './poe-auth.js'
+import corsProxy from "./cors-proxy.js";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
@@ -23,8 +24,9 @@ Object.keys(contentTypes).forEach((key) => {
     contentTypes[key] += '; charset=utf-8';
 });
 
-const server = http.createServer((request, response) => {
-    let url = new URL(request.url, 'https://' + hostname + '/');
+const server = http.createServer(async (request, response) => {
+    console.log(request.headers);
+    let url = new URL(request.url, 'https://' + 'uniquefilter.dev' + '/');
     let fileName = path.join(baseDirectory, url.pathname);
     if(fileName.indexOf(baseDirectory) !== 0){  // check if requested path is escaping the web root
         response.statusCode = 403;
@@ -38,6 +40,12 @@ const server = http.createServer((request, response) => {
             break;
         case '/js/main.js':
         case '/js/client_app.js':
+        case '/js/poe-api-interface.js':
+        case '/js/poe-api-auth.js':
+        case '/js/stash.js':
+        case '/js/unique.js':
+        case '/js/filter.js':
+        case '/json/drop-enabled-uniques.js':
         case '/css/style.css':
             streamFile(baseDirectory + request.url, response);
             break;
@@ -52,6 +60,18 @@ const server = http.createServer((request, response) => {
                     response.end(JSON.stringify(error));
                 });
             break;
+        case '/update-filter':
+            let buffer = [];
+            for await (const chunk of request) {
+                buffer.push(chunk);
+            }
+            const body = JSON.parse(Buffer.concat(buffer).toString());
+
+            // console.log(request);
+            // console.log(body);
+
+            let result = await corsProxy.updateFilter(request, body, response);
+
         default:
             response.setHeader('Content-Type', contentTypes.default);
             response.statusCode = 404;

@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>uniquefilter</title>
     <script src="/js/main.js" type="module" defer></script>
 </head>
 
 <body>
-<main class="title">
-    uniquefilter
+<main>
+    <div class="title">uniquefilter</div>
+
+    <div class="requires-authorization">
+        <label for="league-select">league</label>
+        <select id="league-select">
+            <option value="SSF+Sentinel">Sentinel SSF</option>
+            <option value="SSF+Standard">Standard SSF</option>
+        </select>
+        <label for="uniquestash-select">unique stash</label>
+        <select id="uniquestash-select"></select>
+        <label for="filter-select">filter</label>
+        <select id="filter-select"></select>
+        <input id="update-filter-button" type="button" value="update filter" disabled="true"/>
+        <div class="break"></div>
+        <div id="info"></div>
+        <div class="break"></div>
+        <div id="rate-limit-info"></div>
+    </div>
+
+    <input type="button" id="authorize-poe-button" value="Authorize Access to your Path of Exile account"/>
 </main>
-<input type="button" id="authorize-poe-button" value="Authorize Access to your Path of Exile account" />
 </body>
 
 </html>
