@@ -70,7 +70,7 @@ async function main() {
         updateFilterButton.addEventListener('click', updateFilter);
         stashSelect.addEventListener('change', selectValueChanged);
         filterSelect.addEventListener('change', selectValueChanged);
-    };
+    }
 
     async function updateFilter(){
         let updateFilterButton = document.getElementById('update-filter-button');
@@ -104,7 +104,7 @@ async function main() {
             info.innerText = "filter successfully updated";
         }
         updateFilterButton.disabled = false;
-        };
+        }
     }
 
 function fillStashSelect(uniqueStashes){
@@ -135,7 +135,7 @@ function prepareInput(){
 
     customStyleTextArea.value = window.localStorage.getItem("custom-rule-style");
 
-    let hasCustomStyle = customStyleTextArea.value != '';
+    let hasCustomStyle = customStyleTextArea.value !== '';
     customStyleCheckbox.checked = hasCustomStyle;
     customStyleTextArea.disabled = !hasCustomStyle;
 }
