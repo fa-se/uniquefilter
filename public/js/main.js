@@ -15,6 +15,7 @@ async function main() {
         return;
     }
     setupEventListeners();
+    prepareInput();
 
     let selectedLeague = document.getElementById('league-select').value;
     let accountStashes = await poeApi.getAccountStashes(selectedLeague);
@@ -24,11 +25,32 @@ async function main() {
     // manually trigger change event
     selectValueChanged();
 
+    async function fillFilterSelect(){
+        let filterSelect = document.getElementById('filter-select');
+        let filters = await poeApi.getAccountItemFilters();
+
+        let options = [];
+        for(let filter of filters){
+            let option = document.createElement('option');
+            option.value = filter.id;
+            option.innerHTML = filter.filter_name;
+            options.push(option);
+        }
+
+        filterSelect.replaceChildren(... options);
+    }
+
+
     function setupEventListeners() {
         let leagueSelect = document.getElementById('league-select');
         let stashSelect = document.getElementById('uniquestash-select');
         let filterSelect = document.getElementById('filter-select');
+
+        let customStyleCheckbox = document.getElementById('custom-style-cb');
+        let customStyleTextArea = document.getElementById('custom-style-textarea');
+
         let updateFilterButton = document.getElementById('update-filter-button');
+
 
         leagueSelect.addEventListener('change', (event) => {
             poeApi.getAccountStashes(event.target.value)
@@ -38,6 +60,13 @@ async function main() {
                 });
         });
 
+        customStyleCheckbox.addEventListener('change', (event => {
+            customStyleTextArea.disabled = !event.target.checked;
+        }));
+        customStyleTextArea.addEventListener('change', () => {
+            window.localStorage.setItem("custom-rule-style", customStyleTextArea.value);
+        });
+
         updateFilterButton.addEventListener('click', updateFilter);
         stashSelect.addEventListener('change', selectValueChanged);
         filterSelect.addEventListener('change', selectValueChanged);
@@ -45,19 +74,26 @@ async function main() {
 
     async function updateFilter(){
         let updateFilterButton = document.getElementById('update-filter-button');
+        let stashSelect = document.getElementById('uniquestash-select');
+        let filterSelect = document.getElementById('filter-select');
+        let customStyleCheckbox = document.getElementById('custom-style-cb');
+        let customStyleTextArea = document.getElementById('custom-style-textarea');
+
         updateFilterButton.disabled = true;
         let info = document.getElementById('info');
         info.innerText = "loading stash tab contents...";
 
-        let stashSelect = document.getElementById('uniquestash-select');
         let selectedStash = uniqueStashes[stashSelect.value];
-        let filterSelect = document.getElementById('filter-select');
         let selectedFilter = filterSelect.value;
         let containedUniques = await selectedStash.getContainedUniques();
         let missingUniques = containedUniques.getMissingUniques();
         console.log(missingUniques); // print because the list itself might be useful to users
         info.innerText = "updating filter...";
+
         let filter = new Filter(await poeApi.getItemFilter(selectedFilter));
+        if(customStyleCheckbox.checked){
+            filter.setCustomStyle(customStyleTextArea.value);
+        }
         let result = await filter.updateRulesForMissingUniques(missingUniques);
 
         if(result.error){
@@ -67,7 +103,6 @@ async function main() {
         else{
             info.innerText = "filter successfully updated";
         }
-
         updateFilterButton.disabled = false;
         };
     }
@@ -84,22 +119,6 @@ function fillStashSelect(uniqueStashes){
     });
     stashSelect.replaceChildren(... options);
 }
-
-async function fillFilterSelect(){
-    let filterSelect = document.getElementById('filter-select');
-    let filters = await poeApi.getAccountItemFilters();
-
-    let options = [];
-    for(let filter of filters){
-        let option = document.createElement('option');
-        option.value = filter.id;
-        option.innerHTML = filter.filter_name;
-        options.push(option);
-    }
-
-    filterSelect.replaceChildren(... options);
-}
-
 function selectValueChanged(){
     let stashSelect = document.getElementById('uniquestash-select');
     let filterSelect = document.getElementById('filter-select');
@@ -110,3 +129,13 @@ function selectValueChanged(){
     updateFilterButton.disabled = (!isStashSelected || !isFilterSelected);
 }
 
+function prepareInput(){
+    let customStyleCheckbox = document.getElementById('custom-style-cb');
+    let customStyleTextArea = document.getElementById('custom-style-textarea');
+
+    customStyleTextArea.value = window.localStorage.getItem("custom-rule-style");
+
+    let hasCustomStyle = customStyleTextArea.value != '';
+    customStyleCheckbox.checked = hasCustomStyle;
+    customStyleTextArea.disabled = !hasCustomStyle;
+}
