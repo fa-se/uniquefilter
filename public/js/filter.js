@@ -1,113 +1,117 @@
 'use strict';
 import poeApi from "./poe-api-interface.js";
 
-export class Filter{
-    constructor(apiResponse){
-        this.name = apiResponse.filter_name;
-        this.id = apiResponse.id;
-        this.description = apiResponse.description;
-        this.customStyle = '';
-        this.filter = apiResponse.filter;
-        this.version = apiResponse.version;
-    }
+export class Filter {
+	constructor(apiResponse) {
+		this.name = apiResponse.filter_name;
+		this.id = apiResponse.id;
+		this.description = apiResponse.description;
+		this.customStyle = '';
+		this.filter = apiResponse.filter;
+		this.version = apiResponse.version;
+	}
 
-    setCustomStyle(styleText) {
-        styleText = this.#sanitizeStyleText(styleText);
-        this.customStyle = styleText;
-    }
+	setCustomStyle(styleText) {
+		styleText = this.#sanitizeStyleText(styleText);
+		this.customStyle = styleText;
+	}
 
-    async updateRulesForMissingUniques(uniques){
-        let ruleString = this.#generateMissingUniquesRule(uniques);
-        this.#insertMissingUniquesRule(ruleString);
-        this.#updateVersionAndDescription();
-        return await this.#uploadFilter();
-    }
+	async updateRulesForMissingUniques(uniques) {
+		let ruleString = this.#generateMissingUniquesRule(uniques);
+		this.#insertMissingUniquesRule(ruleString);
+		this.#updateVersionAndDescription();
+		return await this.#uploadFilter();
+	}
 
-    #generateMissingUniquesRule(uniques){
-        let baseTypes = [... new Set(uniques.map( unique => unique.baseType))];
-        let baseTypeString = "";
-        for(const baseType of baseTypes){
-            baseTypeString += '"' + baseType + '" ';
-        }
+	#generateMissingUniquesRule(uniques) {
+		let baseTypes = [...new Set(uniques.map(unique => unique.baseType))];
+		let baseTypeString = "";
+		for (const baseType of baseTypes) {
+			baseTypeString += '"' + baseType + '" ';
+		}
 
-        let useDefaultStyle = (this.customStyle == '');
+		let useDefaultStyle = (this.customStyle == '');
 
-        let style = useDefaultStyle?
-                `SetTextColor 0 0 255
-                SetBorderColor 255 255 255 255
-                SetBackgroundColor 255 109 0 255
-                SetFontSize 45
-                PlayAlertSound 10 300
-                MinimapIcon 0 Orange Cross
-                PlayEffect Orange`
-            :
-            this.customStyle;
+		let style = useDefaultStyle ?
+			`	SetTextColor 0 0 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 255 109 0 255
+	SetFontSize 45
+	PlayAlertSound 10 300
+	MinimapIcon 0 Orange Cross
+	PlayEffect Orange`
+			:
+			this.customStyle;
 
+		let rule =
+			`Show
+	Rarity == Unique
+	BaseType ${baseTypeString}
+${style}\n`;
 
-        let rule =
-            `Show
-                Rarity == Unique
-                BaseType ${baseTypeString}
-                ${style}\n`;
+		return rule;
+	}
 
-        return rule;
-    }
+	#insertMissingUniquesRule(ruleString) {
+		let segmentStart = "#=========================================== uniquefilter.dev - start ==========================================\n";
+		let segmentEnd = "#============================================ uniquefilter.dev - end ===========================================\n\n";
 
-    #insertMissingUniquesRule(ruleString){
-        let segmentStart = "#=========================================== uniquefilter.dev - start ==========================================\n";
-        let segmentEnd = "#============================================ uniquefilter.dev - end ===========================================\n\n";
+		let startIndex = this.filter.indexOf(segmentStart);
+		let endIndex = this.filter.indexOf(segmentEnd);
+		if (endIndex !== -1) {
+			endIndex += segmentEnd.length;
+		}
 
-        let startIndex = this.filter.indexOf(segmentStart);
-        let endIndex = this.filter.indexOf(segmentEnd) + segmentEnd.length;
+		let priorSegment = "";
+		let ruleSegment = segmentStart + ruleString + segmentEnd;
+		let posteriorSegment = "";
 
-        let priorSegment = "";
-        let ruleSegment = segmentStart + ruleString + segmentEnd;
-        let posteriorSegment = "";
+		// if the start pattern has not been found(because this filter didnt have the corresponding rule before),
+		// insert at the beginning
+		if (startIndex === -1) {
+			posteriorSegment = this.filter;
+		}
+		// start pattern was found, but end pattern was not? error!
+		else if (endIndex === -1) {
+			throw "missing end segment during rule generation";
+		}
+		// start and end pattern found
+		else {
+			priorSegment = this.filter.substring(0, startIndex);
+			posteriorSegment = this.filter.substring(endIndex);
+		}
 
-        // if the start pattern has not been found(because this filter didnt have the corresponding rule before),
-        // insert at the beginning
-        if(startIndex === -1){
-            posteriorSegment = this.filter;
-        }
-        // start pattern was found, but end pattern was not? error!
-        else if(endIndex === -1){
-            throw "missing end segment during rule generation";
-        }
-        // start and end pattern found
-        else{
-            priorSegment = this.filter.substring(0, startIndex);
-            posteriorSegment = this.filter.substring(endIndex);
-        }
+		this.filter = priorSegment + ruleSegment + posteriorSegment;
+	}
 
-        this.filter = priorSegment + ruleSegment + posteriorSegment;
-    }
+	async #uploadFilter() {
+		let response = await poeApi.updateItemFilter(this);
+		return response;
+	}
 
-    async #uploadFilter(){
-        let response = await poeApi.updateItemFilter(this);
-        return response;
-    }
+	#updateVersionAndDescription() {
+		let versionSuffix = '.uq';
+		if (!this.version.endsWith(versionSuffix)) {
+			this.version += versionSuffix;
+		}
 
-    #updateVersionAndDescription() {
-        let versionSuffix = '.uq';
-        if (!this.version.endsWith(versionSuffix)) {
-            this.version += versionSuffix;
-        }
+		let descriptionSuffix = '\nModified by uniquefilter.dev';
+		if (!this.description.endsWith(descriptionSuffix)) {
+			this.description += descriptionSuffix;
+		}
+	}
 
-        let descriptionSuffix = '\nModified by uniquefilter.dev';
-        if (!this.description.endsWith(descriptionSuffix)) {
-            this.description += descriptionSuffix;
-        }
-    }
+	#sanitizeStyleText(styleString) {
+		let sanitizedStyleText = styleString; // don't modify input string
 
-    #sanitizeStyleText(styleString) {
-        let sanitizedStyleText = styleString; // don't modify input string
-
-        // styleString might contain 'Show' (e.g. as generated by filterblade's 'Filter Line Translator') which is not part of the style.
-        if(sanitizedStyleText.startsWith('Show')){
-            sanitizedStyleText = sanitizedStyleText.replace(/^Show\n/, '');
-        }
-        // also remove all tabs, so we can apply our own formatting
-        sanitizedStyleText = sanitizedStyleText.replaceAll('\t', '');
-        return sanitizedStyleText;
-    }
+		// styleString might contain 'Show' (e.g. as generated by filterblade's 'Filter Line Translator') which is not part of the style.
+		if (sanitizedStyleText.startsWith('Show')) {
+			sanitizedStyleText = sanitizedStyleText.replace(/^Show\n/, '');
+		}
+		// also remove all tabs, so we can apply our own formatting
+		sanitizedStyleText = sanitizedStyleText.replaceAll('\t', '');
+		// now add one tab at the start of each line
+		sanitizedStyleText = sanitizedStyleText.replaceAll(/^/gm, '\t');
+		return sanitizedStyleText;
+	}
 }
