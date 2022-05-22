@@ -29,6 +29,21 @@ main {
     font-size: 50px;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.requires-authorization{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+}
+
 #authorize-poe-button {
     display: block;
     margin: auto;
@@ -38,17 +53,14 @@ main {
     flex: 1;
     margin: 20px;
 }
-#update-filter-button {
-    margin: auto;
+
+#custom-style-textarea{
+    width: 350px;
+    height: 100px;
 }
 
-.requires-authorization{
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 1000px;
-    margin: 0 auto;
-    align-items: center
+#update-filter-button {
+    margin: auto;
 }
 
 #info{
