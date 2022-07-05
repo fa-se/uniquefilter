@@ -17,6 +17,10 @@ export const allDropEnabledUniques =
             "baseType": "Ezomyte Burgonet"
         },
         {
+            "name": "Acton's Nightmare",
+            "baseType": "Overgrown Shrine Map"
+        },
+        {
             "name": "Actum",
             "baseType": "Butcher Axe"
         },
@@ -91,6 +95,10 @@ export const allDropEnabledUniques =
         {
             "name": "Alpha's Howl",
             "baseType": "Sinner Tricorne"
+        },
+        {
+            "name": "Altered Distant Memory",
+            "baseType": "Synthesised Map"
         },
         {
             "name": "Amanamu's Gaze",
@@ -275,6 +283,10 @@ export const allDropEnabledUniques =
         {
             "name": "Atziri's Step",
             "baseType": "Slink Boots"
+        },
+        {
+            "name": "Augmented Distant Memory",
+            "baseType": "Synthesised Map"
         },
         {
             "name": "Augyre",
@@ -537,6 +549,10 @@ export const allDropEnabledUniques =
             "baseType": "Runic Crown"
         },
         {
+            "name": "Caer Blaidd, Wolfpack's Den",
+            "baseType": "Underground River Map"
+        },
+        {
             "name": "Calamitous Visions",
             "baseType": "Small Cluster Jewel"
         },
@@ -765,6 +781,10 @@ export const allDropEnabledUniques =
             "baseType": "Cobalt Jewel"
         },
         {
+            "name": "Cortex",
+            "baseType": "Synthesised Map"
+        },
+        {
             "name": "Coruscating Elixir",
             "baseType": "Ruby Flask"
         },
@@ -899,6 +919,10 @@ export const allDropEnabledUniques =
         {
             "name": "Dead Reckoning",
             "baseType": "Cobalt Jewel"
+        },
+        {
+            "name": "Death and Taxes",
+            "baseType": "Necropolis Map"
         },
         {
             "name": "Death Rush",
@@ -1053,6 +1077,10 @@ export const allDropEnabledUniques =
             "baseType": "Heavy Belt"
         },
         {
+            "name": "Doryani's Machinarium",
+            "baseType": "Maze Map"
+        },
+        {
             "name": "Doryani's Prototype",
             "baseType": "Saint's Hauberk"
         },
@@ -1183,6 +1211,10 @@ export const allDropEnabledUniques =
         {
             "name": "Ephemeral Edge",
             "baseType": "Dusk Blade"
+        },
+        {
+            "name": "Escalation",
+            "baseType": "Brimstone Stalker Sentinel"
         },
         {
             "name": "Esh's Mirror",
@@ -1565,6 +1597,14 @@ export const allDropEnabledUniques =
             "baseType": "Mind Cage"
         },
         {
+            "name": "Hall of Grandmasters",
+            "baseType": "Promenade Map"
+        },
+        {
+            "name": "Hallowed Ground",
+            "baseType": "Cemetery Map"
+        },
+        {
             "name": "Hand of the Fervent",
             "baseType": "Zealot Gloves"
         },
@@ -1725,6 +1765,26 @@ export const allDropEnabledUniques =
             "baseType": "Onyx Amulet"
         },
         {
+            "name": "Impresence",
+            "baseType": "Onyx Amulet"
+        },
+        {
+            "name": "Impresence",
+            "baseType": "Onyx Amulet"
+        },
+        {
+            "name": "Impresence",
+            "baseType": "Onyx Amulet"
+        },
+        {
+            "name": "Impresence",
+            "baseType": "Onyx Amulet"
+        },
+        {
+            "name": "Impresence",
+            "baseType": "Onyx Amulet"
+        },
+        {
             "name": "Incandescent Heart",
             "baseType": "Saintly Chainmail"
         },
@@ -1753,12 +1813,20 @@ export const allDropEnabledUniques =
             "baseType": "Decimation Bow"
         },
         {
+            "name": "Infused Beachhead",
+            "baseType": "Harbinger Map"
+        },
+        {
             "name": "Innsbury Edge",
             "baseType": "Elder Sword"
         },
         {
             "name": "Inpulsa's Broken Heart",
             "baseType": "Sadist Garb"
+        },
+        {
+            "name": "Insomnia",
+            "baseType": "Cosmic Apex Sentinel"
         },
         {
             "name": "Inspired Learning",
@@ -2013,6 +2081,10 @@ export const allDropEnabledUniques =
             "baseType": "Murder Mitts"
         },
         {
+            "name": "Maelstr\u00f6m of Chaos",
+            "baseType": "Atoll Map"
+        },
+        {
             "name": "Mageblood",
             "baseType": "Heavy Belt"
         },
@@ -2079,6 +2151,10 @@ export const allDropEnabledUniques =
         {
             "name": "Mantra of Flames",
             "baseType": "Crimson Jewel"
+        },
+        {
+            "name": "Mao Kun",
+            "baseType": "Shore Map"
         },
         {
             "name": "March of the Legion",
@@ -2313,6 +2389,10 @@ export const allDropEnabledUniques =
             "baseType": "Crystal Sceptre"
         },
         {
+            "name": "Oba's Cursed Trove",
+            "baseType": "Underground Sea Map"
+        },
+        {
             "name": "Obliteration",
             "baseType": "Demon's Horn"
         },
@@ -2327,6 +2407,10 @@ export const allDropEnabledUniques =
         {
             "name": "Olesya's Delight",
             "baseType": "Cloth Belt"
+        },
+        {
+            "name": "Olmec's Sanctum",
+            "baseType": "Bone Crypt Map"
         },
         {
             "name": "Olroth's Charge",
@@ -2409,6 +2493,10 @@ export const allDropEnabledUniques =
             "baseType": "Iron Staff"
         },
         {
+            "name": "Pillars of Arun",
+            "baseType": "Dunes Map"
+        },
+        {
             "name": "Piscator's Vigil",
             "baseType": "Tornado Wand"
         },
@@ -2427,6 +2515,10 @@ export const allDropEnabledUniques =
         {
             "name": "Polaric Devastation",
             "baseType": "Opal Ring"
+        },
+        {
+            "name": "Poorjoy's Asylum",
+            "baseType": "Temple Map"
         },
         {
             "name": "Powerlessness",
@@ -2633,360 +2725,16 @@ export const allDropEnabledUniques =
             "baseType": "Crusader Gloves"
         },
         {
-            "name": "Replica Abyssus",
-            "baseType": "Ezomyte Burgonet"
-        },
-        {
-            "name": "Replica Advancing Fortress",
-            "baseType": "Gut Ripper"
-        },
-        {
-            "name": "Replica Alberon's Warpath",
-            "baseType": "Soldier Boots"
-        },
-        {
-            "name": "Replica Allelopathy",
-            "baseType": "Sorcerer Gloves"
-        },
-        {
-            "name": "Replica Allure",
-            "baseType": "Vaal Claw"
-        },
-        {
-            "name": "Replica Alpha's Howl",
-            "baseType": "Sinner Tricorne"
-        },
-        {
-            "name": "Replica Ambu's Charge",
-            "baseType": "Crusader Chainmail"
-        },
-        {
-            "name": "Replica Atziri's Acuity",
-            "baseType": "Vaal Gauntlets"
-        },
-        {
-            "name": "Replica Atziri's Foible",
-            "baseType": "Paua Amulet"
-        },
-        {
-            "name": "Replica Bated Breath",
-            "baseType": "Chain Belt"
-        },
-        {
-            "name": "Replica Bitterdream",
-            "baseType": "Shadow Sceptre"
-        },
-        {
-            "name": "Replica Blood Sacrifice",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "Replica Blood Thorn",
-            "baseType": "Gnarled Branch"
-        },
-        {
-            "name": "Replica Bloodplay",
-            "baseType": "Stiletto"
-        },
-        {
-            "name": "Replica Bones of Ullr",
-            "baseType": "Silk Slippers"
-        },
-        {
-            "name": "Replica Cheap Construction",
-            "baseType": "Viridian Jewel"
-        },
-        {
-            "name": "Replica Cold Iron Point",
-            "baseType": "Ezomyte Dagger"
-        },
-        {
-            "name": "Replica Conqueror's Efficiency",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "Replica Doedre's Damning",
-            "baseType": "Paua Ring"
-        },
-        {
-            "name": "Replica Dreamfeather",
-            "baseType": "Eternal Sword"
-        },
-        {
-            "name": "Replica Duskdawn",
-            "baseType": "Maelstr\u00f6m Staff"
-        },
-        {
-            "name": "Replica Earendel's Embrace",
-            "baseType": "Grinning Fetish"
-        },
-        {
-            "name": "Replica Emberwake",
-            "baseType": "Ruby Ring"
-        },
-        {
-            "name": "Replica Eternity Shroud",
-            "baseType": "Blood Raiment"
-        },
-        {
-            "name": "Replica Farrul's Fur",
-            "baseType": "Triumphant Lamellar"
-        },
-        {
-            "name": "Replica Fencoil",
-            "baseType": "Gnarled Branch"
-        },
-        {
-            "name": "Replica Fragile Bloom",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "Replica Frostbreath",
-            "baseType": "Ornate Mace"
-        },
-        {
-            "name": "Replica Grip of the Council",
-            "baseType": "Arcanist Gloves"
-        },
-        {
-            "name": "Replica Harvest",
-            "baseType": "Jasper Chopper"
-        },
-        {
-            "name": "Replica Headhunter",
-            "baseType": "Leather Belt"
-        },
-        {
-            "name": "Replica Heartbreaker",
-            "baseType": "Royal Skean"
-        },
-        {
-            "name": "Replica Hotheaded",
-            "baseType": "Viridian Jewel"
-        },
-        {
-            "name": "Replica Hyrri's Truth",
-            "baseType": "Jade Amulet"
-        },
-        {
-            "name": "Replica Infractem",
-            "baseType": "Decimation Bow"
-        },
-        {
-            "name": "Replica Innsbury Edge",
-            "baseType": "Elder Sword"
-        },
-        {
-            "name": "Replica Inya's Epiphany",
-            "baseType": "Arcanist Slippers"
-        },
-        {
-            "name": "Replica Iron Commander",
-            "baseType": "Death Bow"
-        },
-        {
-            "name": "Replica Kalisa's Grace",
-            "baseType": "Samite Gloves"
-        },
-        {
-            "name": "Replica Kaom's Heart",
-            "baseType": "Glorious Plate"
-        },
-        {
-            "name": "Replica Karui Ward",
-            "baseType": "Jade Amulet"
-        },
-        {
-            "name": "Replica Kongor's Undying Rage",
-            "baseType": "Terror Maul"
-        },
-        {
-            "name": "Replica Last Resort",
-            "baseType": "Nailed Fist"
-        },
-        {
-            "name": "Replica Lavianga's Spirit",
-            "baseType": "Sanctified Mana Flask"
-        },
-        {
-            "name": "Replica Leer Cast",
-            "baseType": "Festival Mask"
-        },
-        {
-            "name": "Replica Lioneye's Paws",
-            "baseType": "Bronzescale Boots"
-        },
-        {
-            "name": "Replica Loreweave",
-            "baseType": "Elegant Ringmail"
-        },
-        {
-            "name": "Replica Malachai's Artifice",
-            "baseType": "Unset Ring"
-        },
-        {
-            "name": "Replica Maloney's Mechanism",
-            "baseType": "Ornate Quiver"
-        },
-        {
-            "name": "Replica Midnight Bargain",
-            "baseType": "Engraved Wand"
-        },
-        {
-            "name": "Replica Mistwall",
-            "baseType": "Lacquered Buckler"
-        },
-        {
-            "name": "Replica Nebulis",
-            "baseType": "Void Sceptre"
-        },
-        {
-            "name": "Replica Oro's Sacrifice",
-            "baseType": "Infernal Sword"
-        },
-        {
-            "name": "Replica Paradoxica",
-            "baseType": "Vaal Rapier"
-        },
-        {
-            "name": "Replica Perfect Form",
-            "baseType": "Zodiac Leather"
-        },
-        {
-            "name": "Replica Primordial Might",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "Replica Prismweave",
-            "baseType": "Rustic Sash"
-        },
-        {
-            "name": "Replica Pure Talent",
-            "baseType": "Viridian Jewel"
-        },
-        {
-            "name": "Replica Quill Rain",
-            "baseType": "Short Bow"
-        },
-        {
-            "name": "Replica Reckless Defence",
-            "baseType": "Cobalt Jewel"
-        },
-        {
-            "name": "Replica Red Trail",
-            "baseType": "Titan Greaves"
-        },
-        {
-            "name": "Replica Restless Ward",
-            "baseType": "Carnal Armour"
-        },
-        {
-            "name": "Replica Rumi's Concoction",
-            "baseType": "Granite Flask"
-        },
-        {
-            "name": "Replica Shroud of the Lightless",
-            "baseType": "Carnal Armour"
-        },
-        {
-            "name": "Replica Siegebreaker",
-            "baseType": "Heavy Belt"
-        },
-        {
-            "name": "Replica Sorrow of the Divine",
-            "baseType": "Sulphur Flask"
-        },
-        {
-            "name": "Replica Soul Strike",
-            "baseType": "Spike-Point Arrow Quiver"
-        },
-        {
-            "name": "Replica Soul Taker",
-            "baseType": "Siege Axe"
-        },
-        {
-            "name": "Replica Soul Tether",
-            "baseType": "Cloth Belt"
-        },
-        {
-            "name": "Replica Stampede",
-            "baseType": "Assassin's Boots"
-        },
-        {
-            "name": "Replica Tasalio's Sign",
-            "baseType": "Sapphire Ring"
-        },
-        {
-            "name": "Replica Tempestuous Steel",
-            "baseType": "War Sword"
-        },
-        {
-            "name": "Replica Three-step Assault",
-            "baseType": "Shagreen Boots"
-        },
-        {
-            "name": "Replica Trypanon",
-            "baseType": "Great Mallet"
-        },
-        {
-            "name": "Replica Tukohama's Fortress",
-            "baseType": "Ebony Tower Shield"
-        },
-        {
-            "name": "Replica Tulfall",
-            "baseType": "Tornado Wand"
-        },
-        {
-            "name": "Replica Twyzel",
-            "baseType": "Sage Wand"
-        },
-        {
-            "name": "Replica Ungil's Gauche",
-            "baseType": "Boot Knife"
-        },
-        {
-            "name": "Replica Unstable Payload",
-            "baseType": "Cobalt Jewel"
-        },
-        {
-            "name": "Replica Veil of the Night",
-            "baseType": "Great Helmet"
-        },
-        {
-            "name": "Replica Victario's Charity",
-            "baseType": "Laminated Kite Shield"
-        },
-        {
-            "name": "Replica Voideye",
-            "baseType": "Unset Ring"
-        },
-        {
-            "name": "Replica Voidwalker",
-            "baseType": "Murder Boots"
-        },
-        {
-            "name": "Replica Volkuur's Guidance",
-            "baseType": "Zealot Gloves"
-        },
-        {
-            "name": "Replica Windripper",
-            "baseType": "Imperial Bow"
-        },
-        {
-            "name": "Replica Wings of Entropy",
-            "baseType": "Ezomyte Axe"
-        },
-        {
-            "name": "Replica Winterheart",
-            "baseType": "Gold Amulet"
-        },
-        {
             "name": "Retaliation Charm",
             "baseType": "Citrine Amulet"
         },
         {
             "name": "Reverberation Rod",
             "baseType": "Spiraled Wand"
+        },
+        {
+            "name": "Rewritten Distant Memory",
+            "baseType": "Synthesised Map"
         },
         {
             "name": "Rigwald's Charge",
@@ -3167,6 +2915,10 @@ export const allDropEnabledUniques =
         {
             "name": "Shadowstitch",
             "baseType": "Sacrificial Garb"
+        },
+        {
+            "name": "Shaper's Seed",
+            "baseType": "Agate Amulet"
         },
         {
             "name": "Shaper's Seed",
@@ -3529,8 +3281,20 @@ export const allDropEnabledUniques =
             "baseType": "Tiger Sword"
         },
         {
+            "name": "Test Sentinel",
+            "baseType": "Bronze Pandemonium Sentinel"
+        },
+        {
             "name": "The Admiral",
             "baseType": "Varnished Coat"
+        },
+        {
+            "name": "The Ancient Angler",
+            "baseType": "Emberstone Apex Sentinel"
+        },
+        {
+            "name": "The Angel of Vengeance",
+            "baseType": "Cosmic Apex Sentinel"
         },
         {
             "name": "The Anima Stone",
@@ -3549,6 +3313,10 @@ export const allDropEnabledUniques =
             "baseType": "Amber Amulet"
         },
         {
+            "name": "The Arbiter",
+            "baseType": "Brimstone Pandemonium Sentinel"
+        },
+        {
             "name": "The Ascetic",
             "baseType": "Gold Amulet"
         },
@@ -3561,8 +3329,28 @@ export const allDropEnabledUniques =
             "baseType": "Close Helmet"
         },
         {
+            "name": "The Basilisk",
+            "baseType": "Emberstone Pandemonium Sentinel"
+        },
+        {
+            "name": "The Beachhead",
+            "baseType": "Harbinger Map"
+        },
+        {
+            "name": "The Beachhead",
+            "baseType": "Harbinger Map"
+        },
+        {
+            "name": "The Beachhead",
+            "baseType": "Harbinger Map"
+        },
+        {
             "name": "The Beast Fur Shawl",
             "baseType": "Vaal Regalia"
+        },
+        {
+            "name": "The Benefactor",
+            "baseType": "Cobalt Stalker Sentinel"
         },
         {
             "name": "The Black Cane",
@@ -3625,6 +3413,10 @@ export const allDropEnabledUniques =
             "baseType": "Spidersilk Robe"
         },
         {
+            "name": "The Coward's Trial",
+            "baseType": "Cursed Crypt Map"
+        },
+        {
             "name": "The Crimson Storm",
             "baseType": "Steelwood Bow"
         },
@@ -3649,6 +3441,10 @@ export const allDropEnabledUniques =
             "baseType": "Studded Round Shield"
         },
         {
+            "name": "The Depraved",
+            "baseType": "Cosmic Apex Sentinel"
+        },
+        {
             "name": "The Devouring Diadem",
             "baseType": "Necromancer Circlet"
         },
@@ -3667,6 +3463,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Ephemeral Bond",
             "baseType": "Lapis Amulet"
+        },
+        {
+            "name": "The Epiphany",
+            "baseType": "Cosmic Apex Sentinel"
         },
         {
             "name": "The Eternal Apple",
@@ -3765,6 +3565,10 @@ export const allDropEnabledUniques =
             "baseType": "Gold Ring"
         },
         {
+            "name": "The Hollow-Eyed Skull",
+            "baseType": "Emberstone Stalker Sentinel"
+        },
+        {
             "name": "The Hungry Loop",
             "baseType": "Unset Ring"
         },
@@ -3809,6 +3613,14 @@ export const allDropEnabledUniques =
             "baseType": "Studded Belt"
         },
         {
+            "name": "The Megalomaniac",
+            "baseType": "Bronze Stalker Sentinel"
+        },
+        {
+            "name": "The Narcissist",
+            "baseType": "Cosmic Apex Sentinel"
+        },
+        {
             "name": "The Nomad",
             "baseType": "Studded Belt"
         },
@@ -3849,8 +3661,16 @@ export const allDropEnabledUniques =
             "baseType": "Sabre"
         },
         {
+            "name": "The Putrid Cloister",
+            "baseType": "Museum Map"
+        },
+        {
             "name": "The Queen's Hunger",
             "baseType": "Vaal Regalia"
+        },
+        {
+            "name": "The Raging Inferno",
+            "baseType": "Cosmic Apex Sentinel"
         },
         {
             "name": "The Rat Cage",
@@ -3981,6 +3801,22 @@ export const allDropEnabledUniques =
             "baseType": "Cloth Belt"
         },
         {
+            "name": "The Torturer",
+            "baseType": "Obsidian Pandemonium Sentinel"
+        },
+        {
+            "name": "The Twilight Temple",
+            "baseType": "Moon Temple Map"
+        },
+        {
+            "name": "The Twisted Trinity",
+            "baseType": "Cosmic Apex Sentinel"
+        },
+        {
+            "name": "The Unbridled Tempest",
+            "baseType": "Cosmic Apex Sentinel"
+        },
+        {
             "name": "The Unshattered Will",
             "baseType": "Archon Kite Shield"
         },
@@ -3991,6 +3827,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Vigil",
             "baseType": "Crimson Jewel"
+        },
+        {
+            "name": "The Vinktar Square",
+            "baseType": "Courtyard Map"
         },
         {
             "name": "The Warden's Brand",
@@ -4149,6 +3989,10 @@ export const allDropEnabledUniques =
             "baseType": "Tornado Wand"
         },
         {
+            "name": "Twisted Distant Memory",
+            "baseType": "Synthesised Map"
+        },
+        {
             "name": "Twyzel",
             "baseType": "Sage Wand"
         },
@@ -4235,6 +4079,10 @@ export const allDropEnabledUniques =
         {
             "name": "Varunastra",
             "baseType": "Vaal Blade"
+        },
+        {
+            "name": "Vaults of Atziri",
+            "baseType": "Vaal Pyramid Map"
         },
         {
             "name": "Veil of the Night",
@@ -4427,6 +4275,10 @@ export const allDropEnabledUniques =
         {
             "name": "Whakatutuki o Matua",
             "baseType": "Tarnished Spirit Shield"
+        },
+        {
+            "name": "Whakawairua Tuahu",
+            "baseType": "Strand Map"
         },
         {
             "name": "Wheel of the Stormsail",
