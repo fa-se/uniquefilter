@@ -2,7 +2,7 @@
 import poeApi from "./poe-api-interface.js";
 import {Filter} from "./filter.js"
 
-window.debugAvoidRateLimit = true; // flag to avoid running into poe api rate limit, for example by using stale data
+window.debugAvoidRateLimit = false; // flag to avoid running into poe api rate limit, for example by using stale data
 
 if (document.readyState !== "loading") {
     main();
