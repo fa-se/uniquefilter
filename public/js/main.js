@@ -55,7 +55,7 @@ async function main() {
         leagueSelect.addEventListener('change', (event) => {
             poeApi.getAccountStashes(event.target.value)
                 .then((accountStashes) => {
-                    let uniqueStashes = accountStashes.getAllUniqueStashes();
+                    uniqueStashes = accountStashes.getAllUniqueStashes();
                     fillStashSelect(uniqueStashes);
                 });
         });
