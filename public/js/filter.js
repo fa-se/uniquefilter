@@ -30,7 +30,7 @@ export class Filter {
 			baseTypeString += '"' + baseType + '" ';
 		}
 
-		let useDefaultStyle = (this.customStyle == '');
+		let useDefaultStyle = (this.customStyle === '');
 
 		let style = useDefaultStyle ?
 			`	SetTextColor 0 0 255
@@ -43,13 +43,10 @@ export class Filter {
 			:
 			this.customStyle;
 
-		let rule =
-			`Show
+		return `Show
 	Rarity == Unique
 	BaseType ${baseTypeString}
 ${style}\n`;
-
-		return rule;
 	}
 
 	#insertMissingUniquesRule(ruleString) {
@@ -85,8 +82,7 @@ ${style}\n`;
 	}
 
 	async #uploadFilter() {
-		let response = await poeApi.updateItemFilter(this);
-		return response;
+		return await poeApi.updateItemFilter(this);
 	}
 
 	#updateVersionAndDescription() {
