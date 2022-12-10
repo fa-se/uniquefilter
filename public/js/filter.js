@@ -90,7 +90,7 @@ ${style}\n`;
 	}
 
 	#updateVersionAndDescription() {
-		let versionSuffix = '.uq';
+		let versionSuffix = 'u';
 		if (!this.version.endsWith(versionSuffix)) {
 			this.version += versionSuffix;
 		}
