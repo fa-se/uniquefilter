@@ -26,7 +26,17 @@ Object.keys(contentTypes).forEach((key) => {
 
 const server = http.createServer(async (request, response) => {
     console.log(request.headers);
-    let url = new URL(request.url, 'https://' + 'uniquefilter.dev' + '/');
+    let url;
+    try {
+        url = new URL(request.url, 'https://' + 'uniquefilter.dev' + '/');
+    }
+    catch{
+        response.writeHead(303, {
+            Location: '/'
+        }).end();
+        return;
+    }
+
     let fileName = path.join(baseDirectory, url.pathname);
     if(fileName.indexOf(baseDirectory) !== 0){  // check if requested path is escaping the web root
         response.statusCode = 403;
