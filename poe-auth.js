@@ -32,7 +32,7 @@ export default {
             }
             catch (error) {
                 console.log(error);
-                reject(error);
+                reject("Error getting authorization token from the Path of Exile API");
             }
         });
         }
