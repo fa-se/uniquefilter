@@ -18,7 +18,7 @@ export default {
                 const response = await got.post('https://pathofexile.com/oauth/token', {
                     form: {
                         code: urlParameters.get('code'),
-                        redirect_uri: "http://127.0.0.1:8080/oauth2callback",
+                        redirect_uri: "https://uniquefilter.dev/oauth2callback",
                         grant_type: "authorization_code",
                         client_id: client_id,
                         client_secret: secrets.client_secret,
