@@ -57,6 +57,10 @@ const server = http.createServer(async (request, response) => {
         case '/js/filter.js':
         case '/json/drop-enabled-uniques.js':
         case '/css/style.css':
+        case '/fonts/nunito-sans-v12-latin-italic.woff':
+        case '/fonts/nunito-sans-v12-latin-italic.woff2':
+        case '/fonts/nunito-sans-v12-latin-regular.woff':
+        case '/fonts/nunito-sans-v12-latin-regular.woff2':
             streamFile(baseDirectory + request.url, response);
             break;
         case '/oauth2callback':
