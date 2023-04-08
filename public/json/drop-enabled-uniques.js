@@ -113,6 +113,10 @@ export const allDropEnabledUniques =
             "baseType": "Moonstone Ring"
         },
         {
+            "name": "Ancestral Vision",
+            "baseType": "Viridian Jewel"
+        },
+        {
             "name": "Ancient Skull",
             "baseType": "Bone Helmet"
         },
@@ -130,7 +134,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Apep's Rage",
-            "baseType": "Opal Wand"
+            "baseType": "Omen Wand"
         },
         {
             "name": "Apep's Slumber",
@@ -178,7 +182,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Ashcaller",
-            "baseType": "Quartz Wand"
+            "baseType": "Carved Wand"
         },
         {
             "name": "Ashes of the Stars",
@@ -425,6 +429,10 @@ export const allDropEnabledUniques =
             "baseType": "Sanctified Life Flask"
         },
         {
+            "name": "Blood Price",
+            "baseType": "Reaver Helmet"
+        },
+        {
             "name": "Bloodbond",
             "baseType": "Bone Armour"
         },
@@ -433,12 +441,20 @@ export const allDropEnabledUniques =
             "baseType": "Marble Amulet"
         },
         {
+            "name": "Bloodnotch",
+            "baseType": "Crimson Jewel"
+        },
+        {
             "name": "Bloodplay",
             "baseType": "Stiletto"
         },
         {
             "name": "Bloodseeker",
             "baseType": "Hellion's Paw"
+        },
+        {
+            "name": "Bloodsoaked Medallion",
+            "baseType": "Amber Amulet"
         },
         {
             "name": "Blunderbore",
@@ -577,8 +593,16 @@ export const allDropEnabledUniques =
             "baseType": "Spiked Gloves"
         },
         {
+            "name": "Ceinture of Benevolence",
+            "baseType": "Cloth Belt"
+        },
+        {
             "name": "Cerberus Limb",
             "baseType": "Blood Sceptre"
+        },
+        {
+            "name": "Chain of Endurance",
+            "baseType": "Chain Belt"
         },
         {
             "name": "Chains of Command",
@@ -853,10 +877,6 @@ export const allDropEnabledUniques =
             "baseType": "Vaal Greaves"
         },
         {
-            "name": "Dead Reckoning",
-            "baseType": "Cobalt Jewel"
-        },
-        {
             "name": "Deadly End",
             "baseType": "Ultimatum Aspect"
         },
@@ -1070,7 +1090,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Eclipse Solaris",
-            "baseType": "Crystal Wand"
+            "baseType": "Engraved Wand"
         },
         {
             "name": "Edge of Madness",
@@ -1079,6 +1099,10 @@ export const allDropEnabledUniques =
         {
             "name": "Efficient Training",
             "baseType": "Crimson Jewel"
+        },
+        {
+            "name": "El&amp;#39;Abin&amp;#39;s Visage",
+            "baseType": "Fencer Helm"
         },
         {
             "name": "Elegant Hubris",
@@ -1142,7 +1166,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Esh's Mirror",
-            "baseType": "Thorium Spirit Shield"
+            "baseType": "Vaal Spirit Shield"
         },
         {
             "name": "Esh's Visage",
@@ -1155,10 +1179,6 @@ export const allDropEnabledUniques =
         {
             "name": "Essentia Sanguis",
             "baseType": "Vaal Claw"
-        },
-        {
-            "name": "Eternal Damnation",
-            "baseType": "Agate Amulet"
         },
         {
             "name": "Ewar's Mirage",
@@ -1542,7 +1562,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Hand of Thought and Motion",
-            "baseType": "Blinder"
+            "baseType": "Imperial Claw"
         },
         {
             "name": "Hand of Wisdom and Action",
@@ -2274,7 +2294,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Obliteration",
-            "baseType": "Demon's Horn"
+            "baseType": "Imbued Wand"
         },
         {
             "name": "Obscurantis",
@@ -2315,6 +2335,10 @@ export const allDropEnabledUniques =
         {
             "name": "Oni-Goroshi",
             "baseType": "Charan's Sword"
+        },
+        {
+            "name": "Orbala's Stand",
+            "baseType": "Eelskin Boots"
         },
         {
             "name": "Oriath's End",
@@ -2378,7 +2402,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Piscator's Vigil",
-            "baseType": "Tornado Wand"
+            "baseType": "Imbued Wand"
         },
         {
             "name": "Pledge of Hands",
@@ -2598,7 +2622,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Relic of the Pact",
-            "baseType": "Spiraled Wand"
+            "baseType": "Sage Wand"
         },
         {
             "name": "Repentance",
@@ -2890,7 +2914,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Replica Tulfall",
-            "baseType": "Tornado Wand"
+            "baseType": "Opal Wand"
         },
         {
             "name": "Replica Twyzel",
@@ -3145,6 +3169,14 @@ export const allDropEnabledUniques =
             "baseType": "Carnal Armour"
         },
         {
+            "name": "Shroud of the Lightless",
+            "baseType": "Carnal Armour"
+        },
+        {
+            "name": "Shroud of the Lightless",
+            "baseType": "Carnal Armour"
+        },
+        {
             "name": "Sibyl's Lament",
             "baseType": "Coral Ring"
         },
@@ -3269,6 +3301,10 @@ export const allDropEnabledUniques =
             "baseType": "Cobalt Jewel"
         },
         {
+            "name": "Soulbound",
+            "baseType": "Paua Ring"
+        },
+        {
             "name": "Soulthirst",
             "baseType": "Cloth Belt"
         },
@@ -3338,7 +3374,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Storm Prison",
-            "baseType": "Carved Wand"
+            "baseType": "Spiraled Wand"
         },
         {
             "name": "Storm Secret",
@@ -3355,6 +3391,10 @@ export const allDropEnabledUniques =
         {
             "name": "Stormfire",
             "baseType": "Opal Ring"
+        },
+        {
+            "name": "Stormseeker",
+            "baseType": "Ambush Mitts"
         },
         {
             "name": "Stormshroud",
@@ -3399,6 +3439,14 @@ export const allDropEnabledUniques =
         {
             "name": "Tabula Rasa",
             "baseType": "Simple Robe"
+        },
+        {
+            "name": "Tainted Pact",
+            "baseType": "Coral Amulet"
+        },
+        {
+            "name": "Tanu Ahi",
+            "baseType": "Wyrmscale Gauntlets"
         },
         {
             "name": "Taproot",
@@ -3475,10 +3523,6 @@ export const allDropEnabledUniques =
         {
             "name": "The Aylardex",
             "baseType": "Agate Amulet"
-        },
-        {
-            "name": "The Balance of Terror",
-            "baseType": "Cobalt Jewel"
         },
         {
             "name": "The Baron",
@@ -3630,11 +3674,15 @@ export const allDropEnabledUniques =
         },
         {
             "name": "The Formless Flame",
-            "baseType": "Siege Helmet"
+            "baseType": "Royal Burgonet"
         },
         {
             "name": "The Formless Inferno",
             "baseType": "Royal Burgonet"
+        },
+        {
+            "name": "The Fourth Vow",
+            "baseType": "Devout Chainmail"
         },
         {
             "name": "The Fracturing Spinner",
@@ -3647,6 +3695,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Fulcrum",
             "baseType": "Ezomyte Staff"
+        },
+        {
+            "name": "The Geomantic Gyre",
+            "baseType": "Highborn Staff"
         },
         {
             "name": "The Ghastly Theatre",
@@ -3714,7 +3766,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "The Infinite Pursuit",
-            "baseType": "Goliath Greaves"
+            "baseType": "Titan Greaves"
         },
         {
             "name": "The Interrogation",
@@ -3801,6 +3853,10 @@ export const allDropEnabledUniques =
             "baseType": "Titan Greaves"
         },
         {
+            "name": "The Redblade",
+            "baseType": "Gladius"
+        },
+        {
             "name": "The Restless Ward",
             "baseType": "Carnal Armour"
         },
@@ -3842,7 +3898,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "The Snowblind Grace",
-            "baseType": "Coronal Leather"
+            "baseType": "Zodiac Leather"
         },
         {
             "name": "The Sorrow of the Divine",
@@ -3913,6 +3969,10 @@ export const allDropEnabledUniques =
             "baseType": "Vaal Mask"
         },
         {
+            "name": "The Vinktar Square",
+            "baseType": "Courtyard Map"
+        },
+        {
             "name": "The Warden's Brand",
             "baseType": "Iron Ring"
         },
@@ -3967,6 +4027,10 @@ export const allDropEnabledUniques =
         {
             "name": "Thousand Teeth Temu",
             "baseType": "Vaal Buckler"
+        },
+        {
+            "name": "Thread of Hope",
+            "baseType": "Crimson Jewel"
         },
         {
             "name": "Thread of Hope",
@@ -4066,11 +4130,11 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Tulborn",
-            "baseType": "Spiraled Wand"
+            "baseType": "Opal Wand"
         },
         {
             "name": "Tulfall",
-            "baseType": "Tornado Wand"
+            "baseType": "Opal Wand"
         },
         {
             "name": "Twisted Distant Memory",
@@ -4122,7 +4186,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Uul-Netol's Kiss",
-            "baseType": "Labrys"
+            "baseType": "Vaal Axe"
         },
         {
             "name": "Uul-Netol's Vow",
@@ -4349,6 +4413,10 @@ export const allDropEnabledUniques =
             "baseType": "Poleaxe"
         },
         {
+            "name": "Widowhail",
+            "baseType": "Crude Bow"
+        },
+        {
             "name": "Widowmaker",
             "baseType": "Boot Blade"
         },
@@ -4446,7 +4514,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Xoph's Inception",
-            "baseType": "Bone Bow"
+            "baseType": "Citadel Bow"
         },
         {
             "name": "Xoph's Nurture",
@@ -4492,4 +4560,4 @@ export const allDropEnabledUniques =
             "name": "Zerphi's Last Breath",
             "baseType": "Grand Mana Flask"
         }
-    ]
+    ];
