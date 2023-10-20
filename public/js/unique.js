@@ -29,11 +29,10 @@ export class UniqueList{
 
     getMissingUniques(globalOnly = false){
         let missingUniques = [];
-
-        for (let unique of allDropEnabledUniques){
         
         let uniqueList = globalOnly ? allGlobalDropEnabledUniques : allDropEnabledUniques;
 
+        for (let unique of uniqueList){
             let uniqueIdx = this.uniqesMap.get(unique.name);
             if(uniqueIdx === undefined){
                 missingUniques.push(new Unique(unique.name, unique["base item"]));

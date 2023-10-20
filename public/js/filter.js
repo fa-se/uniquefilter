@@ -45,7 +45,7 @@ export class Filter {
 
 		return `Show
 	Rarity == Unique
-	BaseType ${baseTypeString}
+	BaseType == ${baseTypeString}
 ${style}\n`;
 	}
 
@@ -63,7 +63,7 @@ ${style}\n`;
 		let ruleSegment = segmentStart + ruleString + segmentEnd;
 		let posteriorSegment = "";
 
-		// if the start pattern has not been found(because this filter didnt have the corresponding rule before),
+		// if the start pattern has not been found (because this filter didn't have the corresponding rule before),
 		// insert at the beginning
 		if (startIndex === -1) {
 			posteriorSegment = this.filter;
