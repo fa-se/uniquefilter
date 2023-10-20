@@ -49,6 +49,8 @@ async function main() {
         let customStyleCheckbox = document.getElementById('custom-style-cb');
         let customStyleTextArea = document.getElementById('custom-style-textarea');
 
+        let globalDropsOnlyCheckbox = document.getElementById('only-global-drops-cb');
+
         let updateFilterButton = document.getElementById('update-filter-button');
 
 
@@ -59,6 +61,10 @@ async function main() {
                     fillStashSelect(uniqueStashes);
                 });
         });
+
+        globalDropsOnlyCheckbox.addEventListener('change', (event) => {
+            window.localStorage.setItem("only-global-drops", event.target.checked);
+        })
 
         customStyleCheckbox.addEventListener('change', (event => {
             customStyleTextArea.disabled = !event.target.checked;
@@ -79,6 +85,8 @@ async function main() {
         let customStyleCheckbox = document.getElementById('custom-style-cb');
         let customStyleTextArea = document.getElementById('custom-style-textarea');
 
+        let globalDropsOnly = document.getElementById('only-global-drops-cb').checked;
+
         updateFilterButton.disabled = true;
         let info = document.getElementById('info');
         info.innerText = "loading stash tab contents...";
@@ -86,7 +94,7 @@ async function main() {
         let selectedStash = uniqueStashes[stashSelect.value];
         let selectedFilter = filterSelect.value;
         let containedUniques = await selectedStash.getContainedUniques();
-        let missingUniques = containedUniques.getMissingUniques();
+        let missingUniques = containedUniques.getMissingUniques(globalDropsOnly);
         console.log(missingUniques); // print because the list itself might be useful to users
         info.innerText = "updating filter...";
 
@@ -132,6 +140,9 @@ function selectValueChanged(){
 function prepareInput(){
     let customStyleCheckbox = document.getElementById('custom-style-cb');
     let customStyleTextArea = document.getElementById('custom-style-textarea');
+    let globalDropsOnlyCheckbox = document.getElementById('only-global-drops-cb');
+
+    globalDropsOnlyCheckbox.checked = window.localStorage.getItem("only-global-drops") === "true";
 
     customStyleTextArea.value = window.localStorage.getItem("custom-rule-style");
 

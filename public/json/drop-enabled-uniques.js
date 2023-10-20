@@ -2,4562 +2,4330 @@ export const allDropEnabledUniques =
     [
         {
             "name": "Abberath's Hooves",
-            "baseType": "Goathide Boots"
+            "base item": "Goathide Boots"
         },
         {
             "name": "Abberath's Horn",
-            "baseType": "Goat's Horn"
+            "base item": "Goat's Horn"
         },
         {
             "name": "Abhorrent Interrogation",
-            "baseType": "Ambush Mitts"
+            "base item": "Ambush Mitts"
         },
         {
             "name": "Abyssus",
-            "baseType": "Ezomyte Burgonet"
+            "base item": "Ezomyte Burgonet"
         },
         {
             "name": "Acton's Nightmare",
-            "baseType": "Overgrown Shrine Map"
+            "base item": "Overgrown Shrine Map"
         },
         {
             "name": "Actum",
-            "baseType": "Butcher Axe"
+            "base item": "Butcher Axe"
         },
         {
             "name": "Advancing Fortress",
-            "baseType": "Gut Ripper"
+            "base item": "Gut Ripper"
         },
         {
             "name": "Aegis Aurora",
-            "baseType": "Champion Kite Shield"
+            "base item": "Champion Kite Shield"
         },
         {
             "name": "Agnerod East",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "Agnerod North",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "Agnerod South",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "Agnerod West",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "Ahkeli's Meadow",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Ahkeli's Mountain",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Ahkeli's Valley",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Ahn's Contempt",
-            "baseType": "Praetor Crown"
+            "base item": "Praetor Crown"
         },
         {
             "name": "Ahn's Heritage",
-            "baseType": "Colossal Tower Shield"
+            "base item": "Colossal Tower Shield"
         },
         {
             "name": "Ahn's Might",
-            "baseType": "Midnight Blade"
+            "base item": "Midnight Blade"
+        },
+        {
+            "name": "Ahuana's Bite",
+            "base item": "Sharktooth Arrow Quiver"
+        },
+        {
+            "name": "Akoya's Gaze",
+            "base item": "Regicide Mask"
         },
         {
             "name": "Al Dhih",
-            "baseType": "Timeworn Claw"
+            "base item": "Timeworn Claw"
         },
         {
             "name": "Alberon's Warpath",
-            "baseType": "Soldier Boots"
+            "base item": "Soldier Boots"
         },
         {
             "name": "Algor Mortis",
-            "baseType": "Carnal Mitts"
+            "base item": "Carnal Mitts"
         },
         {
             "name": "Allelopathy",
-            "baseType": "Satin Gloves"
+            "base item": "Satin Gloves"
         },
         {
             "name": "Allure",
-            "baseType": "Vaal Claw"
+            "base item": "Vaal Claw"
         },
         {
             "name": "Alpha's Howl",
-            "baseType": "Sinner Tricorne"
+            "base item": "Sinner Tricorne"
         },
         {
             "name": "Altered Distant Memory",
-            "baseType": "Synthesised Map"
+            "base item": "Synthesised Map"
         },
         {
             "name": "Amanamu's Gaze",
-            "baseType": "Ghastly Eye Jewel"
+            "base item": "Ghastly Eye Jewel"
         },
         {
             "name": "Ambu's Charge",
-            "baseType": "Crusader Chainmail"
+            "base item": "Crusader Chainmail"
         },
         {
             "name": "Anathema",
-            "baseType": "Moonstone Ring"
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Ancestral Vision",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Ancient Skull",
-            "baseType": "Bone Helmet"
+            "base item": "Bone Helmet"
         },
         {
             "name": "Andvarius",
-            "baseType": "Gold Ring"
+            "base item": "Gold Ring"
         },
         {
             "name": "Angler's Plait",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Annihilation's Approach",
-            "baseType": "Dragonscale Boots"
+            "base item": "Dragonscale Boots"
         },
         {
             "name": "Apep's Rage",
-            "baseType": "Omen Wand"
+            "base item": "Omen Wand"
         },
         {
             "name": "Apep's Slumber",
-            "baseType": "Vaal Spirit Shield"
+            "base item": "Vaal Spirit Shield"
         },
         {
             "name": "Apep's Supremacy",
-            "baseType": "Vaal Spirit Shield"
+            "base item": "Vaal Spirit Shield"
         },
         {
             "name": "Apex Mode",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Arakaali's Fang",
-            "baseType": "Fiend Dagger"
+            "base item": "Fiend Dagger"
         },
         {
             "name": "Araku Tiki",
-            "baseType": "Coral Amulet"
+            "base item": "Coral Amulet"
         },
         {
             "name": "Arborix",
-            "baseType": "Assassin Bow"
+            "base item": "Assassin Bow"
         },
         {
             "name": "Architect's Hand",
-            "baseType": "Ambush Mitts"
+            "base item": "Ambush Mitts"
         },
         {
             "name": "Arn's Anguish",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Ascent From Flesh",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Asenath's Gentle Touch",
-            "baseType": "Silk Gloves"
+            "base item": "Silk Gloves"
         },
         {
             "name": "Asenath's Mark",
-            "baseType": "Iron Circlet"
+            "base item": "Iron Circlet"
         },
         {
             "name": "Ashcaller",
-            "baseType": "Carved Wand"
+            "base item": "Carved Wand"
         },
         {
             "name": "Ashes of the Stars",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Ashrend",
-            "baseType": "Buckskin Tunic"
+            "base item": "Buckskin Tunic"
         },
         {
             "name": "Asphyxia's Wrath",
-            "baseType": "Feathered Arrow Quiver"
+            "base item": "Feathered Arrow Quiver"
         },
         {
             "name": "Assailum",
-            "baseType": "Sinner Tricorne"
+            "base item": "Sinner Tricorne"
         },
         {
             "name": "Astral Projector",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Astramentis",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Atziri's Acuity",
-            "baseType": "Vaal Gauntlets"
+            "base item": "Vaal Gauntlets"
         },
         {
             "name": "Atziri's Disfavour",
-            "baseType": "Vaal Axe"
+            "base item": "Vaal Axe"
         },
         {
             "name": "Atziri's Foible",
-            "baseType": "Paua Amulet"
+            "base item": "Paua Amulet"
         },
         {
             "name": "Atziri's Promise",
-            "baseType": "Amethyst Flask"
+            "base item": "Amethyst Flask"
         },
         {
             "name": "Atziri's Reflection",
-            "baseType": "Golden Buckler"
+            "base item": "Golden Buckler"
         },
         {
             "name": "Atziri's Reign",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Atziri's Rule",
-            "baseType": "Judgement Staff"
+            "base item": "Judgement Staff"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Splendour",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Atziri's Step",
-            "baseType": "Slink Boots"
+            "base item": "Slink Boots"
         },
         {
             "name": "Augmented Distant Memory",
-            "baseType": "Synthesised Map"
+            "base item": "Synthesised Map"
         },
         {
             "name": "Augyre",
-            "baseType": "Void Sceptre"
+            "base item": "Void Sceptre"
         },
         {
             "name": "Aukuna's Will",
-            "baseType": "Clasped Mitts"
+            "base item": "Clasped Mitts"
         },
         {
             "name": "Aul's Uprising",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Aul's Uprising",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Aul's Uprising",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Aul's Uprising",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Aurseize",
-            "baseType": "Steelscale Gauntlets"
+            "base item": "Steelscale Gauntlets"
         },
         {
             "name": "Aurumvorax",
-            "baseType": "Basket Rapier"
+            "base item": "Basket Rapier"
         },
         {
             "name": "Auxium",
-            "baseType": "Crystal Belt"
+            "base item": "Crystal Belt"
         },
         {
             "name": "Axiom Perpetuum",
-            "baseType": "Bronze Sceptre"
+            "base item": "Bronze Sceptre"
         },
         {
             "name": "Badge of the Brotherhood",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "Balefire",
-            "baseType": "Opal Sceptre"
+            "base item": "Opal Sceptre"
         },
         {
             "name": "Bated Breath",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Beacon of Madness",
-            "baseType": "Two-Toned Boots"
+            "base item": "Two-Toned Boots"
         },
         {
             "name": "Beacon of Madness",
-            "baseType": "Two-Toned Boots"
+            "base item": "Two-Toned Boots"
         },
         {
             "name": "Beacon of Madness",
-            "baseType": "Two-Toned Boots"
+            "base item": "Two-Toned Boots"
         },
         {
             "name": "Bear's Girdle",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Belly of the Beast",
-            "baseType": "Full Wyrmscale"
+            "base item": "Full Wyrmscale"
         },
         {
             "name": "Belt of the Deceiver",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Beltimber Blade",
-            "baseType": "Eternal Sword"
+            "base item": "Eternal Sword"
         },
         {
             "name": "Berek's Grip",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Berek's Pass",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Berek's Respite",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Bino's Kitchen Knife",
-            "baseType": "Slaughter Knife"
+            "base item": "Slaughter Knife"
         },
         {
             "name": "Bisco's Collar",
-            "baseType": "Gold Amulet"
+            "base item": "Gold Amulet"
         },
         {
             "name": "Bisco's Leash",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Bitterbind Point",
-            "baseType": "Titanium Spirit Shield"
+            "base item": "Titanium Spirit Shield"
         },
         {
             "name": "Bitterdream",
-            "baseType": "Shadow Sceptre"
+            "base item": "Shadow Sceptre"
         },
         {
             "name": "Black Sun Crest",
-            "baseType": "Lacquered Helmet"
+            "base item": "Lacquered Helmet"
         },
         {
             "name": "Black Zenith",
-            "baseType": "Fingerless Silk Gloves"
+            "base item": "Fingerless Silk Gloves"
         },
         {
             "name": "Blackflame",
-            "baseType": "Amethyst Ring"
+            "base item": "Amethyst Ring"
         },
         {
             "name": "Blackgleam",
-            "baseType": "Blazing Arrow Quiver"
+            "base item": "Blazing Arrow Quiver"
         },
         {
             "name": "Blackheart",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "Blasphemer's Grasp",
-            "baseType": "Assassin's Mitts"
+            "base item": "Assassin's Mitts"
         },
         {
             "name": "Blightwell",
-            "baseType": "Clutching Talisman"
+            "base item": "Clutching Talisman"
         },
         {
             "name": "Blood of Corruption",
-            "baseType": "Amber Amulet"
+            "base item": "Amber Amulet"
         },
         {
             "name": "Blood of the Karui",
-            "baseType": "Sanctified Life Flask"
+            "base item": "Sanctified Life Flask"
         },
         {
             "name": "Blood Price",
-            "baseType": "Reaver Helmet"
+            "base item": "Reaver Helmet"
         },
         {
             "name": "Bloodbond",
-            "baseType": "Bone Armour"
+            "base item": "Bone Armour"
         },
         {
             "name": "Bloodgrip",
-            "baseType": "Marble Amulet"
+            "base item": "Marble Amulet"
         },
         {
             "name": "Bloodnotch",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Bloodplay",
-            "baseType": "Stiletto"
+            "base item": "Stiletto"
         },
         {
             "name": "Bloodseeker",
-            "baseType": "Hellion's Paw"
+            "base item": "Hellion's Paw"
         },
         {
             "name": "Bloodsoaked Medallion",
-            "baseType": "Amber Amulet"
+            "base item": "Amber Amulet"
         },
         {
             "name": "Blunderbore",
-            "baseType": "Astral Plate"
+            "base item": "Astral Plate"
         },
         {
             "name": "Bones of Ullr",
-            "baseType": "Silk Slippers"
+            "base item": "Silk Slippers"
         },
         {
             "name": "Booby Lady's Gloves",
-            "baseType": "Vaal Gauntlets"
+            "base item": "Vaal Gauntlets"
         },
         {
             "name": "Bottled Faith",
-            "baseType": "Sulphur Flask"
+            "base item": "Sulphur Flask"
+        },
+        {
+            "name": "Bound Fate",
+            "base item": "Cloth Belt"
         },
         {
             "name": "Brain Rattler",
-            "baseType": "Meatgrinder"
+            "base item": "Meatgrinder"
         },
         {
             "name": "Bramblejack",
-            "baseType": "Plate Vest"
+            "base item": "Plate Vest"
         },
         {
             "name": "Breath of the Council",
-            "baseType": "Carnal Sceptre"
+            "base item": "Carnal Sceptre"
         },
         {
             "name": "Breathstealer",
-            "baseType": "Hydrascale Gauntlets"
+            "base item": "Hydrascale Gauntlets"
         },
         {
             "name": "Brightbeak",
-            "baseType": "War Hammer"
+            "base item": "War Hammer"
         },
         {
             "name": "Brinerot Flag",
-            "baseType": "Tarnished Spirit Shield"
+            "base item": "Tarnished Spirit Shield"
         },
         {
             "name": "Brinerot Mark",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Brinerot Whalers",
-            "baseType": "Trapper Boots"
+            "base item": "Trapper Boots"
         },
         {
             "name": "Briskwrap",
-            "baseType": "Sun Leather"
+            "base item": "Sun Leather"
         },
         {
             "name": "Broken Faith",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "Bronn's Lithe",
-            "baseType": "Cutthroat's Garb"
+            "base item": "Cutthroat's Garb"
         },
         {
             "name": "Brutal Restraint",
-            "baseType": "Timeless Jewel"
+            "base item": "Timeless Jewel"
         },
         {
             "name": "Brute Force Solution",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Brutus' Lead Sprinkler",
-            "baseType": "Ritual Sceptre"
+            "base item": "Ritual Sceptre"
         },
         {
             "name": "Bubonic Trail",
-            "baseType": "Murder Boots"
+            "base item": "Murder Boots"
         },
         {
             "name": "Bubonic Trail",
-            "baseType": "Murder Boots"
+            "base item": "Murder Boots"
         },
         {
             "name": "Cadigan's Crown",
-            "baseType": "Runic Crown"
+            "base item": "Runic Crown"
         },
         {
             "name": "Caer Blaidd, Wolfpack's Den",
-            "baseType": "Underground River Map"
+            "base item": "Underground River Map"
         },
         {
             "name": "Calamitous Visions",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "Call of the Brotherhood",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Call of the Void",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Callinellus Malleus",
-            "baseType": "Auric Mace"
+            "base item": "Auric Mace"
         },
         {
             "name": "Cameria's Avarice",
-            "baseType": "Gavel"
+            "base item": "Gavel"
         },
         {
             "name": "Cameria's Maul",
-            "baseType": "Gavel"
+            "base item": "Gavel"
         },
         {
             "name": "Cane of Kulemak",
-            "baseType": "Serpentine Staff"
+            "base item": "Serpentine Staff"
         },
         {
             "name": "Cane of Unravelling",
-            "baseType": "Ezomyte Staff"
+            "base item": "Ezomyte Staff"
         },
         {
             "name": "Carcass Jack",
-            "baseType": "Varnished Coat"
+            "base item": "Varnished Coat"
         },
         {
             "name": "Careful Planning",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Carnage Heart",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Ceaseless Feast",
-            "baseType": "Spiked Gloves"
+            "base item": "Spiked Gloves"
         },
         {
             "name": "Ceinture of Benevolence",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Cerberus Limb",
-            "baseType": "Blood Sceptre"
+            "base item": "Blood Sceptre"
         },
         {
             "name": "Chain of Endurance",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Chains of Command",
-            "baseType": "Saintly Chainmail"
+            "base item": "Saintly Chainmail"
         },
         {
             "name": "Chains of Emancipation",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Chalice of Horrors",
-            "baseType": "War Buckler"
+            "base item": "War Buckler"
         },
         {
             "name": "Chernobog's Pillar",
-            "baseType": "Ebony Tower Shield"
+            "base item": "Ebony Tower Shield"
         },
         {
             "name": "Cherrubim's Maleficence",
-            "baseType": "Triumphant Lamellar"
+            "base item": "Triumphant Lamellar"
         },
         {
             "name": "Chill of Corruption",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Chin Sol",
-            "baseType": "Assassin Bow"
+            "base item": "Assassin Bow"
         },
         {
             "name": "Chitus' Apex",
-            "baseType": "Necromancer Circlet"
+            "base item": "Necromancer Circlet"
         },
         {
             "name": "Chober Chaber",
-            "baseType": "Great Mallet"
+            "base item": "Great Mallet"
         },
         {
             "name": "Choir of the Storm",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Cinderswallow Urn",
-            "baseType": "Silver Flask"
+            "base item": "Silver Flask"
         },
         {
             "name": "Circle of Anguish",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Circle of Fear",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Circle of Guilt",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "Circle of Nostalgia",
-            "baseType": "Amethyst Ring"
+            "base item": "Amethyst Ring"
         },
         {
             "name": "Circle of Regret",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Clayshaper",
-            "baseType": "Rock Breaker"
+            "base item": "Rock Breaker"
         },
         {
             "name": "Cloak of Defiance",
-            "baseType": "Lacquered Garb"
+            "base item": "Lacquered Garb"
         },
         {
             "name": "Cloak of Flame",
-            "baseType": "Scholar's Robe"
+            "base item": "Scholar's Robe"
         },
         {
             "name": "Cloak of Tawm'r Isley",
-            "baseType": "Savant's Robe"
+            "base item": "Savant's Robe"
         },
         {
             "name": "Cold Iron Point",
-            "baseType": "Ezomyte Dagger"
+            "base item": "Ezomyte Dagger"
         },
         {
             "name": "Combat Focus",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Combat Focus",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Combat Focus",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Command of the Pit",
-            "baseType": "Riveted Gloves"
+            "base item": "Riveted Gloves"
         },
         {
             "name": "Command of the Pit",
-            "baseType": "Riveted Gloves"
+            "base item": "Riveted Gloves"
         },
         {
             "name": "Contract: Breaking the Unbreakable",
-            "baseType": "Preventative Contract"
+            "base item": "Preventative Contract"
         },
         {
             "name": "Contract: Death to Darnaw",
-            "baseType": "Naval Contract"
+            "base item": "Naval Contract"
         },
         {
             "name": "Contract: Heart of Glory",
-            "baseType": "Familial Contract"
+            "base item": "Familial Contract"
         },
         {
             "name": "Contract: The Slaver King",
-            "baseType": "Vigilante Contract"
+            "base item": "Vigilante Contract"
         },
         {
             "name": "Contract: The Twins",
-            "baseType": "Vengeful Contract"
+            "base item": "Vengeful Contract"
         },
         {
             "name": "Coralito's Signature",
-            "baseType": "Diamond Flask"
+            "base item": "Diamond Flask"
         },
         {
             "name": "Corpsewalker",
-            "baseType": "Carnal Boots"
+            "base item": "Carnal Boots"
         },
         {
             "name": "Cortex",
-            "baseType": "Synthesised Map"
+            "base item": "Synthesised Map"
         },
         {
             "name": "Coruscating Elixir",
-            "baseType": "Ruby Flask"
+            "base item": "Ruby Flask"
         },
         {
             "name": "Cospri's Malice",
-            "baseType": "Jewelled Foil"
+            "base item": "Jewelled Foil"
         },
         {
             "name": "Cospri's Will",
-            "baseType": "Assassin's Garb"
+            "base item": "Assassin's Garb"
         },
         {
             "name": "Coward's Chains",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Coward's Legacy",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Cowl of the Ceraunophile",
-            "baseType": "Solaris Circlet"
+            "base item": "Solaris Circlet"
         },
         {
             "name": "Cowl of the Cryophile",
-            "baseType": "Silken Hood"
+            "base item": "Silken Hood"
         },
         {
             "name": "Cowl of the Thermophile",
-            "baseType": "Ezomyte Burgonet"
+            "base item": "Ezomyte Burgonet"
         },
         {
             "name": "Craghead",
-            "baseType": "Serrated Arrow Quiver"
+            "base item": "Serrated Arrow Quiver"
         },
         {
             "name": "Craiceann's Carapace",
-            "baseType": "Golden Plate"
+            "base item": "Golden Plate"
         },
         {
             "name": "Craiceann's Chitin",
-            "baseType": "Magistrate Crown"
+            "base item": "Magistrate Crown"
         },
         {
             "name": "Craiceann's Pincers",
-            "baseType": "Titan Gauntlets"
+            "base item": "Titan Gauntlets"
         },
         {
             "name": "Craiceann's Tracks",
-            "baseType": "Goliath Greaves"
+            "base item": "Goliath Greaves"
         },
         {
             "name": "Crest of Desire",
-            "baseType": "Fluted Bascinet"
+            "base item": "Fluted Bascinet"
         },
         {
             "name": "Crest of Perandus",
-            "baseType": "Pine Buckler"
+            "base item": "Pine Buckler"
         },
         {
             "name": "Crown of Eyes",
-            "baseType": "Hubris Circlet"
+            "base item": "Hubris Circlet"
         },
         {
             "name": "Crown of the Inward Eye",
-            "baseType": "Prophet Crown"
+            "base item": "Prophet Crown"
         },
         {
             "name": "Crown of the Pale King",
-            "baseType": "Regicide Mask"
+            "base item": "Regicide Mask"
         },
         {
             "name": "Crown of the Tyrant",
-            "baseType": "Magistrate Crown"
+            "base item": "Magistrate Crown"
         },
         {
             "name": "Crown of Thorns",
-            "baseType": "Vine Circlet"
+            "base item": "Vine Circlet"
         },
         {
             "name": "Crystallised Omniscience",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Curtain Call",
-            "baseType": "Plague Mask"
+            "base item": "Plague Mask"
         },
         {
             "name": "Cybil's Paw",
-            "baseType": "Thresher Claw"
+            "base item": "Thresher Claw"
         },
         {
             "name": "Cyclopean Coil",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Dance of the Offered",
-            "baseType": "Carnal Boots"
+            "base item": "Carnal Boots"
         },
         {
             "name": "Daresso's Courage",
-            "baseType": "Baroque Round Shield"
+            "base item": "Baroque Round Shield"
         },
         {
             "name": "Daresso's Defiance",
-            "baseType": "Full Dragonscale"
+            "base item": "Full Dragonscale"
         },
         {
             "name": "Daresso's Passion",
-            "baseType": "Estoc"
+            "base item": "Estoc"
         },
         {
             "name": "Daresso's Salute",
-            "baseType": "Citrine Amulet"
+            "base item": "Citrine Amulet"
         },
         {
             "name": "Darkness Enthroned",
-            "baseType": "Stygian Vise"
+            "base item": "Stygian Vise"
         },
         {
             "name": "Darkray Vectors",
-            "baseType": "Dragonscale Boots"
+            "base item": "Dragonscale Boots"
         },
         {
             "name": "Darkscorn",
-            "baseType": "Assassin Bow"
+            "base item": "Assassin Bow"
         },
         {
             "name": "Dawnbreaker",
-            "baseType": "Colossal Tower Shield"
+            "base item": "Colossal Tower Shield"
         },
         {
             "name": "Dawnstrider",
-            "baseType": "Vaal Greaves"
+            "base item": "Vaal Greaves"
+        },
+        {
+            "name": "Dead Reckoning",
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Deadly End",
-            "baseType": "Ultimatum Aspect"
+            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Death and Taxes",
-            "baseType": "Necropolis Map"
+            "base item": "Necropolis Map"
         },
         {
             "name": "Death Rush",
-            "baseType": "Amethyst Ring"
+            "base item": "Amethyst Ring"
         },
         {
             "name": "Death's Door",
-            "baseType": "Crusader Boots"
+            "base item": "Crusader Boots"
         },
         {
             "name": "Death's Hand",
-            "baseType": "Karui Sceptre"
+            "base item": "Karui Sceptre"
         },
         {
             "name": "Death's Harp",
-            "baseType": "Death Bow"
+            "base item": "Death Bow"
         },
         {
             "name": "Death's Oath",
-            "baseType": "Astral Plate"
+            "base item": "Astral Plate"
         },
         {
             "name": "Debeon's Dirge",
-            "baseType": "Despot Axe"
+            "base item": "Despot Axe"
         },
         {
             "name": "Deerstalker",
-            "baseType": "Deerskin Boots"
+            "base item": "Deerskin Boots"
+        },
+        {
+            "name": "Defiance of Destiny",
+            "base item": "Paua Amulet"
         },
         {
             "name": "Deidbell",
-            "baseType": "Gilded Sallet"
+            "base item": "Gilded Sallet"
         },
         {
             "name": "Demon Stitcher",
-            "baseType": "Satin Gloves"
+            "base item": "Satin Gloves"
         },
         {
             "name": "Dendrobate",
-            "baseType": "Sentinel Jacket"
+            "base item": "Sentinel Jacket"
         },
         {
             "name": "Devoto's Devotion",
-            "baseType": "Nightmare Bascinet"
+            "base item": "Nightmare Bascinet"
         },
         {
             "name": "Dialla's Malefaction",
-            "baseType": "Sage's Robe"
+            "base item": "Sage's Robe"
         },
         {
             "name": "Disintegrator",
-            "baseType": "Maelstr\u00f6m Staff"
+            "base item": "Maelstr\u00f6m Staff"
         },
         {
             "name": "Dissolution of the Flesh",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Divinarius",
-            "baseType": "Imperial Skean"
+            "base item": "Imperial Skean"
         },
         {
             "name": "Divination Distillate",
-            "baseType": "Large Hybrid Flask"
+            "base item": "Large Hybrid Flask"
         },
         {
             "name": "Doedre's Damning",
-            "baseType": "Paua Ring"
+            "base item": "Paua Ring"
         },
         {
             "name": "Doedre's Elixir",
-            "baseType": "Greater Mana Flask"
+            "base item": "Greater Mana Flask"
         },
         {
             "name": "Doedre's Scorn",
-            "baseType": "Lunaris Circlet"
+            "base item": "Lunaris Circlet"
         },
         {
             "name": "Doedre's Skin",
-            "baseType": "Widowsilk Robe"
+            "base item": "Widowsilk Robe"
         },
         {
             "name": "Doedre's Tenure",
-            "baseType": "Velvet Gloves"
+            "base item": "Velvet Gloves"
         },
         {
             "name": "Doedre's Tongue",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Doomfletch",
-            "baseType": "Royal Bow"
+            "base item": "Royal Bow"
         },
         {
             "name": "Doomsower",
-            "baseType": "Lion Sword"
+            "base item": "Lion Sword"
         },
         {
             "name": "Doon Cuebiyari",
-            "baseType": "Vaal Sceptre"
+            "base item": "Vaal Sceptre"
         },
         {
             "name": "Doppelg\u00e4nger Guise",
-            "baseType": "Sadist Garb"
+            "base item": "Sadist Garb"
         },
         {
             "name": "Doryani's Catalyst",
-            "baseType": "Vaal Sceptre"
+            "base item": "Vaal Sceptre"
         },
         {
             "name": "Doryani's Delusion",
-            "baseType": "Slink Boots"
+            "base item": "Slink Boots"
         },
         {
             "name": "Doryani's Delusion",
-            "baseType": "Sorcerer Boots"
+            "base item": "Sorcerer Boots"
         },
         {
             "name": "Doryani's Delusion",
-            "baseType": "Titan Greaves"
+            "base item": "Titan Greaves"
         },
         {
             "name": "Doryani's Fist",
-            "baseType": "Vaal Gauntlets"
+            "base item": "Vaal Gauntlets"
         },
         {
             "name": "Doryani's Invitation",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Doryani's Invitation",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Doryani's Invitation",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Doryani's Invitation",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Doryani's Machinarium",
-            "baseType": "Maze Map"
+            "base item": "Maze Map"
         },
         {
             "name": "Doryani's Prototype",
-            "baseType": "Saint's Hauberk"
+            "base item": "Saint's Hauberk"
         },
         {
             "name": "Dreadarc",
-            "baseType": "Cleaver"
+            "base item": "Cleaver"
         },
         {
             "name": "Dream Fragments",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Dreamfeather",
-            "baseType": "Eternal Sword"
+            "base item": "Eternal Sword"
         },
         {
             "name": "Drillneck",
-            "baseType": "Penetrating Arrow Quiver"
+            "base item": "Penetrating Arrow Quiver"
         },
         {
             "name": "Duskdawn",
-            "baseType": "Maelstr\u00f6m Staff"
+            "base item": "Maelstr\u00f6m Staff"
         },
         {
             "name": "Dusktoe",
-            "baseType": "Ironscale Boots"
+            "base item": "Ironscale Boots"
         },
         {
             "name": "Dyadian Dawn",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Dyadus",
-            "baseType": "Infernal Axe"
+            "base item": "Infernal Axe"
         },
         {
             "name": "Dying Breath",
-            "baseType": "Iron Staff"
+            "base item": "Iron Staff"
         },
         {
             "name": "Dying Sun",
-            "baseType": "Ruby Flask"
+            "base item": "Ruby Flask"
         },
         {
             "name": "Earendel's Embrace",
-            "baseType": "Grinning Fetish"
+            "base item": "Grinning Fetish"
         },
         {
             "name": "Eber's Unification",
-            "baseType": "Hubris Circlet"
+            "base item": "Hubris Circlet"
         },
         {
             "name": "Echoes of Creation",
-            "baseType": "Royal Burgonet"
+            "base item": "Royal Burgonet"
         },
         {
             "name": "Echoforge",
-            "baseType": "Infernal Sword"
+            "base item": "Infernal Sword"
         },
         {
             "name": "Eclipse Solaris",
-            "baseType": "Engraved Wand"
+            "base item": "Engraved Wand"
         },
         {
             "name": "Edge of Madness",
-            "baseType": "Etched Greatsword"
+            "base item": "Etched Greatsword"
         },
         {
             "name": "Efficient Training",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "El&amp;#39;Abin&amp;#39;s Visage",
-            "baseType": "Fencer Helm"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Elegant Hubris",
-            "baseType": "Timeless Jewel"
+            "base item": "Timeless Jewel"
         },
         {
             "name": "Elevore",
-            "baseType": "Wolf Pelt"
+            "base item": "Wolf Pelt"
         },
         {
             "name": "Elixir of the Unbroken Circle",
-            "baseType": "Iron Flask"
+            "base item": "Iron Flask"
         },
         {
             "name": "Emberwake",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Emperor's Cunning",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Emperor's Mastery",
-            "baseType": "Prismatic Jewel"
+            "base item": "Prismatic Jewel"
         },
         {
             "name": "Emperor's Might",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Emperor's Vigilance",
-            "baseType": "Steel Kite Shield"
+            "base item": "Steel Kite Shield"
         },
         {
             "name": "Emperor's Wit",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Empire's Grasp",
-            "baseType": "Goliath Gauntlets"
+            "base item": "Goliath Gauntlets"
         },
         {
             "name": "Endless Misery",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Energised Armour",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Energy From Within",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Entropic Devastation",
-            "baseType": "Assassin's Mitts"
+            "base item": "Assassin's Mitts"
         },
         {
             "name": "Ephemeral Edge",
-            "baseType": "Dusk Blade"
+            "base item": "Dusk Blade"
         },
         {
             "name": "Esh's Mirror",
-            "baseType": "Vaal Spirit Shield"
+            "base item": "Vaal Spirit Shield"
         },
         {
             "name": "Esh's Visage",
-            "baseType": "Vaal Spirit Shield"
+            "base item": "Vaal Spirit Shield"
         },
         {
             "name": "Essence Worm",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Essentia Sanguis",
-            "baseType": "Vaal Claw"
+            "base item": "Vaal Claw"
+        },
+        {
+            "name": "Eternal Damnation",
+            "base item": "Agate Amulet"
         },
         {
             "name": "Ewar's Mirage",
-            "baseType": "Antique Rapier"
+            "base item": "Antique Rapier"
         },
         {
             "name": "Expedition's End",
-            "baseType": "Sentinel Jacket"
+            "base item": "Sentinel Jacket"
         },
         {
             "name": "Extractor Mentis",
-            "baseType": "Agate Amulet"
+            "base item": "Agate Amulet"
         },
         {
             "name": "Eye of Chayula",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Eye of Innocence",
-            "baseType": "Citrine Amulet"
+            "base item": "Citrine Amulet"
         },
         {
             "name": "Eye of Malice",
-            "baseType": "Callous Mask"
+            "base item": "Callous Mask"
         },
         {
             "name": "Eyes of the Greatwolf",
-            "baseType": "Greatwolf Talisman"
+            "base item": "Greatwolf Talisman"
         },
         {
             "name": "Ezomyte Peak",
-            "baseType": "Iron Hat"
+            "base item": "Iron Hat"
         },
         {
             "name": "Facebreaker",
-            "baseType": "Strapped Mitts"
+            "base item": "Strapped Mitts"
         },
         {
             "name": "Fairgraves' Tricorne",
-            "baseType": "Tricorne"
+            "base item": "Tricorne"
         },
         {
             "name": "Faithguard",
-            "baseType": "Runic Helm"
+            "base item": "Runic Helm"
         },
         {
             "name": "Faminebind",
-            "baseType": "Rustic Sash"
+            "base item": "Rustic Sash"
         },
         {
             "name": "Farrul's Bite",
-            "baseType": "Harlequin Mask"
+            "base item": "Harlequin Mask"
         },
         {
             "name": "Farrul's Chase",
-            "baseType": "Slink Boots"
+            "base item": "Slink Boots"
         },
         {
             "name": "Farrul's Fur",
-            "baseType": "Triumphant Lamellar"
+            "base item": "Triumphant Lamellar"
         },
         {
             "name": "Farrul's Pounce",
-            "baseType": "Hydrascale Gauntlets"
+            "base item": "Hydrascale Gauntlets"
         },
         {
             "name": "Fate of the Vaal",
-            "baseType": "Gemstone Sword"
+            "base item": "Gemstone Sword"
         },
         {
             "name": "Fated End",
-            "baseType": "Paua Ring"
+            "base item": "Paua Ring"
         },
         {
             "name": "Feastbind",
-            "baseType": "Rustic Sash"
+            "base item": "Rustic Sash"
         },
         {
             "name": "Femurs of the Saints",
-            "baseType": "Primordial Staff"
+            "base item": "Primordial Staff"
         },
         {
             "name": "Fencoil",
-            "baseType": "Gnarled Branch"
+            "base item": "Gnarled Branch"
         },
         {
             "name": "Fenumus' Shroud",
-            "baseType": "Widowsilk Robe"
+            "base item": "Widowsilk Robe"
         },
         {
             "name": "Fenumus' Spinnerets",
-            "baseType": "Assassin's Boots"
+            "base item": "Assassin's Boots"
         },
         {
             "name": "Fenumus' Toxins",
-            "baseType": "Necromancer Circlet"
+            "base item": "Necromancer Circlet"
         },
         {
             "name": "Fenumus' Weave",
-            "baseType": "Carnal Mitts"
+            "base item": "Carnal Mitts"
         },
         {
             "name": "Fertile Mind",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Fevered Mind",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Fidelitas' Spike",
-            "baseType": "Jagged Foil"
+            "base item": "Jagged Foil"
         },
         {
             "name": "Firesong",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "First Piece of Brutality",
-            "baseType": "Imperial Staff Piece"
+            "base item": "Imperial Staff Piece"
         },
         {
             "name": "First Piece of Directions",
-            "baseType": "Blunt Arrow Quiver Piece"
+            "base item": "Blunt Arrow Quiver Piece"
         },
         {
             "name": "First Piece of Focus",
-            "baseType": "Archon Kite Shield Piece"
+            "base item": "Archon Kite Shield Piece"
         },
         {
             "name": "First Piece of Storms",
-            "baseType": "Callous Mask Piece"
+            "base item": "Callous Mask Piece"
         },
         {
             "name": "First Piece of the Arcane",
-            "baseType": "Legion Sword Piece"
+            "base item": "Legion Sword Piece"
         },
         {
             "name": "First Piece of Time",
-            "baseType": "Cloth Belt Piece"
+            "base item": "Cloth Belt Piece"
         },
         {
             "name": "Flamesight",
-            "baseType": "Solaris Circlet"
+            "base item": "Solaris Circlet"
         },
         {
             "name": "Flesh and Spirit",
-            "baseType": "Ironscale Gauntlets"
+            "base item": "Ironscale Gauntlets"
         },
         {
             "name": "Flesh-Eater",
-            "baseType": "Dream Mace"
+            "base item": "Dream Mace"
         },
         {
             "name": "Fleshcrafter",
-            "baseType": "Necromancer Silks"
+            "base item": "Necromancer Silks"
         },
         {
             "name": "Fluid Motion",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Font of Thunder",
-            "baseType": "Mirrored Spiked Shield"
+            "base item": "Mirrored Spiked Shield"
         },
         {
             "name": "Forbidden Flame",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Forbidden Flesh",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Forbidden Shako",
-            "baseType": "Great Crown"
+            "base item": "Great Crown"
         },
         {
             "name": "Forbidden Taste",
-            "baseType": "Quartz Flask"
+            "base item": "Quartz Flask"
         },
         {
             "name": "Fortress Covenant",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Fourth Piece of Focus",
-            "baseType": "Archon Kite Shield Piece"
+            "base item": "Archon Kite Shield Piece"
         },
         {
             "name": "Foxshade",
-            "baseType": "Wild Leather"
+            "base item": "Wild Leather"
         },
         {
             "name": "Fractal Thoughts",
-            "baseType": "Vaal Mask"
+            "base item": "Vaal Mask"
         },
         {
             "name": "Fragility",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Frostbreath",
-            "baseType": "Ornate Mace"
+            "base item": "Ornate Mace"
         },
         {
             "name": "Fury Valve",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "Galesight",
-            "baseType": "Solaris Circlet"
+            "base item": "Solaris Circlet"
         },
         {
             "name": "Gang's Momentum",
-            "baseType": "Legion Boots"
+            "base item": "Legion Boots"
         },
         {
             "name": "Garb of the Ephemeral",
-            "baseType": "Savant's Robe"
+            "base item": "Savant's Robe"
         },
         {
             "name": "Garukhan's Flight",
-            "baseType": "Stealth Boots"
+            "base item": "Stealth Boots"
         },
         {
             "name": "Geofri's Baptism",
-            "baseType": "Brass Maul"
+            "base item": "Brass Maul"
         },
         {
             "name": "Geofri's Crest",
-            "baseType": "Great Crown"
+            "base item": "Great Crown"
         },
         {
             "name": "Geofri's Sanctuary",
-            "baseType": "Elegant Ringmail"
+            "base item": "Elegant Ringmail"
         },
         {
             "name": "Ghostwrithe",
-            "baseType": "Silken Vest"
+            "base item": "Silken Vest"
         },
         {
             "name": "Giantsbane",
-            "baseType": "Bronze Gauntlets"
+            "base item": "Bronze Gauntlets"
         },
         {
             "name": "Gifts from Above",
-            "baseType": "Diamond Ring"
+            "base item": "Diamond Ring"
         },
         {
             "name": "Glimpse of Chaos",
-            "baseType": "Vaal Mask"
+            "base item": "Vaal Mask"
         },
         {
             "name": "Gloomfang",
-            "baseType": "Blue Pearl Amulet"
+            "base item": "Blue Pearl Amulet"
         },
         {
             "name": "Glorious Vanity",
-            "baseType": "Timeless Jewel"
+            "base item": "Timeless Jewel"
         },
         {
             "name": "Gluttony",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Goblinedge",
-            "baseType": "Ambusher"
+            "base item": "Ambusher"
         },
         {
             "name": "Goldrim",
-            "baseType": "Leather Cap"
+            "base item": "Leather Cap"
         },
         {
             "name": "Goldwyrm",
-            "baseType": "Nubuck Boots"
+            "base item": "Nubuck Boots"
         },
         {
             "name": "Gorebreaker",
-            "baseType": "Spiked Club"
+            "base item": "Spiked Club"
         },
         {
             "name": "Goredrill",
-            "baseType": "Skinning Knife"
+            "base item": "Skinning Knife"
         },
         {
             "name": "Gorgon's Gaze",
-            "baseType": "Regicide Mask"
+            "base item": "Regicide Mask"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Grand Spectrum",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Gravebind",
-            "baseType": "Hydrascale Gauntlets"
+            "base item": "Hydrascale Gauntlets"
         },
         {
             "name": "Graven's Secret",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Great Old One's Tentacles",
-            "baseType": "Eelskin Gloves"
+            "base item": "Eelskin Gloves"
         },
         {
             "name": "Great Old One's Ward",
-            "baseType": "Corrugated Buckler"
+            "base item": "Corrugated Buckler"
         },
         {
             "name": "Greed's Embrace",
-            "baseType": "Golden Plate"
+            "base item": "Golden Plate"
         },
         {
             "name": "Grelwood Shank",
-            "baseType": "Eternal Sword"
+            "base item": "Eternal Sword"
         },
         {
             "name": "Grip of the Council",
-            "baseType": "Arcanist Gloves"
+            "base item": "Arcanist Gloves"
         },
         {
             "name": "Gruthkul's Pelt",
-            "baseType": "Wyrmscale Doublet"
+            "base item": "Wyrmscale Doublet"
         },
         {
             "name": "Haemophilia",
-            "baseType": "Serpentscale Gauntlets"
+            "base item": "Serpentscale Gauntlets"
         },
         {
             "name": "Hale Negator",
-            "baseType": "Mind Cage"
+            "base item": "Mind Cage"
         },
         {
             "name": "Hale Negator",
-            "baseType": "Mind Cage"
+            "base item": "Mind Cage"
         },
         {
             "name": "Hall of Grandmasters",
-            "baseType": "Promenade Map"
+            "base item": "Promenade Map"
         },
         {
             "name": "Hallowed Ground",
-            "baseType": "Cemetery Map"
+            "base item": "Cemetery Map"
         },
         {
             "name": "Hand of the Fervent",
-            "baseType": "Zealot Gloves"
+            "base item": "Zealot Gloves"
         },
         {
             "name": "Hand of Thought and Motion",
-            "baseType": "Imperial Claw"
+            "base item": "Imperial Claw"
         },
         {
             "name": "Hand of Wisdom and Action",
-            "baseType": "Imperial Claw"
+            "base item": "Imperial Claw"
         },
         {
             "name": "Hands of the High Templar",
-            "baseType": "Crusader Gloves"
+            "base item": "Crusader Gloves"
         },
         {
             "name": "Hateforge",
-            "baseType": "Ancient Gauntlets"
+            "base item": "Ancient Gauntlets"
         },
         {
             "name": "Headhunter",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Healthy Mind",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Heartbound Loop",
-            "baseType": "Moonstone Ring"
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Heartbreaker",
-            "baseType": "Royal Skean"
+            "base item": "Royal Skean"
         },
         {
             "name": "Heatshiver",
-            "baseType": "Leather Hood"
+            "base item": "Leather Hood"
         },
         {
             "name": "Hegemony's Era",
-            "baseType": "Judgement Staff"
+            "base item": "Judgement Staff"
         },
         {
             "name": "Heretic's Veil",
-            "baseType": "Deicide Mask"
+            "base item": "Deicide Mask"
         },
         {
             "name": "Hezmana's Bloodlust",
-            "baseType": "Vaal Axe"
+            "base item": "Vaal Axe"
         },
         {
             "name": "Hidden Potential",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Hiltless",
-            "baseType": "Reaver Sword"
+            "base item": "Reaver Sword"
         },
         {
             "name": "Hinekora's Sight",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
+        },
+        {
+            "name": "Honoured Alliance",
+            "base item": "Coral Ring"
         },
         {
             "name": "Honourhome",
-            "baseType": "Soldier Helmet"
+            "base item": "Soldier Helmet"
         },
         {
             "name": "Hopeshredder",
-            "baseType": "Ranger Bow"
+            "base item": "Ranger Bow"
         },
         {
             "name": "Hrimnor's Hymn",
-            "baseType": "Sledgehammer"
+            "base item": "Sledgehammer"
         },
         {
             "name": "Hrimnor's Resolve",
-            "baseType": "Samnite Helmet"
+            "base item": "Samnite Helmet"
         },
         {
             "name": "Hrimsorrow",
-            "baseType": "Goathide Gloves"
+            "base item": "Goathide Gloves"
         },
         {
             "name": "Hyaon's Fury",
-            "baseType": "Legion Sword"
+            "base item": "Legion Sword"
         },
         {
             "name": "Hyperboreus",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Hyrri's Bite",
-            "baseType": "Sharktooth Arrow Quiver"
+            "base item": "Sharktooth Arrow Quiver"
         },
         {
             "name": "Hyrri's Ire",
-            "baseType": "Zodiac Leather"
+            "base item": "Zodiac Leather"
         },
         {
             "name": "Hyrri's Truth",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "Icefang Orbit",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "Icetomb",
-            "baseType": "Latticed Ringmail"
+            "base item": "Latticed Ringmail"
         },
         {
             "name": "Ichimonji",
-            "baseType": "Corsair Sword"
+            "base item": "Corsair Sword"
         },
         {
             "name": "Ignominious Fate",
-            "baseType": "Ultimatum Aspect"
+            "base item": "Ultimatum Aspect"
+        },
+        {
+            "name": "Ikiaho's Promise",
+            "base item": "Coral Amulet"
         },
         {
             "name": "Immortal Flesh",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Immutable Force",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Impossible Escape",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Impresence",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Incandescent Heart",
-            "baseType": "Saintly Chainmail"
+            "base item": "Saintly Chainmail"
         },
         {
             "name": "Indigon",
-            "baseType": "Hubris Circlet"
+            "base item": "Hubris Circlet"
         },
         {
             "name": "Inertia",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Inextricable Fate",
-            "baseType": "Fugitive Boots"
+            "base item": "Fugitive Boots"
         },
         {
             "name": "Infernal Mantle",
-            "baseType": "Widowsilk Robe"
+            "base item": "Widowsilk Robe"
         },
         {
             "name": "Infractem",
-            "baseType": "Decimation Bow"
+            "base item": "Decimation Bow"
         },
         {
             "name": "Infused Beachhead",
-            "baseType": "Harbinger Map"
+            "base item": "Harbinger Map"
         },
         {
             "name": "Innsbury Edge",
-            "baseType": "Elder Sword"
+            "base item": "Elder Sword"
         },
         {
             "name": "Inpulsa's Broken Heart",
-            "baseType": "Sadist Garb"
+            "base item": "Sadist Garb"
         },
         {
             "name": "Inspired Learning",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Intuitive Leap",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Invictus Solaris",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "Inya's Epiphany",
-            "baseType": "Arcanist Slippers"
+            "base item": "Arcanist Slippers"
         },
         {
             "name": "Iron Commander",
-            "baseType": "Death Bow"
+            "base item": "Death Bow"
         },
         {
             "name": "Jack, the Axe",
-            "baseType": "Vaal Hatchet"
+            "base item": "Vaal Hatchet"
         },
         {
             "name": "Jaws of Agony",
-            "baseType": "Supreme Spiked Shield"
+            "base item": "Supreme Spiked Shield"
         },
         {
             "name": "Jorrhast's Blacksteel",
-            "baseType": "Steelhead"
+            "base item": "Steelhead"
+        },
+        {
+            "name": "Kahuturoa's Certainty",
+            "base item": "Ancient Greaves"
         },
         {
             "name": "Kalandra's Touch",
-            "baseType": "Ring"
+            "base item": "Ring"
         },
         {
             "name": "Kalisa's Grace",
-            "baseType": "Samite Gloves"
+            "base item": "Samite Gloves"
         },
         {
             "name": "Kaltenhalt",
-            "baseType": "Painted Buckler"
+            "base item": "Painted Buckler"
+        },
+        {
+            "name": "Kaom's Binding",
+            "base item": "Heavy Belt"
         },
         {
             "name": "Kaom's Heart",
-            "baseType": "Glorious Plate"
+            "base item": "Glorious Plate"
         },
         {
             "name": "Kaom's Primacy",
-            "baseType": "Karui Chopper"
+            "base item": "Karui Chopper"
         },
         {
             "name": "Kaom's Roots",
-            "baseType": "Titan Greaves"
+            "base item": "Titan Greaves"
         },
         {
             "name": "Kaom's Sign",
-            "baseType": "Coral Ring"
+            "base item": "Coral Ring"
         },
         {
             "name": "Kaom's Spirit",
-            "baseType": "Titan Gauntlets"
+            "base item": "Titan Gauntlets"
         },
         {
             "name": "Karui Ward",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "Kiara's Determination",
-            "baseType": "Silver Flask"
+            "base item": "Silver Flask"
         },
         {
             "name": "Kikazaru",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
+        },
+        {
+            "name": "Kiloava's Bluster",
+            "base item": "Ironwood Buckler"
         },
         {
             "name": "Kingmaker",
-            "baseType": "Despot Axe"
+            "base item": "Despot Axe"
         },
         {
             "name": "Kingsguard",
-            "baseType": "Conquest Chainmail"
+            "base item": "Conquest Chainmail"
         },
         {
             "name": "Kintsugi",
-            "baseType": "Exquisite Leather"
+            "base item": "Exquisite Leather"
         },
         {
             "name": "Kitava's Feast",
-            "baseType": "Void Axe"
+            "base item": "Void Axe"
         },
         {
             "name": "Kitava's Teachings",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "Kitava's Thirst",
-            "baseType": "Zealot Helmet"
+            "base item": "Zealot Helmet"
         },
         {
             "name": "Kondo's Pride",
-            "baseType": "Ezomyte Blade"
+            "base item": "Ezomyte Blade"
         },
         {
             "name": "Kongming's Stratagem",
-            "baseType": "Ancient Spirit Shield"
+            "base item": "Ancient Spirit Shield"
         },
         {
             "name": "Kongor's Undying Rage",
-            "baseType": "Terror Maul"
+            "base item": "Terror Maul"
         },
         {
             "name": "Kurgal's Gaze",
-            "baseType": "Hypnotic Eye Jewel"
+            "base item": "Hypnotic Eye Jewel"
         },
         {
             "name": "Lakishu's Blade",
-            "baseType": "Elegant Sword"
+            "base item": "Elegant Sword"
         },
         {
             "name": "Last Resort",
-            "baseType": "Nailed Fist"
+            "base item": "Nailed Fist"
         },
         {
             "name": "Lavianga's Spirit",
-            "baseType": "Sanctified Mana Flask"
+            "base item": "Sanctified Mana Flask"
         },
         {
             "name": "Lavianga's Wisdom",
-            "baseType": "War Hammer"
+            "base item": "War Hammer"
         },
         {
             "name": "Law of the Wilds",
-            "baseType": "Hellion's Paw"
+            "base item": "Hellion's Paw"
         },
         {
             "name": "Le Heup of All",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "Leadership's Price",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Leash of Oblation",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Leer Cast",
-            "baseType": "Festival Mask"
+            "base item": "Festival Mask"
         },
         {
             "name": "Legacy of Fury",
-            "baseType": "Wyrmscale Boots"
+            "base item": "Wyrmscale Boots"
         },
         {
             "name": "Leper's Alms",
-            "baseType": "Mirrored Spiked Shield"
+            "base item": "Mirrored Spiked Shield"
         },
         {
             "name": "Lethal Pride",
-            "baseType": "Timeless Jewel"
+            "base item": "Timeless Jewel"
         },
         {
             "name": "Lifesprig",
-            "baseType": "Driftwood Wand"
+            "base item": "Driftwood Wand"
         },
         {
             "name": "Light of Lunaris",
-            "baseType": "Jingling Spirit Shield"
+            "base item": "Jingling Spirit Shield"
         },
         {
             "name": "Lightbane Raiment",
-            "baseType": "Ornate Ringmail"
+            "base item": "Ornate Ringmail"
         },
         {
             "name": "Lightning Coil",
-            "baseType": "Desert Brigandine"
+            "base item": "Desert Brigandine"
         },
         {
             "name": "Lightpoacher",
-            "baseType": "Great Crown"
+            "base item": "Great Crown"
         },
         {
             "name": "Lightpoacher",
-            "baseType": "Great Crown"
+            "base item": "Great Crown"
         },
         {
             "name": "Limbsplit",
-            "baseType": "Woodsplitter"
+            "base item": "Woodsplitter"
         },
         {
             "name": "Lion's Roar",
-            "baseType": "Granite Flask"
+            "base item": "Granite Flask"
         },
         {
             "name": "Lioneye's Fall",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Lioneye's Glare",
-            "baseType": "Imperial Bow"
+            "base item": "Imperial Bow"
         },
         {
             "name": "Lioneye's Paws",
-            "baseType": "Bronzescale Boots"
+            "base item": "Bronzescale Boots"
         },
         {
             "name": "Lioneye's Remorse",
-            "baseType": "Pinnacle Tower Shield"
+            "base item": "Pinnacle Tower Shield"
         },
         {
             "name": "Lioneye's Vision",
-            "baseType": "Crusader Plate"
+            "base item": "Crusader Plate"
         },
         {
             "name": "Lochtonial Caress",
-            "baseType": "Iron Gauntlets"
+            "base item": "Iron Gauntlets"
         },
         {
             "name": "Loreweave",
-            "baseType": "Elegant Ringmail"
+            "base item": "Elegant Ringmail"
         },
         {
             "name": "Lori's Lantern",
-            "baseType": "Prismatic Ring"
+            "base item": "Prismatic Ring"
         },
         {
             "name": "Lycosidae",
-            "baseType": "Rawhide Tower Shield"
+            "base item": "Rawhide Tower Shield"
+        },
+        {
+            "name": "Maata's Teaching",
+            "base item": "Karui Sceptre"
         },
         {
             "name": "Machina Mitts",
-            "baseType": "Murder Mitts"
+            "base item": "Murder Mitts"
         },
         {
             "name": "Maelstr\u00f6m of Chaos",
-            "baseType": "Atoll Map"
+            "base item": "Atoll Map"
         },
         {
             "name": "Mageblood",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Magna Eclipsis",
-            "baseType": "Pinnacle Tower Shield"
+            "base item": "Pinnacle Tower Shield"
         },
         {
             "name": "Mahuxotl's Machination",
-            "baseType": "Steel Kite Shield"
+            "base item": "Steel Kite Shield"
         },
         {
             "name": "Malachai's Artifice",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Malachai's Loop",
-            "baseType": "Harmonic Spirit Shield"
+            "base item": "Harmonic Spirit Shield"
         },
         {
             "name": "Malachai's Mark",
-            "baseType": "Murder Mitts"
+            "base item": "Murder Mitts"
         },
         {
             "name": "Malachai's Simula",
-            "baseType": "Iron Mask"
+            "base item": "Iron Mask"
         },
         {
             "name": "Malachai's Vision",
-            "baseType": "Praetor Crown"
+            "base item": "Praetor Crown"
         },
         {
             "name": "Maligaro's Cruelty",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "Maligaro's Lens",
-            "baseType": "Compound Spiked Shield"
+            "base item": "Compound Spiked Shield"
         },
         {
             "name": "Maligaro's Restraint",
-            "baseType": "Chain Belt"
+            "base item": "Chain Belt"
         },
         {
             "name": "Maligaro's Virtuosity",
-            "baseType": "Deerskin Gloves"
+            "base item": "Deerskin Gloves"
         },
         {
             "name": "Maloney's Mechanism",
-            "baseType": "Ornate Quiver"
+            "base item": "Ornate Quiver"
         },
         {
             "name": "Maloney's Nightfall",
-            "baseType": "Vile Arrow Quiver"
+            "base item": "Vile Arrow Quiver"
         },
         {
             "name": "Manastorm",
-            "baseType": "Lacewood Spirit Shield"
+            "base item": "Lacewood Spirit Shield"
         },
         {
             "name": "Mao Kun",
-            "baseType": "Shore Map"
+            "base item": "Shore Map"
         },
         {
             "name": "March of the Legion",
-            "baseType": "Legion Boots"
+            "base item": "Legion Boots"
         },
         {
             "name": "Mark of Submission",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Mark of the Doubting Knight",
-            "baseType": "Platinum Kris"
+            "base item": "Platinum Kris"
         },
         {
             "name": "Mark of the Elder",
-            "baseType": "Steel Ring"
+            "base item": "Steel Ring"
         },
         {
             "name": "Mark of the Red Covenant",
-            "baseType": "Tribal Circlet"
+            "base item": "Tribal Circlet"
         },
         {
             "name": "Mark of the Shaper",
-            "baseType": "Opal Ring"
+            "base item": "Opal Ring"
         },
         {
             "name": "Marohi Erqi",
-            "baseType": "Karui Maul"
+            "base item": "Karui Maul"
         },
         {
             "name": "Martyr of Innocence",
-            "baseType": "Highborn Staff"
+            "base item": "Highborn Staff"
         },
         {
             "name": "Marylene's Fallacy",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Mask of the Spirit Drinker",
-            "baseType": "Magistrate Crown"
+            "base item": "Magistrate Crown"
         },
         {
             "name": "Mask of the Stitched Demon",
-            "baseType": "Magistrate Crown"
+            "base item": "Magistrate Crown"
         },
         {
             "name": "Mask of the Tribunal",
-            "baseType": "Magistrate Crown"
+            "base item": "Magistrate Crown"
         },
         {
             "name": "Matua Tupuna",
-            "baseType": "Tarnished Spirit Shield"
+            "base item": "Tarnished Spirit Shield"
         },
         {
             "name": "Maw of Conquest",
-            "baseType": "Steel Circlet"
+            "base item": "Steel Circlet"
         },
         {
             "name": "Maw of Mischief",
-            "baseType": "Bone Helmet"
+            "base item": "Bone Helmet"
         },
         {
             "name": "Medved's Challenge",
-            "baseType": "Runic Gauntlets"
+            "base item": "Runic Gauntlets"
         },
         {
             "name": "Megalomaniac",
-            "baseType": "Medium Cluster Jewel"
+            "base item": "Medium Cluster Jewel"
         },
         {
             "name": "Meginord's Girdle",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Meginord's Vise",
-            "baseType": "Steel Gauntlets"
+            "base item": "Steel Gauntlets"
         },
         {
             "name": "Melding of the Flesh",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Memory Vault",
-            "baseType": "Praetor Crown"
+            "base item": "Praetor Crown"
         },
         {
             "name": "Mercenary's Lot",
-            "baseType": "Slink Gloves"
+            "base item": "Slink Gloves"
         },
         {
             "name": "Midnight Bargain",
-            "baseType": "Engraved Wand"
+            "base item": "Engraved Wand"
         },
         {
             "name": "Might of the Meek",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Mightflay",
-            "baseType": "Flaying Knife"
+            "base item": "Flaying Knife"
         },
         {
             "name": "Militant Faith",
-            "baseType": "Timeless Jewel"
+            "base item": "Timeless Jewel"
         },
         {
             "name": "Mind of the Council",
-            "baseType": "Harlequin Mask"
+            "base item": "Harlequin Mask"
         },
         {
             "name": "Mindspiral",
-            "baseType": "Aventail Helmet"
+            "base item": "Aventail Helmet"
         },
         {
             "name": "Ming's Heart",
-            "baseType": "Amethyst Ring"
+            "base item": "Amethyst Ring"
         },
         {
             "name": "Mistwall",
-            "baseType": "Lacquered Buckler"
+            "base item": "Lacquered Buckler"
         },
         {
             "name": "Mj\u00f6lner",
-            "baseType": "Gavel"
+            "base item": "Gavel"
         },
         {
             "name": "Mokou's Embrace",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Mon'tregul's Grasp",
-            "baseType": "Void Sceptre"
+            "base item": "Void Sceptre"
         },
         {
             "name": "Moonbender's Wing",
-            "baseType": "Tomahawk"
+            "base item": "Tomahawk"
         },
         {
             "name": "Moonsorrow",
-            "baseType": "Imbued Wand"
+            "base item": "Imbued Wand"
         },
         {
             "name": "Mortem Morsu",
-            "baseType": "Fright Claw"
+            "base item": "Fright Claw"
         },
         {
             "name": "Mother's Embrace",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Mutewind Pennant",
-            "baseType": "Enameled Buckler"
+            "base item": "Enameled Buckler"
         },
         {
             "name": "Mutewind Seal",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Mutewind Whispersteps",
-            "baseType": "Serpentscale Boots"
+            "base item": "Serpentscale Boots"
         },
         {
             "name": "Nadir Mode",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Natural Affinity",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "Natural Hierarchy",
-            "baseType": "Rotfeather Talisman"
+            "base item": "Rotfeather Talisman"
         },
         {
             "name": "Nebulis",
-            "baseType": "Void Sceptre"
+            "base item": "Void Sceptre"
         },
         {
             "name": "Nebuloch",
-            "baseType": "Nightmare Mace"
+            "base item": "Nightmare Mace"
         },
         {
             "name": "Ngamahu's Flame",
-            "baseType": "Abyssal Axe"
+            "base item": "Abyssal Axe"
         },
         {
             "name": "Ngamahu's Sign",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Night's Hold",
-            "baseType": "Black Maw Talisman"
+            "base item": "Black Maw Talisman"
         },
         {
             "name": "Nightgrip",
-            "baseType": "Runic Gages"
+            "base item": "Runic Gages"
         },
         {
             "name": "Nimis",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Nomic's Storm",
-            "baseType": "Strapped Boots"
+            "base item": "Strapped Boots"
         },
         {
             "name": "Null and Void",
-            "baseType": "Legion Gloves"
+            "base item": "Legion Gloves"
         },
         {
             "name": "Null's Inclination",
-            "baseType": "Ranger Bow"
+            "base item": "Ranger Bow"
         },
         {
             "name": "Nuro's Harp",
-            "baseType": "Harbinger Bow"
+            "base item": "Harbinger Bow"
         },
         {
             "name": "Nycta's Lantern",
-            "baseType": "Crystal Sceptre"
+            "base item": "Crystal Sceptre"
         },
         {
             "name": "Oba's Cursed Trove",
-            "baseType": "Underground Sea Map"
+            "base item": "Underground Sea Map"
         },
         {
             "name": "Obliteration",
-            "baseType": "Imbued Wand"
+            "base item": "Imbued Wand"
         },
         {
             "name": "Obscurantis",
-            "baseType": "Lion Pelt"
+            "base item": "Lion Pelt"
         },
         {
             "name": "Offering to the Serpent",
-            "baseType": "Legion Gloves"
+            "base item": "Legion Gloves"
         },
         {
             "name": "Olesya's Delight",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Olmec's Sanctum",
-            "baseType": "Bone Crypt Map"
+            "base item": "Bone Crypt Map"
         },
         {
             "name": "Olroth's Charge",
-            "baseType": "Runic Sollerets"
+            "base item": "Runic Sollerets"
         },
         {
             "name": "Olroth's Resolve",
-            "baseType": "Iron Flask"
+            "base item": "Iron Flask"
         },
         {
             "name": "Omeyocan",
-            "baseType": "Carnal Boots"
+            "base item": "Carnal Boots"
         },
         {
             "name": "Ondar's Clasp",
-            "baseType": "Wrapped Mitts"
+            "base item": "Wrapped Mitts"
         },
         {
             "name": "One With Nothing",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "Oni-Goroshi",
-            "baseType": "Charan's Sword"
+            "base item": "Charan's Sword"
         },
         {
             "name": "Orbala's Stand",
-            "baseType": "Eelskin Boots"
+            "base item": "Eelskin Boots"
         },
         {
             "name": "Oriath's End",
-            "baseType": "Bismuth Flask"
+            "base item": "Bismuth Flask"
         },
         {
             "name": "Ornament of the East",
-            "baseType": "Gut Ripper"
+            "base item": "Gut Ripper"
         },
         {
             "name": "Oro's Sacrifice",
-            "baseType": "Infernal Sword"
+            "base item": "Infernal Sword"
         },
         {
             "name": "Oskarm",
-            "baseType": "Nubuck Gloves"
+            "base item": "Nubuck Gloves"
         },
         {
             "name": "Pacifism",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Painseeker",
-            "baseType": "Shagreen Gloves"
+            "base item": "Shagreen Gloves"
         },
         {
             "name": "Paradoxica",
-            "baseType": "Vaal Rapier"
+            "base item": "Vaal Rapier"
         },
         {
             "name": "Perandus Blazon",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Perandus Signet",
-            "baseType": "Paua Ring"
+            "base item": "Paua Ring"
         },
         {
             "name": "Perepiteia",
-            "baseType": "Ezomyte Spiked Shield"
+            "base item": "Ezomyte Spiked Shield"
         },
         {
             "name": "Perfidy",
-            "baseType": "Glorious Plate"
+            "base item": "Glorious Plate"
         },
         {
             "name": "Perquil's Toe",
-            "baseType": "Gold Amulet"
+            "base item": "Gold Amulet"
         },
         {
             "name": "Perseverance",
-            "baseType": "Vanguard Belt"
+            "base item": "Vanguard Belt"
         },
         {
             "name": "Pillar of the Caged God",
-            "baseType": "Iron Staff"
+            "base item": "Iron Staff"
         },
         {
             "name": "Pillars of Arun",
-            "baseType": "Dunes Map"
+            "base item": "Dunes Map"
         },
         {
             "name": "Piscator's Vigil",
-            "baseType": "Imbued Wand"
+            "base item": "Imbued Wand"
         },
         {
             "name": "Pledge of Hands",
-            "baseType": "Judgement Staff"
+            "base item": "Judgement Staff"
         },
         {
             "name": "Plume of Pursuit",
-            "baseType": "Bone Circlet"
+            "base item": "Bone Circlet"
         },
         {
             "name": "Polaric Devastation",
-            "baseType": "Opal Ring"
+            "base item": "Opal Ring"
         },
         {
             "name": "Poorjoy's Asylum",
-            "baseType": "Temple Map"
+            "base item": "Temple Map"
         },
         {
             "name": "Powerlessness",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Praxis",
-            "baseType": "Paua Ring"
+            "base item": "Paua Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Prismatic Ring"
+            "base item": "Prismatic Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Precursor's Emblem",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Presence of Chayula",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Primordial Eminence",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Primordial Harmony",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Primordial Might",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Prism Guardian",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "Prismatic Eclipse",
-            "baseType": "Twilight Blade"
+            "base item": "Twilight Blade"
         },
         {
             "name": "Prismweave",
-            "baseType": "Rustic Sash"
+            "base item": "Rustic Sash"
         },
         {
             "name": "Profane Proxy",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Progenesis",
-            "baseType": "Amethyst Flask"
+            "base item": "Amethyst Flask"
         },
         {
             "name": "Pure Talent",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Putembo's Meadow",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Putembo's Mountain",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Putembo's Valley",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Pyre",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Pyroshock Clasp",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Qotra's Regulator",
-            "baseType": "Sovereign Spiked Shield"
+            "base item": "Sovereign Spiked Shield"
         },
         {
             "name": "Quecholli",
-            "baseType": "Jagged Maul"
+            "base item": "Jagged Maul"
         },
         {
             "name": "Queen of the Forest",
-            "baseType": "Destiny Leather"
+            "base item": "Destiny Leather"
         },
         {
             "name": "Queen's Decree",
-            "baseType": "Ornate Sword"
+            "base item": "Ornate Sword"
         },
         {
             "name": "Quickening Covenant",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Quill Rain",
-            "baseType": "Short Bow"
+            "base item": "Short Bow"
         },
         {
             "name": "Rain of Splinters",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Rainbowstride",
-            "baseType": "Conjurer Boots"
+            "base item": "Conjurer Boots"
+        },
+        {
+            "name": "Rakiata's Dance",
+            "base item": "Engraved Greatsword"
         },
         {
             "name": "Ralakesh's Impatience",
-            "baseType": "Riveted Boots"
+            "base item": "Riveted Boots"
         },
         {
             "name": "Rashkaldor's Patience",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "Rat's Nest",
-            "baseType": "Ursine Pelt"
+            "base item": "Ursine Pelt"
         },
         {
             "name": "Rathpith Globe",
-            "baseType": "Titanium Spirit Shield"
+            "base item": "Titanium Spirit Shield"
         },
         {
             "name": "Rational Doctrine",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Razor of the Seventh Sun",
-            "baseType": "Midnight Blade"
+            "base item": "Midnight Blade"
         },
         {
             "name": "Reach of the Council",
-            "baseType": "Spine Bow"
+            "base item": "Spine Bow"
         },
         {
             "name": "Realmshaper",
-            "baseType": "Iron Staff"
+            "base item": "Iron Staff"
         },
         {
             "name": "Reaper's Pursuit",
-            "baseType": "Shadow Axe"
+            "base item": "Shadow Axe"
         },
         {
             "name": "Rearguard",
-            "baseType": "Blunt Arrow Quiver"
+            "base item": "Blunt Arrow Quiver"
         },
         {
             "name": "Rebuke of the Vaal",
-            "baseType": "Vaal Blade"
+            "base item": "Vaal Blade"
         },
         {
             "name": "Reckless Defence",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Redbeak",
-            "baseType": "Rusted Sword"
+            "base item": "Rusted Sword"
         },
         {
             "name": "Redblade Band",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Redblade Banner",
-            "baseType": "Painted Tower Shield"
+            "base item": "Painted Tower Shield"
         },
         {
             "name": "Redblade Tramplers",
-            "baseType": "Ancient Greaves"
+            "base item": "Ancient Greaves"
         },
         {
             "name": "Reefbane",
-            "baseType": "Fishing Rod"
+            "base item": "Fishing Rod"
         },
         {
             "name": "Relentless Fury",
-            "baseType": "Decorative Axe"
+            "base item": "Decorative Axe"
         },
         {
             "name": "Relic of the Pact",
-            "baseType": "Sage Wand"
+            "base item": "Sage Wand"
         },
         {
             "name": "Repentance",
-            "baseType": "Crusader Gloves"
+            "base item": "Crusader Gloves"
         },
         {
-            "name": "Replica Abyssus",
-            "baseType": "Ezomyte Burgonet"
-        },
-        {
-            "name": "Replica Advancing Fortress",
-            "baseType": "Gut Ripper"
-        },
-        {
-            "name": "Replica Alberon's Warpath",
-            "baseType": "Soldier Boots"
-        },
-        {
-            "name": "Replica Allelopathy",
-            "baseType": "Satin Gloves"
-        },
-        {
-            "name": "Replica Allure",
-            "baseType": "Vaal Claw"
-        },
-        {
-            "name": "Replica Alpha's Howl",
-            "baseType": "Sinner Tricorne"
-        },
-        {
-            "name": "Replica Ambu's Charge",
-            "baseType": "Crusader Chainmail"
-        },
-        {
-            "name": "Replica Atziri's Acuity",
-            "baseType": "Vaal Gauntlets"
-        },
-        {
-            "name": "Replica Atziri's Foible",
-            "baseType": "Paua Amulet"
-        },
-        {
-            "name": "Replica Bated Breath",
-            "baseType": "Chain Belt"
-        },
-        {
-            "name": "Replica Bitterdream",
-            "baseType": "Shadow Sceptre"
-        },
-        {
-            "name": "Replica Blood Thorn",
-            "baseType": "Gnarled Branch"
-        },
-        {
-            "name": "Replica Bloodplay",
-            "baseType": "Stiletto"
-        },
-        {
-            "name": "Replica Bones of Ullr",
-            "baseType": "Silk Slippers"
-        },
-        {
-            "name": "Replica Cold Iron Point",
-            "baseType": "Ezomyte Dagger"
-        },
-        {
-            "name": "Replica Cortex",
-            "baseType": "Synthesised Map"
-        },
-        {
-            "name": "Replica Doedre's Damning",
-            "baseType": "Paua Ring"
-        },
-        {
-            "name": "Replica Dreamfeather",
-            "baseType": "Eternal Sword"
-        },
-        {
-            "name": "Replica Duskdawn",
-            "baseType": "Maelstr\u00f6m Staff"
-        },
-        {
-            "name": "Replica Earendel's Embrace",
-            "baseType": "Grinning Fetish"
-        },
-        {
-            "name": "Replica Emberwake",
-            "baseType": "Ruby Ring"
-        },
-        {
-            "name": "Replica Eternity Shroud",
-            "baseType": "Blood Raiment"
-        },
-        {
-            "name": "Replica Farrul's Fur",
-            "baseType": "Triumphant Lamellar"
-        },
-        {
-            "name": "Replica Fencoil",
-            "baseType": "Gnarled Branch"
-        },
-        {
-            "name": "Replica Frostbreath",
-            "baseType": "Ornate Mace"
-        },
-        {
-            "name": "Replica Grip of the Council",
-            "baseType": "Arcanist Gloves"
-        },
-        {
-            "name": "Replica Harvest",
-            "baseType": "Jasper Chopper"
-        },
-        {
-            "name": "Replica Headhunter",
-            "baseType": "Leather Belt"
-        },
-        {
-            "name": "Replica Heartbreaker",
-            "baseType": "Royal Skean"
-        },
-        {
-            "name": "Replica Hyrri's Truth",
-            "baseType": "Jade Amulet"
-        },
-        {
-            "name": "Replica Infractem",
-            "baseType": "Decimation Bow"
-        },
-        {
-            "name": "Replica Innsbury Edge",
-            "baseType": "Elder Sword"
-        },
-        {
-            "name": "Replica Inya's Epiphany",
-            "baseType": "Arcanist Slippers"
-        },
-        {
-            "name": "Replica Iron Commander",
-            "baseType": "Death Bow"
-        },
-        {
-            "name": "Replica Kalisa's Grace",
-            "baseType": "Samite Gloves"
-        },
-        {
-            "name": "Replica Kaom's Heart",
-            "baseType": "Glorious Plate"
-        },
-        {
-            "name": "Replica Karui Ward",
-            "baseType": "Jade Amulet"
-        },
-        {
-            "name": "Replica Kongor's Undying Rage",
-            "baseType": "Terror Maul"
-        },
-        {
-            "name": "Replica Last Resort",
-            "baseType": "Nailed Fist"
-        },
-        {
-            "name": "Replica Lavianga's Spirit",
-            "baseType": "Sanctified Mana Flask"
-        },
-        {
-            "name": "Replica Leer Cast",
-            "baseType": "Festival Mask"
-        },
-        {
-            "name": "Replica Lioneye's Paws",
-            "baseType": "Bronzescale Boots"
-        },
-        {
-            "name": "Replica Loreweave",
-            "baseType": "Elegant Ringmail"
-        },
-        {
-            "name": "Replica Malachai's Artifice",
-            "baseType": "Unset Ring"
-        },
-        {
-            "name": "Replica Maloney's Mechanism",
-            "baseType": "Ornate Quiver"
-        },
-        {
-            "name": "Replica Midnight Bargain",
-            "baseType": "Engraved Wand"
-        },
-        {
-            "name": "Replica Mistwall",
-            "baseType": "Lacquered Buckler"
-        },
-        {
-            "name": "Replica Nebulis",
-            "baseType": "Void Sceptre"
-        },
-        {
-            "name": "Replica Oro's Sacrifice",
-            "baseType": "Infernal Sword"
-        },
-        {
-            "name": "Replica Paradoxica",
-            "baseType": "Vaal Rapier"
-        },
-        {
-            "name": "Replica Perfect Form",
-            "baseType": "Zodiac Leather"
-        },
-        {
-            "name": "Replica Pillars of Arun",
-            "baseType": "Dunes Map"
-        },
-        {
-            "name": "Replica Poorjoy's Asylum",
-            "baseType": "Temple Map"
-        },
-        {
-            "name": "Replica Primordial Might",
-            "baseType": "Crimson Jewel"
-        },
-        {
-            "name": "Replica Prismweave",
-            "baseType": "Rustic Sash"
-        },
-        {
-            "name": "Replica Quill Rain",
-            "baseType": "Short Bow"
-        },
-        {
-            "name": "Replica Reckless Defence",
-            "baseType": "Cobalt Jewel"
-        },
-        {
-            "name": "Replica Red Trail",
-            "baseType": "Titan Greaves"
-        },
-        {
-            "name": "Replica Restless Ward",
-            "baseType": "Carnal Armour"
-        },
-        {
-            "name": "Replica Rumi's Concoction",
-            "baseType": "Granite Flask"
-        },
-        {
-            "name": "Replica Shroud of the Lightless",
-            "baseType": "Carnal Armour"
-        },
-        {
-            "name": "Replica Siegebreaker",
-            "baseType": "Heavy Belt"
-        },
-        {
-            "name": "Replica Sorrow of the Divine",
-            "baseType": "Sulphur Flask"
-        },
-        {
-            "name": "Replica Soul Strike",
-            "baseType": "Spike-Point Arrow Quiver"
-        },
-        {
-            "name": "Replica Soul Tether",
-            "baseType": "Cloth Belt"
-        },
-        {
-            "name": "Replica Stampede",
-            "baseType": "Assassin's Boots"
-        },
-        {
-            "name": "Replica Tasalio's Sign",
-            "baseType": "Sapphire Ring"
-        },
-        {
-            "name": "Replica Tempestuous Steel",
-            "baseType": "War Sword"
-        },
-        {
-            "name": "Replica Three-step Assault",
-            "baseType": "Shagreen Boots"
-        },
-        {
-            "name": "Replica Trypanon",
-            "baseType": "Great Mallet"
-        },
-        {
-            "name": "Replica Tukohama's Fortress",
-            "baseType": "Ebony Tower Shield"
-        },
-        {
-            "name": "Replica Tulfall",
-            "baseType": "Opal Wand"
-        },
-        {
-            "name": "Replica Twyzel",
-            "baseType": "Sage Wand"
-        },
-        {
-            "name": "Replica Ungil's Gauche",
-            "baseType": "Boot Knife"
-        },
-        {
-            "name": "Replica Veil of the Night",
-            "baseType": "Great Helmet"
-        },
-        {
-            "name": "Replica Victario's Charity",
-            "baseType": "Laminated Kite Shield"
-        },
-        {
-            "name": "Replica Voideye",
-            "baseType": "Unset Ring"
-        },
-        {
-            "name": "Replica Voidwalker",
-            "baseType": "Murder Boots"
-        },
-        {
-            "name": "Replica Volkuur's Guidance",
-            "baseType": "Zealot Gloves"
-        },
-        {
-            "name": "Replica Windripper",
-            "baseType": "Imperial Bow"
-        },
-        {
-            "name": "Replica Wings of Entropy",
-            "baseType": "Ezomyte Axe"
-        },
-        {
-            "name": "Replica Winterheart",
-            "baseType": "Gold Amulet"
+            "name": "Replica Dragonfang's Flight",
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Retaliation Charm",
-            "baseType": "Citrine Amulet"
+            "base item": "Citrine Amulet"
         },
         {
             "name": "Reverberation Rod",
-            "baseType": "Spiraled Wand"
+            "base item": "Spiraled Wand"
         },
         {
             "name": "Rewritten Distant Memory",
-            "baseType": "Synthesised Map"
+            "base item": "Synthesised Map"
         },
         {
             "name": "Rigwald's Charge",
-            "baseType": "Highland Blade"
+            "base item": "Highland Blade"
         },
         {
             "name": "Rigwald's Command",
-            "baseType": "Midnight Blade"
+            "base item": "Midnight Blade"
         },
         {
             "name": "Rigwald's Crest",
-            "baseType": "Two-Stone Ring"
+            "base item": "Two-Stone Ring"
         },
         {
             "name": "Rigwald's Curse",
-            "baseType": "Wereclaw Talisman"
+            "base item": "Wereclaw Talisman"
         },
         {
             "name": "Rigwald's Quills",
-            "baseType": "Two-Point Arrow Quiver"
+            "base item": "Two-Point Arrow Quiver"
         },
         {
             "name": "Rigwald's Savagery",
-            "baseType": "Royal Axe"
+            "base item": "Royal Axe"
         },
         {
             "name": "Rime Gaze",
-            "baseType": "Mind Cage"
+            "base item": "Mind Cage"
         },
         {
             "name": "Rise of the Phoenix",
-            "baseType": "Mosaic Kite Shield"
+            "base item": "Mosaic Kite Shield"
         },
         {
             "name": "Rive",
-            "baseType": "Terror Claw"
+            "base item": "Terror Claw"
         },
         {
             "name": "Romira's Banquet",
-            "baseType": "Diamond Ring"
+            "base item": "Diamond Ring"
         },
         {
             "name": "Rotblood Promise",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Rotgut",
-            "baseType": "Quicksilver Flask"
+            "base item": "Quicksilver Flask"
         },
         {
             "name": "Roth's Reach",
-            "baseType": "Recurve Bow"
+            "base item": "Recurve Bow"
         },
         {
             "name": "Rumi's Concoction",
-            "baseType": "Granite Flask"
+            "base item": "Granite Flask"
         },
         {
             "name": "Ryslatha's Coil",
-            "baseType": "Studded Belt"
+            "base item": "Studded Belt"
         },
         {
             "name": "Sacrificial Heart",
-            "baseType": "Paua Amulet"
+            "base item": "Paua Amulet"
         },
         {
             "name": "Sadima's Touch",
-            "baseType": "Wool Gloves"
+            "base item": "Wool Gloves"
         },
         {
             "name": "Saemus' Gift",
-            "baseType": "Feathered Arrow Quiver"
+            "base item": "Feathered Arrow Quiver"
         },
         {
             "name": "Saffell's Frame",
-            "baseType": "Branded Kite Shield"
+            "base item": "Branded Kite Shield"
+        },
+        {
+            "name": "Sandstorm Visage",
+            "base item": "Necromancer Circlet"
         },
         {
             "name": "Saqawal's Flock",
-            "baseType": "Silken Hood"
+            "base item": "Silken Hood"
         },
         {
             "name": "Saqawal's Nest",
-            "baseType": "Blood Raiment"
+            "base item": "Blood Raiment"
         },
         {
             "name": "Saqawal's Talons",
-            "baseType": "Hydrascale Boots"
+            "base item": "Hydrascale Boots"
         },
         {
             "name": "Saqawal's Winds",
-            "baseType": "Soldier Gloves"
+            "base item": "Soldier Gloves"
         },
         {
             "name": "Scaeva",
-            "baseType": "Gladius"
+            "base item": "Gladius"
         },
         {
             "name": "Scold's Bridle",
-            "baseType": "Mind Cage"
+            "base item": "Mind Cage"
         },
         {
             "name": "Scorpion's Call",
-            "baseType": "Heavy Arrow Quiver"
+            "base item": "Heavy Arrow Quiver"
         },
         {
             "name": "Second Piece of Brutality",
-            "baseType": "Imperial Staff Piece"
+            "base item": "Imperial Staff Piece"
         },
         {
             "name": "Second Piece of Directions",
-            "baseType": "Blunt Arrow Quiver Piece"
+            "base item": "Blunt Arrow Quiver Piece"
         },
         {
             "name": "Second Piece of Focus",
-            "baseType": "Archon Kite Shield Piece"
+            "base item": "Archon Kite Shield Piece"
         },
         {
             "name": "Second Piece of Storms",
-            "baseType": "Callous Mask Piece"
+            "base item": "Callous Mask Piece"
         },
         {
             "name": "Second Piece of the Arcane",
-            "baseType": "Legion Sword Piece"
+            "base item": "Legion Sword Piece"
         },
         {
             "name": "Second Piece of Time",
-            "baseType": "Cloth Belt Piece"
+            "base item": "Cloth Belt Piece"
         },
         {
             "name": "Seething Fury",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Self-Flagellation",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Sentari's Answer",
-            "baseType": "Brass Spirit Shield"
+            "base item": "Brass Spirit Shield"
         },
         {
             "name": "Seven-League Step",
-            "baseType": "Rawhide Boots"
+            "base item": "Rawhide Boots"
         },
         {
             "name": "Severed in Sleep",
-            "baseType": "Cutlass"
+            "base item": "Cutlass"
         },
         {
             "name": "Shackles of the Wretched",
-            "baseType": "Chain Gloves"
+            "base item": "Chain Gloves"
         },
         {
             "name": "Shade of Solaris",
-            "baseType": "Sage Wand"
+            "base item": "Sage Wand"
         },
         {
             "name": "Shadows and Dust",
-            "baseType": "Clasped Mitts"
+            "base item": "Clasped Mitts"
         },
         {
             "name": "Shadowstitch",
-            "baseType": "Sacrificial Garb"
+            "base item": "Sacrificial Garb"
         },
         {
             "name": "Shaper's Seed",
-            "baseType": "Agate Amulet"
+            "base item": "Agate Amulet"
         },
         {
             "name": "Shaper's Touch",
-            "baseType": "Crusader Gloves"
+            "base item": "Crusader Gloves"
         },
         {
             "name": "Shattershard",
-            "baseType": "Crimson Round Shield"
+            "base item": "Crimson Round Shield"
         },
         {
             "name": "Shavronne's Pace",
-            "baseType": "Scholar Boots"
+            "base item": "Scholar Boots"
         },
         {
             "name": "Shavronne's Revelation",
-            "baseType": "Moonstone Ring"
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Shavronne's Wrappings",
-            "baseType": "Occultist's Vestment"
+            "base item": "Occultist's Vestment"
         },
         {
             "name": "Shimmeron",
-            "baseType": "Tornado Wand"
+            "base item": "Tornado Wand"
         },
         {
             "name": "Shiversting",
-            "baseType": "Bastard Sword"
+            "base item": "Bastard Sword"
         },
         {
             "name": "Shroud of the Lightless",
-            "baseType": "Carnal Armour"
+            "base item": "Carnal Armour"
         },
         {
             "name": "Shroud of the Lightless",
-            "baseType": "Carnal Armour"
-        },
-        {
-            "name": "Shroud of the Lightless",
-            "baseType": "Carnal Armour"
+            "base item": "Carnal Armour"
         },
         {
             "name": "Sibyl's Lament",
-            "baseType": "Coral Ring"
+            "base item": "Coral Ring"
         },
         {
             "name": "Sidhebreath",
-            "baseType": "Paua Amulet"
+            "base item": "Paua Amulet"
         },
         {
             "name": "Siegebreaker",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Sign of the Sin Eater",
-            "baseType": "Tyrant's Sekhem"
+            "base item": "Tyrant's Sekhem"
         },
         {
             "name": "Silverbranch",
-            "baseType": "Crude Bow"
+            "base item": "Crude Bow"
         },
         {
             "name": "Sin Trek",
-            "baseType": "Stealth Boots"
+            "base item": "Stealth Boots"
         },
         {
             "name": "Sin's Rebirth",
-            "baseType": "Stibnite Flask"
+            "base item": "Stibnite Flask"
         },
         {
             "name": "Singularity",
-            "baseType": "Platinum Sceptre"
+            "base item": "Platinum Sceptre"
         },
         {
             "name": "Sinvicta's Mettle",
-            "baseType": "Ezomyte Axe"
+            "base item": "Ezomyte Axe"
         },
         {
             "name": "Sire of Shards",
-            "baseType": "Serpentine Staff"
+            "base item": "Serpentine Staff"
         },
         {
             "name": "Skin of the Lords",
-            "baseType": "Simple Robe"
+            "base item": "Simple Robe"
         },
         {
             "name": "Skin of the Loyal",
-            "baseType": "Simple Robe"
+            "base item": "Simple Robe"
         },
         {
             "name": "Skirmish",
-            "baseType": "Two-Point Arrow Quiver"
+            "base item": "Two-Point Arrow Quiver"
         },
         {
             "name": "Skullhead",
-            "baseType": "Secutor Helm"
+            "base item": "Secutor Helm"
         },
         {
             "name": "Skyforth",
-            "baseType": "Sorcerer Boots"
+            "base item": "Sorcerer Boots"
         },
         {
             "name": "Slavedriver's Hand",
-            "baseType": "Ambush Mitts"
+            "base item": "Ambush Mitts"
         },
         {
             "name": "Slitherpinch",
-            "baseType": "Bronzescale Gauntlets"
+            "base item": "Bronzescale Gauntlets"
         },
         {
             "name": "Slivertongue",
-            "baseType": "Harbinger Bow"
+            "base item": "Harbinger Bow"
         },
         {
             "name": "Snakebite",
-            "baseType": "Assassin's Mitts"
+            "base item": "Assassin's Mitts"
         },
         {
             "name": "Snakepit",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Solaris Lorica",
-            "baseType": "Copper Plate"
+            "base item": "Copper Plate"
         },
         {
             "name": "Solstice Vigil",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Song of the Sirens",
-            "baseType": "Fishing Rod"
+            "base item": "Fishing Rod"
         },
         {
             "name": "Soul Ascension",
-            "baseType": "Carnal Mitts"
+            "base item": "Carnal Mitts"
         },
         {
             "name": "Soul Catcher",
-            "baseType": "Quartz Flask"
+            "base item": "Quartz Flask"
         },
         {
             "name": "Soul Mantle",
-            "baseType": "Spidersilk Robe"
+            "base item": "Spidersilk Robe"
         },
         {
             "name": "Soul Ripper",
-            "baseType": "Quartz Flask"
+            "base item": "Quartz Flask"
         },
         {
             "name": "Soul Strike",
-            "baseType": "Spike-Point Arrow Quiver"
+            "base item": "Spike-Point Arrow Quiver"
         },
         {
             "name": "Soul Taker",
-            "baseType": "Siege Axe"
+            "base item": "Siege Axe"
         },
         {
             "name": "Soul Tether",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Soul's Wick",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Soulbound",
-            "baseType": "Paua Ring"
+            "base item": "Paua Ring"
         },
         {
             "name": "Soulthirst",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Soulwrest",
-            "baseType": "Ezomyte Staff"
+            "base item": "Ezomyte Staff"
         },
         {
             "name": "Southbound",
-            "baseType": "Soldier Gloves"
+            "base item": "Soldier Gloves"
         },
         {
             "name": "Speaker's Wreath",
-            "baseType": "Prophet Crown"
+            "base item": "Prophet Crown"
         },
         {
             "name": "Spirit Guards",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Split Personality",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Sporeguard",
-            "baseType": "Saint's Hauberk"
+            "base item": "Saint's Hauberk"
         },
         {
             "name": "Springleaf",
-            "baseType": "Plank Kite Shield"
+            "base item": "Plank Kite Shield"
         },
         {
             "name": "Star of Wraeclast",
-            "baseType": "Ruby Amulet"
+            "base item": "Ruby Amulet"
         },
         {
             "name": "Starforge",
-            "baseType": "Infernal Sword"
+            "base item": "Infernal Sword"
         },
         {
             "name": "Starkonja's Head",
-            "baseType": "Silken Hood"
+            "base item": "Silken Hood"
         },
         {
             "name": "Starlight Chalice",
-            "baseType": "Iron Flask"
+            "base item": "Iron Flask"
         },
         {
             "name": "Stasis Prison",
-            "baseType": "Carnal Armour"
+            "base item": "Carnal Armour"
         },
         {
             "name": "Steelworm",
-            "baseType": "Broadhead Arrow Quiver"
+            "base item": "Broadhead Arrow Quiver"
         },
         {
             "name": "Steppan Eard",
-            "baseType": "Sorcerer Boots"
+            "base item": "Sorcerer Boots"
         },
         {
             "name": "Stone of Lazhwar",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Storm Cloud",
-            "baseType": "Long Bow"
+            "base item": "Long Bow"
         },
         {
             "name": "Storm Prison",
-            "baseType": "Spiraled Wand"
+            "base item": "Spiraled Wand"
         },
         {
             "name": "Storm Secret",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Storm's Gift",
-            "baseType": "Assassin's Mitts"
+            "base item": "Assassin's Mitts"
         },
         {
             "name": "Stormcharger",
-            "baseType": "Plated Greaves"
+            "base item": "Plated Greaves"
         },
         {
             "name": "Stormfire",
-            "baseType": "Opal Ring"
+            "base item": "Opal Ring"
         },
         {
             "name": "Stormseeker",
-            "baseType": "Ambush Mitts"
+            "base item": "Ambush Mitts"
         },
         {
             "name": "Stormshroud",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Story of the Vaal",
-            "baseType": "Gemstone Sword"
+            "base item": "Gemstone Sword"
         },
         {
             "name": "Stranglegasp",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "String of Servitude",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Sublime Vision",
-            "baseType": "Prismatic Jewel"
+            "base item": "Prismatic Jewel"
         },
         {
             "name": "Sudden Dawn",
-            "baseType": "Steel Circlet"
+            "base item": "Steel Circlet"
         },
         {
             "name": "Sunblast",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "Sundance",
-            "baseType": "Clasped Boots"
+            "base item": "Clasped Boots"
         },
         {
             "name": "Surgebinders",
-            "baseType": "Dragonscale Gauntlets"
+            "base item": "Dragonscale Gauntlets"
         },
         {
             "name": "Survivor's Guilt",
-            "baseType": "Heavy Belt"
+            "base item": "Heavy Belt"
         },
         {
             "name": "Tabula Rasa",
-            "baseType": "Simple Robe"
+            "base item": "Simple Robe"
         },
         {
             "name": "Tainted Pact",
-            "baseType": "Coral Amulet"
+            "base item": "Coral Amulet"
         },
         {
             "name": "Tanu Ahi",
-            "baseType": "Wyrmscale Gauntlets"
+            "base item": "Wyrmscale Gauntlets"
         },
         {
             "name": "Taproot",
-            "baseType": "Ambusher"
+            "base item": "Ambusher"
         },
         {
             "name": "Taryn's Shiver",
-            "baseType": "Maelstr\u00f6m Staff"
+            "base item": "Maelstr\u00f6m Staff"
         },
         {
             "name": "Tasalio's Sign",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Taste of Hate",
-            "baseType": "Sapphire Flask"
+            "base item": "Sapphire Flask"
         },
         {
             "name": "Tavukai",
-            "baseType": "Coral Amulet"
+            "base item": "Coral Amulet"
+        },
+        {
+            "name": "Tawhanuku's Timing",
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Tear of Purity",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Tecrod's Gaze",
-            "baseType": "Murderous Eye Jewel"
+            "base item": "Murderous Eye Jewel"
         },
         {
             "name": "Tempered Flesh",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Tempered Mind",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Tempered Spirit",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Temptation Step",
-            "baseType": "Shagreen Boots"
+            "base item": "Shagreen Boots"
         },
         {
             "name": "Terminus Est",
-            "baseType": "Tiger Sword"
+            "base item": "Tiger Sword"
         },
         {
             "name": "The Admiral",
-            "baseType": "Varnished Coat"
+            "base item": "Varnished Coat"
         },
         {
             "name": "The Anima Stone",
-            "baseType": "Prismatic Jewel"
+            "base item": "Prismatic Jewel"
         },
         {
             "name": "The Annihilating Light",
-            "baseType": "Quarterstaff"
+            "base item": "Quarterstaff"
         },
         {
             "name": "The Anticipation",
-            "baseType": "Ezomyte Tower Shield"
+            "base item": "Ezomyte Tower Shield"
         },
         {
             "name": "The Anvil",
-            "baseType": "Amber Amulet"
+            "base item": "Amber Amulet"
         },
         {
             "name": "The Ascetic",
-            "baseType": "Gold Amulet"
+            "base item": "Gold Amulet"
         },
         {
             "name": "The Aylardex",
-            "baseType": "Agate Amulet"
+            "base item": "Agate Amulet"
+        },
+        {
+            "name": "The Balance of Terror",
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "The Baron",
-            "baseType": "Close Helmet"
+            "base item": "Close Helmet"
         },
         {
             "name": "The Beachhead",
-            "baseType": "Harbinger Map"
+            "base item": "Harbinger Map"
         },
         {
             "name": "The Beachhead",
-            "baseType": "Harbinger Map"
+            "base item": "Harbinger Map"
         },
         {
             "name": "The Beachhead",
-            "baseType": "Harbinger Map"
+            "base item": "Harbinger Map"
         },
         {
             "name": "The Beast Fur Shawl",
-            "baseType": "Vaal Regalia"
+            "base item": "Vaal Regalia"
         },
         {
             "name": "The Black Cane",
-            "baseType": "Royal Sceptre"
+            "base item": "Royal Sceptre"
         },
         {
             "name": "The Blood Dance",
-            "baseType": "Sharkskin Boots"
+            "base item": "Sharkskin Boots"
+        },
+        {
+            "name": "The Blood of Innocence",
+            "base item": "Censer Relic"
         },
         {
             "name": "The Blood Reaper",
-            "baseType": "Headsman Axe"
+            "base item": "Headsman Axe"
         },
         {
             "name": "The Blood Thorn",
-            "baseType": "Gnarled Branch"
+            "base item": "Gnarled Branch"
         },
         {
             "name": "The Blue Dream",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "The Blue Nightmare",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "The Brass Dome",
-            "baseType": "Gladiator Plate"
+            "base item": "Gladiator Plate"
         },
         {
             "name": "The Brine Crown",
-            "baseType": "Prophet Crown"
+            "base item": "Prophet Crown"
         },
         {
             "name": "The Bringer of Rain",
-            "baseType": "Nightmare Bascinet"
+            "base item": "Nightmare Bascinet"
+        },
+        {
+            "name": "The Broken Censer",
+            "base item": "Tome Relic"
         },
         {
             "name": "The Broken Crown",
-            "baseType": "Prophet Crown"
+            "base item": "Prophet Crown"
         },
         {
             "name": "The Burden of Truth",
-            "baseType": "Crystal Belt"
+            "base item": "Crystal Belt"
+        },
+        {
+            "name": "The Chains of Castigation",
+            "base item": "Processional Relic"
         },
         {
             "name": "The Coming Calamity",
-            "baseType": "Destroyer Regalia"
+            "base item": "Destroyer Regalia"
         },
         {
             "name": "The Consuming Dark",
-            "baseType": "Fiend Dagger"
+            "base item": "Fiend Dagger"
         },
         {
             "name": "The Covenant",
-            "baseType": "Spidersilk Robe"
+            "base item": "Spidersilk Robe"
         },
         {
             "name": "The Coward's Trial",
-            "baseType": "Cursed Crypt Map"
+            "base item": "Cursed Crypt Map"
         },
         {
             "name": "The Crimson Storm",
-            "baseType": "Steelwood Bow"
+            "base item": "Steelwood Bow"
         },
         {
             "name": "The Dancing Dervish",
-            "baseType": "Reaver Sword"
+            "base item": "Reaver Sword"
         },
         {
             "name": "The Dark Seer",
-            "baseType": "Shadow Sceptre"
+            "base item": "Shadow Sceptre"
         },
         {
             "name": "The Dark Seer",
-            "baseType": "Shadow Sceptre"
+            "base item": "Shadow Sceptre"
         },
         {
             "name": "The Dark Seer",
-            "baseType": "Shadow Sceptre"
+            "base item": "Shadow Sceptre"
         },
         {
             "name": "The Deep One's Hide",
-            "baseType": "Studded Round Shield"
+            "base item": "Studded Round Shield"
         },
         {
             "name": "The Devouring Diadem",
-            "baseType": "Necromancer Circlet"
+            "base item": "Necromancer Circlet"
         },
         {
             "name": "The Druggery",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "The Embalmer",
-            "baseType": "Carnal Mitts"
+            "base item": "Carnal Mitts"
         },
         {
             "name": "The Enmity Divine",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "The Ephemeral Bond",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "The Eternal Apple",
-            "baseType": "Chiming Spirit Shield"
+            "base item": "Chiming Spirit Shield"
         },
         {
             "name": "The Eternal Struggle",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "The Eternity Shroud",
-            "baseType": "Blood Raiment"
+            "base item": "Blood Raiment"
         },
         {
             "name": "The Felbog Fang",
-            "baseType": "Citrine Amulet"
+            "base item": "Citrine Amulet"
+        },
+        {
+            "name": "The First Crest",
+            "base item": "Coffer Relic"
         },
         {
             "name": "The Fledgling",
-            "baseType": "Lacquered Helmet"
+            "base item": "Lacquered Helmet"
         },
         {
             "name": "The Flow Untethered",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "The Formless Flame",
-            "baseType": "Royal Burgonet"
+            "base item": "Royal Burgonet"
         },
         {
             "name": "The Formless Inferno",
-            "baseType": "Royal Burgonet"
+            "base item": "Royal Burgonet"
         },
         {
             "name": "The Fourth Vow",
-            "baseType": "Devout Chainmail"
+            "base item": "Devout Chainmail"
         },
         {
             "name": "The Fracturing Spinner",
-            "baseType": "Blunt Arrow Quiver"
+            "base item": "Blunt Arrow Quiver"
         },
         {
             "name": "The Front Line",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "The Fulcrum",
-            "baseType": "Ezomyte Staff"
-        },
-        {
-            "name": "The Geomantic Gyre",
-            "baseType": "Highborn Staff"
+            "base item": "Ezomyte Staff"
         },
         {
             "name": "The Ghastly Theatre",
-            "baseType": "Teak Round Shield"
+            "base item": "Teak Round Shield"
         },
         {
             "name": "The Gluttonous Tide",
-            "baseType": "Citadel Bow"
+            "base item": "Citadel Bow"
         },
         {
             "name": "The Goddess Bound",
-            "baseType": "Whalebone Rapier"
+            "base item": "Whalebone Rapier"
         },
         {
             "name": "The Goddess Scorned",
-            "baseType": "Elegant Sword"
+            "base item": "Elegant Sword"
         },
         {
             "name": "The Golden Rule",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "The Green Dream",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "The Green Nightmare",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "The Grey Spire",
-            "baseType": "Judgement Staff"
+            "base item": "Judgement Staff"
         },
         {
             "name": "The Gull",
-            "baseType": "Raven Mask"
+            "base item": "Raven Mask"
         },
         {
             "name": "The Halcyon",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "The Harvest",
-            "baseType": "Jasper Chopper"
+            "base item": "Jasper Chopper"
         },
         {
             "name": "The Hidden Blade",
-            "baseType": "Ambusher"
+            "base item": "Ambusher"
         },
         {
             "name": "The Highwayman",
-            "baseType": "Gold Ring"
+            "base item": "Gold Ring"
         },
         {
             "name": "The Hungry Loop",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "The Ignomon",
-            "baseType": "Gold Amulet"
+            "base item": "Gold Amulet"
         },
         {
             "name": "The Immortal Will",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "The Infinite Pursuit",
-            "baseType": "Titan Greaves"
+            "base item": "Titan Greaves"
         },
         {
             "name": "The Interrogation",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "The Iron Fortress",
-            "baseType": "Crusader Plate"
+            "base item": "Crusader Plate"
         },
         {
             "name": "The Iron Mass",
-            "baseType": "Gladius"
+            "base item": "Gladius"
         },
         {
             "name": "The Ivory Tower",
-            "baseType": "Saint's Hauberk"
+            "base item": "Saint's Hauberk"
         },
         {
             "name": "The Jinxed Juju",
-            "baseType": "Citrine Amulet"
+            "base item": "Citrine Amulet"
         },
         {
             "name": "The Magnate",
-            "baseType": "Studded Belt"
+            "base item": "Studded Belt"
+        },
+        {
+            "name": "The Night Lamp",
+            "base item": "Urn Relic"
         },
         {
             "name": "The Oppressor",
-            "baseType": "Elegant Round Shield"
+            "base item": "Elegant Round Shield"
+        },
+        {
+            "name": "The Original Scripture",
+            "base item": "Papyrus Relic"
         },
         {
             "name": "The Overflowing Chalice",
-            "baseType": "Sulphur Flask"
+            "base item": "Sulphur Flask"
         },
         {
             "name": "The Pandemonius",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "The Pariah",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "The Perfect Form",
-            "baseType": "Zodiac Leather"
+            "base item": "Zodiac Leather"
         },
         {
             "name": "The Poet's Pen",
-            "baseType": "Carved Wand"
+            "base item": "Carved Wand"
         },
         {
             "name": "The Poised Prism",
-            "baseType": "Primal Arrow Quiver"
+            "base item": "Primal Arrow Quiver"
+        },
+        {
+            "name": "The Power and the Promise",
+            "base item": "Tome Relic"
         },
         {
             "name": "The Primordial Chain",
-            "baseType": "Coral Amulet"
+            "base item": "Coral Amulet"
         },
         {
             "name": "The Princess",
-            "baseType": "Sabre"
+            "base item": "Sabre"
         },
         {
             "name": "The Putrid Cloister",
-            "baseType": "Museum Map"
+            "base item": "Museum Map"
         },
         {
             "name": "The Queen's Hunger",
-            "baseType": "Vaal Regalia"
+            "base item": "Vaal Regalia"
         },
         {
             "name": "The Rat Cage",
-            "baseType": "Sharkskin Tunic"
+            "base item": "Sharkskin Tunic"
         },
         {
             "name": "The Red Dream",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "The Red Nightmare",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "The Red Trail",
-            "baseType": "Titan Greaves"
-        },
-        {
-            "name": "The Redblade",
-            "baseType": "Gladius"
+            "base item": "Titan Greaves"
         },
         {
             "name": "The Restless Ward",
-            "baseType": "Carnal Armour"
+            "base item": "Carnal Armour"
         },
         {
             "name": "The Retch",
-            "baseType": "Rustic Sash"
+            "base item": "Rustic Sash"
         },
         {
             "name": "The Rippling Thoughts",
-            "baseType": "Legion Sword"
+            "base item": "Legion Sword"
         },
         {
             "name": "The Saviour",
-            "baseType": "Legion Sword"
+            "base item": "Legion Sword"
         },
         {
             "name": "The Scales of Justice",
-            "baseType": "Chiming Spirit Shield"
+            "base item": "Chiming Spirit Shield"
         },
         {
             "name": "The Scourge",
-            "baseType": "Terror Claw"
+            "base item": "Terror Claw"
         },
         {
             "name": "The Screaming Eagle",
-            "baseType": "Jade Hatchet"
+            "base item": "Jade Hatchet"
         },
         {
             "name": "The Searing Touch",
-            "baseType": "Lathi"
+            "base item": "Lathi"
+        },
+        {
+            "name": "The Second Sacrament",
+            "base item": "Candlestick Relic"
         },
         {
             "name": "The Shattered Divinity",
-            "baseType": "Blunt Arrow Quiver"
+            "base item": "Blunt Arrow Quiver"
         },
         {
             "name": "The Siege",
-            "baseType": "Small Cluster Jewel"
+            "base item": "Small Cluster Jewel"
         },
         {
             "name": "The Snowblind Grace",
-            "baseType": "Zodiac Leather"
+            "base item": "Zodiac Leather"
         },
         {
             "name": "The Sorrow of the Divine",
-            "baseType": "Sulphur Flask"
+            "base item": "Sulphur Flask"
         },
         {
             "name": "The Squire",
-            "baseType": "Elegant Round Shield"
+            "base item": "Elegant Round Shield"
         },
         {
             "name": "The Stampede",
-            "baseType": "Assassin's Boots"
+            "base item": "Assassin's Boots"
         },
         {
             "name": "The Stormheart",
-            "baseType": "Royal Staff"
+            "base item": "Royal Staff"
         },
         {
             "name": "The Supreme Truth",
-            "baseType": "Crystal Sceptre"
+            "base item": "Crystal Sceptre"
         },
         {
             "name": "The Surging Thoughts",
-            "baseType": "Legion Sword"
+            "base item": "Legion Sword"
         },
         {
             "name": "The Surrender",
-            "baseType": "Ezomyte Tower Shield"
+            "base item": "Ezomyte Tower Shield"
         },
         {
             "name": "The Taming",
-            "baseType": "Prismatic Ring"
+            "base item": "Prismatic Ring"
         },
         {
             "name": "The Tempest's Binding",
-            "baseType": "Callous Mask"
+            "base item": "Callous Mask"
         },
         {
             "name": "The Tempest's Liberation",
-            "baseType": "Callous Mask"
+            "base item": "Callous Mask"
         },
         {
             "name": "The Tempestuous Steel",
-            "baseType": "War Sword"
+            "base item": "War Sword"
         },
         {
             "name": "The Three Dragons",
-            "baseType": "Golden Mask"
+            "base item": "Golden Mask"
         },
         {
             "name": "The Torrent's Reclamation",
-            "baseType": "Cloth Belt"
+            "base item": "Cloth Belt"
         },
         {
             "name": "The Tower of Ordeals",
-            "baseType": "Engraved Ultimatum"
+            "base item": "Engraved Ultimatum"
         },
         {
             "name": "The Twilight Temple",
-            "baseType": "Moon Temple Map"
+            "base item": "Moon Temple Map"
         },
         {
             "name": "The Unshattered Will",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "The Vertex",
-            "baseType": "Vaal Mask"
+            "base item": "Vaal Mask"
         },
         {
             "name": "The Vinktar Square",
-            "baseType": "Courtyard Map"
+            "base item": "Courtyard Map"
         },
         {
             "name": "The Warden's Brand",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "The Wasp Nest",
-            "baseType": "Throat Stabber"
+            "base item": "Throat Stabber"
         },
         {
             "name": "The Whispering Ice",
-            "baseType": "Vile Staff"
+            "base item": "Vile Staff"
+        },
+        {
+            "name": "The Winds of Fate",
+            "base item": "Foul Staff"
         },
         {
             "name": "The Wise Oak",
-            "baseType": "Bismuth Flask"
+            "base item": "Bismuth Flask"
         },
         {
             "name": "The Writhing Jar",
-            "baseType": "Hallowed Hybrid Flask"
+            "base item": "Hallowed Hybrid Flask"
         },
         {
             "name": "The Yielding Mortality",
-            "baseType": "Imperial Staff"
+            "base item": "Imperial Staff"
         },
         {
             "name": "Thief's Torment",
-            "baseType": "Prismatic Ring"
+            "base item": "Prismatic Ring"
         },
         {
             "name": "Third Piece of Brutality",
-            "baseType": "Imperial Staff Piece"
+            "base item": "Imperial Staff Piece"
         },
         {
             "name": "Third Piece of Directions",
-            "baseType": "Blunt Arrow Quiver Piece"
+            "base item": "Blunt Arrow Quiver Piece"
         },
         {
             "name": "Third Piece of Focus",
-            "baseType": "Archon Kite Shield Piece"
+            "base item": "Archon Kite Shield Piece"
         },
         {
             "name": "Third Piece of Storms",
-            "baseType": "Callous Mask Piece"
+            "base item": "Callous Mask Piece"
         },
         {
             "name": "Third Piece of the Arcane",
-            "baseType": "Legion Sword Piece"
+            "base item": "Legion Sword Piece"
         },
         {
             "name": "Thousand Ribbons",
-            "baseType": "Simple Robe"
+            "base item": "Simple Robe"
         },
         {
             "name": "Thousand Teeth Temu",
-            "baseType": "Vaal Buckler"
+            "base item": "Vaal Buckler"
         },
         {
             "name": "Thread of Hope",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Thread of Hope",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Three-step Assault",
-            "baseType": "Shagreen Boots"
+            "base item": "Shagreen Boots"
         },
         {
             "name": "Thrillsteel",
-            "baseType": "Barbute Helmet"
+            "base item": "Barbute Helmet"
         },
         {
             "name": "Thunderfist",
-            "baseType": "Murder Mitts"
+            "base item": "Murder Mitts"
         },
         {
             "name": "Thundersight",
-            "baseType": "Solaris Circlet"
+            "base item": "Solaris Circlet"
         },
         {
             "name": "Tidebreaker",
-            "baseType": "Imperial Maul"
+            "base item": "Imperial Maul"
         },
         {
             "name": "Timeclasp",
-            "baseType": "Moonstone Ring"
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Tinkerskin",
-            "baseType": "Sadist Garb"
+            "base item": "Sadist Garb"
         },
         {
             "name": "Titucius' Span",
-            "baseType": "Reinforced Tower Shield"
+            "base item": "Reinforced Tower Shield"
         },
         {
             "name": "To Dust",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Tombfist",
-            "baseType": "Steelscale Gauntlets"
+            "base item": "Steelscale Gauntlets"
         },
         {
             "name": "Tombfist",
-            "baseType": "Steelscale Gauntlets"
+            "base item": "Steelscale Gauntlets"
         },
         {
             "name": "Torchoak Step",
-            "baseType": "Antique Greaves"
+            "base item": "Antique Greaves"
         },
         {
             "name": "Touch of Anguish",
-            "baseType": "Imperial Claw"
+            "base item": "Imperial Claw"
         },
         {
             "name": "Transcendent Flesh",
-            "baseType": "Crimson Jewel"
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Transcendent Mind",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Transcendent Spirit",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Tremor Rod",
-            "baseType": "Military Staff"
+            "base item": "Military Staff"
         },
         {
             "name": "Triad Grip",
-            "baseType": "Mesh Gloves"
+            "base item": "Mesh Gloves"
         },
         {
             "name": "Triumvirate Authority",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Triumvirate Authority",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Trolltimber Spire",
-            "baseType": "Cedar Tower Shield"
+            "base item": "Cedar Tower Shield"
         },
         {
             "name": "Trypanon",
-            "baseType": "Great Mallet"
+            "base item": "Great Mallet"
         },
         {
             "name": "Tukohama's Fortress",
-            "baseType": "Ebony Tower Shield"
+            "base item": "Ebony Tower Shield"
         },
         {
             "name": "Tulborn",
-            "baseType": "Opal Wand"
+            "base item": "Opal Wand"
         },
         {
             "name": "Tulfall",
-            "baseType": "Opal Wand"
+            "base item": "Opal Wand"
         },
         {
             "name": "Twisted Distant Memory",
-            "baseType": "Synthesised Map"
+            "base item": "Synthesised Map"
         },
         {
             "name": "Twyzel",
-            "baseType": "Sage Wand"
+            "base item": "Sage Wand"
         },
         {
             "name": "Ulaman's Gaze",
-            "baseType": "Searching Eye Jewel"
+            "base item": "Searching Eye Jewel"
         },
         {
             "name": "Umbilicus Immortalis",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Unending Hunger",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Ungil's Gauche",
-            "baseType": "Boot Knife"
+            "base item": "Boot Knife"
         },
         {
             "name": "Ungil's Harmony",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "United in Dream",
-            "baseType": "Cutlass"
+            "base item": "Cutlass"
         },
         {
             "name": "Unnatural Instinct",
-            "baseType": "Viridian Jewel"
+            "base item": "Viridian Jewel"
         },
         {
             "name": "Unyielding Flame",
-            "baseType": "Archon Kite Shield"
+            "base item": "Archon Kite Shield"
         },
         {
             "name": "Usurper's Penance",
-            "baseType": "Eternal Burgonet"
+            "base item": "Eternal Burgonet"
+        },
+        {
+            "name": "Utula's Hunger",
+            "base item": "Majestic Plate"
         },
         {
             "name": "Uul-Netol's Embrace",
-            "baseType": "Vaal Axe"
+            "base item": "Vaal Axe"
         },
         {
             "name": "Uul-Netol's Kiss",
-            "baseType": "Vaal Axe"
+            "base item": "Vaal Axe"
         },
         {
             "name": "Uul-Netol's Vow",
-            "baseType": "Unset Amulet"
+            "base item": "Unset Amulet"
         },
         {
             "name": "Uzaza's Meadow",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Uzaza's Mountain",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Uzaza's Valley",
-            "baseType": "Sapphire Ring"
+            "base item": "Sapphire Ring"
         },
         {
             "name": "Vaal Caress",
-            "baseType": "Bronzescale Gauntlets"
+            "base item": "Bronzescale Gauntlets"
         },
         {
             "name": "Valako's Sign",
-            "baseType": "Topaz Ring"
+            "base item": "Topaz Ring"
         },
         {
             "name": "Valyrium",
-            "baseType": "Moonstone Ring"
+            "base item": "Moonstone Ring"
         },
         {
             "name": "Varunastra",
-            "baseType": "Vaal Blade"
+            "base item": "Vaal Blade"
         },
         {
             "name": "Vaults of Atziri",
-            "baseType": "Vaal Pyramid Map"
+            "base item": "Vaal Pyramid Map"
         },
         {
             "name": "Veil of the Night",
-            "baseType": "Great Helmet"
+            "base item": "Great Helmet"
         },
         {
             "name": "Venopuncture",
-            "baseType": "Iron Ring"
+            "base item": "Iron Ring"
         },
         {
             "name": "Ventor's Gamble",
-            "baseType": "Gold Ring"
+            "base item": "Gold Ring"
         },
         {
             "name": "Veruso's Battering Rams",
-            "baseType": "Titan Gauntlets"
+            "base item": "Titan Gauntlets"
         },
         {
             "name": "Vessel of Vinktar",
-            "baseType": "Topaz Flask"
+            "base item": "Topaz Flask"
         },
         {
             "name": "Vessel of Vinktar",
-            "baseType": "Topaz Flask"
+            "base item": "Topaz Flask"
         },
         {
             "name": "Vessel of Vinktar",
-            "baseType": "Topaz Flask"
+            "base item": "Topaz Flask"
         },
         {
             "name": "Vessel of Vinktar",
-            "baseType": "Topaz Flask"
+            "base item": "Topaz Flask"
         },
         {
             "name": "Vessel of Vinktar",
-            "baseType": "Topaz Flask"
+            "base item": "Topaz Flask"
         },
         {
             "name": "Victario's Acuity",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "Victario's Charity",
-            "baseType": "Laminated Kite Shield"
+            "base item": "Laminated Kite Shield"
         },
         {
             "name": "Victario's Flight",
-            "baseType": "Goathide Boots"
+            "base item": "Goathide Boots"
         },
         {
             "name": "Victario's Influence",
-            "baseType": "Lacquered Garb"
+            "base item": "Lacquered Garb"
         },
         {
             "name": "Victorious Fate",
-            "baseType": "Ultimatum Aspect"
+            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Viridi's Veil",
-            "baseType": "Praetor Crown"
+            "base item": "Praetor Crown"
         },
         {
             "name": "Vis Mortis",
-            "baseType": "Necromancer Silks"
+            "base item": "Necromancer Silks"
         },
         {
             "name": "Vivinsect",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Vix Lunaris",
-            "baseType": "Cardinal Round Shield"
+            "base item": "Cardinal Round Shield"
         },
         {
             "name": "Vixen's Entrapment",
-            "baseType": "Embroidered Gloves"
+            "base item": "Embroidered Gloves"
         },
         {
             "name": "Voice of the Storm",
-            "baseType": "Lapis Amulet"
+            "base item": "Lapis Amulet"
         },
         {
             "name": "Voices",
-            "baseType": "Large Cluster Jewel"
+            "base item": "Large Cluster Jewel"
         },
         {
             "name": "Void Battery",
-            "baseType": "Prophecy Wand"
+            "base item": "Prophecy Wand"
         },
         {
             "name": "Voidbringer",
-            "baseType": "Conjurer Gloves"
+            "base item": "Conjurer Gloves"
         },
         {
             "name": "Voideye",
-            "baseType": "Unset Ring"
+            "base item": "Unset Ring"
         },
         {
             "name": "Voidfletcher",
-            "baseType": "Primal Arrow Quiver"
+            "base item": "Primal Arrow Quiver"
         },
         {
             "name": "Voidforge",
-            "baseType": "Infernal Sword"
+            "base item": "Infernal Sword"
         },
         {
             "name": "Voidhome",
-            "baseType": "Dread Maul"
+            "base item": "Dread Maul"
         },
         {
             "name": "Voidwalker",
-            "baseType": "Murder Boots"
+            "base item": "Murder Boots"
         },
         {
             "name": "Volkuur's Guidance",
-            "baseType": "Zealot Gloves"
+            "base item": "Zealot Gloves"
         },
         {
             "name": "Volkuur's Guidance",
-            "baseType": "Zealot Gloves"
+            "base item": "Zealot Gloves"
         },
         {
             "name": "Volkuur's Guidance",
-            "baseType": "Zealot Gloves"
+            "base item": "Zealot Gloves"
         },
         {
             "name": "Voll's Devotion",
-            "baseType": "Agate Amulet"
+            "base item": "Agate Amulet"
         },
         {
             "name": "Voll's Protector",
-            "baseType": "Holy Chainmail"
+            "base item": "Holy Chainmail"
         },
         {
             "name": "Voll's Vision",
-            "baseType": "Praetor Crown"
+            "base item": "Praetor Crown"
         },
         {
             "name": "Voltaxic Rift",
-            "baseType": "Spine Bow"
+            "base item": "Spine Bow"
         },
         {
             "name": "Vorana's March",
-            "baseType": "Runic Sabatons"
+            "base item": "Runic Sabatons"
         },
         {
             "name": "Vorana's Preparation",
-            "baseType": "Iron Flask"
+            "base item": "Iron Flask"
         },
         {
             "name": "Vulconus",
-            "baseType": "Demon Dagger"
+            "base item": "Demon Dagger"
         },
         {
             "name": "Wake of Destruction",
-            "baseType": "Mesh Boots"
+            "base item": "Mesh Boots"
         },
         {
             "name": "Wanderlust",
-            "baseType": "Wool Shoes"
+            "base item": "Wool Shoes"
         },
         {
             "name": "Warped Timepiece",
-            "baseType": "Turquoise Amulet"
+            "base item": "Turquoise Amulet"
         },
         {
             "name": "Warrior's Legacy",
-            "baseType": "Ruby Ring"
+            "base item": "Ruby Ring"
+        },
+        {
+            "name": "Warrior's Tale",
+            "base item": "Crimson Jewel"
         },
         {
             "name": "Watcher's Eye",
-            "baseType": "Prismatic Jewel"
+            "base item": "Prismatic Jewel"
         },
         {
             "name": "Whakawairua Tuahu",
-            "baseType": "Strand Map"
+            "base item": "Strand Map"
         },
         {
             "name": "Wheel of the Stormsail",
-            "baseType": "Rotted Round Shield"
+            "base item": "Rotted Round Shield"
         },
         {
             "name": "White Wind",
-            "baseType": "Imperial Skean"
+            "base item": "Imperial Skean"
         },
         {
             "name": "Wideswing",
-            "baseType": "Poleaxe"
+            "base item": "Poleaxe"
         },
         {
             "name": "Widowhail",
-            "baseType": "Crude Bow"
+            "base item": "Crude Bow"
         },
         {
             "name": "Widowmaker",
-            "baseType": "Boot Blade"
+            "base item": "Boot Blade"
         },
         {
             "name": "Wildslash",
-            "baseType": "Awl"
+            "base item": "Awl"
         },
         {
             "name": "Will of Chaos",
-            "baseType": "Ultimatum Aspect"
+            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Willclash",
-            "baseType": "Golden Mask"
+            "base item": "Golden Mask"
         },
         {
             "name": "Willowgift",
-            "baseType": "Jade Amulet"
+            "base item": "Jade Amulet"
         },
         {
             "name": "Wilma's Requital",
-            "baseType": "Solaris Circlet"
+            "base item": "Solaris Circlet"
         },
         {
             "name": "Windripper",
-            "baseType": "Imperial Bow"
+            "base item": "Imperial Bow"
         },
         {
             "name": "Winds of Change",
-            "baseType": "Ancient Gauntlets"
+            "base item": "Ancient Gauntlets"
         },
         {
             "name": "Windscream",
-            "baseType": "Reinforced Greaves"
+            "base item": "Reinforced Greaves"
         },
         {
             "name": "Wings of Entropy",
-            "baseType": "Ezomyte Axe"
+            "base item": "Ezomyte Axe"
         },
         {
             "name": "Winterheart",
-            "baseType": "Gold Amulet"
+            "base item": "Gold Amulet"
         },
         {
             "name": "Winterweave",
-            "baseType": "Coral Ring"
+            "base item": "Coral Ring"
         },
         {
             "name": "Witchbane",
-            "baseType": "Cobalt Jewel"
+            "base item": "Cobalt Jewel"
         },
         {
             "name": "Witchfire Brew",
-            "baseType": "Stibnite Flask"
+            "base item": "Stibnite Flask"
         },
         {
             "name": "Witchhunter's Judgment",
-            "baseType": "Highborn Staff"
+            "base item": "Highborn Staff"
         },
         {
             "name": "Wondertrap",
-            "baseType": "Velvet Slippers"
+            "base item": "Velvet Slippers"
         },
         {
             "name": "Wraithlord",
-            "baseType": "Bone Circlet"
+            "base item": "Bone Circlet"
         },
         {
             "name": "Wreath of Phrecia",
-            "baseType": "Iron Circlet"
+            "base item": "Iron Circlet"
         },
         {
             "name": "Wurm's Molt",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Wurm's Molt",
-            "baseType": "Leather Belt"
+            "base item": "Leather Belt"
         },
         {
             "name": "Wyrmsign",
-            "baseType": "Wyrmscale Gauntlets"
+            "base item": "Wyrmscale Gauntlets"
         },
         {
             "name": "Xirgil's Crank",
-            "baseType": "Coiled Staff"
+            "base item": "Coiled Staff"
         },
         {
             "name": "Xoph's Blood",
-            "baseType": "Amber Amulet"
+            "base item": "Amber Amulet"
         },
         {
             "name": "Xoph's Heart",
-            "baseType": "Amber Amulet"
+            "base item": "Amber Amulet"
         },
         {
             "name": "Xoph's Inception",
-            "baseType": "Citadel Bow"
+            "base item": "Citadel Bow"
         },
         {
             "name": "Xoph's Nurture",
-            "baseType": "Citadel Bow"
+            "base item": "Citadel Bow"
         },
         {
             "name": "Yaomac's Accord",
-            "baseType": "Vaal Sceptre"
+            "base item": "Vaal Sceptre"
         },
         {
             "name": "Ylfeban's Trickery",
-            "baseType": "Hubris Circlet"
+            "base item": "Hubris Circlet"
         },
         {
             "name": "Yoke of Suffering",
-            "baseType": "Onyx Amulet"
+            "base item": "Onyx Amulet"
         },
         {
             "name": "Yriel's Fostering",
-            "baseType": "Exquisite Leather"
+            "base item": "Exquisite Leather"
         },
         {
             "name": "Yriel's Fostering",
-            "baseType": "Exquisite Leather"
+            "base item": "Exquisite Leather"
         },
         {
             "name": "Yriel's Fostering",
-            "baseType": "Exquisite Leather"
+            "base item": "Exquisite Leather"
         },
         {
             "name": "Zahndethus' Cassock",
-            "baseType": "Sage's Robe"
+            "base item": "Sage's Robe"
         },
         {
             "name": "Zeel's Amplifier",
-            "baseType": "Polished Spiked Shield"
+            "base item": "Polished Spiked Shield"
         },
         {
             "name": "Zerphi's Heart",
-            "baseType": "Paua Amulet"
+            "base item": "Paua Amulet"
         },
         {
             "name": "Zerphi's Last Breath",
-            "baseType": "Grand Mana Flask"
+            "base item": "Grand Mana Flask"
         }
     ];

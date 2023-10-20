@@ -16,9 +16,9 @@
     <div class="requires-authorization">
         <label for="league-select">league</label>
         <select id="league-select">
-            <option value="SSF+Crucible">Crucible SSF</option>
+            <option value="SSF+Ancestor">Ancestor SSF</option>
             <option value="SSF+Standard">Standard SSF</option>
-            <option value="Crucible">Crucible</option>
+            <option value="Ancestor">Ancestor</option>
             <option value="Standard">Standard</option>
         </select>
         <label for="uniquestash-select">unique stash</label>
@@ -27,13 +27,15 @@
         <select id="filter-select"></select>
         <input id="update-filter-button" type="button" value="update filter" disabled="disabled"/>
         <div class="break"></div>
-        <div class="container">
+        <input type="checkbox" id="only-global-drops-cb"/>
+        <label for="only-global-drops-cb">highlight only global drops (experimental)</label>
+        <div class="break"></div>
+        <div class="container" style="display: none">
             <input type="checkbox" id="custom-style-cb"/>
             <label for="custom-style-cb">custom style</label>
             <textarea id="custom-style-textarea"></textarea>
         </div>
-        <div class="break"></div>
-        <div class="break"></div>
+        <hr width="100%"/>
         <div id="info"></div>
         <div class="break"></div>
         <div id="rate-limit-info"></div>

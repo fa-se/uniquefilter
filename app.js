@@ -56,6 +56,7 @@ const server = http.createServer(async (request, response) => {
         case '/js/unique.js':
         case '/js/filter.js':
         case '/json/drop-enabled-uniques.js':
+        case '/json/global-drop-enabled-uniques.js':
         case '/css/style.css':
         case '/fonts/nunito-sans-v12-latin-italic.woff':
         case '/fonts/nunito-sans-v12-latin-italic.woff2':

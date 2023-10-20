@@ -1,6 +1,7 @@
 'use strict';
 
 import {allDropEnabledUniques} from "../json/drop-enabled-uniques.js";
+import {allGlobalDropEnabledUniques} from "../json/global-drop-enabled-uniques.js";
 
 export class Unique{
     constructor(name, baseType) {
@@ -26,13 +27,16 @@ export class UniqueList{
         }
     }
 
-    getMissingUniques(){
+    getMissingUniques(globalOnly = false){
         let missingUniques = [];
 
         for (let unique of allDropEnabledUniques){
+        
+        let uniqueList = globalOnly ? allGlobalDropEnabledUniques : allDropEnabledUniques;
+
             let uniqueIdx = this.uniqesMap.get(unique.name);
             if(uniqueIdx === undefined){
-                missingUniques.push(new Unique(unique.name, unique.baseType));
+                missingUniques.push(new Unique(unique.name, unique["base item"]));
             }
         }
 
