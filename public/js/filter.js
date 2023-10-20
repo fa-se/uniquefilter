@@ -91,9 +91,9 @@ ${style}\n`;
 			this.version += versionSuffix;
 		}
 
-		let descriptionSuffix = '\nModified by uniquefilter.dev';
+		let descriptionSuffix = 'Modified by uniquefilter.dev';
 		if (!this.description.endsWith(descriptionSuffix)) {
-			this.description += descriptionSuffix;
+			this.description += '\n' + descriptionSuffix;
 		}
 	}
 
