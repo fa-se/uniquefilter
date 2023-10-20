@@ -54,7 +54,9 @@ export class StashList {
         this.stashes = [];
         if (apiResponse.hasOwnProperty('children')) {
             this.#addAllChildren(this.stashes, apiResponse.children);
-        } else {
+        }
+        // if stash contains no items, apiResponse won't have the stashes property
+        else if (apiResponse.hasOwnProperty('stashes')){
             this.#addAllChildren(this.stashes, apiResponse.stashes)
         }
     }
