@@ -113,6 +113,10 @@ export const allDropEnabledUniques =
             "base item": "Ghastly Eye Jewel"
         },
         {
+            "name": "Ambition",
+            "base item": "Vaal Aspect"
+        },
+        {
             "name": "Ambu's Charge",
             "base item": "Crusader Chainmail"
         },
@@ -355,6 +359,10 @@ export const allDropEnabledUniques =
         {
             "name": "Bear's Girdle",
             "base item": "Leather Belt"
+        },
+        {
+            "name": "Beauty",
+            "base item": "Vaal Aspect"
         },
         {
             "name": "Belly of the Beast",
@@ -741,6 +749,10 @@ export const allDropEnabledUniques =
             "base item": "Vengeful Contract"
         },
         {
+            "name": "Cooperation",
+            "base item": "Vaal Aspect"
+        },
+        {
             "name": "Coralito's Signature",
             "base item": "Diamond Flask"
         },
@@ -837,6 +849,10 @@ export const allDropEnabledUniques =
             "base item": "Onyx Amulet"
         },
         {
+            "name": "Curiosity",
+            "base item": "Vaal Aspect"
+        },
+        {
             "name": "Curtain Call",
             "base item": "Plague Mask"
         },
@@ -891,10 +907,6 @@ export const allDropEnabledUniques =
         {
             "name": "Dead Reckoning",
             "base item": "Cobalt Jewel"
-        },
-        {
-            "name": "Deadly End",
-            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Death and Taxes",
@@ -1161,10 +1173,6 @@ export const allDropEnabledUniques =
             "base item": "Goliath Gauntlets"
         },
         {
-            "name": "Endless Misery",
-            "base item": "Cobalt Jewel"
-        },
-        {
             "name": "Energised Armour",
             "base item": "Crimson Jewel"
         },
@@ -1413,6 +1421,10 @@ export const allDropEnabledUniques =
             "base item": "Solaris Circlet"
         },
         {
+            "name": "Gamblesprint",
+            "base item": "Hydrascale Boots"
+        },
+        {
             "name": "Gang's Momentum",
             "base item": "Legion Boots"
         },
@@ -1641,10 +1653,6 @@ export const allDropEnabledUniques =
             "base item": "Onyx Amulet"
         },
         {
-            "name": "Honoured Alliance",
-            "base item": "Coral Ring"
-        },
-        {
             "name": "Honourhome",
             "base item": "Soldier Helmet"
         },
@@ -1695,10 +1703,6 @@ export const allDropEnabledUniques =
         {
             "name": "Ichimonji",
             "base item": "Corsair Sword"
-        },
-        {
-            "name": "Ignominious Fate",
-            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Ikiaho's Promise",
@@ -1811,6 +1815,10 @@ export const allDropEnabledUniques =
         {
             "name": "Iron Commander",
             "base item": "Death Bow"
+        },
+        {
+            "name": "Ixchel's Temptation",
+            "base item": "Gold Ring"
         },
         {
             "name": "Jack, the Axe",
@@ -2277,6 +2285,10 @@ export const allDropEnabledUniques =
             "base item": "Cobalt Jewel"
         },
         {
+            "name": "Nametaker",
+            "base item": "Graceful Sword"
+        },
+        {
             "name": "Natural Affinity",
             "base item": "Small Cluster Jewel"
         },
@@ -2389,6 +2401,10 @@ export const allDropEnabledUniques =
             "base item": "Bismuth Flask"
         },
         {
+            "name": "Original Sin",
+            "base item": "Amethyst Ring"
+        },
+        {
             "name": "Ornament of the East",
             "base item": "Gut Ripper"
         },
@@ -2467,6 +2483,10 @@ export const allDropEnabledUniques =
         {
             "name": "Powerlessness",
             "base item": "Cobalt Jewel"
+        },
+        {
+            "name": "Pragmatism",
+            "base item": "Colosseum Plate"
         },
         {
             "name": "Praxis",
@@ -3021,10 +3041,6 @@ export const allDropEnabledUniques =
             "base item": "Cloth Belt"
         },
         {
-            "name": "Soul's Wick",
-            "base item": "Cobalt Jewel"
-        },
-        {
             "name": "Soulbound",
             "base item": "Paua Ring"
         },
@@ -3043,10 +3059,6 @@ export const allDropEnabledUniques =
         {
             "name": "Speaker's Wreath",
             "base item": "Prophet Crown"
-        },
-        {
-            "name": "Spirit Guards",
-            "base item": "Viridian Jewel"
         },
         {
             "name": "Split Personality",
@@ -3225,8 +3237,16 @@ export const allDropEnabledUniques =
             "base item": "Tiger Sword"
         },
         {
+            "name": "That Which Was Taken",
+            "base item": "Crimson Jewel"
+        },
+        {
             "name": "The Admiral",
             "base item": "Varnished Coat"
+        },
+        {
+            "name": "The Adorned",
+            "base item": "Crimson Jewel"
         },
         {
             "name": "The Anima Stone",
@@ -3325,6 +3345,10 @@ export const allDropEnabledUniques =
             "base item": "Prophet Crown"
         },
         {
+            "name": "The Burden of Shadows",
+            "base item": "Primordial Staff"
+        },
+        {
             "name": "The Burden of Truth",
             "base item": "Crystal Belt"
         },
@@ -3413,6 +3437,10 @@ export const allDropEnabledUniques =
             "base item": "Coffer Relic"
         },
         {
+            "name": "The Flawed Refuge",
+            "base item": "Maple Round Shield"
+        },
+        {
             "name": "The Fledgling",
             "base item": "Lacquered Helmet"
         },
@@ -3447,6 +3475,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Ghastly Theatre",
             "base item": "Teak Round Shield"
+        },
+        {
+            "name": "The Gilded Chalice",
+            "base item": "Processional Relic"
         },
         {
             "name": "The Gluttonous Tide",
@@ -3495,6 +3527,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Highwayman",
             "base item": "Gold Ring"
+        },
+        {
+            "name": "The Hour of Divinity",
+            "base item": "Censer Relic"
         },
         {
             "name": "The Hungry Loop",
@@ -3709,8 +3745,8 @@ export const allDropEnabledUniques =
             "base item": "Cloth Belt"
         },
         {
-            "name": "The Tower of Ordeals",
-            "base item": "Engraved Ultimatum"
+            "name": "The Trickster's Smile",
+            "base item": "Visored Sallet"
         },
         {
             "name": "The Twilight Temple",
@@ -3719,6 +3755,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Unshattered Will",
             "base item": "Archon Kite Shield"
+        },
+        {
+            "name": "The Untouched Soul",
+            "base item": "Gold Amulet"
         },
         {
             "name": "The Vertex",
@@ -4041,10 +4081,6 @@ export const allDropEnabledUniques =
             "base item": "Lacquered Garb"
         },
         {
-            "name": "Victorious Fate",
-            "base item": "Ultimatum Aspect"
-        },
-        {
             "name": "Viridi's Veil",
             "base item": "Praetor Crown"
         },
@@ -4157,10 +4193,6 @@ export const allDropEnabledUniques =
             "base item": "Ruby Ring"
         },
         {
-            "name": "Warrior's Tale",
-            "base item": "Crimson Jewel"
-        },
-        {
             "name": "Watcher's Eye",
             "base item": "Prismatic Jewel"
         },
@@ -4191,10 +4223,6 @@ export const allDropEnabledUniques =
         {
             "name": "Wildslash",
             "base item": "Awl"
-        },
-        {
-            "name": "Will of Chaos",
-            "base item": "Ultimatum Aspect"
         },
         {
             "name": "Willclash",

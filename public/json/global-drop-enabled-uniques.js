@@ -52,6 +52,14 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Midnight Blade"
     },
     {
+        "name": "Ahuana's Bite",
+        "base item": "Sharktooth Arrow Quiver"
+    },
+    {
+        "name": "Akoya's Gaze",
+        "base item": "Regicide Mask"
+    },
+    {
         "name": "Al Dhih",
         "base item": "Timeworn Claw"
     },
@@ -134,6 +142,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Assailum",
         "base item": "Sinner Tricorne"
+    },
+    {
+        "name": "Astral Projector",
+        "base item": "Topaz Ring"
     },
     {
         "name": "Astramentis",
@@ -286,6 +298,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Bones of Ullr",
         "base item": "Silk Slippers"
+    },
+    {
+        "name": "Bound Fate",
+        "base item": "Cloth Belt"
     },
     {
         "name": "Brain Rattler",
@@ -464,6 +480,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Assassin Bow"
     },
     {
+        "name": "Dead Reckoning",
+        "base item": "Cobalt Jewel"
+    },
+    {
         "name": "Death and Taxes",
         "base item": "Necropolis Map"
     },
@@ -490,6 +510,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Deerstalker",
         "base item": "Deerskin Boots"
+    },
+    {
+        "name": "Defiance of Destiny",
+        "base item": "Paua Amulet"
     },
     {
         "name": "Deidbell",
@@ -732,6 +756,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Ornate Mace"
     },
     {
+        "name": "Fury Valve",
+        "base item": "Turquoise Amulet"
+    },
+    {
         "name": "Galesight",
         "base item": "Solaris Circlet"
     },
@@ -916,6 +944,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Corsair Sword"
     },
     {
+        "name": "Ikiaho's Promise",
+        "base item": "Coral Amulet"
+    },
+    {
         "name": "Immortal Flesh",
         "base item": "Leather Belt"
     },
@@ -972,6 +1004,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Steelhead"
     },
     {
+        "name": "Kahuturoa's Certainty",
+        "base item": "Ancient Greaves"
+    },
+    {
         "name": "Kalandra's Touch",
         "base item": "Ring"
     },
@@ -982,6 +1018,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Kaltenhalt",
         "base item": "Painted Buckler"
+    },
+    {
+        "name": "Kaom's Binding",
+        "base item": "Heavy Belt"
     },
     {
         "name": "Kaom's Heart",
@@ -1014,6 +1054,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Kikazaru",
         "base item": "Topaz Ring"
+    },
+    {
+        "name": "Kiloava's Bluster",
+        "base item": "Ironwood Buckler"
     },
     {
         "name": "Kingsguard",
@@ -1130,6 +1174,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Lycosidae",
         "base item": "Rawhide Tower Shield"
+    },
+    {
+        "name": "Maata's Teaching",
+        "base item": "Karui Sceptre"
     },
     {
         "name": "Machina Mitts",
@@ -1296,6 +1344,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Fright Claw"
     },
     {
+        "name": "Mother's Embrace",
+        "base item": "Heavy Belt"
+    },
+    {
         "name": "Natural Hierarchy",
         "base item": "Rotfeather Talisman"
     },
@@ -1458,6 +1510,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Rainbowstride",
         "base item": "Conjurer Boots"
+    },
+    {
+        "name": "Rakiata's Dance",
+        "base item": "Engraved Greatsword"
     },
     {
         "name": "Ralakesh's Impatience",
@@ -1840,6 +1896,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Coral Amulet"
     },
     {
+        "name": "Tawhanuku's Timing",
+        "base item": "Moonstone Ring"
+    },
+    {
         "name": "Tear of Purity",
         "base item": "Lapis Amulet"
     },
@@ -2200,6 +2260,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Eternal Burgonet"
     },
     {
+        "name": "Utula's Hunger",
+        "base item": "Majestic Plate"
+    },
+    {
         "name": "Vaal Caress",
         "base item": "Bronzescale Gauntlets"
     },
@@ -2318,6 +2382,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Warped Timepiece",
         "base item": "Turquoise Amulet"
+    },
+    {
+        "name": "Warrior's Legacy",
+        "base item": "Ruby Ring"
     },
     {
         "name": "Whakawairua Tuahu",
@@ -2443,4 +2511,4 @@ export const allGlobalDropEnabledUniques = [
         "name": "Zerphi's Last Breath",
         "base item": "Grand Mana Flask"
     }
-]
+];
