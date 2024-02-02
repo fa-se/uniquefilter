@@ -11,7 +11,7 @@ if (document.readyState !== "loading") {
 }
 
 async function main() {
-    if(!poeApi.isReady()){
+    if (!poeApi.isReady()) {
         return;
     }
     setupEventListeners();
@@ -25,19 +25,19 @@ async function main() {
     // manually trigger change event
     selectValueChanged();
 
-    async function fillFilterSelect(){
+    async function fillFilterSelect() {
         let filterSelect = document.getElementById('filter-select');
         let filters = await poeApi.getAccountItemFilters();
 
         let options = [];
-        for(let filter of filters){
+        for (let filter of filters) {
             let option = document.createElement('option');
             option.value = filter.id;
             option.innerHTML = filter.filter_name;
             options.push(option);
         }
 
-        filterSelect.replaceChildren(... options);
+        filterSelect.replaceChildren(...options);
     }
 
 
@@ -78,7 +78,7 @@ async function main() {
         filterSelect.addEventListener('change', selectValueChanged);
     }
 
-    async function updateFilter(){
+    async function updateFilter() {
         let updateFilterButton = document.getElementById('update-filter-button');
         let stashSelect = document.getElementById('uniquestash-select');
         let filterSelect = document.getElementById('filter-select');
@@ -94,28 +94,28 @@ async function main() {
         let selectedStash = uniqueStashes[stashSelect.value];
         let selectedFilter = filterSelect.value;
         let containedUniques = await selectedStash.getContainedUniques();
+        console.log("owned uniques: ", containedUniques.uniquesMap);
         let missingUniques = containedUniques.getMissingUniques(globalDropsOnly);
-        console.log(missingUniques); // print because the list itself might be useful to users
+        console.log("missing uniques: ", missingUniques); // print because the list itself might be useful to users
         info.innerText = "updating filter...";
 
         let filter = new Filter(await poeApi.getItemFilter(selectedFilter));
-        if(customStyleCheckbox.checked){
+        if (customStyleCheckbox.checked) {
             filter.setCustomStyle(customStyleTextArea.value);
         }
         let result = await filter.updateRulesForMissingUniques(missingUniques);
 
-        if(result.error){
+        if (result.error) {
             console.log(result);
             info.innerText = result.error.message;
-        }
-        else{
+        } else {
             info.innerText = "filter successfully updated";
         }
         updateFilterButton.disabled = false;
-        }
     }
+}
 
-function fillStashSelect(uniqueStashes){
+function fillStashSelect(uniqueStashes) {
     let stashSelect = document.getElementById('uniquestash-select');
     let options = [];
 
@@ -125,9 +125,10 @@ function fillStashSelect(uniqueStashes){
         option.innerHTML = stash.name;
         options.push(option);
     });
-    stashSelect.replaceChildren(... options);
+    stashSelect.replaceChildren(...options);
 }
-function selectValueChanged(){
+
+function selectValueChanged() {
     let stashSelect = document.getElementById('uniquestash-select');
     let filterSelect = document.getElementById('filter-select');
     let updateFilterButton = document.getElementById('update-filter-button');
@@ -137,7 +138,7 @@ function selectValueChanged(){
     updateFilterButton.disabled = (!isStashSelected || !isFilterSelected);
 }
 
-function prepareInput(){
+function prepareInput() {
     let customStyleCheckbox = document.getElementById('custom-style-cb');
     let customStyleTextArea = document.getElementById('custom-style-textarea');
     let globalDropsOnlyCheckbox = document.getElementById('only-global-drops-cb');
