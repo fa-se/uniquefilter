@@ -481,10 +481,6 @@ export const allDropEnabledUniques =
             "base item": "Silk Slippers"
         },
         {
-            "name": "Booby Lady's Gloves",
-            "base item": "Vaal Gauntlets"
-        },
-        {
             "name": "Bottled Faith",
             "base item": "Sulphur Flask"
         },
@@ -669,6 +665,10 @@ export const allDropEnabledUniques =
             "base item": "Silver Flask"
         },
         {
+            "name": "Circle of Ambition",
+            "base item": "Prismatic Ring"
+        },
+        {
             "name": "Circle of Anguish",
             "base item": "Ruby Ring"
         },
@@ -847,6 +847,14 @@ export const allDropEnabledUniques =
         {
             "name": "Crystallised Omniscience",
             "base item": "Onyx Amulet"
+        },
+        {
+            "name": "Curio of Decay",
+            "base item": "Primordial Fragment"
+        },
+        {
+            "name": "Curio of Potential",
+            "base item": "Primordial Fragment"
         },
         {
             "name": "Curiosity",
@@ -1501,6 +1509,10 @@ export const allDropEnabledUniques =
             "base item": "Regicide Mask"
         },
         {
+            "name": "Grace of the Goddess",
+            "base item": "Prophecy Wand"
+        },
+        {
             "name": "Grand Spectrum",
             "base item": "Cobalt Jewel"
         },
@@ -1535,6 +1547,10 @@ export const allDropEnabledUniques =
         {
             "name": "Grand Spectrum",
             "base item": "Viridian Jewel"
+        },
+        {
+            "name": "Grattus Signet",
+            "base item": "Diamond Ring"
         },
         {
             "name": "Gravebind",
@@ -2305,6 +2321,10 @@ export const allDropEnabledUniques =
             "base item": "Nightmare Mace"
         },
         {
+            "name": "Nevalius Inheritance",
+            "base item": "Cloth Belt"
+        },
+        {
             "name": "Ngamahu's Flame",
             "base item": "Abyssal Axe"
         },
@@ -2635,6 +2655,10 @@ export const allDropEnabledUniques =
         {
             "name": "Rational Doctrine",
             "base item": "Cobalt Jewel"
+        },
+        {
+            "name": "Ravenous Passion",
+            "base item": "Zealot Helmet"
         },
         {
             "name": "Razor of the Seventh Sun",
@@ -3237,10 +3261,6 @@ export const allDropEnabledUniques =
             "base item": "Tiger Sword"
         },
         {
-            "name": "That Which Was Taken",
-            "base item": "Crimson Jewel"
-        },
-        {
             "name": "The Admiral",
             "base item": "Varnished Coat"
         },
@@ -3263,6 +3283,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Anvil",
             "base item": "Amber Amulet"
+        },
+        {
+            "name": "The Apostate",
+            "base item": "Cabalist Regalia"
         },
         {
             "name": "The Ascetic",
@@ -3353,6 +3377,10 @@ export const allDropEnabledUniques =
             "base item": "Crystal Belt"
         },
         {
+            "name": "The Celestial Brace",
+            "base item": "Goliath Gauntlets"
+        },
+        {
             "name": "The Chains of Castigation",
             "base item": "Processional Relic"
         },
@@ -3395,6 +3423,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Deep One's Hide",
             "base item": "Studded Round Shield"
+        },
+        {
+            "name": "The Devourer of Minds",
+            "base item": "Pig-Faced Bascinet"
         },
         {
             "name": "The Devouring Diadem",
@@ -3517,6 +3549,10 @@ export const allDropEnabledUniques =
             "base item": "Jade Amulet"
         },
         {
+            "name": "The Hand of Phrecia",
+            "base item": "Mesh Gloves"
+        },
+        {
             "name": "The Harvest",
             "base item": "Jasper Chopper"
         },
@@ -3595,6 +3631,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Pariah",
             "base item": "Unset Ring"
+        },
+        {
+            "name": "The Perandus Pact",
+            "base item": "Prismatic Jewel"
         },
         {
             "name": "The Perfect Form",
@@ -3725,6 +3765,10 @@ export const allDropEnabledUniques =
             "base item": "Prismatic Ring"
         },
         {
+            "name": "The Tempest Rising",
+            "base item": "Goliath Greaves"
+        },
+        {
             "name": "The Tempest's Binding",
             "base item": "Callous Mask"
         },
@@ -3739,6 +3783,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Three Dragons",
             "base item": "Golden Mask"
+        },
+        {
+            "name": "The Tides of Time",
+            "base item": "Vanguard Belt"
         },
         {
             "name": "The Torrent's Reclamation",
@@ -3758,6 +3806,10 @@ export const allDropEnabledUniques =
         },
         {
             "name": "The Untouched Soul",
+            "base item": "Gold Amulet"
+        },
+        {
+            "name": "The Utmost",
             "base item": "Gold Amulet"
         },
         {
@@ -4039,6 +4091,10 @@ export const allDropEnabledUniques =
         {
             "name": "Ventor's Gamble",
             "base item": "Gold Ring"
+        },
+        {
+            "name": "Veruso's Ambition",
+            "base item": "Shackled Boots"
         },
         {
             "name": "Veruso's Battering Rams",

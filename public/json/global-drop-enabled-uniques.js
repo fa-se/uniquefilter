@@ -1200,10 +1200,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Harmonic Spirit Shield"
     },
     {
-        "name": "Malachai's Mark",
-        "base item": "Murder Mitts"
-    },
-    {
         "name": "Malachai's Simula",
         "base item": "Iron Mask"
     },
@@ -1230,10 +1226,6 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Maloney's Nightfall",
         "base item": "Vile Arrow Quiver"
-    },
-    {
-        "name": "Manastorm",
-        "base item": "Lacewood Spirit Shield"
     },
     {
         "name": "Mao Kun",
@@ -1348,6 +1340,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Heavy Belt"
     },
     {
+        "name": "Nametaker",
+        "base item": "Graceful Sword"
+    },
+    {
         "name": "Natural Hierarchy",
         "base item": "Rotfeather Talisman"
     },
@@ -1458,6 +1454,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Poorjoy's Asylum",
         "base item": "Temple Map"
+    },
+    {
+        "name": "Pragmatism",
+        "base item": "Colosseum Plate"
     },
     {
         "name": "Praxis",
@@ -1836,6 +1836,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Topaz Ring"
     },
     {
+        "name": "Storm's Gift",
+        "base item": "Assassin's Mitts"
+    },
+    {
         "name": "Stormcharger",
         "base item": "Plated Greaves"
     },
@@ -1960,6 +1964,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Prophet Crown"
     },
     {
+        "name": "The Burden of Shadows",
+        "base item": "Primordial Staff"
+    },
+    {
         "name": "The Coming Calamity",
         "base item": "Destroyer Regalia"
     },
@@ -1980,18 +1988,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Reaver Sword"
     },
     {
-        "name": "The Dark Seer",
-        "base item": "Shadow Sceptre"
-    },
-    {
-        "name": "The Dark Seer",
-        "base item": "Shadow Sceptre"
-    },
-    {
-        "name": "The Dark Seer",
-        "base item": "Shadow Sceptre"
-    },
-    {
         "name": "The Deep One's Hide",
         "base item": "Studded Round Shield"
     },
@@ -2010,6 +2006,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "The Eternal Apple",
         "base item": "Chiming Spirit Shield"
+    },
+    {
+        "name": "The Flawed Refuge",
+        "base item": "Maple Round Shield"
     },
     {
         "name": "The Fourth Vow",
@@ -2136,8 +2136,16 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Golden Mask"
     },
     {
+        "name": "The Trickster's Smile",
+        "base item": "Visored Sallet"
+    },
+    {
         "name": "The Twilight Temple",
         "base item": "Moon Temple Map"
+    },
+    {
+        "name": "The Untouched Soul",
+        "base item": "Gold Amulet"
     },
     {
         "name": "The Warden's Brand",
@@ -2460,10 +2468,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Velvet Slippers"
     },
     {
-        "name": "Wraithlord",
-        "base item": "Bone Circlet"
-    },
-    {
         "name": "Wreath of Phrecia",
         "base item": "Iron Circlet"
     },
@@ -2482,10 +2486,6 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Ylfeban's Trickery",
         "base item": "Hubris Circlet"
-    },
-    {
-        "name": "Yoke of Suffering",
-        "base item": "Onyx Amulet"
     },
     {
         "name": "Yriel's Fostering",
