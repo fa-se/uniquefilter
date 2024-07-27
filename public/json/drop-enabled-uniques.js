@@ -25,6 +25,10 @@ export const allDropEnabledUniques =
             "base item": "Butcher Axe"
         },
         {
+            "name": "Admiral's Arrogance",
+            "base item": "Ambush Mitts"
+        },
+        {
             "name": "Advancing Fortress",
             "base item": "Gut Ripper"
         },
@@ -391,10 +395,6 @@ export const allDropEnabledUniques =
         {
             "name": "Bino's Kitchen Knife",
             "base item": "Slaughter Knife"
-        },
-        {
-            "name": "Bisco's Collar",
-            "base item": "Gold Amulet"
         },
         {
             "name": "Bisco's Leash",
@@ -847,6 +847,14 @@ export const allDropEnabledUniques =
         {
             "name": "Crystallised Omniscience",
             "base item": "Onyx Amulet"
+        },
+        {
+            "name": "Curio of Absorption",
+            "base item": "Primordial Fragment"
+        },
+        {
+            "name": "Curio of Consumption",
+            "base item": "Primordial Fragment"
         },
         {
             "name": "Curio of Decay",
@@ -1549,6 +1557,10 @@ export const allDropEnabledUniques =
             "base item": "Viridian Jewel"
         },
         {
+            "name": "Grasping Nightshade",
+            "base item": "Sporebloom Tincture"
+        },
+        {
             "name": "Grattus Signet",
             "base item": "Diamond Ring"
         },
@@ -1867,6 +1879,10 @@ export const allDropEnabledUniques =
         {
             "name": "Kaom's Binding",
             "base item": "Heavy Belt"
+        },
+        {
+            "name": "Kaom's Command",
+            "base item": "Siege Helmet"
         },
         {
             "name": "Kaom's Heart",
@@ -2231,6 +2247,10 @@ export const allDropEnabledUniques =
         {
             "name": "Might of the Meek",
             "base item": "Crimson Jewel"
+        },
+        {
+            "name": "Mightblood Ire",
+            "base item": "Ironwood Tincture"
         },
         {
             "name": "Mightflay",
@@ -2817,6 +2837,10 @@ export const allDropEnabledUniques =
             "base item": "Necromancer Circlet"
         },
         {
+            "name": "Sap of the Seasons",
+            "base item": "Prismatic Tincture"
+        },
+        {
             "name": "Saqawal's Flock",
             "base item": "Silken Hood"
         },
@@ -2879,6 +2903,10 @@ export const allDropEnabledUniques =
         {
             "name": "Sentari's Answer",
             "base item": "Brass Spirit Shield"
+        },
+        {
+            "name": "Serle's Masterwork",
+            "base item": "Phantom Mace"
         },
         {
             "name": "Seven-League Step",
@@ -3197,6 +3225,10 @@ export const allDropEnabledUniques =
             "base item": "Heavy Belt"
         },
         {
+            "name": "Svalinn",
+            "base item": "Girded Tower Shield"
+        },
+        {
             "name": "Tabula Rasa",
             "base item": "Simple Robe"
         },
@@ -3231,6 +3263,10 @@ export const allDropEnabledUniques =
         {
             "name": "Tawhanuku's Timing",
             "base item": "Moonstone Ring"
+        },
+        {
+            "name": "Tawhoa's Felling",
+            "base item": "Piledriver"
         },
         {
             "name": "Tear of Purity",
@@ -3289,10 +3325,6 @@ export const allDropEnabledUniques =
             "base item": "Cabalist Regalia"
         },
         {
-            "name": "The Ascetic",
-            "base item": "Gold Amulet"
-        },
-        {
             "name": "The Aylardex",
             "base item": "Agate Amulet"
         },
@@ -3303,6 +3335,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Baron",
             "base item": "Close Helmet"
+        },
+        {
+            "name": "The Battle Within",
+            "base item": "Oakbranch Tincture"
         },
         {
             "name": "The Beachhead",
@@ -3557,6 +3593,10 @@ export const allDropEnabledUniques =
             "base item": "Jasper Chopper"
         },
         {
+            "name": "The Hateful Accuser",
+            "base item": "Nameless Ring"
+        },
+        {
             "name": "The Hidden Blade",
             "base item": "Ambusher"
         },
@@ -3605,6 +3645,14 @@ export const allDropEnabledUniques =
             "base item": "Citrine Amulet"
         },
         {
+            "name": "The Light of Meaning",
+            "base item": "Prismatic Jewel"
+        },
+        {
+            "name": "The Living Blade",
+            "base item": "Highland Blade"
+        },
+        {
             "name": "The Magnate",
             "base item": "Studded Belt"
         },
@@ -3631,10 +3679,6 @@ export const allDropEnabledUniques =
         {
             "name": "The Pariah",
             "base item": "Unset Ring"
-        },
-        {
-            "name": "The Perandus Pact",
-            "base item": "Prismatic Jewel"
         },
         {
             "name": "The Perfect Form",
@@ -3667,6 +3711,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Queen's Hunger",
             "base item": "Vaal Regalia"
+        },
+        {
+            "name": "The Queller of Minds",
+            "base item": "Nameless Ring"
         },
         {
             "name": "The Rat Cage",
@@ -3719,6 +3767,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Second Sacrament",
             "base item": "Candlestick Relic"
+        },
+        {
+            "name": "The Selfish Shepherd",
+            "base item": "Nameless Ring"
         },
         {
             "name": "The Shattered Divinity",
@@ -4277,6 +4329,10 @@ export const allDropEnabledUniques =
             "base item": "Boot Blade"
         },
         {
+            "name": "Wildfire Phloem",
+            "base item": "Ashbark Tincture"
+        },
+        {
             "name": "Wildslash",
             "base item": "Awl"
         },
@@ -4379,6 +4435,10 @@ export const allDropEnabledUniques =
         {
             "name": "Ylfeban's Trickery",
             "base item": "Hubris Circlet"
+        },
+        {
+            "name": "Ynda's Stand",
+            "base item": "Studded Belt"
         },
         {
             "name": "Yoke of Suffering",

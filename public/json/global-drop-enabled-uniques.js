@@ -232,10 +232,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Slaughter Knife"
     },
     {
-        "name": "Bisco's Collar",
-        "base item": "Gold Amulet"
-    },
-    {
         "name": "Bisco's Leash",
         "base item": "Heavy Belt"
     },
@@ -824,6 +820,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Skinning Knife"
     },
     {
+        "name": "Grattus Signet",
+        "base item": "Diamond Ring"
+    },
+    {
         "name": "Gravebind",
         "base item": "Hydrascale Gauntlets"
     },
@@ -1340,12 +1340,12 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Heavy Belt"
     },
     {
-        "name": "Nametaker",
-        "base item": "Graceful Sword"
-    },
-    {
         "name": "Natural Hierarchy",
         "base item": "Rotfeather Talisman"
+    },
+    {
+        "name": "Nevalius Inheritance",
+        "base item": "Cloth Belt"
     },
     {
         "name": "Ngamahu's Flame",
@@ -1454,10 +1454,6 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Poorjoy's Asylum",
         "base item": "Temple Map"
-    },
-    {
-        "name": "Pragmatism",
-        "base item": "Colosseum Plate"
     },
     {
         "name": "Praxis",
@@ -1916,10 +1912,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Amber Amulet"
     },
     {
-        "name": "The Ascetic",
-        "base item": "Gold Amulet"
-    },
-    {
         "name": "The Aylardex",
         "base item": "Agate Amulet"
     },
@@ -1964,10 +1956,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Prophet Crown"
     },
     {
-        "name": "The Burden of Shadows",
-        "base item": "Primordial Staff"
-    },
-    {
         "name": "The Coming Calamity",
         "base item": "Destroyer Regalia"
     },
@@ -2008,10 +1996,6 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Chiming Spirit Shield"
     },
     {
-        "name": "The Flawed Refuge",
-        "base item": "Maple Round Shield"
-    },
-    {
         "name": "The Fourth Vow",
         "base item": "Devout Chainmail"
     },
@@ -2030,6 +2014,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "The Gull",
         "base item": "Raven Mask"
+    },
+    {
+        "name": "The Hand of Phrecia",
+        "base item": "Mesh Gloves"
     },
     {
         "name": "The Harvest",
@@ -2136,16 +2124,8 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Golden Mask"
     },
     {
-        "name": "The Trickster's Smile",
-        "base item": "Visored Sallet"
-    },
-    {
         "name": "The Twilight Temple",
         "base item": "Moon Temple Map"
-    },
-    {
-        "name": "The Untouched Soul",
-        "base item": "Gold Amulet"
     },
     {
         "name": "The Warden's Brand",
@@ -2302,6 +2282,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Ventor's Gamble",
         "base item": "Gold Ring"
+    },
+    {
+        "name": "Veruso's Ambition",
+        "base item": "Shackled Boots"
     },
     {
         "name": "Veruso's Battering Rams",
