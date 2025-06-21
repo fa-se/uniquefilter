@@ -1,3 +1,4 @@
+// https://www.poewiki.net/index.php?title=Special:CargoExport&tables=items%2C&&fields=items.name%2C+items.base_item%2C&where=items.rarity+%3D+%22Unique%22+AND+items.drop_enabled+%3D+true+AND+items.is_drop_restricted+%3D+false&order+by=&limit=5000&format=json
 export const allGlobalDropEnabledUniques = [
     {
         "name": "Abberath's Hooves",
@@ -820,6 +821,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Skinning Knife"
     },
     {
+        "name": "Grasping Nightshade",
+        "base item": "Sporebloom Tincture"
+    },
+    {
         "name": "Grattus Signet",
         "base item": "Diamond Ring"
     },
@@ -1280,16 +1285,16 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Praetor Crown"
     },
     {
-        "name": "Mercenary's Lot",
-        "base item": "Slink Gloves"
-    },
-    {
         "name": "Midnight Bargain",
         "base item": "Engraved Wand"
     },
     {
         "name": "Might of the Meek",
         "base item": "Crimson Jewel"
+    },
+    {
+        "name": "Mightblood Ire",
+        "base item": "Ironwood Tincture"
     },
     {
         "name": "Mightflay",
@@ -1338,6 +1343,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Mother's Embrace",
         "base item": "Heavy Belt"
+    },
+    {
+        "name": "Mystic Refractor",
+        "base item": "Pagan Wand"
     },
     {
         "name": "Natural Hierarchy",
@@ -1474,6 +1483,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Profane Proxy",
         "base item": "Unset Ring"
+    },
+    {
+        "name": "Prospero's Protection",
+        "base item": "Iron Ring"
     },
     {
         "name": "Pure Talent",
@@ -1648,6 +1661,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Branded Kite Shield"
     },
     {
+        "name": "Sap of the Seasons",
+        "base item": "Prismatic Tincture"
+    },
+    {
         "name": "Scaeva",
         "base item": "Gladius"
     },
@@ -1772,6 +1789,10 @@ export const allGlobalDropEnabledUniques = [
         "base item": "Copper Plate"
     },
     {
+        "name": "Song of the Sirens",
+        "base item": "Fishing Rod"
+    },
+    {
         "name": "Soul Mantle",
         "base item": "Spidersilk Robe"
     },
@@ -1810,6 +1831,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Springleaf",
         "base item": "Plank Kite Shield"
+    },
+    {
+        "name": "Squirming Terror",
+        "base item": "Unset Ring"
     },
     {
         "name": "Starkonja's Head",
@@ -1918,6 +1943,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "The Baron",
         "base item": "Close Helmet"
+    },
+    {
+        "name": "The Battle Within",
+        "base item": "Oakbranch Tincture"
     },
     {
         "name": "The Beast Fur Shawl",
@@ -2402,6 +2431,10 @@ export const allGlobalDropEnabledUniques = [
     {
         "name": "Widowmaker",
         "base item": "Boot Blade"
+    },
+    {
+        "name": "Wildfire Phloem",
+        "base item": "Ashbark Tincture"
     },
     {
         "name": "Wildslash",

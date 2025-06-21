@@ -1,3 +1,4 @@
+// https://www.poewiki.net/index.php?title=Special:CargoExport&tables=items%2C&&fields=items.name%2C+items.base_item%2C&where=items.rarity+%3D+%22Unique%22+AND+items.drop_enabled+%3D+true&order+by=&limit=5000&format=json
 export const allDropEnabledUniques =
     [
         {
@@ -26,7 +27,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "Admiral's Arrogance",
-            "base item": "Ambush Mitts"
+            "base item": "Antique Gauntlets"
         },
         {
             "name": "Advancing Fortress",
@@ -337,6 +338,10 @@ export const allDropEnabledUniques =
             "base item": "Bronze Sceptre"
         },
         {
+            "name": "Azadi Crest",
+            "base item": "Lacquered Buckler"
+        },
+        {
             "name": "Badge of the Brotherhood",
             "base item": "Turquoise Amulet"
         },
@@ -391,6 +396,14 @@ export const allDropEnabledUniques =
         {
             "name": "Berek's Respite",
             "base item": "Two-Stone Ring"
+        },
+        {
+            "name": "Betrayal's Sting",
+            "base item": "Steel Ring"
+        },
+        {
+            "name": "Binds of Bloody Vengeance",
+            "base item": "Vanguard Belt"
         },
         {
             "name": "Bino's Kitchen Knife",
@@ -485,6 +498,10 @@ export const allDropEnabledUniques =
             "base item": "Sulphur Flask"
         },
         {
+            "name": "Bound by Destiny",
+            "base item": "Prismatic Jewel"
+        },
+        {
             "name": "Bound Fate",
             "base item": "Cloth Belt"
         },
@@ -553,6 +570,10 @@ export const allDropEnabledUniques =
             "base item": "Murder Boots"
         },
         {
+            "name": "Cadigan's Authority",
+            "base item": "Platinum Sceptre"
+        },
+        {
             "name": "Cadigan's Crown",
             "base item": "Runic Crown"
         },
@@ -583,6 +604,14 @@ export const allDropEnabledUniques =
         {
             "name": "Cameria's Maul",
             "base item": "Gavel"
+        },
+        {
+            "name": "Cane of Kulemak",
+            "base item": "Serpentine Staff"
+        },
+        {
+            "name": "Cane of Kulemak",
+            "base item": "Serpentine Staff"
         },
         {
             "name": "Cane of Kulemak",
@@ -703,6 +732,10 @@ export const allDropEnabledUniques =
         {
             "name": "Cloak of Tawm'r Isley",
             "base item": "Savant's Robe"
+        },
+        {
+            "name": "Coiling Whisper",
+            "base item": "Amethyst Ring"
         },
         {
             "name": "Cold Iron Point",
@@ -1197,6 +1230,10 @@ export const allDropEnabledUniques =
             "base item": "Cobalt Jewel"
         },
         {
+            "name": "Enmity's Embrace",
+            "base item": "Vermillion Ring"
+        },
+        {
             "name": "Entropic Devastation",
             "base item": "Assassin's Mitts"
         },
@@ -1617,6 +1654,10 @@ export const allDropEnabledUniques =
             "base item": "Cemetery Map"
         },
         {
+            "name": "Hand of Heresy",
+            "base item": "Martyr Gloves"
+        },
+        {
             "name": "Hand of the Fervent",
             "base item": "Zealot Gloves"
         },
@@ -1687,6 +1728,10 @@ export const allDropEnabledUniques =
         {
             "name": "Hopeshredder",
             "base item": "Ranger Bow"
+        },
+        {
+            "name": "Howlcrack",
+            "base item": "Ezomyte Burgonet"
         },
         {
             "name": "Hrimnor's Hymn",
@@ -1999,6 +2044,10 @@ export const allDropEnabledUniques =
         {
             "name": "Legacy of Fury",
             "base item": "Wyrmscale Boots"
+        },
+        {
+            "name": "Legacy of the Rose",
+            "base item": "Judgement Staff"
         },
         {
             "name": "Leper's Alms",
@@ -2317,6 +2366,10 @@ export const allDropEnabledUniques =
             "base item": "Serpentscale Boots"
         },
         {
+            "name": "Mystic Refractor",
+            "base item": "Pagan Wand"
+        },
+        {
             "name": "Nadir Mode",
             "base item": "Cobalt Jewel"
         },
@@ -2597,6 +2650,10 @@ export const allDropEnabledUniques =
             "base item": "Amethyst Flask"
         },
         {
+            "name": "Prospero's Protection",
+            "base item": "Iron Ring"
+        },
+        {
             "name": "Pure Talent",
             "base item": "Viridian Jewel"
         },
@@ -2865,6 +2922,10 @@ export const allDropEnabledUniques =
             "base item": "Mind Cage"
         },
         {
+            "name": "Scornflux",
+            "base item": "Satin Slippers"
+        },
+        {
             "name": "Scorpion's Call",
             "base item": "Heavy Arrow Quiver"
         },
@@ -2905,8 +2966,12 @@ export const allDropEnabledUniques =
             "base item": "Brass Spirit Shield"
         },
         {
-            "name": "Serle's Masterwork",
-            "base item": "Phantom Mace"
+            "name": "Servant of Decay",
+            "base item": "Torturer Garb"
+        },
+        {
+            "name": "Seven Teachings",
+            "base item": "Waxed Garb"
         },
         {
             "name": "Seven-League Step",
@@ -3113,6 +3178,10 @@ export const allDropEnabledUniques =
             "base item": "Prophet Crown"
         },
         {
+            "name": "Spinehail",
+            "base item": "Vile Arrow Quiver"
+        },
+        {
             "name": "Split Personality",
             "base item": "Crimson Jewel"
         },
@@ -3125,8 +3194,16 @@ export const allDropEnabledUniques =
             "base item": "Plank Kite Shield"
         },
         {
+            "name": "Squirming Terror",
+            "base item": "Unset Ring"
+        },
+        {
             "name": "Star of Wraeclast",
             "base item": "Ruby Amulet"
+        },
+        {
+            "name": "Starcaller",
+            "base item": "Abyssal Axe"
         },
         {
             "name": "Starforge",
@@ -3325,6 +3402,10 @@ export const allDropEnabledUniques =
             "base item": "Cabalist Regalia"
         },
         {
+            "name": "The Arkhon's Tools",
+            "base item": "Cloth Belt"
+        },
+        {
             "name": "The Aylardex",
             "base item": "Agate Amulet"
         },
@@ -3443,6 +3524,10 @@ export const allDropEnabledUniques =
         {
             "name": "The Dancing Dervish",
             "base item": "Reaver Sword"
+        },
+        {
+            "name": "The Dark Monarch",
+            "base item": "Lich's Circlet"
         },
         {
             "name": "The Dark Seer",
@@ -3650,7 +3735,7 @@ export const allDropEnabledUniques =
         },
         {
             "name": "The Living Blade",
-            "base item": "Highland Blade"
+            "base item": "Ezomyte Blade"
         },
         {
             "name": "The Magnate",
@@ -4137,6 +4222,10 @@ export const allDropEnabledUniques =
             "base item": "Great Helmet"
         },
         {
+            "name": "Venarius' Astrolabe",
+            "base item": "Astrolabe Amulet"
+        },
+        {
             "name": "Venopuncture",
             "base item": "Iron Ring"
         },
@@ -4313,6 +4402,10 @@ export const allDropEnabledUniques =
             "base item": "Rotted Round Shield"
         },
         {
+            "name": "Whispers of Infinity",
+            "base item": "Seaglass Amulet"
+        },
+        {
             "name": "White Wind",
             "base item": "Imperial Skean"
         },
@@ -4359,6 +4452,10 @@ export const allDropEnabledUniques =
         {
             "name": "Windscream",
             "base item": "Reinforced Greaves"
+        },
+        {
+            "name": "Wine of the Prophet",
+            "base item": "Gold Flask"
         },
         {
             "name": "Wings of Entropy",
