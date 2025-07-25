@@ -1,10 +1,23 @@
 'use strict';
 
 import {PoeApiAuth} from "./poe-api-auth.js";
+import {Stash, StashList} from "./stash.js";
 
-import {Stash, StashList} from "./stash.js"
+export class RateLimitError extends Error {
+    constructor(timeToWait, ...params) {
+        super(...params);
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, RateLimitError);
+        }
+        this.name = 'RateLimitError';
+        this.timeToWait = timeToWait;
+    }
+}
 
 class PoeApi {
+    static isPaused = false;
+    static #wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
+
     constructor() {
         if (!PoeApi.instance) {
             PoeApiAuth.handleAuthorization();
@@ -42,20 +55,19 @@ class PoeApi {
     }
 
     async #getPoeApiData(endpoint, rateLimitPolicy, queryParameters = {}) {
+        while (PoeApi.isPaused) {
+            await PoeApi.#wait(1);
+        }
+
         let baseURL = 'https://api.pathofexile.com';
         let url = new URL(baseURL + endpoint);
         url.search = new URLSearchParams(queryParameters).toString();
 
-        let timeToWait = this.#needToWaitDueToRateLimit(rateLimitPolicy);
-        if(timeToWait > 0){
-            let rateLimitWaitInfo = document.getElementById('rate-limit-info');
-
-            rateLimitWaitInfo.innerText = "waiting for " + String(timeToWait - 1) + " seconds due to poe-api rate limit";
-            rateLimitWaitInfo.style.display = 'block';
-            await this.#wait(timeToWait);
-            rateLimitWaitInfo.style.display = 'none';
-            rateLimitWaitInfo.innerText = '';
+        const timeToWait = this.#needToWaitDueToRateLimit(rateLimitPolicy);
+        if (timeToWait > 0) {
+            throw new RateLimitError(timeToWait);
         }
+
         const response = await fetch(url.toString(), {
             headers: {
                 Authorization: 'Bearer ' + this.accessToken
@@ -68,8 +80,8 @@ class PoeApi {
     async #postPoeApiData(endpoint, data, queryParameters){
         // poe api CORS policy doesn't allow POST request with JSON body from the browser,
         // so the requests need to be proxied by the webserver.
-        let baseURL = 'https://uniquefilter.dev';
-        let url = new URL(baseURL + endpoint);
+        // Use a relative URL to ensure requests are sent to the same origin that served the page.
+        const url = new URL(endpoint, window.location.origin);
         url.search = new URLSearchParams(queryParameters).toString();
 
         const response = await fetch(url.toString(), {
@@ -166,7 +178,7 @@ class PoeApi {
             let backThen = Math.ceil(state.timestamp / 1000);
             // if the limit was exceeded, wait for the time specified by the server
             if(state.waitTime > 0){
-                return (backThen + state.waitTime - now) + 1;
+                return (backThen + state.waitTime - now);
             }
             else if(current < max){
                 return 0; // don't need to wait if limit is not yet reached
@@ -174,14 +186,14 @@ class PoeApi {
             else if (current === max){
                 // if the limit was reached with the previous request, assume that all request were made at the very end
                 // of the sliding window, and wait for the full window width to be on the safe side
-                return (backThen + limit.timePeriod - now) + 1;
+                return (backThen + limit.timePeriod - now);
             }
             // if the limit was exceeded somehow, wait for the 'penalty' wait time specified in the rule
             else return limit.waitTime;
         }
     }
 
-     #wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1e3));
+     
 
     async updateItemFilter(filter) {
         let data = {

@@ -10,119 +10,84 @@ import corsProxy from "./cors-proxy.js";
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
 const port = 8080;
-const baseDirectory = __dirname + 'public';
+const publicDirectory = path.join(__dirname, 'public');
 
 const contentTypes = {
-    html: 'text/html',
-    js: 'text/javascript',
-    css: 'text/css',
-    json: 'application/json',
-    default: 'text/plain',
+    '.html': 'text/html; charset=utf-8',
+    '.js': 'text/javascript; charset=utf-8',
+    '.css': 'text/css; charset=utf-8',
+    '.json': 'application/json; charset=utf-8',
+    '.woff': 'font/woff',
+    '.woff2': 'font/woff2',
+    'default': 'text/plain; charset=utf-8',
 };
-// Encoding für alle contentTypes (bis jetzt nur Text) setzen:
-Object.keys(contentTypes).forEach((key) => {
-    contentTypes[key] += '; charset=utf-8';
-});
+
+function serveFile(filePath, response) {
+    const fileExtension = path.extname(filePath);
+    const mimeType = contentTypes[fileExtension] || contentTypes.default;
+
+    fs.createReadStream(filePath)
+        .on('open', function () {
+            response.setHeader('Content-Type', mimeType);
+            response.statusCode = 200;
+            this.pipe(response);
+        })
+        .on('error', function (err) {
+            response.setHeader('Content-Type', 'text/plain; charset=utf-8');
+            if (err.code === 'ENOENT') {
+                response.statusCode = 404;
+                response.end(`404 Not Found: ${filePath}`);
+            } else {
+                response.statusCode = 500;
+                response.end(`500 Internal Server Error: ${err.message}`);
+            }
+        });
+}
 
 const server = http.createServer(async (request, response) => {
-    console.log(request.headers);
+    console.log(new Date().toISOString(), request.method, request.url);
     let url;
     try {
-        url = new URL(request.url, 'https://' + 'uniquefilter.dev' + '/');
-    }
-    catch{
-        response.writeHead(303, {
-            Location: '/'
-        }).end();
+        url = new URL(request.url, `https://${hostname}`);
+    } catch {
+        response.statusCode = 400;
+        response.end('Bad Request');
         return;
     }
 
-    let fileName = path.join(baseDirectory, url.pathname);
-    if(fileName.indexOf(baseDirectory) !== 0){  // check if requested path is escaping the web root
-        response.statusCode = 403;
-        response.end('403');
-        return;
-    }
-    else switch (url.pathname) {
-        case '/':
-            let filePath = baseDirectory + '/html/main.html';
-            streamFile(filePath, response);
-            break;
-        case '/js/main.js':
-        case '/js/client_app.js':
-        case '/js/poe-api-interface.js':
-        case '/js/poe-api-auth.js':
-        case '/js/stash.js':
-        case '/js/unique.js':
-        case '/js/filter.js':
-        case '/json/drop-enabled-uniques.js':
-        case '/json/global-drop-enabled-uniques.js':
-        case '/css/style.css':
-        case '/fonts/nunito-sans-v12-latin-italic.woff':
-        case '/fonts/nunito-sans-v12-latin-italic.woff2':
-        case '/fonts/nunito-sans-v12-latin-regular.woff':
-        case '/fonts/nunito-sans-v12-latin-regular.woff2':
-            streamFile(baseDirectory + request.url, response);
-            break;
-        case '/oauth2callback':
-            response.setHeader("Content-Type", contentTypes["json"]);
-            poeAuth.requestTokenCallback(url, response)
-                .then(() => {
-                    response.end();
-                })
-                .catch(error => {
-                    response.statusCode = 500;
-                    response.end(JSON.stringify(error));
-                });
-            break;
-        case '/update-filter':
-            let buffer = [];
-            for await (const chunk of request) {
-                buffer.push(chunk);
-            }
-            const body = JSON.parse(Buffer.concat(buffer).toString());
+    const pathname = url.pathname;
 
-            // console.log(request);
-            // console.log(body);
+    if (pathname === '/') {
+        serveFile(path.join(publicDirectory, 'html', 'main.html'), response);
+    } else if (pathname === '/oauth2callback') {
+        response.setHeader("Content-Type", contentTypes['.json']);
+        poeAuth.requestTokenCallback(url, response)
+            .then(() => response.end())
+            .catch(error => {
+                response.statusCode = 500;
+                response.end(JSON.stringify(error));
+            });
+    } else if (pathname === '/update-filter') {
+        let buffer = [];
+        for await (const chunk of request) {
+            buffer.push(chunk);
+        }
+        const body = JSON.parse(Buffer.concat(buffer).toString());
+        await corsProxy.updateFilter(request, body, response);
+    } else {
+        // Serve static files from the public directory
+        const filePath = path.join(publicDirectory, pathname);
 
-            let result = await corsProxy.updateFilter(request, body, response);
-
-        default:
-            response.setHeader('Content-Type', contentTypes.default);
-            response.statusCode = 404;
-            response.write(request.url);
-            response.write('\n');
-            response.end('404');
+        // Security: Ensure the resolved path is within the public directory
+        if (path.resolve(filePath).indexOf(publicDirectory) !== 0) {
+            response.statusCode = 403;
+            response.end('403 Forbidden');
             return;
+        }
+        serveFile(filePath, response);
     }
 });
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at https://${hostname}:${port}/`);
+    console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-function streamFile(path, response) {
-    // deduct MIME-type from file extension
-    let fileExtension = path.split('.').pop();
-    let mimeType = Object.keys(contentTypes).includes(fileExtension)
-        ? contentTypes[fileExtension]
-        : contentTypes.default;
-
-    let fileStream = fs.createReadStream(path);
-    // stream file if possible
-    fileStream.on('open', function () {
-        response.setHeader('Content-Type', mimeType);
-        response.statusCode = 200;
-        fileStream.pipe(response);
-    });
-    // handle errors opening/streaming the file
-    fileStream.on('error', function () {
-        if (!fs.existsSync(path)) {
-            response.statusCode = 404;
-        } else {
-            response.statusCode = 500;
-        }
-        response.setHeader('Content-Type', 'text/plain');
-        response.end(String(response.statusCode));
-    });
-}
