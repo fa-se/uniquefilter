@@ -158,20 +158,39 @@ button:disabled, input[type="button"]:disabled {
 }
 
 
-/* === INFO & MESSAGES === */
-#info-section {
+
+/* === STATUS MESSAGES === */
+#status-container {
     width: 100%;
     max-width: 1000px;
     margin-top: 1em;
+    text-align: center;
+    min-height: 2em; /* Reserve space to prevent layout shifts */
 }
 
-#info {
-    color: white;
-    display: block;
-    margin-bottom: 1em;
+.status-message {
+    padding: 0.8em 1.2em;
+    border-radius: 5px;
+    display: inline-block; /* Fit content width but allow margin/padding */
+    font-weight: bold;
+    margin: 0 auto;
 }
 
-#rate-limit-info {
-    color: red;
-    display: none;
+.status-info {
+    background-color: #2a3a4a;
+    color: #a0c0e0;
+    border: 1px solid #4a6a8a;
 }
+
+.status-error {
+    background-color: #4a2a2a;
+    color: #e0a0a0;
+    border: 1px solid #8a4a4a;
+}
+
+.status-rate-limit {
+    background-color: #4a4a2a;
+    color: #e0e0a0;
+    border: 1px solid #8a8a4a;
+}
+

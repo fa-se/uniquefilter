@@ -23,8 +23,7 @@ export function render(state) {
     const stashSelect = document.getElementById('uniquestash-select');
     const filterSelect = document.getElementById('filter-select');
     const updateFilterButton = document.getElementById('update-filter-button');
-    const info = document.getElementById('info');
-    const rateLimitInfo = document.getElementById('rate-limit-info');
+    const statusContainer = document.getElementById('status-container');
 
     // Render dropdowns
     if (leagueSelect.value !== state.league) {
@@ -42,14 +41,27 @@ export function render(state) {
     updateFilterButton.disabled = state.isLoading || !isStashSelected || !isFilterSelected;
 
     // Render messages
-    renderText(info, state.isLoading ? state.infoMessage : (state.error || state.infoMessage));
-    if (state.error) {
-        info.classList.add('error');
-    } else {
-        info.classList.remove('error');
+    statusContainer.innerHTML = ''; // Clear previous messages
+    let messageText = null;
+    let messageClass = '';
+
+    if (state.rateLimitMessage) {
+        messageText = state.rateLimitMessage;
+        messageClass = 'status-rate-limit';
+    } else if (state.error) {
+        messageText = state.error;
+        messageClass = 'status-error';
+    } else if (state.isLoading || state.infoMessage) {
+        messageText = state.infoMessage;
+        messageClass = 'status-info';
     }
-    
-    renderText(rateLimitInfo, state.rateLimitMessage);
+
+    if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `status-message ${messageClass}`;
+        messageElement.innerText = messageText;
+        statusContainer.appendChild(messageElement);
+    }
 }
 
 export function updateLeagueOptions(leagues) {
