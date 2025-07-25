@@ -24,19 +24,15 @@ export class Stash {
 
             const subStashIds = subStashes.stashes.map(stash => stash.id);
 
-            // Fetch all sub-stash details in parallel, with each call individually wrapped in rate-limit handling.
-            const itemChunks = await Promise.all(
-                subStashIds.map(id =>
-                    withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${id}`))
-                        .then(detail => {
-                            if (detail && detail.stash && detail.stash.items) {
-                                return detail.stash.items;
-                            }
-                            console.warn(`No items found or malformed response for stash tab ${id}`, detail);
-                            return []; // Return an empty array for this chunk if data is malformed
-                        })
-                )
-            );
+            const itemChunks = [];
+            for (const id of subStashIds) {
+                const detail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${id}`));
+                if (detail && detail.stash && detail.stash.items) {
+                    itemChunks.push(detail.stash.items);
+                } else {
+                    console.warn(`No items found or malformed response for stash tab ${id}`, detail);
+                }
+            }
             
             items = itemChunks.flat();
 
