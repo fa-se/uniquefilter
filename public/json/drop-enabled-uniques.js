@@ -2798,8 +2798,372 @@ export const allDropEnabledUniques =
             "base item": "Crusader Gloves"
         },
         {
+            "name": "Replica Abyssus",
+            "base item": "Ezomyte Burgonet"
+        },
+        {
+            "name": "Replica Advancing Fortress",
+            "base item": "Gut Ripper"
+        },
+        {
+            "name": "Replica Alberon's Warpath",
+            "base item": "Soldier Boots"
+        },
+        {
+            "name": "Replica Allelopathy",
+            "base item": "Satin Gloves"
+        },
+        {
+            "name": "Replica Allure",
+            "base item": "Vaal Claw"
+        },
+        {
+            "name": "Replica Alpha's Howl",
+            "base item": "Sinner Tricorne"
+        },
+        {
+            "name": "Replica Ambu's Charge",
+            "base item": "Crusader Chainmail"
+        },
+        {
+            "name": "Replica Atziri's Acuity",
+            "base item": "Vaal Gauntlets"
+        },
+        {
+            "name": "Replica Atziri's Foible",
+            "base item": "Paua Amulet"
+        },
+        {
+            "name": "Replica Badge of the Brotherhood",
+            "base item": "Turquoise Amulet"
+        },
+        {
+            "name": "Replica Bated Breath",
+            "base item": "Chain Belt"
+        },
+        {
+            "name": "Replica Bitterdream",
+            "base item": "Shadow Sceptre"
+        },
+        {
+            "name": "Replica Blood Thorn",
+            "base item": "Gnarled Branch"
+        },
+        {
+            "name": "Replica Bloodplay",
+            "base item": "Stiletto"
+        },
+        {
+            "name": "Replica Bones of Ullr",
+            "base item": "Silk Slippers"
+        },
+        {
+            "name": "Replica Cold Iron Point",
+            "base item": "Ezomyte Dagger"
+        },
+        {
+            "name": "Replica Cortex",
+            "base item": "Synthesised Map"
+        },
+        {
+            "name": "Replica Covenant",
+            "base item": "Spidersilk Robe"
+        },
+        {
+            "name": "Replica Doedre's Damning",
+            "base item": "Paua Ring"
+        },
+        {
             "name": "Replica Dragonfang's Flight",
             "base item": "Onyx Amulet"
+        },
+        {
+            "name": "Replica Dreamfeather",
+            "base item": "Eternal Sword"
+        },
+        {
+            "name": "Replica Duskdawn",
+            "base item": "Maelstr\u00f6m Staff"
+        },
+        {
+            "name": "Replica Earendel's Embrace",
+            "base item": "Grinning Fetish"
+        },
+        {
+            "name": "Replica Emberwake",
+            "base item": "Ruby Ring"
+        },
+        {
+            "name": "Replica Eternity Shroud",
+            "base item": "Blood Raiment"
+        },
+        {
+            "name": "Replica Farrul's Fur",
+            "base item": "Triumphant Lamellar"
+        },
+        {
+            "name": "Replica Fencoil",
+            "base item": "Gnarled Branch"
+        },
+        {
+            "name": "Replica Fragility",
+            "base item": "Crimson Jewel"
+        },
+        {
+            "name": "Replica Frostbreath",
+            "base item": "Ornate Mace"
+        },
+        {
+            "name": "Replica Grip of the Council",
+            "base item": "Arcanist Gloves"
+        },
+        {
+            "name": "Replica Harvest",
+            "base item": "Jasper Chopper"
+        },
+        {
+            "name": "Replica Headhunter",
+            "base item": "Leather Belt"
+        },
+        {
+            "name": "Replica Heartbreaker",
+            "base item": "Royal Skean"
+        },
+        {
+            "name": "Replica Heatshiver",
+            "base item": "Leather Hood"
+        },
+        {
+            "name": "Replica Hinekora's Sight",
+            "base item": "Onyx Amulet"
+        },
+        {
+            "name": "Replica Hyrri's Ire",
+            "base item": "Zodiac Leather"
+        },
+        {
+            "name": "Replica Hyrri's Truth",
+            "base item": "Jade Amulet"
+        },
+        {
+            "name": "Replica Infractem",
+            "base item": "Decimation Bow"
+        },
+        {
+            "name": "Replica Innsbury Edge",
+            "base item": "Elder Sword"
+        },
+        {
+            "name": "Replica Inya's Epiphany",
+            "base item": "Arcanist Slippers"
+        },
+        {
+            "name": "Replica Iron Commander",
+            "base item": "Death Bow"
+        },
+        {
+            "name": "Replica Kalisa's Grace",
+            "base item": "Samite Gloves"
+        },
+        {
+            "name": "Replica Kaom's Heart",
+            "base item": "Glorious Plate"
+        },
+        {
+            "name": "Replica Karui Ward",
+            "base item": "Jade Amulet"
+        },
+        {
+            "name": "Replica Kongor's Undying Rage",
+            "base item": "Terror Maul"
+        },
+        {
+            "name": "Replica Last Resort",
+            "base item": "Nailed Fist"
+        },
+        {
+            "name": "Replica Lavianga's Spirit",
+            "base item": "Sanctified Mana Flask"
+        },
+        {
+            "name": "Replica Leer Cast",
+            "base item": "Festival Mask"
+        },
+        {
+            "name": "Replica Lioneye's Paws",
+            "base item": "Bronzescale Boots"
+        },
+        {
+            "name": "Replica Loreweave",
+            "base item": "Elegant Ringmail"
+        },
+        {
+            "name": "Replica Malachai's Artifice",
+            "base item": "Unset Ring"
+        },
+        {
+            "name": "Replica Maloney's Mechanism",
+            "base item": "Ornate Quiver"
+        },
+        {
+            "name": "Replica Midnight Bargain",
+            "base item": "Engraved Wand"
+        },
+        {
+            "name": "Replica Mistwall",
+            "base item": "Lacquered Buckler"
+        },
+        {
+            "name": "Replica Nebulis",
+            "base item": "Void Sceptre"
+        },
+        {
+            "name": "Replica Oro's Sacrifice",
+            "base item": "Infernal Sword"
+        },
+        {
+            "name": "Replica Pacifism",
+            "base item": "Viridian Jewel"
+        },
+        {
+            "name": "Replica Paradoxica",
+            "base item": "Vaal Rapier"
+        },
+        {
+            "name": "Replica Perfect Form",
+            "base item": "Zodiac Leather"
+        },
+        {
+            "name": "Replica Pillars of Arun",
+            "base item": "Dunes Map"
+        },
+        {
+            "name": "Replica Poorjoy's Asylum",
+            "base item": "Temple Map"
+        },
+        {
+            "name": "Replica Powerlessness",
+            "base item": "Cobalt Jewel"
+        },
+        {
+            "name": "Replica Primordial Might",
+            "base item": "Crimson Jewel"
+        },
+        {
+            "name": "Replica Prismweave",
+            "base item": "Rustic Sash"
+        },
+        {
+            "name": "Replica Quill Rain",
+            "base item": "Short Bow"
+        },
+        {
+            "name": "Replica Reckless Defence",
+            "base item": "Cobalt Jewel"
+        },
+        {
+            "name": "Replica Red Trail",
+            "base item": "Titan Greaves"
+        },
+        {
+            "name": "Replica Restless Ward",
+            "base item": "Carnal Armour"
+        },
+        {
+            "name": "Replica Rumi's Concoction",
+            "base item": "Granite Flask"
+        },
+        {
+            "name": "Replica Shroud of the Lightless",
+            "base item": "Carnal Armour"
+        },
+        {
+            "name": "Replica Siegebreaker",
+            "base item": "Heavy Belt"
+        },
+        {
+            "name": "Replica Sorrow of the Divine",
+            "base item": "Sulphur Flask"
+        },
+        {
+            "name": "Replica Soul Strike",
+            "base item": "Spike-Point Arrow Quiver"
+        },
+        {
+            "name": "Replica Soul Tether",
+            "base item": "Cloth Belt"
+        },
+        {
+            "name": "Replica Stampede",
+            "base item": "Assassin's Boots"
+        },
+        {
+            "name": "Replica Tasalio's Sign",
+            "base item": "Sapphire Ring"
+        },
+        {
+            "name": "Replica Tempestuous Steel",
+            "base item": "War Sword"
+        },
+        {
+            "name": "Replica Three-step Assault",
+            "base item": "Shagreen Boots"
+        },
+        {
+            "name": "Replica Trypanon",
+            "base item": "Great Mallet"
+        },
+        {
+            "name": "Replica Tukohama's Fortress",
+            "base item": "Ebony Tower Shield"
+        },
+        {
+            "name": "Replica Tulfall",
+            "base item": "Opal Wand"
+        },
+        {
+            "name": "Replica Twyzel",
+            "base item": "Sage Wand"
+        },
+        {
+            "name": "Replica Ungil's Gauche",
+            "base item": "Boot Knife"
+        },
+        {
+            "name": "Replica Veil of the Night",
+            "base item": "Great Helmet"
+        },
+        {
+            "name": "Replica Victario's Charity",
+            "base item": "Laminated Kite Shield"
+        },
+        {
+            "name": "Replica Voideye",
+            "base item": "Unset Ring"
+        },
+        {
+            "name": "Replica Voidwalker",
+            "base item": "Murder Boots"
+        },
+        {
+            "name": "Replica Volkuur's Guidance",
+            "base item": "Zealot Gloves"
+        },
+        {
+            "name": "Replica Windripper",
+            "base item": "Imperial Bow"
+        },
+        {
+            "name": "Replica Wings of Entropy",
+            "base item": "Ezomyte Axe"
+        },
+        {
+            "name": "Replica Winterheart",
+            "base item": "Gold Amulet"
+        },
+        {
+            "name": "Replica Witchfire Brew",
+            "base item": "Stibnite Flask"
         },
         {
             "name": "Retaliation Charm",
