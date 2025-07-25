@@ -191,7 +191,7 @@ class PoeApi {
             let backThen = Math.ceil(state.timestamp / 1000);
             // if the limit was exceeded, wait for the time specified by the server
             if(state.waitTime > 0){
-                return (backThen + state.waitTime - now);
+                return (backThen + state.waitTime - now) + 1;
             }
             else if(current < max){
                 return 0; // don't need to wait if limit is not yet reached
@@ -199,7 +199,7 @@ class PoeApi {
             else if (current === max){
                 // if the limit was reached with the previous request, assume that all request were made at the very end
                 // of the sliding window, and wait for the full window width to be on the safe side
-                return (backThen + limit.timePeriod - now);
+                return (backThen + limit.timePeriod - now) + 1;
             }
             // if the limit was exceeded somehow, wait for the 'penalty' wait time specified in the rule
             else return limit.waitTime;
