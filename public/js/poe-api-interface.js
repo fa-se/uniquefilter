@@ -36,6 +36,11 @@ class PoeApi {
         return PoeApi.instance;
     }
 
+    async getLeagues() {
+        const leagues = await this.#getProxiedPoeApiData('/api/leagues');
+        return leagues.filter(league => league.realm === 'pc' && !league.event);
+    }
+
     async getAccountStashes(league) {
         return new StashList(league, await this.#getPoeApiData('/stash/' + league, this.rateLimitPolicies.stash));
     }
@@ -54,7 +59,7 @@ class PoeApi {
         return response.filter;
     }
 
-    async #getPoeApiData(endpoint, rateLimitPolicy, queryParameters = {}) {
+    async #getPoeApiData(endpoint, rateLimitPolicy, queryParameters = {}, authenticated = true) {
         while (PoeApi.isPaused) {
             await PoeApi.#wait(1);
         }
@@ -68,11 +73,12 @@ class PoeApi {
             throw new RateLimitError(timeToWait);
         }
 
-        const response = await fetch(url.toString(), {
-            headers: {
-                Authorization: 'Bearer ' + this.accessToken
-            }
-        });
+        const headers = {};
+        if (authenticated) {
+            headers['Authorization'] = 'Bearer ' + this.accessToken;
+        }
+
+        const response = await fetch(url.toString(), { headers });
         this.#updateRateLimitInfo(response.headers);
         return await response.json();
     }
@@ -93,6 +99,13 @@ class PoeApi {
             body: JSON.stringify(data)
         });
 
+        return await response.json();
+    }
+
+    async #getProxiedPoeApiData(endpoint, queryParameters = {}) {
+        const url = new URL(endpoint, window.location.origin);
+        url.search = new URLSearchParams(queryParameters).toString();
+        const response = await fetch(url.toString());
         return await response.json();
     }
 

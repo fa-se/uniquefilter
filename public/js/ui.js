@@ -51,3 +51,8 @@ export function render(state) {
     
     renderText(rateLimitInfo, state.rateLimitMessage);
 }
+
+export function updateLeagueOptions(leagues) {
+    const leagueSelect = document.getElementById('league-select');
+    renderOptions(leagueSelect, leagues, 'id', 'id');
+}

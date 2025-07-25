@@ -3,7 +3,7 @@ import poeApi from "./poe-api-interface.js";
 import { PoeApiAuth } from "./poe-api-auth.js";
 import { Filter } from "./filter.js";
 import { appState, setState } from "./state.js";
-import { render } from "./ui.js";
+import { render, updateLeagueOptions } from "./ui.js";
 import { withRateLimitHandling } from "./utils.js";
 
 async function handleLeagueChange(league) {
@@ -41,9 +41,8 @@ async function handleUpdateFilter() {
         const filterData = await withRateLimitHandling(() => poeApi.getItemFilter(appState.selectedFilterId));
         const filter = new Filter(filterData);
 
-        const customStyleCheckbox = document.getElementById('custom-style-cb');
-        if (customStyleCheckbox.checked) {
-            const customStyleTextArea = document.getElementById('custom-style-textarea');
+        const customStyleTextArea = document.getElementById('custom-style-textarea');
+        if (customStyleTextArea.value.trim() !== '') {
             filter.setCustomStyle(customStyleTextArea.value);
         }
 
@@ -78,27 +77,18 @@ function setupEventListeners() {
     document.getElementById('only-global-drops-cb').addEventListener('change', (event) => {
         window.localStorage.setItem("only-global-drops", event.target.checked);
     });
-    const customStyleCheckbox = document.getElementById('custom-style-cb');
     const customStyleTextArea = document.getElementById('custom-style-textarea');
-    customStyleCheckbox.addEventListener('change', (event => {
-        customStyleTextArea.disabled = !event.target.checked;
-    }));
     customStyleTextArea.addEventListener('change', () => {
         window.localStorage.setItem("custom-rule-style", customStyleTextArea.value);
     });
 }
 
 function prepareLegacyInput() {
-    const customStyleCheckbox = document.getElementById('custom-style-cb');
     const customStyleTextArea = document.getElementById('custom-style-textarea');
     const globalDropsOnlyCheckbox = document.getElementById('only-global-drops-cb');
 
     globalDropsOnlyCheckbox.checked = window.localStorage.getItem("only-global-drops") === "true";
-    customStyleTextArea.value = window.localStorage.getItem("custom-rule-style");
-
-    let hasCustomStyle = customStyleTextArea.value !== '';
-    customStyleCheckbox.checked = hasCustomStyle;
-    customStyleTextArea.disabled = !hasCustomStyle;
+    customStyleTextArea.value = window.localStorage.getItem("custom-rule-style") || '';
 }
 
 async function main() {
@@ -115,10 +105,13 @@ async function main() {
     render(appState);
 
     try {
-        const [stashes, filters] = await Promise.all([
+        const [leagues, stashes, filters] = await Promise.all([
+            withRateLimitHandling(() => poeApi.getLeagues()),
             withRateLimitHandling(() => poeApi.getAccountStashes(appState.league)),
             withRateLimitHandling(() => poeApi.getAccountItemFilters())
         ]);
+
+        updateLeagueOptions(leagues);
         
         const uniqueStashes = Object.values(stashes.getAllUniqueStashes());
         setState({

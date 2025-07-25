@@ -2,7 +2,30 @@ import secrets from "./secrets.js";
 import {URL} from "url";
 import got from "got";
 
-export default{
+export default {
+    /**
+     * Gets called by POE server after user authorization.
+     * @param {import("http").IncomingMessage} req
+     * @param {import("http").ServerResponse} res
+     * @returns {Promise}
+     */
+    async getLeagues(req, res) {
+        const endpoint = "https://api.pathofexile.com/leagues";
+        return new Promise((resolve, reject) => {
+            const gotStream = got.stream(endpoint);
+            gotStream.on("error", (error) => {
+                console.error("Error fetching leagues:", error);
+                res.writeHead(500, {"Content-Type": "application/json"});
+                res.end(JSON.stringify({error: "Failed to fetch leagues"}));
+                reject(error);
+            });
+            gotStream.pipe(res);
+            gotStream.on("end", () => {
+                resolve();
+            });
+        });
+    },
+
     /**
      * Gets called by POE server after user authorization.
      * @param {import("http").IncomingMessage} req

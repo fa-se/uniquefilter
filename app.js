@@ -74,6 +74,8 @@ const server = http.createServer(async (request, response) => {
         }
         const body = JSON.parse(Buffer.concat(buffer).toString());
         await corsProxy.updateFilter(request, body, response);
+    } else if (pathname === '/api/leagues') {
+        await corsProxy.getLeagues(request, response);
     } else {
         // Serve static files from the public directory
         const filePath = path.join(publicDirectory, pathname);
