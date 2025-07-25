@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="robots" content="noindex">
@@ -8,45 +7,64 @@
     <title>uniquefilter</title>
     <script src="/js/main.js" type="module" defer></script>
 </head>
-
 <body>
 <main>
-    <div class="title">uniquefilter</div>
+    <h1 class="title">uniquefilter</h1>
 
-    <div class="requires-authorization">
-        <label for="league-select">league</label>
-        <select id="league-select">
-            <option value="SSF+Mercenaries">Mercenaries SSF</option>
-            <option value="Solo+Self-Found">Standard SSF</option>
-            <option value="Mercenaries">Mercenaries</option>
-            <option value="Standard">Standard</option>
-            <option value="HC+SSF+Mercenaries">Mercenaries HC SSF</option>
-            <option value="Hardcore+SSF">Standard HC SSF</option>
-            <option value="Hardcore+Mercenaries">Mercenaries HC</option>
-            <option value="Hardcore">Standard HC</option>
-        </select>
-        <label for="uniquestash-select">unique stash</label>
-        <select id="uniquestash-select"></select>
-        <label for="filter-select">filter</label>
-        <select id="filter-select"></select>
-        <input id="update-filter-button" type="button" value="update filter" disabled="disabled"/>
-        <div class="break"></div>
-        <input type="checkbox" id="only-global-drops-cb"/>
-        <label for="only-global-drops-cb">highlight only global drops</label>
-        <div class="break"></div>
-        <div class="container">
-            <input type="checkbox" id="custom-style-cb"/>
-            <label for="custom-style-cb">custom style</label>
-            <textarea id="custom-style-textarea"></textarea>
+    <div class="content-wrapper">
+        <div id="auth-section">
+            <input type="button" id="authorize-poe-button" value="Authorize Access to your Path of Exile account"/>
         </div>
-        <hr width="100%"/>
-        <div id="info"></div>
-        <div class="break"></div>
-        <div id="rate-limit-info"></div>
-    </div>
 
-    <input type="button" id="authorize-poe-button" value="Authorize Access to your Path of Exile account"/>
+        <div id="main-controls" class="requires-authorization">
+            <div class="control-group">
+                <label for="league-select">League</label>
+                <select id="league-select">
+                    <option value="SSF+Mercenaries">Mercenaries SSF</option>
+                    <option value="Solo+Self-Found">Standard SSF</option>
+                    <option value="Mercenaries">Mercenaries</option>
+                    <option value="Standard">Standard</option>
+                    <option value="HC+SSF+Mercenaries">Mercenaries HC SSF</option>
+                    <option value="Hardcore+SSF">Standard HC SSF</option>
+                    <option value="Hardcore+Mercenaries">Mercenaries HC</option>
+                    <option value="Hardcore">Standard HC</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="uniquestash-select">Unique Stash</label>
+                <select id="uniquestash-select"></select>
+            </div>
+
+            <div class="control-group">
+                <label for="filter-select">Filter</label>
+                <select id="filter-select"></select>
+            </div>
+
+            <div class="control-group" id="update-filter-button-group">
+                <input id="update-filter-button" type="button" value="Update Filter" disabled="disabled"/>
+            </div>
+        </div>
+
+        <div id="options" class="requires-authorization">
+            <div class="option-group">
+                <input type="checkbox" id="only-global-drops-cb"/>
+                <label for="only-global-drops-cb">Highlight only global drops</label>
+            </div>
+
+            <fieldset id="custom-style-fieldset">
+                <legend>Custom Style</legend>
+                <div id="custom-style-group">
+                    <textarea id="custom-style-textarea" placeholder="Hint: Go to filterblade.xyz -> Advanced -> Filter Line Translator to create and copy a style rule."></textarea>
+                </div>
+            </fieldset>
+        </div>
+
+        <div id="info-section" class="requires-authorization">
+            <div id="info"></div>
+            <div id="rate-limit-info"></div>
+        </div>
+    </div>
 </main>
 </body>
-
 </html>

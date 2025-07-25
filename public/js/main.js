@@ -1,5 +1,6 @@
 "use strict";
 import poeApi from "./poe-api-interface.js";
+import { PoeApiAuth } from "./poe-api-auth.js";
 import { Filter } from "./filter.js";
 import { appState, setState } from "./state.js";
 import { render } from "./ui.js";
@@ -101,6 +102,8 @@ function prepareLegacyInput() {
 }
 
 async function main() {
+    PoeApiAuth.handleAuthorization();
+
     if (!poeApi.isReady()) {
         return;
     }

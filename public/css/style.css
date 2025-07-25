@@ -1,105 +1,177 @@
+/* === FONT IMPORTS === */
 /* nunito-sans-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    /*noinspection CssUnknownTarget*/
-    src: url('/fonts/nunito-sans-v12-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('/fonts/nunito-sans-v12-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('/fonts/nunito-sans-v12-latin-regular.woff2') format('woff2'),
+         url('/fonts/nunito-sans-v12-latin-regular.woff') format('woff');
 }
 
 /* nunito-sans-italic - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
     font-family: 'Nunito Sans';
     font-style: italic;
     font-weight: 400;
-    src: url('../fonts/nunito-sans-v12-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-    url('../fonts/nunito-sans-v12-latin-italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../fonts/nunito-sans-v12-latin-italic.woff2') format('woff2'),
+         url('../fonts/nunito-sans-v12-latin-italic.woff') format('woff');
 }
 
+/* === GENERAL STYLES === */
 * {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: normal;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #181818;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+}
+
+main {
+    padding: 4em 0;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
 }
 
-body {
-    background-color: #181818;
-    color: white;
-}
-
-button {
-    background-color: darkgrey;
-}
-
-main {
-    padding: 8em 0;
-    text-align: center;
-}
-
-.title {
+h1.title {
     font-size: 50px;
+    margin-bottom: 2em;
 }
 
-.container{
+/* === LAYOUT === */
+.content-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 2em;
 }
 
-.requires-authorization{
-    display: none;
+.requires-authorization {
+    display: none; /* Initially hidden, shown by JS */
+}
+
+/* === CONTROLS === */
+#main-controls {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 1000px;
-    margin: 0 auto;
-    align-items: center;
+    gap: 2em; /* Increased gap for better separation */
+    width: 100%;
+    max-width: 1000px;
 }
 
-#authorize-poe-button {
-    display: block;
-    margin: auto;
-}
-
-#league-select, #uniquestash-select, #filter-select {
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
     flex: 1;
-    margin: 20px;
+    min-width: 200px;
 }
 
-#custom-style-textarea{
-    width: 350px;
+/* Target the button's group specifically for layout changes */
+#update-filter-button-group {
+    flex-basis: 100%; /* Make it take the full width */
+    margin-top: 1em; /* Add space above the button */
+}
+
+.control-group label {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+select, button, input[type="button"] {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+button, input[type="button"] {
+    cursor: pointer;
+    background-color: #444;
+}
+
+button:disabled, input[type="button"]:disabled {
+    background-color: #2a2a2a;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* === OPTIONS === */
+#options {
+    width: 100%;
+    max-width: 1000px;
+    border-top: 1px solid #444;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#custom-style-fieldset {
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 1.5em;
+    width: 50%;
+}
+
+#custom-style-fieldset legend {
+    padding: 0 0.5em;
+    color: #ccc;
+    font-weight: bold;
+}
+
+#custom-style-group {
+    width: 100%;
+}
+
+#custom-style-textarea {
+    width: 100%;
     height: 100px;
+    background-color: #222;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 5px;
 }
 
-#update-filter-button {
-    margin: auto;
+#custom-style-textarea::placeholder {
+    color: #888;
+    font-style: italic;
 }
 
-#info{
+
+/* === INFO & MESSAGES === */
+#info-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 1em;
+}
+
+#info {
     color: white;
     display: block;
+    margin-bottom: 1em;
 }
 
-#rate-limit-info{
+#rate-limit-info {
     color: red;
     display: none;
-}
-#rate-limit-info-time{
-    display:inline;
-}
-
-
-
-/* Inserting this collapsed row between two flex items will make
- * the flex item that comes after it break to a new row */
-.break {
-    flex-basis: 100%;
-    height: 0;
 }
