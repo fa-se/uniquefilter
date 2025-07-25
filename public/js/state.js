@@ -1,11 +1,11 @@
 'use strict';
 
 export const appState = {
-    league: 'Standard',
+    league: window.localStorage.getItem('league') || 'Standard',
     stashes: [],
     filters: [],
-    selectedStashId: null,
-    selectedFilterId: null,
+    selectedStashId: window.localStorage.getItem('selectedStashId') || null,
+    selectedFilterId: window.localStorage.getItem('selectedFilterId') || null,
     isLoading: false,
     error: null,
     infoMessage: null,

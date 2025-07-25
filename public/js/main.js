@@ -62,12 +62,17 @@ async function handleUpdateFilter() {
 }
 
 function setupEventListeners() {
-    document.getElementById('league-select').addEventListener('change', (event) => handleLeagueChange(event.target.value));
+    document.getElementById('league-select').addEventListener('change', (event) => {
+        window.localStorage.setItem('league', event.target.value);
+        handleLeagueChange(event.target.value);
+    });
     document.getElementById('uniquestash-select').addEventListener('change', (event) => {
+        window.localStorage.setItem('selectedStashId', event.target.value);
         setState({ selectedStashId: event.target.value });
         render(appState);
     });
     document.getElementById('filter-select').addEventListener('change', (event) => {
+        window.localStorage.setItem('selectedFilterId', event.target.value);
         setState({ selectedFilterId: event.target.value });
         render(appState);
     });
@@ -114,11 +119,18 @@ async function main() {
         updateLeagueOptions(leagues);
         
         const uniqueStashes = Object.values(stashes.getAllUniqueStashes());
+        const uniqueStashIds = new Set(uniqueStashes.map(s => s.id));
+        const filterIds = new Set(filters.map(f => f.id));
+
         setState({
             stashes: uniqueStashes,
             filters: filters,
-            selectedStashId: uniqueStashes[0]?.id,
-            selectedFilterId: filters[0]?.id,
+            selectedStashId: appState.selectedStashId && uniqueStashIds.has(appState.selectedStashId) 
+                ? appState.selectedStashId 
+                : uniqueStashes[0]?.id,
+            selectedFilterId: appState.selectedFilterId && filterIds.has(appState.selectedFilterId)
+                ? appState.selectedFilterId
+                : filters[0]?.id,
             isLoading: false,
             infoMessage: null
         });
