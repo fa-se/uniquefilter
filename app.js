@@ -22,7 +22,7 @@ const rateLimits = new Map(); // ip -> {count, resetTime}
 function addSecurityHeaders(response) {
     response.setHeader('X-Frame-Options', 'DENY');
     response.setHeader('X-Content-Type-Options', 'nosniff');
-    response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'");
+    response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; font-src 'self'; connect-src 'self' https://api.pathofexile.com https://www.pathofexile.com");
 }
 
 function checkRateLimit(ip, limit = 60) {
@@ -201,8 +201,8 @@ const server = http.createServer(async (request, response) => {
         }
     } else if (pathname === '/api/leagues') {
         try {
-            const poeApiResponse = await got('https://www.pathofexile.com/api/trade/data/leagues').json();
-            await checkForNewLeagues(poeApiResponse.result);
+            const poeApiResponse = await got('https://api.pathofexile.com/leagues').json();
+            await checkForNewLeagues(poeApiResponse);
             response.setHeader('Content-Type', contentTypes['.json']);
             response.statusCode = 200;
             response.end(JSON.stringify(poeApiResponse));
