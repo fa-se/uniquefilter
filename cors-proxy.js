@@ -35,9 +35,16 @@ export default {
     async updateFilter(req, body, res){
         let url = new URL(req.url, "http://dum.my/");
         let id = url.searchParams.get("id");
-        // let authorizationToken = url.searchParams.get("authorization");
+        
+        // Validate filter ID
+        if (!id || typeof id !== 'string' || id.length > 50 || !/^[a-zA-Z0-9_-]+$/.test(id)) {
+            console.error(`Invalid filter ID attempt: ${id} from ${req.connection.remoteAddress}`);
+            res.writeHead(400, {"Content-Type": "application/json"});
+            res.end(JSON.stringify({error: "Invalid filter ID"}));
+            return;
+        }
+        
         let authorizationToken = req.headers.authorization;
-        // console.log(authorizationToken);
 
         let endpoint = "https://api.pathofexile.com/item-filter/" + id;
         // console.log(endpoint);
@@ -58,9 +65,16 @@ export default {
                 res.end(JSON.stringify(response.body))
             }
             catch (error) {
-                console.log(error);
-                res.writeHead(error.response.statusCode, {"Content-Type": error.response.headers["content-type"]});
-                res.end(JSON.stringify(error.response.body))
+                console.error('PoE API error:', error.message);
+                const statusCode = error.response?.statusCode || 500;
+                res.writeHead(statusCode, {"Content-Type": "application/json"});
+                
+                // Sanitize error response - don't expose detailed API errors
+                const sanitizedError = {
+                    error: statusCode >= 500 ? 'External service error' : 'Request failed',
+                    code: statusCode
+                };
+                res.end(JSON.stringify(sanitizedError));
             }
         });
     }

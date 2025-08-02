@@ -15,6 +15,50 @@ const port = 8080;
 const publicDirectory = path.join(__dirname, 'public');
 const leaguesCachePath = path.join(__dirname, 'leagues.json');
 
+// Rate limiting store
+const rateLimits = new Map(); // ip -> {count, resetTime}
+
+// Security utilities
+function addSecurityHeaders(response) {
+    response.setHeader('X-Frame-Options', 'DENY');
+    response.setHeader('X-Content-Type-Options', 'nosniff');
+    response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'");
+}
+
+function checkRateLimit(ip, limit = 60) {
+    const now = Date.now();
+    const entry = rateLimits.get(ip) || {count: 0, resetTime: now + 60000};
+    
+    if (now > entry.resetTime) {
+        entry.count = 0;
+        entry.resetTime = now + 60000;
+    }
+    
+    if (entry.count >= limit) {
+        console.error(`Rate limit exceeded for IP ${ip}: ${entry.count}/${limit} requests`);
+        return false;
+    }
+    
+    entry.count++;
+    rateLimits.set(ip, entry);
+    return true;
+}
+
+function validateLeagueName(name) {
+    if (!name || typeof name !== 'string') return false;
+    return /^[a-zA-Z0-9\s]{1,50}$/.test(name);
+}
+
+// Cleanup old rate limit entries every hour
+setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of rateLimits.entries()) {
+        if (now > entry.resetTime) {
+            rateLimits.delete(ip);
+        }
+    }
+}, 3600000);
+
 const contentTypes = {
     '.html': 'text/html; charset=utf-8',
     '.js': 'text/javascript; charset=utf-8',
@@ -70,16 +114,31 @@ function serveFile(filePath, response) {
             response.setHeader('Content-Type', 'text/plain; charset=utf-8');
             if (err.code === 'ENOENT') {
                 response.statusCode = 404;
-                response.end(`404 Not Found: ${filePath}`);
+                response.end('Not Found');
             } else {
+                console.error('File serving error:', err.message, 'for path:', filePath);
                 response.statusCode = 500;
-                response.end(`500 Internal Server Error: ${err.message}`);
+                response.end('Internal Server Error');
             }
         });
 }
 
 const server = http.createServer(async (request, response) => {
     console.log(new Date().toISOString(), request.method, request.url);
+    
+    // Get client IP
+    const clientIP = request.headers['x-forwarded-for'] || request.connection.remoteAddress || 'unknown';
+    
+    // Apply rate limiting
+    if (!checkRateLimit(clientIP)) {
+        response.statusCode = 429;
+        response.end('Too Many Requests');
+        return;
+    }
+    
+    // Add security headers to all responses
+    addSecurityHeaders(response);
+    
     let url;
     try {
         url = new URL(request.url, `https://${hostname}`);
@@ -102,12 +161,44 @@ const server = http.createServer(async (request, response) => {
                 response.end(JSON.stringify(error));
             });
     } else if (pathname === '/update-filter') {
-        let buffer = [];
-        for await (const chunk of request) {
-            buffer.push(chunk);
+        // Stricter rate limiting for expensive operations
+        if (!checkRateLimit(clientIP, 10)) { // 10 requests per minute
+            response.statusCode = 429;
+            response.end('Too Many Requests');
+            return;
         }
-        const body = JSON.parse(Buffer.concat(buffer).toString());
-        await corsProxy.updateFilter(request, body, response);
+        
+        // Validate Content-Type
+        if (!request.headers['content-type']?.includes('application/json')) {
+            response.statusCode = 400;
+            response.end('Invalid Content-Type');
+            return;
+        }
+
+        // Request size protection
+        const MAX_BODY_SIZE = 1024 * 1024; // 1MB
+        let buffer = [];
+        let totalSize = 0;
+        
+        try {
+            for await (const chunk of request) {
+                totalSize += chunk.length;
+                if (totalSize > MAX_BODY_SIZE) {
+                    console.error(`Request size limit exceeded: ${totalSize} bytes from ${request.connection.remoteAddress}`);
+                    response.statusCode = 413;
+                    response.end('Payload Too Large');
+                    return;
+                }
+                buffer.push(chunk);
+            }
+            
+            const body = JSON.parse(Buffer.concat(buffer).toString());
+            await corsProxy.updateFilter(request, body, response);
+        } catch (error) {
+            console.error('JSON parsing error:', error.message);
+            response.statusCode = 400;
+            response.end('Invalid JSON');
+        }
     } else if (pathname === '/api/leagues') {
         try {
             const poeApiResponse = await got('https://www.pathofexile.com/api/trade/data/leagues').json();
@@ -132,7 +223,9 @@ const server = http.createServer(async (request, response) => {
         const filePath = path.join(publicDirectory, pathname);
 
         // Security: Ensure the resolved path is within the public directory
-        if (path.resolve(filePath).indexOf(publicDirectory) !== 0) {
+        const resolvedPath = path.resolve(filePath);
+        const normalizedPublicDir = path.resolve(publicDirectory);
+        if (!resolvedPath.startsWith(normalizedPublicDir + path.sep) && resolvedPath !== normalizedPublicDir) {
             response.statusCode = 403;
             response.end('403 Forbidden');
             return;
