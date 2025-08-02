@@ -21,22 +21,59 @@ export class Stash {
         } else {
             const stashDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, this.id));
             const subStashes = new StashList(this.league, stashDetail.stash);
-
             const subStashIds = subStashes.stashes.map(stash => stash.id);
-
             const itemChunks = [];
-            for (const id of subStashIds) {
-                const detail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${id}`));
-                if (detail && detail.stash && detail.stash.items) {
-                    itemChunks.push(detail.stash.items);
-                } else {
-                    console.warn(`No items found or malformed response for stash tab ${id}`, detail);
+
+            while (subStashIds.length > 0) {
+                // 1. Probe: Fetch the next single tab to get the latest rate-limit headers.
+                const probeId = subStashIds.shift();
+                if (!probeId) continue;
+
+                const probeDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${probeId}`));
+                if (probeDetail && probeDetail.stash && probeDetail.stash.items) {
+                    itemChunks.push(probeDetail.stash.items);
+                } else if (probeDetail && !probeDetail.stash) {
+                    console.warn(`Malformed response for stash tab ${probeId}`, probeDetail);
+                }
+
+                if (subStashIds.length === 0) break;
+
+                // 2. Evaluate: Check available slots based on the headers from the probe request.
+                const rateLimitInfo = JSON.parse(window.localStorage.getItem("rateLimitInfo"))['stash-request-limit'];
+                let availableSlots = 0;
+                if (rateLimitInfo && rateLimitInfo.limits && rateLimitInfo.state) {
+                    const limits = rateLimitInfo.limits.split(',');
+                    const states = rateLimitInfo.state.split(',');
+                    const availableByRule = limits.map((limit, index) => {
+                        const limitParts = limit.split(':');
+                        const stateParts = states[index].split(':');
+                        return parseInt(limitParts[0], 10) - parseInt(stateParts[0], 10);
+                    });
+                    availableSlots = Math.max(0, Math.min(...availableByRule));
+                }
+
+                // 3. Burst: Create a batch of requests to run in parallel.
+                const batchSize = Math.min(subStashIds.length, availableSlots);
+                if (batchSize > 0) {
+                    const batchIds = subStashIds.splice(0, batchSize);
+                    const batchPromises = batchIds.map(id =>
+                        withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${id}`))
+                    );
+                    
+                    const batchResults = await Promise.all(batchPromises);
+
+                    batchResults.forEach((detail, index) => {
+                        const id = batchIds[index];
+                        if (detail && detail.stash && detail.stash.items) {
+                            itemChunks.push(detail.stash.items);
+                        } else if (detail && !detail.stash) {
+                            console.warn(`Malformed response for stash tab ${id}`, detail);
+                        }
+                    });
                 }
             }
-            
-            items = itemChunks.flat();
 
-            // save result to local storage to allow avoiding running into rate limit by using stale data for debug purposes
+            items = itemChunks.flat();
             window.localStorage.setItem("poe-owned-uniques-" + this.league, JSON.stringify(items));
         }
 
