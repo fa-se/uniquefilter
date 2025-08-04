@@ -96,7 +96,18 @@ function prepareLegacyInput() {
     customStyleTextArea.value = window.localStorage.getItem("custom-rule-style") || '';
 }
 
+function cleanupOldLocalStorageEntries() {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('poe-owned-uniques-')) {
+            localStorage.removeItem(key);
+            console.log(`Removed deprecated localStorage entry: ${key}`);
+        }
+    }
+}
+
 async function main() {
+    cleanupOldLocalStorageEntries();
     PoeApiAuth.handleAuthorization();
 
     if (!poeApi.isReady()) {
