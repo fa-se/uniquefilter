@@ -18,6 +18,12 @@ const leaguesCachePath = path.join(__dirname, 'leagues.json');
 // Rate limiting store
 const rateLimits = new Map(); // ip -> {count, resetTime}
 
+// ANSI color codes for console output
+const colors = {
+    red: '\x1b[31m',
+    reset: '\x1b[0m'
+};
+
 // Security utilities
 function addSecurityHeaders(response) {
     response.setHeader('X-Frame-Options', 'DENY');
@@ -35,7 +41,7 @@ function checkRateLimit(ip, limit = 60) {
     }
     
     if (entry.count >= limit) {
-        console.error(`Rate limit exceeded for IP ${ip}: ${entry.count}/${limit} requests`);
+        console.error(`${colors.red}BLOCKED - Rate limit exceeded for IP ${ip}: ${entry.count}/${limit} requests${colors.reset}`);
         return false;
     }
     
@@ -131,6 +137,7 @@ const server = http.createServer(async (request, response) => {
     
     // Apply rate limiting
     if (!checkRateLimit(clientIP)) {
+        console.error(`${colors.red}BLOCKED - 429 Too Many Requests from ${clientIP}${colors.reset}`);
         response.statusCode = 429;
         response.end('Too Many Requests');
         return;
@@ -143,6 +150,7 @@ const server = http.createServer(async (request, response) => {
     try {
         url = new URL(request.url, `https://${hostname}`);
     } catch {
+        console.error(`${colors.red}BLOCKED - 400 Bad Request (invalid URL) from ${clientIP}${colors.reset}`);
         response.statusCode = 400;
         response.end('Bad Request');
         return;
@@ -163,6 +171,7 @@ const server = http.createServer(async (request, response) => {
     } else if (pathname === '/update-filter') {
         // Stricter rate limiting for expensive operations
         if (!checkRateLimit(clientIP, 10)) { // 10 requests per minute
+            console.error(`${colors.red}BLOCKED - 429 Too Many Requests for /update-filter from ${clientIP}${colors.reset}`);
             response.statusCode = 429;
             response.end('Too Many Requests');
             return;
@@ -170,6 +179,7 @@ const server = http.createServer(async (request, response) => {
         
         // Validate Content-Type
         if (!request.headers['content-type']?.includes('application/json')) {
+            console.error(`${colors.red}BLOCKED - 400 Invalid Content-Type from ${clientIP}${colors.reset}`);
             response.statusCode = 400;
             response.end('Invalid Content-Type');
             return;
@@ -184,7 +194,7 @@ const server = http.createServer(async (request, response) => {
             for await (const chunk of request) {
                 totalSize += chunk.length;
                 if (totalSize > MAX_BODY_SIZE) {
-                    console.error(`Request size limit exceeded: ${totalSize} bytes from ${request.connection.remoteAddress}`);
+                    console.error(`${colors.red}BLOCKED - 413 Request size limit exceeded: ${totalSize} bytes from ${clientIP}${colors.reset}`);
                     response.statusCode = 413;
                     response.end('Payload Too Large');
                     return;
@@ -195,7 +205,7 @@ const server = http.createServer(async (request, response) => {
             const body = JSON.parse(Buffer.concat(buffer).toString());
             await corsProxy.updateFilter(request, body, response);
         } catch (error) {
-            console.error('JSON parsing error:', error.message);
+            console.error(`${colors.red}BLOCKED - 400 JSON parsing error from ${clientIP}: ${error.message}${colors.reset}`);
             response.statusCode = 400;
             response.end('Invalid JSON');
         }
@@ -226,6 +236,7 @@ const server = http.createServer(async (request, response) => {
         const resolvedPath = path.resolve(filePath);
         const normalizedPublicDir = path.resolve(publicDirectory);
         if (!resolvedPath.startsWith(normalizedPublicDir + path.sep) && resolvedPath !== normalizedPublicDir) {
+            console.error(`${colors.red}BLOCKED - 403 Path traversal attempt from ${clientIP}: ${pathname}${colors.reset}`);
             response.statusCode = 403;
             response.end('403 Forbidden');
             return;
