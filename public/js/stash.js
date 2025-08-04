@@ -14,69 +14,69 @@ export class Stash {
     }
 
     async getContainedUniques() {
-        let localStorageSavedUniques = window.localStorage.getItem("poe-owned-uniques-" + this.league);
-        let items = [];
-        if (window.debugAvoidRateLimit && localStorageSavedUniques !== null) {
-            items = JSON.parse(localStorageSavedUniques);
-        } else {
-            const stashDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, this.id));
-            const subStashes = new StashList(this.league, stashDetail.stash);
-            const subStashIds = subStashes.stashes.map(stash => stash.id);
-            const itemChunks = [];
+        const stashDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, this.id));
+        const subStashes = new StashList(this.league, stashDetail.stash);
+        const subStashIds = subStashes.stashes.map(stash => stash.id);
+        const itemChunks = [];
 
-            while (subStashIds.length > 0) {
-                // 1. Probe: Fetch the next single tab to get the latest rate-limit headers.
-                const probeId = subStashIds.shift();
-                if (!probeId) continue;
+        while (subStashIds.length > 0) {
+            // 1. Probe: Fetch the next single tab to get the latest rate-limit headers.
+            const probeId = subStashIds.shift();
+            if (!probeId) continue;
 
-                const probeDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${probeId}`));
-                if (probeDetail && probeDetail.stash && probeDetail.stash.items) {
-                    itemChunks.push(probeDetail.stash.items);
-                } else if (probeDetail && !probeDetail.stash) {
-                    console.warn(`Malformed response for stash tab ${probeId}`, probeDetail);
-                }
-
-                if (subStashIds.length === 0) break;
-
-                // 2. Evaluate: Check available slots based on the headers from the probe request.
-                const rateLimitInfo = JSON.parse(window.localStorage.getItem("rateLimitInfo"))['stash-request-limit'];
-                let availableSlots = 0;
-                if (rateLimitInfo && rateLimitInfo.limits && rateLimitInfo.state) {
-                    const limits = rateLimitInfo.limits.split(',');
-                    const states = rateLimitInfo.state.split(',');
-                    const availableByRule = limits.map((limit, index) => {
-                        const limitParts = limit.split(':');
-                        const stateParts = states[index].split(':');
-                        return parseInt(limitParts[0], 10) - parseInt(stateParts[0], 10);
-                    });
-                    availableSlots = Math.max(0, Math.min(...availableByRule));
-                }
-
-                // 3. Burst: Create a batch of requests to run in parallel.
-                const batchSize = Math.min(subStashIds.length, availableSlots);
-                if (batchSize > 0) {
-                    const batchIds = subStashIds.splice(0, batchSize);
-                    const batchPromises = batchIds.map(id =>
-                        withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${id}`))
-                    );
-                    
-                    const batchResults = await Promise.all(batchPromises);
-
-                    batchResults.forEach((detail, index) => {
-                        const id = batchIds[index];
-                        if (detail && detail.stash && detail.stash.items) {
-                            itemChunks.push(detail.stash.items);
-                        } else if (detail && !detail.stash) {
-                            console.warn(`Malformed response for stash tab ${id}`, detail);
-                        }
-                    });
-                }
+            const probeDetail = await withRateLimitHandling(() => poeApi.getStashDetail(this.league, `${this.id}/${probeId}`));
+            if (probeDetail && probeDetail.stash && probeDetail.stash.items) {
+                itemChunks.push(probeDetail.stash.items);
+            } else if (probeDetail && !probeDetail.stash) {
+                console.warn(`Malformed response for stash tab ${probeId}`, probeDetail);
             }
 
-            items = itemChunks.flat();
-            window.localStorage.setItem("poe-owned-uniques-" + this.league, JSON.stringify(items));
+            if (subStashIds.length === 0) break;
+
+            // 2. Evaluate: Check available slots based on the headers from the probe request.
+            const rateLimitInfo = JSON.parse(window.localStorage.getItem("rateLimitInfo"))['stash-request-limit'];
+            let availableSlots = 0;
+            if (rateLimitInfo && rateLimitInfo.limits && rateLimitInfo.state) {
+                const limits = rateLimitInfo.limits.split(',');
+                const states = rateLimitInfo.state.split(',');
+                const availableByRule = limits.map((limit, index) => {
+                    const limitParts = limit.split(':');
+                    const stateParts = states[index].split(':');
+                    return parseInt(limitParts[0], 10) - parseInt(stateParts[0], 10);
+                });
+                availableSlots = Math.max(0, Math.min(...availableByRule));
+            }
+
+            // 3. Calculate batch size, reserving one slot for the next probe if needed
+            let batchSize = Math.min(subStashIds.length, availableSlots);
+            // If there will be more batches after this one, reserve one slot for the probe
+            if (subStashIds.length > batchSize) {
+                batchSize = Math.max(0, batchSize - 1);
+            }
+
+            if (batchSize > 0) {
+                const batchIds = subStashIds.splice(0, batchSize);
+                console.log(`Processing batch of ${batchSize} stash tabs (${availableSlots} slots available)...`);
+                
+                // Make requests directly without withRateLimitHandling since we're being proactive
+                const batchPromises = batchIds.map(id =>
+                    poeApi.getStashDetail(this.league, `${this.id}/${id}`)
+                );
+                
+                const batchResults = await Promise.all(batchPromises);
+
+                batchResults.forEach((detail, index) => {
+                    const id = batchIds[index];
+                    if (detail && detail.stash && detail.stash.items) {
+                        itemChunks.push(detail.stash.items);
+                    } else if (detail && !detail.stash) {
+                        console.warn(`Malformed response for stash tab ${id}`, detail);
+                    }
+                });
+            }
         }
 
+        const items = itemChunks.flat();
         return new UniqueList(items);
     }
 }
