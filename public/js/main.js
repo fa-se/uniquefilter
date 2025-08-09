@@ -33,22 +33,17 @@ async function handleUpdateFilter() {
         console.log("owned uniques: ", containedUniques.uniquesMap);
         
         // Capture owned uniques BEFORE getMissingUniques modifies the map
-        const ownedUniques = Array.from(containedUniques.uniquesMap.keys());
+        const ownedUniques = containedUniques.uniques;
         
         const globalDropsOnly = document.getElementById('only-global-drops-cb').checked;
         const missingUniques = containedUniques.getMissingUniques(globalDropsOnly);
         console.log("missing uniques: ", missingUniques);
-        const missingUniqueNames = missingUniques.map(unique => unique.name);
-        const ownedCount = ownedUniques.length;
-        const missingCount = missingUniqueNames.length;
 
         setState({ 
             infoMessage: 'Updating filter...',
             collectionStats: {
                 owned: ownedUniques,
-                missing: missingUniqueNames,
-                ownedCount,
-                missingCount
+                missing: missingUniques
             }
         });
         render(appState);
