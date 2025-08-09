@@ -22,7 +22,7 @@ async function handleLeagueChange(league) {
 }
 
 async function handleUpdateFilter() {
-    setState({ isLoading: true, infoMessage: 'Loading stash tab contents...', error: null });
+    setState({ isLoading: true, infoMessage: 'Loading stash tab contents...', error: null, collectionStats: null });
     render(appState);
 
     try {
@@ -31,11 +31,26 @@ async function handleUpdateFilter() {
         const containedUniques = await selectedStash.getContainedUniques();
         
         console.log("owned uniques: ", containedUniques.uniquesMap);
+        
+        // Capture owned uniques BEFORE getMissingUniques modifies the map
+        const ownedUniques = Array.from(containedUniques.uniquesMap.keys());
+        
         const globalDropsOnly = document.getElementById('only-global-drops-cb').checked;
         const missingUniques = containedUniques.getMissingUniques(globalDropsOnly);
         console.log("missing uniques: ", missingUniques);
+        const missingUniqueNames = missingUniques.map(unique => unique.name);
+        const ownedCount = ownedUniques.length;
+        const missingCount = missingUniqueNames.length;
 
-        setState({ infoMessage: 'Updating filter...' });
+        setState({ 
+            infoMessage: 'Updating filter...',
+            collectionStats: {
+                owned: ownedUniques,
+                missing: missingUniqueNames,
+                ownedCount,
+                missingCount
+            }
+        });
         render(appState);
 
         const filterData = await withRateLimitHandling(() => poeApi.getItemFilter(appState.selectedFilterId));
