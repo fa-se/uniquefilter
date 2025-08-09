@@ -64,10 +64,21 @@ async function handleUpdateFilter() {
         const result = await filter.updateRulesForMissingUniques(missingUniques);
 
         if (result.error) {
-            throw new Error(result.error.message);
+            // Check if it's the throttling message (not a real error)
+            if (result.error.message.includes('updated multiple times in the last 10 minutes')) {
+                setState({ 
+                    isLoading: false, 
+                    infoMessage: result.error.message.replace('Error: ', '')
+                });
+            } else {
+                throw new Error(result.error.message);
+            }
+        } else {
+            setState({ 
+                isLoading: false, 
+                infoMessage: 'Filter successfully updated!'
+            });
         }
-        
-        setState({ isLoading: false, infoMessage: 'Filter successfully updated!' });
 
     } catch (error) {
         setState({ isLoading: false, error: `Error: ${error.message}` });
