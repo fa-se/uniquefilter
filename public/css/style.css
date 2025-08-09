@@ -328,10 +328,46 @@ button:disabled, input[type="button"]:disabled {
 .item-entry {
     padding: 0.25em 0;
     border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .item-entry:last-child {
     border-bottom: none;
+}
+
+.item-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.item-base {
+    color: #999;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.base-type-fieldset {
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.base-type-fieldset:last-child {
+    margin-bottom: 0;
+}
+
+.base-type-fieldset legend {
+    padding: 0 0.5em;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.base-type-items {
+    margin: 0;
 }
 
 /* === COLLECTION STATS CONTAINER === */

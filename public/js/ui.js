@@ -73,15 +73,15 @@ export function render(state) {
     
     // Render collection stats if available
     if (state.collectionStats && collectionStatsContainer) {
-        const { ownedCount, missingCount } = state.collectionStats;
+        const { owned, missing } = state.collectionStats;
         
         const template = document.getElementById('collection-stats-template');
         if (template) {
             const statsArea = template.content.cloneNode(true);
         
             // Populate counts
-            statsArea.querySelector('[data-owned-count]').textContent = ownedCount;
-            statsArea.querySelector('[data-missing-count]').textContent = missingCount;
+            statsArea.querySelector('[data-owned-count]').textContent = owned.length;
+            statsArea.querySelector('[data-missing-count]').textContent = missing.length;
             
             // Add click handler
             const viewDetailsBtn = statsArea.querySelector('.view-details-btn');
@@ -93,7 +93,7 @@ export function render(state) {
 }
 
 function showUniquesBreakdown(data) {
-    const { owned, missing, ownedCount, missingCount } = data;
+    const { owned, missing } = data;
     
     // Clone the template
     const template = document.getElementById('uniques-breakdown-template');
@@ -101,29 +101,61 @@ function showUniquesBreakdown(data) {
     
     // Populate counts
     modal.querySelectorAll('[data-owned-count]').forEach(el => {
-        el.textContent = ownedCount;
+        el.textContent = owned.length;
     });
     modal.querySelectorAll('[data-missing-count]').forEach(el => {
-        el.textContent = missingCount;
+        el.textContent = missing.length;
     });
     
+    // Helper function to create grouped list
+    const createGroupedList = (uniques, container) => {
+        // Group by base type
+        const grouped = uniques.reduce((groups, unique) => {
+            const baseType = unique.baseType;
+            if (!groups[baseType]) {
+                groups[baseType] = [];
+            }
+            groups[baseType].push(unique);
+            return groups;
+        }, {});
+
+        // Sort base types alphabetically
+        const sortedBaseTypes = Object.keys(grouped).sort();
+
+        sortedBaseTypes.forEach(baseType => {
+            // Create fieldset-style group
+            const fieldset = document.createElement('fieldset');
+            fieldset.className = 'base-type-fieldset';
+            
+            const legend = document.createElement('legend');
+            legend.textContent = baseType;
+            fieldset.appendChild(legend);
+            
+            const itemsContainer = document.createElement('div');
+            itemsContainer.className = 'base-type-items';
+            
+            // Sort uniques within the group by name
+            const sortedUniques = grouped[baseType].sort((a, b) => a.name.localeCompare(b.name));
+            
+            sortedUniques.forEach(unique => {
+                const item = document.createElement('div');
+                item.className = 'item-entry';
+                item.innerHTML = `<span class="item-name">${unique.name}</span>`;
+                itemsContainer.appendChild(item);
+            });
+            
+            fieldset.appendChild(itemsContainer);
+            container.appendChild(fieldset);
+        });
+    };
+
     // Populate owned list
     const ownedList = modal.querySelector('[data-owned-list]');
-    owned.sort().forEach(name => {
-        const item = document.createElement('div');
-        item.className = 'item-entry';
-        item.textContent = name;
-        ownedList.appendChild(item);
-    });
+    createGroupedList(owned, ownedList);
     
     // Populate missing list
     const missingList = modal.querySelector('[data-missing-list]');
-    missing.sort().forEach(name => {
-        const item = document.createElement('div');
-        item.className = 'item-entry';
-        item.textContent = name;
-        missingList.appendChild(item);
-    });
+    createGroupedList(missing, missingList);
     
     // Add to DOM
     document.body.appendChild(modal);
