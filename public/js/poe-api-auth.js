@@ -20,6 +20,14 @@ export class PoeApiAuth {
                 "authorize-poe-button"
             );
 
+            // show authorization button
+            authorizationButton.style.display = "block";
+
+            // hide elements that require authorization
+            document.querySelectorAll('.requires-authorization').forEach((element) => {
+                element.style.display = 'none';
+            });
+
             let state = self.crypto.randomUUID();
             authorizationButton.addEventListener("click", function () {
                 let url = new URL("https://www.pathofexile.com/oauth/authorize");
@@ -65,7 +73,7 @@ export class PoeApiAuth {
     static #accessTokenExpired() {
         const expiry = PoeApiAuth.getPoeAccessData().expiry;
         const expiryValid = expiry !== null && expiry !== undefined && expiry > 0;
-        // If the expiry date is invalid, the token cannot have expired
-        return expiryValid && PoeApiAuth.getPoeAccessData().expiry < Date.now().valueOf();
+        // If the expiry date is invalid, treat the token as expired
+        return !expiryValid || PoeApiAuth.getPoeAccessData().expiry < Date.now().valueOf();
     }
 }
