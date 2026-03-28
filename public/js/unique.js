@@ -27,6 +27,15 @@ export class UniqueList {
             } else {
                 this.uniquesMap.set(unique.name, this.uniquesMap.get(unique.name) + 1);
             }
+            // foulborn variants (e.g. "Foulborn Berek's Grip") should count as owning the base unique
+            if (unique.name.startsWith('Foulborn ')) {
+                const baseName = unique.name.slice('Foulborn '.length);
+                if (!this.uniquesMap.has(baseName)) {
+                    this.uniquesMap.set(baseName, 1);
+                } else {
+                    this.uniquesMap.set(baseName, this.uniquesMap.get(baseName) + 1);
+                }
+            }
         }
     }
 
