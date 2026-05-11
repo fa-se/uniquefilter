@@ -12,7 +12,7 @@ function renderOptions(selectElement, items, key, value) {
     const options = items.map(item => {
         const option = document.createElement('option');
         option.value = item[key];
-        option.innerHTML = item[value];
+        option.textContent = item[value];
         return option;
     });
     selectElement.replaceChildren(...options);
@@ -143,7 +143,10 @@ function showUniquesBreakdown(data) {
             sortedUniques.forEach(unique => {
                 const item = document.createElement('div');
                 item.className = 'item-entry';
-                item.innerHTML = `<span class="item-name">${unique.name}</span>`;
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'item-name';
+                nameSpan.textContent = unique.name;
+                item.appendChild(nameSpan);
                 itemsContainer.appendChild(item);
             });
             
