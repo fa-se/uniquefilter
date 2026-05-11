@@ -30,13 +30,15 @@ node poe-uniques-updater.js
 
 ### Frontend (Vanilla JavaScript ES6 modules)
 - **main.js**: Application entry point and main controller
-- **poe-api-interface.js**: Path of Exile API client with rate limiting
-- **poe-api-auth.js**: Frontend OAuth handling
-- **filter.js**: Item filter manipulation and generation
+- **poe-api-interface.js**: Path of Exile API client (wraps fetch, gates on auth, exports `NotAuthorizedError`)
+- **poe-api-auth.js**: Frontend OAuth handling (persists CSRF state in sessionStorage)
+- **oauth-finalize.js**: Runs only on the `/oauth2callback` HTML stub — verifies state, writes tokens to localStorage, replaces history
+- **filter.js**: Item filter manipulation and generation; returns a tagged `{status: success|throttled|error}` from upload
 - **stash.js**: Stash data models and unique item detection
 - **state.js**: Global application state management
 - **ui.js**: DOM manipulation and UI rendering
-- **utils.js**: Rate limiting utilities
+- **rate-limit.js**: Leaf module — `RateLimitError`, the global pause flag, header parsing, `computeWaitSeconds`/`getRemainingSlots`
+- **utils.js**: `withRateLimitHandling` retry wrapper
 
 ### Key Data Files
 - **public/json/drop-enabled-uniques.json**: All unique items that can drop
@@ -45,10 +47,11 @@ node poe-uniques-updater.js
 
 ## Authentication Flow
 
-1. User clicks "Authorize" → redirects to PoE OAuth
-2. PoE redirects to `/oauth2callback` with auth code
-3. Backend exchanges code for access token via `poe-auth.js`
-4. Token stored in localStorage, used for API requests
+1. User clicks "Authorize" → `poe-api-auth.js` generates a CSRF `state`, persists it to `sessionStorage`, and redirects to PoE OAuth.
+2. PoE redirects to `/oauth2callback?code=...&state=...`.
+3. The Node server exchanges the code for tokens via `poe-auth.js#exchangeCodeForTokens`, then renders an HTML stub page that embeds the tokens + echoed `state` in a `<script type="application/json">` block (escaping `<` to defeat `</script>` breakout). Tokens never appear in any URL.
+4. `oauth-finalize.js` (loaded by the stub) reads the embedded payload, compares `state` against the value in `sessionStorage`, writes tokens to `localStorage` only on match, then `location.replace('/')`. Mismatch or missing payload redirects to `/?auth_error=<reason>`.
+5. `localStorage` tokens are read per-call by `PoeApi`'s `accessToken` getter so token refreshes don't require re-instantiation.
 
 ## Rate Limiting
 
