@@ -12,6 +12,12 @@ uniquefilter.dev {
 		reverse_proxy localhost:8080
 	}
 	
+	# Security headers applied to every response (Node sets these too for proxied
+	# routes, but file_server responses bypass the Node app entirely).
+	header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self' https://api.pathofexile.com https://www.pathofexile.com"
+	header X-Frame-Options "DENY"
+	header X-Content-Type-Options "nosniff"
+
 	# Prevent stale caches for JS/CSS/HTML
 	header /js/* Cache-Control "no-cache"
 	header /css/* Cache-Control "no-cache"
