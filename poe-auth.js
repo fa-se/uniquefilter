@@ -1,39 +1,27 @@
 import got from 'got';
 import secrets from './secrets.js'
-import * as querystring from "querystring";
 
 const client_id = "uniquefilter";
 
 export default {
     /**
-     * Gets called by POE server after user authorization.
-     * @param {import("url").URL} url
-     * @param {import("http").ServerResponse} res
-     * @returns {Promise}
+     * Exchange an authorization code from the PoE OAuth callback for an access/refresh token pair.
+     * Returns the parsed token-response object; the caller is responsible for rendering the
+     * client-facing response.
+     * @param {string} code
+     * @returns {Promise<{access_token: string, refresh_token: string, expires_in: number, token_type: string, scope: string}>}
      */
-    requestTokenCallback: function (url, res) {
-        let urlParameters = url.searchParams;
-        return new Promise(async (resolve, reject) => {
-            try {
-                const response = await got.post('https://pathofexile.com/oauth/token', {
-                    form: {
-                        code: urlParameters.get('code'),
-                        redirect_uri: "https://uniquefilter.dev/oauth2callback",
-                        grant_type: "authorization_code",
-                        client_id: client_id,
-                        client_secret: secrets.client_secret,
-                        scope: 'account:profile account:stashes account:item_filter'
-                    }
-                });
-                const responseData = JSON.parse(response.body);
-                res.statusCode = 301;
-                res.setHeader("Location", "/?" + querystring.stringify(responseData));
-                resolve(responseData);
-            }
-            catch (error) {
-                console.log(error);
-                reject("Error getting authorization token from the Path of Exile API");
+    async exchangeCodeForTokens(code) {
+        const response = await got.post('https://pathofexile.com/oauth/token', {
+            form: {
+                code,
+                redirect_uri: "https://uniquefilter.dev/oauth2callback",
+                grant_type: "authorization_code",
+                client_id: client_id,
+                client_secret: secrets.client_secret,
+                scope: 'account:profile account:stashes account:item_filter'
             }
         });
-        }
+        return JSON.parse(response.body);
+    }
 }
