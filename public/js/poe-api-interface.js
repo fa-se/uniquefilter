@@ -2,33 +2,17 @@
 
 import {PoeApiAuth} from "./poe-api-auth.js";
 import {Stash, StashList} from "./stash.js";
+import {
+    RateLimitError,
+    STASH_POLICY,
+    computeWaitSeconds,
+    isPaused,
+    updateRateLimitInfoFromHeaders
+} from "./rate-limit.js";
 
-export class RateLimitError extends Error {
-    constructor(timeToWait, ...params) {
-        super(...params);
-        if (Error.captureStackTrace) {
-            Error.captureStackTrace(this, RateLimitError);
-        }
-        this.name = 'RateLimitError';
-        this.timeToWait = timeToWait;
-    }
-}
-
-// Safe access to the rateLimitInfo blob in localStorage. Returns the parsed object,
-// or null/{} on missing/corrupt data so callers don't crash on a stray write.
-export function readRateLimitInfo(policy) {
-    const raw = window.localStorage.getItem("rateLimitInfo");
-    if (raw === null) return policy ? null : {};
-    try {
-        const parsed = JSON.parse(raw);
-        if (parsed && typeof parsed === 'object') {
-            return policy ? (parsed[policy] ?? null) : parsed;
-        }
-    } catch {
-        // fall through to default
-    }
-    return policy ? null : {};
-}
+// Re-export so callers don't need to know rate-limit.js exists yet (utils.js does
+// the right thing by importing from rate-limit.js directly).
+export { RateLimitError } from "./rate-limit.js";
 
 // Throw a useful Error when fetch returns a non-2xx response. PoE returns JSON
 // errors as {error: {code, message}}; our own proxy returns {error: string, code}.
@@ -50,10 +34,9 @@ async function ensureOk(response) {
     throw new Error(message);
 }
 
-class PoeApi {
-    static isPaused = false;
-    static #wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
+const wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
 
+class PoeApi {
     constructor() {
         if (!PoeApi.instance) {
             PoeApiAuth.handleAuthorization();
@@ -61,7 +44,7 @@ class PoeApi {
                 return;
             }
             this.accessToken = PoeApiAuth.getPoeAccessData().token;
-            this.rateLimitPolicies = {stash: 'stash-request-limit', none : ''};
+            this.rateLimitPolicies = {stash: STASH_POLICY, none : ''};
 
             PoeApi.instance = this;
         }
@@ -92,15 +75,15 @@ class PoeApi {
     }
 
     async #getPoeApiData(endpoint, rateLimitPolicy, queryParameters = {}, authenticated = true) {
-        while (PoeApi.isPaused) {
-            await PoeApi.#wait(1);
+        while (isPaused()) {
+            await wait(1);
         }
 
         let baseURL = 'https://api.pathofexile.com';
         let url = new URL(baseURL + endpoint);
         url.search = new URLSearchParams(queryParameters).toString();
 
-        const timeToWait = this.#needToWaitDueToRateLimit(rateLimitPolicy);
+        const timeToWait = computeWaitSeconds(rateLimitPolicy);
         if (timeToWait > 0) {
             throw new RateLimitError(timeToWait);
         }
@@ -111,7 +94,7 @@ class PoeApi {
         }
 
         const response = await fetch(url.toString(), { headers });
-        this.#updateRateLimitInfo(response.headers);
+        updateRateLimitInfoFromHeaders(response.headers);
         await ensureOk(response);
         return await response.json();
     }
@@ -146,101 +129,6 @@ class PoeApi {
     isReady(){
         return PoeApiAuth.isAuthorized();
     }
-
-    /**
-     * Keep track of the rate limit information provided by poe-API's response headers to avoid running into rate limit
-     * @param {Headers} responseHeaders
-     */
-    #updateRateLimitInfo(responseHeaders) {
-        let keys = ['x-rate-limit-rules', 'x-rate-limit-policy'];
-        let rules = responseHeaders.get(keys[0]);
-        if (rules !== null) {
-            rules = rules.toLowerCase();
-            keys.push('x-rate-limit-' + rules, 'x-rate-limit-' + rules + '-state');
-
-            let policy = responseHeaders.get(keys[1]);
-
-            let rateLimitInfo = {};
-            rateLimitInfo[policy] = {
-                limits: responseHeaders.get(keys[2]),
-                state: responseHeaders.get(keys[3]),
-                timestamp: new Date().getTime()
-            };
-            let retryAfter = responseHeaders.get('retry-after');
-            if (retryAfter !== null) {
-                // getTime returns ms, retry-after contains seconds, so conversion is needed
-                retryAfter = new Date().getTime() + (Number(retryAfter) * 1000);
-                rateLimitInfo[policy]['retry-after'] = retryAfter;
-            }
-            window.localStorage.setItem("rateLimitInfo", JSON.stringify(rateLimitInfo));
-        }
-    }
-
-    #needToWaitDueToRateLimit(policy) {
-        let info = readRateLimitInfo(policy);
-        // if no information exists for the specified policy, this is probably the first request so we dont have to wait
-        if(info === undefined || info === null) {
-            return 0;
-        }
-        let timestamp = info.timestamp;
-
-        // limits and state are strings in the following format: '15:10:60,30:300:300',
-        // where ',' delimits different rules, each of which consists of three numbers,
-        // the first number being the maximum allowed requests per amount of seconds represented by the second number.
-        // The third number is the required wait time in case this limit is exceeded.
-        // In case of state, the first number is the current number of requests made
-        // in the sliding window defined by this rule.
-        let limits = info.limits.split(',');
-        let states = info.state.split(',');
-
-        let ruleLimits = [];
-        let ruleStates = [];
-
-        limits.forEach(limit => {ruleLimits.push(parseRule(limit));});
-        states.forEach(state => {ruleStates.push(parseRule(state));});
-
-        let waitTimes = [];
-        ruleStates.forEach((state, index) => {
-            waitTimes.push(calcWaitingTimeForRule(state, ruleLimits[index]));
-        });
-
-        return Math.max(... waitTimes);
-
-        function parseRule(ruleString){
-            let strings = ruleString.split(':');
-            return {
-                maxOrCurrent: Number(strings[0]),
-                timePeriod: Number(strings[1]),
-                waitTime: Number(strings[2]),
-                timestamp: timestamp
-            };
-        }
-
-        function calcWaitingTimeForRule(state, limit){
-            let current = state.maxOrCurrent;
-            let max = limit.maxOrCurrent;
-
-            // Convert ms timestamps to s
-            let now = Math.ceil(Date.now() / 1000);
-            let backThen = Math.ceil(state.timestamp / 1000);
-            // if the limit was exceeded, wait for the time specified by the server
-            if(state.waitTime > 0){
-                return (backThen + state.waitTime - now) + 1;
-            }
-            else if(current < max){
-                return 0; // don't need to wait if limit is not yet reached
-            }
-            else if (current === max){
-                // if the limit was reached with the previous request, assume that all request were made at the very end
-                // of the sliding window, and wait for the full window width to be on the safe side
-                return (backThen + limit.timePeriod - now) + 1;
-            }
-            // if the limit was exceeded somehow, wait for the 'penalty' wait time specified in the rule
-            else return limit.waitTime;
-        }
-    }
-
-     
 
     async updateItemFilter(filter) {
         let data = {

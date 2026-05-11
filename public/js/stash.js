@@ -1,8 +1,9 @@
 'use strict';
 
-import poeApi, { readRateLimitInfo } from './poe-api-interface.js';
+import poeApi from './poe-api-interface.js';
 import { UniqueList } from "./unique.js";
 import { withRateLimitHandling } from "./utils.js";
+import { getRemainingSlots, STASH_POLICY } from "./rate-limit.js";
 
 export class Stash {
     constructor(league, id, name, type, index) {
@@ -34,18 +35,10 @@ export class Stash {
             if (subStashIds.length === 0) break;
 
             // 2. Evaluate: Check available slots based on the headers from the probe request.
-            const rateLimitInfo = readRateLimitInfo('stash-request-limit');
-            let availableSlots = 0;
-            if (rateLimitInfo && rateLimitInfo.limits && rateLimitInfo.state) {
-                const limits = rateLimitInfo.limits.split(',');
-                const states = rateLimitInfo.state.split(',');
-                const availableByRule = limits.map((limit, index) => {
-                    const limitParts = limit.split(':');
-                    const stateParts = states[index].split(':');
-                    return parseInt(limitParts[0], 10) - parseInt(stateParts[0], 10);
-                });
-                availableSlots = Math.max(0, Math.min(...availableByRule));
-            }
+            // If no headers have populated rate-limit info yet, treat as 0 so we keep
+            // probing one tab at a time until we have data (matches prior behavior).
+            const remaining = getRemainingSlots(STASH_POLICY);
+            const availableSlots = remaining === Infinity ? 0 : remaining;
 
             // 3. Calculate batch size, reserving one slot for the next probe if needed
             let batchSize = Math.min(subStashIds.length, availableSlots);
