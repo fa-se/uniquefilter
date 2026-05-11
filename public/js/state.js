@@ -9,6 +9,7 @@ export const appState = {
     isLoading: false,
     error: null,
     infoMessage: null,
+    warningMessage: null,
     rateLimitMessage: null,
     statusMessage: null, // Object: { type, text, data?, clickable? }
     collectionStats: null, // Object: { owned, missing, ownedCount, missingCount }

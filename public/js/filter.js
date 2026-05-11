@@ -20,7 +20,23 @@ export class Filter {
 		let ruleString = this.#generateMissingUniquesRule(uniques);
 		this.#insertMissingUniquesRule(ruleString);
 		this.#updateVersionAndDescription();
-		return await this.#uploadFilter();
+		const response = await this.#uploadFilter();
+		return Filter.#interpretUploadResponse(response);
+	}
+
+	// Normalize PoE's filter-update response into a tagged status. The throttle path
+	// is a 200 with {error: {message: "...updated multiple times in the last 10
+	// minutes..."}} — recognizable only by text because PoE doesn't expose a
+	// distinct code for it.
+	static #interpretUploadResponse(response) {
+		if (!response || !response.error) {
+			return { status: 'success' };
+		}
+		const message = response.error.message ?? 'Filter update failed';
+		if (typeof message === 'string' && message.includes('updated multiple times in the last 10 minutes')) {
+			return { status: 'throttled', message };
+		}
+		return { status: 'error', message };
 	}
 
 	#generateMissingUniquesRule(uniques) {
@@ -70,7 +86,7 @@ ${style}\n`;
 		}
 		// start pattern was found, but end pattern was not? error!
 		else if (endIndex === -1) {
-			throw "missing end segment during rule generation";
+			throw new Error("missing end segment during rule generation");
 		}
 		// start and end pattern found
 		else {
