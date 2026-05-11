@@ -197,7 +197,7 @@
   },
   {
     "name": "Ashcaller",
-    "base item": "Carved Wand"
+    "base item": "Goat's Horn"
   },
   {
     "name": "Ashes of the Stars",
@@ -412,6 +412,10 @@
     "base item": "Heavy Belt"
   },
   {
+    "name": "Bitter Instinct",
+    "base item": "Spiny Round Shield"
+  },
+  {
     "name": "Bitterbind Point",
     "base item": "Titanium Spirit Shield"
   },
@@ -486,6 +490,10 @@
   {
     "name": "Blunderbore",
     "base item": "Astral Plate"
+  },
+  {
+    "name": "Bonemeld",
+    "base item": "Marble Amulet"
   },
   {
     "name": "Bones of Ullr",
@@ -814,6 +822,10 @@
   {
     "name": "Coward's Legacy",
     "base item": "Chain Belt"
+  },
+  {
+    "name": "Cowards' Wail",
+    "base item": "Ezomyte Tower Shield"
   },
   {
     "name": "Cowl of the Ceraunophile",
@@ -1169,7 +1181,7 @@
   },
   {
     "name": "Eclipse Solaris",
-    "base item": "Engraved Wand"
+    "base item": "Faun's Horn"
   },
   {
     "name": "Edge of Madness",
@@ -1364,6 +1376,10 @@
     "base item": "Cobalt Jewel"
   },
   {
+    "name": "Festering Resentment",
+    "base item": "Demon Dagger"
+  },
+  {
     "name": "Fevered Mind",
     "base item": "Cobalt Jewel"
   },
@@ -1374,30 +1390,6 @@
   {
     "name": "Firesong",
     "base item": "Crimson Jewel"
-  },
-  {
-    "name": "First Piece of Brutality",
-    "base item": "Imperial Staff Piece"
-  },
-  {
-    "name": "First Piece of Directions",
-    "base item": "Blunt Arrow Quiver Piece"
-  },
-  {
-    "name": "First Piece of Focus",
-    "base item": "Archon Kite Shield Piece"
-  },
-  {
-    "name": "First Piece of Storms",
-    "base item": "Callous Mask Piece"
-  },
-  {
-    "name": "First Piece of the Arcane",
-    "base item": "Legion Sword Piece"
-  },
-  {
-    "name": "First Piece of Time",
-    "base item": "Cloth Belt Piece"
   },
   {
     "name": "Flamesight",
@@ -1414,6 +1406,10 @@
   {
     "name": "Fleshcrafter",
     "base item": "Necromancer Silks"
+  },
+  {
+    "name": "Fleshrender",
+    "base item": "Exquisite Blade"
   },
   {
     "name": "Fluid Motion",
@@ -1442,10 +1438,6 @@
   {
     "name": "Fortress Covenant",
     "base item": "Cobalt Jewel"
-  },
-  {
-    "name": "Fourth Piece of Focus",
-    "base item": "Archon Kite Shield Piece"
   },
   {
     "name": "Foxshade",
@@ -1664,6 +1656,10 @@
     "base item": "Zealot Gloves"
   },
   {
+    "name": "Hand of the Lords",
+    "base item": "Carnal Mitts"
+  },
+  {
     "name": "Hand of Thought and Motion",
     "base item": "Imperial Claw"
   },
@@ -1678,6 +1674,14 @@
   {
     "name": "Hateforge",
     "base item": "Ancient Gauntlets"
+  },
+  {
+    "name": "Haunting Memories",
+    "base item": "Turquoise Amulet"
+  },
+  {
+    "name": "Headhunter",
+    "base item": "Leather Belt"
   },
   {
     "name": "Headhunter",
@@ -1706,6 +1710,10 @@
   {
     "name": "Heretic's Veil",
     "base item": "Deicide Mask"
+  },
+  {
+    "name": "Heroic Tragedy",
+    "base item": "Timeless Jewel"
   },
   {
     "name": "Hezmana's Bloodlust",
@@ -1860,10 +1868,6 @@
     "base item": "Decimation Bow"
   },
   {
-    "name": "Infused Beachhead",
-    "base item": "Harbinger Map"
-  },
-  {
     "name": "Innsbury Edge",
     "base item": "Elder Sword"
   },
@@ -1902,6 +1906,10 @@
   {
     "name": "Jaws of Agony",
     "base item": "Supreme Spiked Shield"
+  },
+  {
+    "name": "Jiquani's Potential",
+    "base item": "Imperial Staff"
   },
   {
     "name": "Jorrhast's Blacksteel",
@@ -1954,6 +1962,14 @@
   {
     "name": "Karui Ward",
     "base item": "Jade Amulet"
+  },
+  {
+    "name": "Khatal's Geyser",
+    "base item": "Lapis Amulet"
+  },
+  {
+    "name": "Khatal's Weeping",
+    "base item": "Lapis Amulet"
   },
   {
     "name": "Kiara's Determination",
@@ -2122,6 +2138,10 @@
   {
     "name": "Lori's Lantern",
     "base item": "Prismatic Ring"
+  },
+  {
+    "name": "Lost Unity",
+    "base item": "Formless Ring"
   },
   {
     "name": "Lycosidae",
@@ -2293,7 +2313,7 @@
   },
   {
     "name": "Midnight Bargain",
-    "base item": "Engraved Wand"
+    "base item": "Calling Wand"
   },
   {
     "name": "Might of the Meek",
@@ -2345,7 +2365,7 @@
   },
   {
     "name": "Moonsorrow",
-    "base item": "Imbued Wand"
+    "base item": "Kinetic Wand"
   },
   {
     "name": "Mortem Morsu",
@@ -2445,7 +2465,7 @@
   },
   {
     "name": "Obliteration",
-    "base item": "Imbued Wand"
+    "base item": "Omen Wand"
   },
   {
     "name": "Obscurantis",
@@ -2557,7 +2577,7 @@
   },
   {
     "name": "Piscator's Vigil",
-    "base item": "Imbued Wand"
+    "base item": "Kinetic Wand"
   },
   {
     "name": "Pledge of Hands",
@@ -2788,6 +2808,10 @@
     "base item": "Fishing Rod"
   },
   {
+    "name": "Refuge in Isolation",
+    "base item": "Paladin Crown"
+  },
+  {
     "name": "Relentless Fury",
     "base item": "Decorative Axe"
   },
@@ -2916,6 +2940,10 @@
     "base item": "Ornate Mace"
   },
   {
+    "name": "Replica Gifts from Above",
+    "base item": "Diamond Ring"
+  },
+  {
     "name": "Replica Grip of the Council",
     "base item": "Arcanist Gloves"
   },
@@ -3009,7 +3037,7 @@
   },
   {
     "name": "Replica Midnight Bargain",
-    "base item": "Engraved Wand"
+    "base item": "Calling Wand"
   },
   {
     "name": "Replica Mistwall",
@@ -3125,7 +3153,7 @@
   },
   {
     "name": "Replica Twyzel",
-    "base item": "Sage Wand"
+    "base item": "Blasting Wand"
   },
   {
     "name": "Replica Ungil's Gauche",
@@ -3194,6 +3222,10 @@
   {
     "name": "Rigwald's Curse",
     "base item": "Wereclaw Talisman"
+  },
+  {
+    "name": "Rigwald's Hunt",
+    "base item": "General's Brigandine"
   },
   {
     "name": "Rigwald's Quills",
@@ -3280,6 +3312,10 @@
     "base item": "Soldier Gloves"
   },
   {
+    "name": "Saresh's Darkness",
+    "base item": "Chain Belt"
+  },
+  {
     "name": "Scaeva",
     "base item": "Gladius"
   },
@@ -3296,28 +3332,12 @@
     "base item": "Heavy Arrow Quiver"
   },
   {
-    "name": "Second Piece of Brutality",
-    "base item": "Imperial Staff Piece"
+    "name": "Screams of the Desiccated",
+    "base item": "Leather Belt"
   },
   {
-    "name": "Second Piece of Directions",
-    "base item": "Blunt Arrow Quiver Piece"
-  },
-  {
-    "name": "Second Piece of Focus",
-    "base item": "Archon Kite Shield Piece"
-  },
-  {
-    "name": "Second Piece of Storms",
-    "base item": "Callous Mask Piece"
-  },
-  {
-    "name": "Second Piece of the Arcane",
-    "base item": "Legion Sword Piece"
-  },
-  {
-    "name": "Second Piece of Time",
-    "base item": "Cloth Belt Piece"
+    "name": "Screams of the Desiccated",
+    "base item": "Leather Belt"
   },
   {
     "name": "Seething Fury",
@@ -3464,6 +3484,10 @@
     "base item": "Sorcerer Boots"
   },
   {
+    "name": "Skysunder",
+    "base item": "Exquisite Blade"
+  },
+  {
     "name": "Slavedriver's Hand",
     "base item": "Ambush Mitts"
   },
@@ -3486,6 +3510,10 @@
   {
     "name": "Solaris Lorica",
     "base item": "Copper Plate"
+  },
+  {
+    "name": "Solerai's Radiance",
+    "base item": "Chain Belt"
   },
   {
     "name": "Solstice Vigil",
@@ -3780,24 +3808,20 @@
     "base item": "Cobalt Jewel"
   },
   {
+    "name": "The Bandit Lord's Band",
+    "base item": "Gold Ring"
+  },
+  {
+    "name": "The Bane of Hope",
+    "base item": "Maraketh Bow"
+  },
+  {
     "name": "The Baron",
     "base item": "Close Helmet"
   },
   {
     "name": "The Battle Within",
     "base item": "Oakbranch Tincture"
-  },
-  {
-    "name": "The Beachhead",
-    "base item": "Harbinger Map"
-  },
-  {
-    "name": "The Beachhead",
-    "base item": "Harbinger Map"
-  },
-  {
-    "name": "The Beachhead",
-    "base item": "Harbinger Map"
   },
   {
     "name": "The Beast Fur Shawl",
@@ -3852,12 +3876,20 @@
     "base item": "Prophet Crown"
   },
   {
+    "name": "The Broken Elegy",
+    "base item": "Foul Staff"
+  },
+  {
     "name": "The Burden of Shadows",
     "base item": "Primordial Staff"
   },
   {
     "name": "The Burden of Truth",
     "base item": "Crystal Belt"
+  },
+  {
+    "name": "The Caged Mammoth",
+    "base item": "Antique Gauntlets"
   },
   {
     "name": "The Celestial Brace",
@@ -3912,6 +3944,10 @@
     "base item": "Studded Round Shield"
   },
   {
+    "name": "The Desecrated Chalice",
+    "base item": "Coronal Maul"
+  },
+  {
     "name": "The Devourer of Minds",
     "base item": "Pig-Faced Bascinet"
   },
@@ -3926,10 +3962,6 @@
   {
     "name": "The Embalmer",
     "base item": "Carnal Mitts"
-  },
-  {
-    "name": "The Enmity Divine",
-    "base item": "Imperial Staff"
   },
   {
     "name": "The Ephemeral Bond",
@@ -3956,16 +3988,16 @@
     "base item": "Coffer Relic"
   },
   {
+    "name": "The Flame of Hope",
+    "base item": "Maraketh Bow"
+  },
+  {
     "name": "The Flawed Refuge",
     "base item": "Maple Round Shield"
   },
   {
     "name": "The Fledgling",
     "base item": "Lacquered Helmet"
-  },
-  {
-    "name": "The Flow Untethered",
-    "base item": "Cloth Belt"
   },
   {
     "name": "The Formless Flame",
@@ -4012,6 +4044,10 @@
     "base item": "Elegant Sword"
   },
   {
+    "name": "The Golden Charlatan",
+    "base item": "Lion Sword"
+  },
+  {
     "name": "The Golden Rule",
     "base item": "Viridian Jewel"
   },
@@ -4028,12 +4064,20 @@
     "base item": "Judgement Staff"
   },
   {
+    "name": "The Grey Wind",
+    "base item": "Spectral Axe"
+  },
+  {
     "name": "The Gull",
     "base item": "Raven Mask"
   },
   {
     "name": "The Halcyon",
     "base item": "Jade Amulet"
+  },
+  {
+    "name": "The Hallowed Monarch",
+    "base item": "Faithful Helmet"
   },
   {
     "name": "The Hand of Phrecia",
@@ -4108,6 +4152,10 @@
     "base item": "Studded Belt"
   },
   {
+    "name": "The Monastery Bell",
+    "base item": "Dream Mace"
+  },
+  {
     "name": "The Night Lamp",
     "base item": "Urn Relic"
   },
@@ -4137,7 +4185,7 @@
   },
   {
     "name": "The Poet's Pen",
-    "base item": "Carved Wand"
+    "base item": "Somatic Wand"
   },
   {
     "name": "The Poised Prism",
@@ -4192,8 +4240,12 @@
     "base item": "Rustic Sash"
   },
   {
-    "name": "The Rippling Thoughts",
-    "base item": "Legion Sword"
+    "name": "The Sacred Chalice",
+    "base item": "Coronal Maul"
+  },
+  {
+    "name": "The Sands of Time",
+    "base item": "Tyrant's Sekhem"
   },
   {
     "name": "The Saviour",
@@ -4252,6 +4304,10 @@
     "base item": "Royal Staff"
   },
   {
+    "name": "The Sundered Will",
+    "base item": "Fugitive Ring"
+  },
+  {
     "name": "The Supreme Truth",
     "base item": "Crystal Sceptre"
   },
@@ -4270,10 +4326,6 @@
   {
     "name": "The Tempest Rising",
     "base item": "Goliath Greaves"
-  },
-  {
-    "name": "The Tempest's Binding",
-    "base item": "Callous Mask"
   },
   {
     "name": "The Tempest's Liberation",
@@ -4302,6 +4354,10 @@
   {
     "name": "The Twilight Temple",
     "base item": "Moon Temple Map"
+  },
+  {
+    "name": "The Unseen Hue",
+    "base item": "Opal Ring"
   },
   {
     "name": "The Unshattered Will",
@@ -4336,6 +4392,22 @@
     "base item": "Vile Staff"
   },
   {
+    "name": "The Will of Esh",
+    "base item": "Synaptic Ring"
+  },
+  {
+    "name": "The Will of Tul",
+    "base item": "Cryonic Ring"
+  },
+  {
+    "name": "The Will of Uul-Netol",
+    "base item": "Organic Ring"
+  },
+  {
+    "name": "The Will of Xoph",
+    "base item": "Enthalpic Ring"
+  },
+  {
     "name": "The Winds of Fate",
     "base item": "Foul Staff"
   },
@@ -4354,26 +4426,6 @@
   {
     "name": "Thief's Torment",
     "base item": "Prismatic Ring"
-  },
-  {
-    "name": "Third Piece of Brutality",
-    "base item": "Imperial Staff Piece"
-  },
-  {
-    "name": "Third Piece of Directions",
-    "base item": "Blunt Arrow Quiver Piece"
-  },
-  {
-    "name": "Third Piece of Focus",
-    "base item": "Archon Kite Shield Piece"
-  },
-  {
-    "name": "Third Piece of Storms",
-    "base item": "Callous Mask Piece"
-  },
-  {
-    "name": "Third Piece of the Arcane",
-    "base item": "Legion Sword Piece"
   },
   {
     "name": "Thousand Ribbons",
@@ -4497,7 +4549,7 @@
   },
   {
     "name": "Twyzel",
-    "base item": "Sage Wand"
+    "base item": "Blasting Wand"
   },
   {
     "name": "Ulaman's Gaze",
@@ -4524,8 +4576,16 @@
     "base item": "Cutlass"
   },
   {
+    "name": "Unlight Extant",
+    "base item": "Sage Wand"
+  },
+  {
     "name": "Unnatural Instinct",
     "base item": "Viridian Jewel"
+  },
+  {
+    "name": "Untainted Paradise",
+    "base item": "Tropical Island Map"
   },
   {
     "name": "Unyielding Flame",
@@ -4760,6 +4820,10 @@
     "base item": "Prismatic Jewel"
   },
   {
+    "name": "Wellwater Phylactery",
+    "base item": "Colossal Mana Flask"
+  },
+  {
     "name": "Whakawairua Tuahu",
     "base item": "Strand Map"
   },
@@ -4824,6 +4888,10 @@
     "base item": "Gold Flask"
   },
   {
+    "name": "Wing of the Wyvern",
+    "base item": "Imperial Bow"
+  },
+  {
     "name": "Wings of Entropy",
     "base item": "Ezomyte Axe"
   },
@@ -4846,6 +4914,10 @@
   {
     "name": "Witchhunter's Judgment",
     "base item": "Highborn Staff"
+  },
+  {
+    "name": "Woespike",
+    "base item": "Steel Ring"
   },
   {
     "name": "Wondertrap",
