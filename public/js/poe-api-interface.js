@@ -14,6 +14,13 @@ import {
 // the right thing by importing from rate-limit.js directly).
 export { RateLimitError } from "./rate-limit.js";
 
+export class NotAuthorizedError extends Error {
+    constructor(message = 'PoE API call attempted before authorization') {
+        super(message);
+        this.name = 'NotAuthorizedError';
+    }
+}
+
 // Throw a useful Error when fetch returns a non-2xx response. PoE returns JSON
 // errors as {error: {code, message}}; our own proxy returns {error: string, code}.
 // 429 maps to RateLimitError so existing retry logic can resume.
@@ -37,18 +44,23 @@ async function ensureOk(response) {
 const wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
 
 class PoeApi {
-    constructor() {
-        if (!PoeApi.instance) {
-            PoeApiAuth.handleAuthorization();
-            if(!PoeApiAuth.isAuthorized()){
-                return;
-            }
-            this.accessToken = PoeApiAuth.getPoeAccessData().token;
-            this.rateLimitPolicies = {stash: STASH_POLICY, none : ''};
+    // Auth state is read per-call (via the accessToken getter and #requireAuthorized)
+    // rather than cached on the instance, so a fresh token after a refresh is picked
+    // up without re-instantiating, and there's no half-initialized state to guard.
+    rateLimitPolicies = { stash: STASH_POLICY, none: '' };
 
-            PoeApi.instance = this;
+    get accessToken() {
+        return PoeApiAuth.getPoeAccessData().token;
+    }
+
+    isReady() {
+        return PoeApiAuth.isAuthorized();
+    }
+
+    #requireAuthorized() {
+        if (!PoeApiAuth.isAuthorized()) {
+            throw new NotAuthorizedError();
         }
-        return PoeApi.instance;
     }
 
     async getLeagues() {
@@ -57,19 +69,23 @@ class PoeApi {
     }
 
     async getAccountStashes(league) {
+        this.#requireAuthorized();
         return new StashList(league, await this.#getPoeApiData('/stash/' + league, this.rateLimitPolicies.stash));
     }
 
     async getStashDetail(league, id) {
+        this.#requireAuthorized();
         return await this.#getPoeApiData('/stash/' + league + '/' + id, this.rateLimitPolicies.stash)
     }
 
     async getAccountItemFilters(){
+        this.#requireAuthorized();
         let response = await this.#getPoeApiData('/item-filter', this.rateLimitPolicies.none);
         return response.filters;
     }
 
     async getItemFilter(filterId){
+        this.#requireAuthorized();
         let response = await this.#getPoeApiData('/item-filter/' + filterId, this.rateLimitPolicies.none);
         return response.filter;
     }
@@ -126,11 +142,8 @@ class PoeApi {
         return await response.json();
     }
 
-    isReady(){
-        return PoeApiAuth.isAuthorized();
-    }
-
     async updateItemFilter(filter) {
+        this.#requireAuthorized();
         let data = {
             filter: filter.filter,
             version: filter.version,
