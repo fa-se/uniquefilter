@@ -30,13 +30,15 @@ node poe-uniques-updater.js
 
 ### Frontend (Vanilla JavaScript ES6 modules)
 - **main.js**: Application entry point and main controller
-- **poe-api-interface.js**: Path of Exile API client with rate limiting
-- **poe-api-auth.js**: Frontend OAuth handling
-- **filter.js**: Item filter manipulation and generation
+- **poe-api-interface.js**: Path of Exile API client (wraps fetch, gates on auth, exports `NotAuthorizedError`)
+- **poe-api-auth.js**: Frontend OAuth handling (persists CSRF state in sessionStorage)
+- **oauth-finalize.js**: Runs only on the `/oauth2callback` HTML stub — verifies state, writes tokens to localStorage, replaces history
+- **filter.js**: Item filter manipulation and generation; returns a tagged `{status: success|throttled|error}` from upload
 - **stash.js**: Stash data models and unique item detection
 - **state.js**: Global application state management
 - **ui.js**: DOM manipulation and UI rendering
-- **utils.js**: Rate limiting utilities
+- **rate-limit.js**: Leaf module — `RateLimitError`, the global pause flag, header parsing, `computeWaitSeconds`/`getRemainingSlots`
+- **utils.js**: `withRateLimitHandling` retry wrapper
 
 ### Key Data Files
 - **public/json/drop-enabled-uniques.json**: All unique items that can drop
@@ -45,10 +47,11 @@ node poe-uniques-updater.js
 
 ## Authentication Flow
 
-1. User clicks "Authorize" → redirects to PoE OAuth
-2. PoE redirects to `/oauth2callback` with auth code
-3. Backend exchanges code for access token via `poe-auth.js`
-4. Token stored in localStorage, used for API requests
+1. User clicks "Authorize" → `poe-api-auth.js` generates a CSRF `state`, persists it to `sessionStorage`, and redirects to PoE OAuth.
+2. PoE redirects to `/oauth2callback?code=...&state=...`.
+3. The Node server exchanges the code for tokens via `poe-auth.js#exchangeCodeForTokens`, then renders an HTML stub page that embeds the tokens + echoed `state` in a `<script type="application/json">` block (escaping `<` to defeat `</script>` breakout). Tokens never appear in any URL.
+4. `oauth-finalize.js` (loaded by the stub) reads the embedded payload, compares `state` against the value in `sessionStorage`, writes tokens to `localStorage` only on match, then `location.replace('/')`. Mismatch or missing payload redirects to `/?auth_error=<reason>`.
+5. `localStorage` tokens are read per-call by `PoeApi`'s `accessToken` getter so token refreshes don't require re-instantiation.
 
 ## Rate Limiting
 
@@ -82,27 +85,34 @@ Copy `secrets.js.sample` to `secrets.js` and configure:
 ## Production Deployment
 
 **Production Server:** `raspberrypi` (accessible via SSH with public key auth)
-**Production Path:** `/home/pi/uniquefilter/`
-**Service Management:** systemd service `uniquefilter.service`
+**Production URL:** https://uniquefilter.dev
+**Node app path:** `/home/pi/uniquefilter/` (systemd unit `uniquefilter.service`, runs on `127.0.0.1:8080`)
+**Webserver:** Caddy (systemd unit `caddy`). Config at **`/etc/caddy/Caddyfile`** — the repo's `Caddyfile` is the source of truth and deploys directly there. There is no copy under `/home/pi/uniquefilter/`; do not re-create one.
 
-### Deployment Process:
-1. **Dry run first:** `rsync -av --dry-run public/js/file.js pi@raspberrypi:/home/pi/uniquefilter/public/js/`
-2. **Verify changes:** Check file sizes/line counts match expectations
-3. **Deploy files with CORRECT PATHS:** 
-   - `rsync -av public/js/file.js pi@raspberrypi:/home/pi/uniquefilter/public/js/`
-   - `rsync -av public/css/file.css pi@raspberrypi:/home/pi/uniquefilter/public/css/`
+### Deploy Node app code (rsync to `/home/pi/uniquefilter/`)
+1. **Dry run first:** `rsync -avn public/js/*.js pi@raspberrypi:/home/pi/uniquefilter/public/js/`
+2. **Verify changes:** check the file list matches what you expect.
+3. **Deploy files with CORRECT PATHS:**
+   - `rsync -av public/js/*.js pi@raspberrypi:/home/pi/uniquefilter/public/js/`
+   - `rsync -av public/css/style.css pi@raspberrypi:/home/pi/uniquefilter/public/css/`
+   - `rsync -av app.js poe-auth.js cors-proxy.js pi@raspberrypi:/home/pi/uniquefilter/`
 4. **Restart service:** `ssh pi@raspberrypi "sudo systemctl restart uniquefilter"`
-5. **Check status:** `ssh pi@raspberrypi "sudo systemctl status uniquefilter"`
-6. **Verify deployment:** Use curl to check files are actually updated: 
-   - `curl -s https://uniquefilter.dev/js/file.js | grep "some-unique-string"`
+5. **Check status:** `ssh pi@raspberrypi "sudo systemctl is-active uniquefilter && sudo journalctl -u uniquefilter -n 5 --no-pager"`
+6. **Verify deployment:** `curl -s https://uniquefilter.dev/js/<file>.js | wc -c` and compare to local.
 
-**CRITICAL:** Always deploy to the correct `public/` subdirectories, NOT to the root directory. The server serves static files from the `public/` folder structure.
+### Deploy Caddyfile change
+1. `scp Caddyfile pi@raspberrypi:/tmp/Caddyfile.new`
+2. `ssh pi@raspberrypi "sudo caddy validate --config /tmp/Caddyfile.new --adapter caddyfile"` — must report "Valid configuration".
+3. `ssh pi@raspberrypi "sudo cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.bak.\$(date +%Y%m%d-%H%M%S) && sudo cp /tmp/Caddyfile.new /etc/caddy/Caddyfile && sudo systemctl reload caddy"` (use `reload`, not `restart` — preserves connections).
+4. Verify: `curl -sD - -o /dev/null https://uniquefilter.dev/ | grep -i content-security-policy` (or whichever header you changed).
 
-### Production Notes:
-- Production directory is NOT a git repository (deploy via file copy)
-- Service runs as systemd daemon with auto-restart
-- Check server logs for security events and rate limiting
-- Production URL: https://uniquefilter.dev
+**CRITICAL:** Always deploy app code to the correct `public/` subdirectories, NOT to the root directory. The server serves static files from the `public/` folder structure.
+
+### Production Notes
+- Production directory is NOT a git repository — deploy via rsync.
+- Caddy serves static files directly from `/home/pi/uniquefilter/public/` via `file_server`; only `/api/*`, `/update-filter`, and `/oauth2callback` proxy to the Node app on `127.0.0.1:8080`. Security headers (CSP, X-Frame-Options, X-Content-Type-Options) are set in the Caddyfile so they cover static responses too; the Node app sets them again for proxied responses as defense in depth.
+- Service runs as systemd daemon with auto-restart.
+- Check server logs (`journalctl -u uniquefilter` / `journalctl -u caddy`) for security events and rate limiting.
 
 ## Testing
 
