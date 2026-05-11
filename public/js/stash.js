@@ -1,6 +1,6 @@
 'use strict';
 
-import poeApi from './poe-api-interface.js';
+import poeApi, { readRateLimitInfo } from './poe-api-interface.js';
 import { UniqueList } from "./unique.js";
 import { withRateLimitHandling } from "./utils.js";
 
@@ -34,7 +34,7 @@ export class Stash {
             if (subStashIds.length === 0) break;
 
             // 2. Evaluate: Check available slots based on the headers from the probe request.
-            const rateLimitInfo = JSON.parse(window.localStorage.getItem("rateLimitInfo"))['stash-request-limit'];
+            const rateLimitInfo = readRateLimitInfo('stash-request-limit');
             let availableSlots = 0;
             if (rateLimitInfo && rateLimitInfo.limits && rateLimitInfo.state) {
                 const limits = rateLimitInfo.limits.split(',');
