@@ -14,6 +14,42 @@ export class RateLimitError extends Error {
     }
 }
 
+// Safe access to the rateLimitInfo blob in localStorage. Returns the parsed object,
+// or null/{} on missing/corrupt data so callers don't crash on a stray write.
+export function readRateLimitInfo(policy) {
+    const raw = window.localStorage.getItem("rateLimitInfo");
+    if (raw === null) return policy ? null : {};
+    try {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+            return policy ? (parsed[policy] ?? null) : parsed;
+        }
+    } catch {
+        // fall through to default
+    }
+    return policy ? null : {};
+}
+
+// Throw a useful Error when fetch returns a non-2xx response. PoE returns JSON
+// errors as {error: {code, message}}; our own proxy returns {error: string, code}.
+// 429 maps to RateLimitError so existing retry logic can resume.
+async function ensureOk(response) {
+    if (response.ok) return;
+    let bodyText = '';
+    try { bodyText = await response.text(); } catch { /* ignore */ }
+    let parsed = null;
+    try { parsed = bodyText ? JSON.parse(bodyText) : null; } catch { /* not JSON */ }
+    const message =
+        parsed?.error?.message ??
+        (typeof parsed?.error === 'string' ? parsed.error : null) ??
+        `HTTP ${response.status} ${response.statusText}`;
+    if (response.status === 429) {
+        const retryAfter = Number(response.headers.get('retry-after')) || 60;
+        throw new RateLimitError(retryAfter, message);
+    }
+    throw new Error(message);
+}
+
 class PoeApi {
     static isPaused = false;
     static #wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
@@ -26,10 +62,6 @@ class PoeApi {
             }
             this.accessToken = PoeApiAuth.getPoeAccessData().token;
             this.rateLimitPolicies = {stash: 'stash-request-limit', none : ''};
-
-            if(window.localStorage.getItem("rateLimitInfo") === null){
-                window.localStorage.setItem("rateLimitInfo", JSON.stringify({}));
-            }
 
             PoeApi.instance = this;
         }
@@ -80,6 +112,7 @@ class PoeApi {
 
         const response = await fetch(url.toString(), { headers });
         this.#updateRateLimitInfo(response.headers);
+        await ensureOk(response);
         return await response.json();
     }
 
@@ -98,7 +131,7 @@ class PoeApi {
            },
             body: JSON.stringify(data)
         });
-
+        await ensureOk(response);
         return await response.json();
     }
 
@@ -106,6 +139,7 @@ class PoeApi {
         const url = new URL(endpoint, window.location.origin);
         url.search = new URLSearchParams(queryParameters).toString();
         const response = await fetch(url.toString());
+        await ensureOk(response);
         return await response.json();
     }
 
@@ -143,7 +177,7 @@ class PoeApi {
     }
 
     #needToWaitDueToRateLimit(policy) {
-        let info = JSON.parse(window.localStorage.getItem("rateLimitInfo"))[policy];
+        let info = readRateLimitInfo(policy);
         // if no information exists for the specified policy, this is probably the first request so we dont have to wait
         if(info === undefined || info === null) {
             return 0;
