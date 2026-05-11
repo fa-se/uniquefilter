@@ -129,7 +129,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Ashcaller",
-    "base item": "Carved Wand"
+    "base item": "Goat's Horn"
   },
   {
     "name": "Ashrend",
@@ -180,6 +180,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Bronze Sceptre"
   },
   {
+    "name": "Azadi Crest",
+    "base item": "Lacquered Buckler"
+  },
+  {
     "name": "Badge of the Brotherhood",
     "base item": "Turquoise Amulet"
   },
@@ -226,6 +230,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Berek's Respite",
     "base item": "Two-Stone Ring"
+  },
+  {
+    "name": "Binds of Bloody Vengeance",
+    "base item": "Vanguard Belt"
   },
   {
     "name": "Bino's Kitchen Knife",
@@ -422,6 +430,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Cospri's Will",
     "base item": "Assassin's Garb"
+  },
+  {
+    "name": "Cowards' Wail",
+    "base item": "Ezomyte Tower Shield"
   },
   {
     "name": "Craghead",
@@ -625,7 +637,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Eclipse Solaris",
-    "base item": "Engraved Wand"
+    "base item": "Faun's Horn"
   },
   {
     "name": "Edge of Madness",
@@ -868,6 +880,14 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Cemetery Map"
   },
   {
+    "name": "Hand of Heresy",
+    "base item": "Martyr Gloves"
+  },
+  {
+    "name": "Headhunter",
+    "base item": "Leather Belt"
+  },
+  {
     "name": "Headhunter",
     "base item": "Leather Belt"
   },
@@ -906,6 +926,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Honourhome",
     "base item": "Soldier Helmet"
+  },
+  {
+    "name": "Howlcrack",
+    "base item": "Ezomyte Burgonet"
   },
   {
     "name": "Hrimnor's Hymn",
@@ -1002,6 +1026,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Jaws of Agony",
     "base item": "Supreme Spiked Shield"
+  },
+  {
+    "name": "Jiquani's Potential",
+    "base item": "Imperial Staff"
   },
   {
     "name": "Jorrhast's Blacksteel",
@@ -1289,7 +1317,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Midnight Bargain",
-    "base item": "Engraved Wand"
+    "base item": "Calling Wand"
   },
   {
     "name": "Might of the Meek",
@@ -1337,7 +1365,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Moonsorrow",
-    "base item": "Imbued Wand"
+    "base item": "Kinetic Wand"
   },
   {
     "name": "Mortem Morsu",
@@ -1397,7 +1425,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Obliteration",
-    "base item": "Imbued Wand"
+    "base item": "Omen Wand"
   },
   {
     "name": "Obscurantis",
@@ -1461,7 +1489,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Piscator's Vigil",
-    "base item": "Imbued Wand"
+    "base item": "Kinetic Wand"
   },
   {
     "name": "Poorjoy's Asylum",
@@ -1612,6 +1640,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Wereclaw Talisman"
   },
   {
+    "name": "Rigwald's Hunt",
+    "base item": "General's Brigandine"
+  },
+  {
     "name": "Rigwald's Quills",
     "base item": "Two-Point Arrow Quiver"
   },
@@ -1674,6 +1706,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Scold's Bridle",
     "base item": "Mind Cage"
+  },
+  {
+    "name": "Scornflux",
+    "base item": "Satin Slippers"
   },
   {
     "name": "Scorpion's Call",
@@ -2068,6 +2104,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Gold Amulet"
   },
   {
+    "name": "The Immortal Will",
+    "base item": "Archon Kite Shield"
+  },
+  {
     "name": "The Iron Fortress",
     "base item": "Crusader Plate"
   },
@@ -2084,6 +2124,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Studded Belt"
   },
   {
+    "name": "The Monastery Bell",
+    "base item": "Dream Mace"
+  },
+  {
     "name": "The Oppressor",
     "base item": "Elegant Round Shield"
   },
@@ -2093,7 +2137,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "The Poet's Pen",
-    "base item": "Carved Wand"
+    "base item": "Somatic Wand"
   },
   {
     "name": "The Poised Prism",
@@ -2132,6 +2176,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Lathi"
   },
   {
+    "name": "The Shattered Divinity",
+    "base item": "Blunt Arrow Quiver"
+  },
+  {
     "name": "The Sorrow of the Divine",
     "base item": "Sulphur Flask"
   },
@@ -2148,12 +2196,24 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Crystal Sceptre"
   },
   {
+    "name": "The Surging Thoughts",
+    "base item": "Legion Sword"
+  },
+  {
+    "name": "The Tempest's Liberation",
+    "base item": "Callous Mask"
+  },
+  {
     "name": "The Tempestuous Steel",
     "base item": "War Sword"
   },
   {
     "name": "The Three Dragons",
     "base item": "Golden Mask"
+  },
+  {
+    "name": "The Torrent's Reclamation",
+    "base item": "Cloth Belt"
   },
   {
     "name": "The Twilight Temple",
@@ -2178,6 +2238,10 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "The Writhing Jar",
     "base item": "Hallowed Hybrid Flask"
+  },
+  {
+    "name": "The Yielding Mortality",
+    "base item": "Imperial Staff"
   },
   {
     "name": "Thief's Torment",
@@ -2253,7 +2317,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Twyzel",
-    "base item": "Sage Wand"
+    "base item": "Blasting Wand"
   },
   {
     "name": "Umbilicus Immortalis",
@@ -2272,8 +2336,16 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Turquoise Amulet"
   },
   {
+    "name": "Unlight Extant",
+    "base item": "Sage Wand"
+  },
+  {
     "name": "Unnatural Instinct",
     "base item": "Viridian Jewel"
+  },
+  {
+    "name": "Untainted Paradise",
+    "base item": "Tropical Island Map"
   },
   {
     "name": "Usurper's Penance",
