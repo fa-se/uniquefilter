@@ -1,0 +1,34 @@
+uniquefilter.dev {
+	root * /home/pi/uniquefilter/public
+	
+	# Proxy API and special routes first (before file_server)
+	handle /api/* {
+		reverse_proxy localhost:8080
+	}
+	handle /update-filter {
+		reverse_proxy localhost:8080
+	}
+	handle /oauth2callback {
+		reverse_proxy localhost:8080
+	}
+	
+	# Prevent stale caches for JS/CSS/HTML
+	header /js/* Cache-Control "no-cache"
+	header /css/* Cache-Control "no-cache"
+	header /html/* Cache-Control "no-cache"
+
+	# Serve static files
+	handle {
+		file_server
+		
+		# Fallback to main.html for SPA routing (only for paths that don't exist)
+		@notFound {
+			not file
+			not path /api/*
+			not path /update-filter
+			not path /oauth2callback
+		}
+		rewrite @notFound /html/main.html
+	}
+}
+
