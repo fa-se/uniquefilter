@@ -149,9 +149,7 @@ class PoeApi {
             version: filter.version,
             description: filter.description
         };
-        let response = await this.#postPoeApiData('/update-filter', data, {id: filter.id});
-
-        return JSON.parse(response);
+        return await this.#postPoeApiData('/update-filter', data, {id: filter.id});
     }
 }
 

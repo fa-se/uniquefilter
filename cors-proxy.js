@@ -71,9 +71,10 @@ export default {
                     json: body
 
                 });
-                //const responseData = JSON.parse(response.body);
+                // got returns body as a string when responseType isn't set; pass through
+                // unmodified so the client gets the raw JSON document (one parse round-trip).
                 res.writeHead(response.statusCode, {"Content-Type": response.headers["content-type"]});
-                res.end(JSON.stringify(response.body))
+                res.end(response.body);
             }
             catch (error) {
                 console.error('PoE API error:', error.message);
