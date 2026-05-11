@@ -195,6 +195,12 @@ button:disabled, input[type="button"]:disabled {
     border: 1px solid #8a8a4a;
 }
 
+.status-warning {
+    background-color: #4a3a1a;
+    color: #e8c890;
+    border: 1px solid #a07840;
+}
+
 .clickable {
     text-decoration: underline;
     opacity: 0.8;

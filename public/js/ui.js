@@ -54,6 +54,9 @@ export function render(state) {
     } else if (state.error) {
         primaryMessage = state.error;
         primaryClass = 'status-error';
+    } else if (state.warningMessage) {
+        primaryMessage = state.warningMessage;
+        primaryClass = 'status-warning';
     } else if (state.isLoading || state.infoMessage) {
         primaryMessage = state.infoMessage;
         primaryClass = 'status-info';

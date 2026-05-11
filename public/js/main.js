@@ -22,7 +22,7 @@ async function handleLeagueChange(league) {
 }
 
 async function handleUpdateFilter() {
-    setState({ isLoading: true, infoMessage: 'Loading stash tab contents...', error: null, collectionStats: null });
+    setState({ isLoading: true, infoMessage: 'Loading stash tab contents...', error: null, warningMessage: null, collectionStats: null });
     render(appState);
 
     try {
@@ -58,25 +58,24 @@ async function handleUpdateFilter() {
 
         const result = await filter.updateRulesForMissingUniques(missingUniques);
 
-        if (result.error) {
-            // Check if it's the throttling message (not a real error)
-            if (result.error.message.includes('updated multiple times in the last 10 minutes')) {
-                setState({ 
-                    isLoading: false, 
-                    infoMessage: result.error.message.replace('Error: ', '')
-                });
-            } else {
-                throw new Error(result.error.message);
-            }
+        if (result.status === 'throttled') {
+            setState({
+                isLoading: false,
+                infoMessage: null,
+                warningMessage: `Filter not updated — PoE rate-limits filter updates ("${result.message.replace(/^Error:\s*/, '')}"). Your local filter rules are current; try again later.`
+            });
+        } else if (result.status === 'error') {
+            throw new Error(result.message);
         } else {
-            setState({ 
-                isLoading: false, 
-                infoMessage: 'Filter successfully updated!'
+            setState({
+                isLoading: false,
+                infoMessage: 'Filter successfully updated!',
+                warningMessage: null
             });
         }
 
     } catch (error) {
-        setState({ isLoading: false, error: `Error: ${error.message}` });
+        setState({ isLoading: false, error: `Error: ${error.message}`, warningMessage: null });
         console.error(error);
     }
     render(appState);
