@@ -1,17 +1,14 @@
 'use strict';
 
+const STATE_STORAGE_KEY = 'poe-oauth-state';
+
 export class PoeApiAuth {
     static handleAuthorization(){
+        // Surface auth errors propagated from /oauth2callback via the auth_error query param.
         const urlParams = new URLSearchParams(window.location.search);
-
-        // save authorization data if user got redirected during authorization
-        if (urlParams.has("access_token")) {
-            PoeApiAuth.#setPoeAccessData(
-                urlParams.get("access_token"),
-                Date.now().valueOf() + 1000 * Number(urlParams.get("expires_in")),
-                urlParams.get("refresh_token")
-            );
-            window.location.search = '';
+        if (urlParams.has('auth_error')) {
+            console.warn('Authorization failed:', urlParams.get('auth_error'));
+            window.history.replaceState({}, '', window.location.pathname);
         }
 
         // if this client is not yet authorized, prepare the authorization button to direct the user to the pathofexile website
@@ -28,8 +25,14 @@ export class PoeApiAuth {
                 element.style.display = 'none';
             });
 
-            let state = self.crypto.randomUUID();
             authorizationButton.addEventListener("click", function () {
+                // Generate the CSRF state at click time and persist it in sessionStorage so
+                // oauth-finalize.js can verify the value PoE echoes back. sessionStorage
+                // survives the cross-origin round-trip because it's keyed to the
+                // uniquefilter.dev origin and the tab.
+                const state = self.crypto.randomUUID();
+                window.sessionStorage.setItem(STATE_STORAGE_KEY, state);
+
                 let url = new URL("https://www.pathofexile.com/oauth/authorize");
                 url.searchParams.set("client_id", "uniquefilter");
                 url.searchParams.set("response_type", "code");
@@ -62,12 +65,6 @@ export class PoeApiAuth {
             expiry: Number(window.localStorage.getItem("poe-access-token-expiry")),
             refreshToken: window.localStorage.getItem("poe-refresh-token"),
         };
-    }
-
-    static #setPoeAccessData(token, expiry, refreshToken) {
-        window.localStorage.setItem("poe-access-token", token);
-        window.localStorage.setItem("poe-access-token-expiry", expiry);
-        window.localStorage.setItem("poe-refresh-token", refreshToken);
     }
 
     static #accessTokenExpired() {

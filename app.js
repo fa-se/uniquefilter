@@ -106,6 +106,36 @@ async function checkForNewLeagues(leaguesFromApi) {
     }
 }
 
+// Escape a value for safe embedding inside a <script type="application/json"> block.
+// JSON.parse handles everything except </script> breakout, so we only need to escape "<".
+function escapeForJsonScript(value) {
+    return JSON.stringify(value).replace(/</g, '\\u003c');
+}
+
+function renderOauthCallbackPage(tokens, state) {
+    const payload = {
+        access_token: tokens.access_token,
+        refresh_token: tokens.refresh_token,
+        expires_in: tokens.expires_in,
+        state: state
+    };
+    return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Authorizing…</title>
+<meta name="robots" content="noindex"></head>
+<body><p>Finalizing authorization…</p>
+<script type="application/json" id="oauth-payload">${escapeForJsonScript(payload)}</script>
+<script src="/js/oauth-finalize.js" type="module"></script>
+</body></html>`;
+}
+
+function renderOauthErrorPage(reason) {
+    return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Authorization failed</title>
+<meta http-equiv="refresh" content="2;url=/?auth_error=${encodeURIComponent(reason)}">
+</head>
+<body><p>Authorization failed (${reason}). Redirecting…</p></body></html>`;
+}
+
 function serveFile(filePath, response) {
     const fileExtension = path.extname(filePath);
     const mimeType = contentTypes[fileExtension] || contentTypes.default;
@@ -161,13 +191,25 @@ const server = http.createServer(async (request, response) => {
     if (pathname === '/') {
         serveFile(path.join(publicDirectory, 'html', 'main.html'), response);
     } else if (pathname === '/oauth2callback') {
-        response.setHeader("Content-Type", contentTypes['.json']);
-        poeAuth.requestTokenCallback(url, response)
-            .then(() => response.end())
-            .catch(error => {
-                response.statusCode = 500;
-                response.end(JSON.stringify(error));
-            });
+        const code = url.searchParams.get('code');
+        const stateParam = url.searchParams.get('state');
+        if (!code) {
+            response.setHeader('Content-Type', contentTypes['.html']);
+            response.statusCode = 400;
+            response.end(renderOauthErrorPage('missing_code'));
+            return;
+        }
+        try {
+            const tokens = await poeAuth.exchangeCodeForTokens(code);
+            response.setHeader('Content-Type', contentTypes['.html']);
+            response.statusCode = 200;
+            response.end(renderOauthCallbackPage(tokens, stateParam));
+        } catch (error) {
+            console.error('OAuth token exchange failed:', error.message);
+            response.setHeader('Content-Type', contentTypes['.html']);
+            response.statusCode = 500;
+            response.end(renderOauthErrorPage('token_exchange_failed'));
+        }
     } else if (pathname === '/update-filter') {
         // Stricter rate limiting for expensive operations
         if (!checkRateLimit(clientIP, 10)) { // 10 requests per minute
