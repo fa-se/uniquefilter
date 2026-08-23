@@ -1,6 +1,12 @@
 
 import got from 'got';
 import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath, pathToFileURL } from 'url';
+
+// Output paths below are repo-relative; resolve them against this file rather than
+// the cwd so a manual `node poe-uniques-updater.js` works from any directory.
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const URLS = {
     all: 'https://www.poewiki.net/index.php?title=Special:CargoExport&tables=items%2C&&fields=items.name%2C+items.base_item%2C&where=items.rarity+%3D+%22Unique%22+AND+items.drop_enabled+%3D+true&order+by=&limit=5000&format=json',
@@ -64,8 +70,8 @@ async function fetchAndSaveList(listType, url, paths) {
     const jsonContent = JSON.stringify(data, null, 2);
     const jsContent = `export const all${listType.charAt(0).toUpperCase() + listType.slice(1)}Uniques = ${jsonContent};`;
 
-    await fs.writeFile(paths.json, jsonContent);
-    await fs.writeFile(paths.js, jsContent);
+    await fs.writeFile(path.join(projectRoot, paths.json), jsonContent);
+    await fs.writeFile(path.join(projectRoot, paths.js), jsContent);
     console.log(`Successfully saved ${listType} uniques to ${paths.json} and ${paths.js}`);
 }
 
@@ -81,4 +87,11 @@ export async function updateUniqueLists() {
         console.error('Error updating unique item lists:', error);
         throw error; // Re-throw to be handled by the caller
     }
+}
+
+// Entry point for running the updater by hand (`node poe-uniques-updater.js`);
+// skipped when app.js imports updateUniqueLists on new-league detection.
+// process.argv[1] is unset under `node -e`, hence the guard.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+    updateUniqueLists().catch(() => process.exit(1));
 }
