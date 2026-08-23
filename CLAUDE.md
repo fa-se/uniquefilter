@@ -33,7 +33,7 @@ node poe-uniques-updater.js
 - **poe-api-interface.js**: Path of Exile API client (wraps fetch, gates on auth, exports `NotAuthorizedError`)
 - **poe-api-auth.js**: Frontend OAuth handling (persists CSRF state in sessionStorage)
 - **oauth-finalize.js**: Runs only on the `/oauth2callback` HTML stub — verifies state, writes tokens to localStorage, replaces history
-- **filter.js**: Item filter manipulation and generation; returns a tagged `{status: success|throttled|error}` from upload
+- **filter.js**: Item filter manipulation and generation; returns a tagged `{status: success|delayed|error}` from upload (`delayed` = PoE stored the filter but defers the game-client sync)
 - **stash.js**: Stash data models and unique item detection
 - **state.js**: Global application state management
 - **ui.js**: DOM manipulation and UI rendering
