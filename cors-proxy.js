@@ -77,7 +77,10 @@ export default {
                 res.end(response.body);
             }
             catch (error) {
-                console.error('PoE API error:', error.message);
+                // Log PoE's own body server-side: the sanitized client response below
+                // deliberately drops it, and without it a validation rejection reads as
+                // a bare "Response code 400" with no hint at which rule PoE disliked.
+                console.error('PoE API error:', error.message, '- body:', error.response?.body ?? '<none>');
                 const statusCode = error.response?.statusCode || 500;
                 res.writeHead(statusCode, {"Content-Type": "application/json"});
                 
