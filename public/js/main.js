@@ -58,11 +58,11 @@ async function handleUpdateFilter() {
 
         const result = await filter.updateRulesForMissingUniques(missingUniques);
 
-        if (result.status === 'throttled') {
+        if (result.status === 'delayed') {
             setState({
                 isLoading: false,
                 infoMessage: null,
-                warningMessage: `Filter not updated — PoE rate-limits filter updates ("${result.message.replace(/^Error:\s*/, '')}"). Your local filter rules are current; try again later.`
+                warningMessage: `Filter updated. PoE reports a delay before the changes sync to the game client ("${result.message.replace(/^Error:\s*/, '')}").`
             });
         } else if (result.status === 'error') {
             throw new Error(result.message);

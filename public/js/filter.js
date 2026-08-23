@@ -24,17 +24,21 @@ export class Filter {
 		return Filter.#interpretUploadResponse(response);
 	}
 
-	// Normalize PoE's filter-update response into a tagged status. The throttle path
-	// is a 200 with {error: {message: "...updated multiple times in the last 10
-	// minutes..."}} — recognizable only by text because PoE doesn't expose a
-	// distinct code for it.
+	// Normalize PoE's filter-update response into a tagged status. The 'delayed' path
+	// is a 200 carrying {error: {message: "...updated multiple times in the last 10
+	// minutes, there will be a delay before your most recent changes can be synced to
+	// the game client"}}. Despite the `error` key, PoE has accepted and stored the
+	// upload — only the push to the game client is deferred. Recognizable only by text
+	// because PoE doesn't expose a distinct code for it. A genuine rejection comes back
+	// as a non-2xx, which cors-proxy.js replaces with {error: 'Request failed'}, so it
+	// falls through to 'error' below.
 	static #interpretUploadResponse(response) {
 		if (!response || !response.error) {
 			return { status: 'success' };
 		}
 		const message = response.error.message ?? 'Filter update failed';
 		if (typeof message === 'string' && message.includes('updated multiple times in the last 10 minutes')) {
-			return { status: 'throttled', message };
+			return { status: 'delayed', message };
 		}
 		return { status: 'error', message };
 	}
