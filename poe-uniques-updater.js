@@ -18,9 +18,47 @@ const OUTPUT_PATHS = {
     }
 };
 
+const NAMED_ENTITIES = {
+    amp: '&',
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    nbsp: '\u00a0',
+};
+
+// The wiki's Cargo export HTML-escapes field values — apostrophes arrive as
+// "Abberath&#039;s Hooves", and other entities are possible. Both names and base
+// items are compared against PoE API stash data and written verbatim into the
+// filter's `BaseType == "..."` line, and both of those use the literal
+// character, so an escaped value silently fails every match and makes PoE reject
+// the filter as invalid. Decode once here, where wiki data enters the project.
+// Single-pass on purpose: "&amp;#039;" must decode to "&#039;", not to "'".
+function decodeHtmlEntities(value) {
+    return value.replace(/&(#\d+|#[xX][0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]*);/g, (entity, body) => {
+        if (body[0] !== '#') {
+            return NAMED_ENTITIES[body.toLowerCase()] ?? entity;
+        }
+        const codePoint = (body[1] === 'x' || body[1] === 'X')
+            ? parseInt(body.slice(2), 16)
+            : parseInt(body.slice(1), 10);
+        if (!Number.isInteger(codePoint) || codePoint < 0 || codePoint > 0x10ffff) {
+            return entity;
+        }
+        return String.fromCodePoint(codePoint);
+    });
+}
+
+function decodeEntry(entry) {
+    return Object.fromEntries(
+        Object.entries(entry).map(([key, value]) =>
+            [key, typeof value === 'string' ? decodeHtmlEntities(value) : value])
+    );
+}
+
 async function fetchAndSaveList(listType, url, paths) {
     console.log(`Fetching ${listType} uniques from ${url}`);
-    const data = await got(url).json();
+    const data = (await got(url).json()).map(decodeEntry);
     console.log(`Successfully fetched ${data.length} ${listType} uniques.`);
 
     const jsonContent = JSON.stringify(data, null, 2);
