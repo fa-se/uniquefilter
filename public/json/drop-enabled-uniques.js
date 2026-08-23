@@ -17,7 +17,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Acton's Nightmare",
-    "base item": "Overgrown Shrine Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Actum",
@@ -37,6 +37,10 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Agnerod East",
+    "base item": "Imperial Staff"
+  },
+  {
+    "name": "Agnerod North",
     "base item": "Imperial Staff"
   },
   {
@@ -109,7 +113,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Altered Distant Memory",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Amanamu's Gaze",
@@ -293,7 +297,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Augmented Distant Memory",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Augyre",
@@ -346,6 +350,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Balefire",
     "base item": "Opal Sceptre"
+  },
+  {
+    "name": "Baleful Dominion",
+    "base item": "Hypnotic Eye Jewel"
   },
   {
     "name": "Bated Breath",
@@ -449,7 +457,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Blightwell",
-    "base item": "Clutching Talisman"
+    "base item": "Shield Crab Talisman"
   },
   {
     "name": "Blood of Corruption",
@@ -585,7 +593,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Caer Blaidd, Wolfpack's Den",
-    "base item": "Underground River Map"
+    "base item": "Map (Tier 5)"
   },
   {
     "name": "Calamitous Visions",
@@ -801,7 +809,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Cortex",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Coruscating Elixir",
@@ -969,7 +977,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Death and Taxes",
-    "base item": "Necropolis Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Death Rush",
@@ -1014,6 +1022,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Dendrobate",
     "base item": "Sentinel Jacket"
+  },
+  {
+    "name": "Destructive Aspiration",
+    "base item": "Ghastly Eye Jewel"
   },
   {
     "name": "Devoto's Devotion",
@@ -1085,15 +1097,15 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Doryani's Delusion",
-    "base item": "Slink Boots"
+    "base item": "Leviathan Greaves"
   },
   {
     "name": "Doryani's Delusion",
-    "base item": "Sorcerer Boots"
+    "base item": "Velour Boots"
   },
   {
     "name": "Doryani's Delusion",
-    "base item": "Titan Greaves"
+    "base item": "Warlock Boots"
   },
   {
     "name": "Doryani's Fist",
@@ -1117,11 +1129,15 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Doryani's Machinarium",
-    "base item": "Maze Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Doryani's Prototype",
     "base item": "Saint's Hauberk"
+  },
+  {
+    "name": "Dread Captain's Cutlass",
+    "base item": "Ghostflame Blade"
   },
   {
     "name": "Dreadarc",
@@ -1178,6 +1194,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Echoforge",
     "base item": "Infernal Sword"
+  },
+  {
+    "name": "Eclipse Solaris",
+    "base item": "Faun's Horn"
   },
   {
     "name": "Eclipse Solaris",
@@ -1280,6 +1300,10 @@ export const allDropEnabledUniques = [
     "base item": "Sentinel Jacket"
   },
   {
+    "name": "Extinguishing Grasp",
+    "base item": "Searching Eye Jewel"
+  },
+  {
     "name": "Extractor Mentis",
     "base item": "Agate Amulet"
   },
@@ -1380,6 +1404,10 @@ export const allDropEnabledUniques = [
     "base item": "Demon Dagger"
   },
   {
+    "name": "Festering Vengeance",
+    "base item": "Murderous Eye Jewel"
+  },
+  {
     "name": "Fevered Mind",
     "base item": "Cobalt Jewel"
   },
@@ -1406,10 +1434,6 @@ export const allDropEnabledUniques = [
   {
     "name": "Fleshcrafter",
     "base item": "Necromancer Silks"
-  },
-  {
-    "name": "Fleshrender",
-    "base item": "Exquisite Blade"
   },
   {
     "name": "Fluid Motion",
@@ -1470,10 +1494,6 @@ export const allDropEnabledUniques = [
   {
     "name": "Gang's Momentum",
     "base item": "Legion Boots"
-  },
-  {
-    "name": "Garb of the Ephemeral",
-    "base item": "Savant's Robe"
   },
   {
     "name": "Garb of the Ephemeral",
@@ -1641,11 +1661,11 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Hall of Grandmasters",
-    "base item": "Promenade Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Hallowed Ground",
-    "base item": "Cemetery Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Hand of Heresy",
@@ -1678,10 +1698,6 @@ export const allDropEnabledUniques = [
   {
     "name": "Haunting Memories",
     "base item": "Turquoise Amulet"
-  },
-  {
-    "name": "Headhunter",
-    "base item": "Leather Belt"
   },
   {
     "name": "Headhunter",
@@ -1964,14 +1980,6 @@ export const allDropEnabledUniques = [
     "base item": "Jade Amulet"
   },
   {
-    "name": "Khatal's Geyser",
-    "base item": "Lapis Amulet"
-  },
-  {
-    "name": "Khatal's Weeping",
-    "base item": "Lapis Amulet"
-  },
-  {
     "name": "Kiara's Determination",
     "base item": "Silver Flask"
   },
@@ -2157,7 +2165,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Maelström of Chaos",
-    "base item": "Atoll Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Mageblood",
@@ -2221,7 +2229,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Mao Kun",
-    "base item": "Shore Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "March of the Legion",
@@ -2405,7 +2413,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Natural Hierarchy",
-    "base item": "Rotfeather Talisman"
+    "base item": "Rhex Talisman"
   },
   {
     "name": "Nebulis",
@@ -2461,7 +2469,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Oba's Cursed Trove",
-    "base item": "Underground Sea Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Obliteration",
@@ -2481,7 +2489,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Olmec's Sanctum",
-    "base item": "Bone Crypt Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Olroth's Charge",
@@ -2516,6 +2524,10 @@ export const allDropEnabledUniques = [
     "base item": "Bismuth Flask"
   },
   {
+    "name": "Oriath's End",
+    "base item": "Bismuth Flask"
+  },
+  {
     "name": "Original Sin",
     "base item": "Amethyst Ring"
   },
@@ -2542,6 +2554,14 @@ export const allDropEnabledUniques = [
   {
     "name": "Paradoxica",
     "base item": "Vaal Rapier"
+  },
+  {
+    "name": "Pearl of Tsoatha",
+    "base item": "Prismatic Ring"
+  },
+  {
+    "name": "Pearl of Tsoatha",
+    "base item": "Prismatic Ring"
   },
   {
     "name": "Perandus Blazon",
@@ -2573,7 +2593,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Pillars of Arun",
-    "base item": "Dunes Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Piscator's Vigil",
@@ -2593,7 +2613,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Poorjoy's Asylum",
-    "base item": "Temple Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Powerlessness",
@@ -2788,6 +2808,10 @@ export const allDropEnabledUniques = [
     "base item": "Cobalt Jewel"
   },
   {
+    "name": "Reclaimed Malevolence",
+    "base item": "Assembled Eye Jewel"
+  },
+  {
     "name": "Redbeak",
     "base item": "Rusted Sword"
   },
@@ -2889,7 +2913,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Replica Cortex",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Replica Covenant",
@@ -3028,6 +3052,10 @@ export const allDropEnabledUniques = [
     "base item": "Elegant Ringmail"
   },
   {
+    "name": "Replica Maata's Teaching",
+    "base item": "Karui Sceptre"
+  },
+  {
     "name": "Replica Malachai's Artifice",
     "base item": "Unset Ring"
   },
@@ -3065,11 +3093,11 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Replica Pillars of Arun",
-    "base item": "Dunes Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Replica Poorjoy's Asylum",
-    "base item": "Temple Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Replica Powerlessness",
@@ -3205,7 +3233,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Rewritten Distant Memory",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Rigwald's Charge",
@@ -3221,7 +3249,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Rigwald's Curse",
-    "base item": "Wereclaw Talisman"
+    "base item": "Wolf Alpha Talisman"
   },
   {
     "name": "Rigwald's Hunt",
@@ -3262,6 +3290,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Roth's Reach",
     "base item": "Recurve Bow"
+  },
+  {
+    "name": "Rotmother's Mutiny",
+    "base item": "Pearlescent Amulet"
   },
   {
     "name": "Rumi's Concoction",
@@ -3312,10 +3344,6 @@ export const allDropEnabledUniques = [
     "base item": "Soldier Gloves"
   },
   {
-    "name": "Saresh's Darkness",
-    "base item": "Chain Belt"
-  },
-  {
     "name": "Scaeva",
     "base item": "Gladius"
   },
@@ -3332,12 +3360,8 @@ export const allDropEnabledUniques = [
     "base item": "Heavy Arrow Quiver"
   },
   {
-    "name": "Screams of the Desiccated",
-    "base item": "Leather Belt"
-  },
-  {
-    "name": "Screams of the Desiccated",
-    "base item": "Leather Belt"
+    "name": "Seablister",
+    "base item": "Spiny Round Shield"
   },
   {
     "name": "Seething Fury",
@@ -3484,10 +3508,6 @@ export const allDropEnabledUniques = [
     "base item": "Sorcerer Boots"
   },
   {
-    "name": "Skysunder",
-    "base item": "Exquisite Blade"
-  },
-  {
     "name": "Slavedriver's Hand",
     "base item": "Ambush Mitts"
   },
@@ -3510,10 +3530,6 @@ export const allDropEnabledUniques = [
   {
     "name": "Solaris Lorica",
     "base item": "Copper Plate"
-  },
-  {
-    "name": "Solerai's Radiance",
-    "base item": "Chain Belt"
   },
   {
     "name": "Solstice Vigil",
@@ -3574,6 +3590,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Spinehail",
     "base item": "Vile Arrow Quiver"
+  },
+  {
+    "name": "Spinesnatch",
+    "base item": "Fleshripper"
   },
   {
     "name": "Split Personality",
@@ -3644,6 +3664,14 @@ export const allDropEnabledUniques = [
     "base item": "Assassin's Mitts"
   },
   {
+    "name": "Stormblood",
+    "base item": "Sapphire Flask"
+  },
+  {
+    "name": "Stormblood",
+    "base item": "Topaz Flask"
+  },
+  {
     "name": "Stormcharger",
     "base item": "Plated Greaves"
   },
@@ -3674,6 +3702,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Sublime Vision",
     "base item": "Prismatic Jewel"
+  },
+  {
+    "name": "Subsume the Source",
+    "base item": "Faithful Helmet"
   },
   {
     "name": "Sudden Dawn",
@@ -3812,10 +3844,6 @@ export const allDropEnabledUniques = [
     "base item": "Gold Ring"
   },
   {
-    "name": "The Bane of Hope",
-    "base item": "Maraketh Bow"
-  },
-  {
     "name": "The Baron",
     "base item": "Close Helmet"
   },
@@ -3876,10 +3904,6 @@ export const allDropEnabledUniques = [
     "base item": "Prophet Crown"
   },
   {
-    "name": "The Broken Elegy",
-    "base item": "Foul Staff"
-  },
-  {
     "name": "The Burden of Shadows",
     "base item": "Primordial Staff"
   },
@@ -3913,11 +3937,15 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "The Coward's Trial",
-    "base item": "Cursed Crypt Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Crimson Storm",
     "base item": "Steelwood Bow"
+  },
+  {
+    "name": "The Crustacean's Call",
+    "base item": "Primordial Staff"
   },
   {
     "name": "The Dancing Dervish",
@@ -3944,10 +3972,6 @@ export const allDropEnabledUniques = [
     "base item": "Studded Round Shield"
   },
   {
-    "name": "The Desecrated Chalice",
-    "base item": "Coronal Maul"
-  },
-  {
     "name": "The Devourer of Minds",
     "base item": "Pig-Faced Bascinet"
   },
@@ -3956,12 +3980,20 @@ export const allDropEnabledUniques = [
     "base item": "Necromancer Circlet"
   },
   {
+    "name": "The Draugur's Lantern",
+    "base item": "Ancient Spirit Shield"
+  },
+  {
     "name": "The Druggery",
     "base item": "Cloth Belt"
   },
   {
     "name": "The Embalmer",
     "base item": "Carnal Mitts"
+  },
+  {
+    "name": "The Enmity Divine",
+    "base item": "Imperial Staff"
   },
   {
     "name": "The Ephemeral Bond",
@@ -3988,16 +4020,16 @@ export const allDropEnabledUniques = [
     "base item": "Coffer Relic"
   },
   {
-    "name": "The Flame of Hope",
-    "base item": "Maraketh Bow"
-  },
-  {
     "name": "The Flawed Refuge",
     "base item": "Maple Round Shield"
   },
   {
     "name": "The Fledgling",
     "base item": "Lacquered Helmet"
+  },
+  {
+    "name": "The Flow Untethered",
+    "base item": "Cloth Belt"
   },
   {
     "name": "The Formless Flame",
@@ -4205,7 +4237,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "The Putrid Cloister",
-    "base item": "Museum Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Queen's Hunger",
@@ -4240,12 +4272,8 @@ export const allDropEnabledUniques = [
     "base item": "Rustic Sash"
   },
   {
-    "name": "The Sacred Chalice",
-    "base item": "Coronal Maul"
-  },
-  {
-    "name": "The Sands of Time",
-    "base item": "Tyrant's Sekhem"
+    "name": "The Rippling Thoughts",
+    "base item": "Legion Sword"
   },
   {
     "name": "The Saviour",
@@ -4328,6 +4356,10 @@ export const allDropEnabledUniques = [
     "base item": "Goliath Greaves"
   },
   {
+    "name": "The Tempest's Binding",
+    "base item": "Callous Mask"
+  },
+  {
     "name": "The Tempest's Liberation",
     "base item": "Callous Mask"
   },
@@ -4353,7 +4385,11 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "The Twilight Temple",
-    "base item": "Moon Temple Map"
+    "base item": "Map (Tier 1)"
+  },
+  {
+    "name": "The Unblinking Eye",
+    "base item": "Harlequin Mask"
   },
   {
     "name": "The Unseen Hue",
@@ -4377,7 +4413,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "The Vinktar Square",
-    "base item": "Courtyard Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Warden's Brand",
@@ -4386,6 +4422,10 @@ export const allDropEnabledUniques = [
   {
     "name": "The Wasp Nest",
     "base item": "Throat Stabber"
+  },
+  {
+    "name": "The Wellhook",
+    "base item": "Fishing Rod"
   },
   {
     "name": "The Whispering Ice",
@@ -4545,7 +4585,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Twisted Distant Memory",
-    "base item": "Synthesised Map"
+    "base item": "Map (Tier 16)"
   },
   {
     "name": "Twyzel",
@@ -4572,6 +4612,10 @@ export const allDropEnabledUniques = [
     "base item": "Turquoise Amulet"
   },
   {
+    "name": "Unholy Accomplice",
+    "base item": "Cloth Belt"
+  },
+  {
     "name": "United in Dream",
     "base item": "Cutlass"
   },
@@ -4582,10 +4626,6 @@ export const allDropEnabledUniques = [
   {
     "name": "Unnatural Instinct",
     "base item": "Viridian Jewel"
-  },
-  {
-    "name": "Untainted Paradise",
-    "base item": "Tropical Island Map"
   },
   {
     "name": "Unyielding Flame",
@@ -4641,7 +4681,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Vaults of Atziri",
-    "base item": "Vaal Pyramid Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Veil of the Night",
@@ -4745,7 +4785,7 @@ export const allDropEnabledUniques = [
   },
   {
     "name": "Voidfletcher",
-    "base item": "Primal Arrow Quiver"
+    "base item": "Ornate Quiver"
   },
   {
     "name": "Voidforge",
@@ -4820,12 +4860,16 @@ export const allDropEnabledUniques = [
     "base item": "Prismatic Jewel"
   },
   {
+    "name": "Waxen Soul",
+    "base item": "Saint's Hauberk"
+  },
+  {
     "name": "Wellwater Phylactery",
     "base item": "Colossal Mana Flask"
   },
   {
     "name": "Whakawairua Tuahu",
-    "base item": "Strand Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Wheel of the Stormsail",
@@ -4936,10 +4980,6 @@ export const allDropEnabledUniques = [
     "base item": "Leather Belt"
   },
   {
-    "name": "Wurm's Molt",
-    "base item": "Leather Belt"
-  },
-  {
     "name": "Wyrmsign",
     "base item": "Wyrmscale Gauntlets"
   },
@@ -4994,6 +5034,10 @@ export const allDropEnabledUniques = [
   {
     "name": "Zahndethus' Cassock",
     "base item": "Sage's Robe"
+  },
+  {
+    "name": "Zana's Ingenuity",
+    "base item": "Prismatic Ring"
   },
   {
     "name": "Zeel's Amplifier",

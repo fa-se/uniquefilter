@@ -13,7 +13,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Acton's Nightmare",
-    "base item": "Overgrown Shrine Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Advancing Fortress",
@@ -25,6 +25,10 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Agnerod East",
+    "base item": "Imperial Staff"
+  },
+  {
+    "name": "Agnerod North",
     "base item": "Imperial Staff"
   },
   {
@@ -180,10 +184,6 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Bronze Sceptre"
   },
   {
-    "name": "Azadi Crest",
-    "base item": "Lacquered Buckler"
-  },
-  {
     "name": "Badge of the Brotherhood",
     "base item": "Turquoise Amulet"
   },
@@ -232,10 +232,6 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Two-Stone Ring"
   },
   {
-    "name": "Binds of Bloody Vengeance",
-    "base item": "Vanguard Belt"
-  },
-  {
     "name": "Bino's Kitchen Knife",
     "base item": "Slaughter Knife"
   },
@@ -258,10 +254,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Blackheart",
     "base item": "Iron Ring"
-  },
-  {
-    "name": "Blightwell",
-    "base item": "Clutching Talisman"
   },
   {
     "name": "Blood of the Karui",
@@ -337,7 +329,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Caer Blaidd, Wolfpack's Den",
-    "base item": "Underground River Map"
+    "base item": "Map (Tier 5)"
   },
   {
     "name": "Call of the Brotherhood",
@@ -493,7 +485,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Death and Taxes",
-    "base item": "Necropolis Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Death Rush",
@@ -640,6 +632,10 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Faun's Horn"
   },
   {
+    "name": "Eclipse Solaris",
+    "base item": "Faun's Horn"
+  },
+  {
     "name": "Edge of Madness",
     "base item": "Etched Greatsword"
   },
@@ -690,10 +686,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Eye of Malice",
     "base item": "Callous Mask"
-  },
-  {
-    "name": "Eyes of the Greatwolf",
-    "base item": "Greatwolf Talisman"
   },
   {
     "name": "Ezomyte Peak",
@@ -873,19 +865,11 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Hall of Grandmasters",
-    "base item": "Promenade Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Hallowed Ground",
-    "base item": "Cemetery Map"
-  },
-  {
-    "name": "Hand of Heresy",
-    "base item": "Martyr Gloves"
-  },
-  {
-    "name": "Headhunter",
-    "base item": "Leather Belt"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Headhunter",
@@ -926,10 +910,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Honourhome",
     "base item": "Soldier Helmet"
-  },
-  {
-    "name": "Howlcrack",
-    "base item": "Ezomyte Burgonet"
   },
   {
     "name": "Hrimnor's Hymn",
@@ -1217,7 +1197,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Maelström of Chaos",
-    "base item": "Atoll Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Mageblood",
@@ -1261,7 +1241,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Mao Kun",
-    "base item": "Shore Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "March of the Legion",
@@ -1380,10 +1360,6 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Pagan Wand"
   },
   {
-    "name": "Natural Hierarchy",
-    "base item": "Rotfeather Talisman"
-  },
-  {
     "name": "Nevalius Inheritance",
     "base item": "Cloth Belt"
   },
@@ -1394,10 +1370,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Ngamahu's Sign",
     "base item": "Ruby Ring"
-  },
-  {
-    "name": "Night's Hold",
-    "base item": "Black Maw Talisman"
   },
   {
     "name": "Nomic's Storm",
@@ -1421,7 +1393,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Oba's Cursed Trove",
-    "base item": "Underground Sea Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Obliteration",
@@ -1433,7 +1405,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Olmec's Sanctum",
-    "base item": "Bone Crypt Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Ondar's Clasp",
@@ -1485,7 +1457,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Pillars of Arun",
-    "base item": "Dunes Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Piscator's Vigil",
@@ -1493,7 +1465,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Poorjoy's Asylum",
-    "base item": "Temple Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Praxis",
@@ -1636,10 +1608,6 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Two-Stone Ring"
   },
   {
-    "name": "Rigwald's Curse",
-    "base item": "Wereclaw Talisman"
-  },
-  {
     "name": "Rigwald's Hunt",
     "base item": "General's Brigandine"
   },
@@ -1706,10 +1674,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Scold's Bridle",
     "base item": "Mind Cage"
-  },
-  {
-    "name": "Scornflux",
-    "base item": "Satin Slippers"
   },
   {
     "name": "Scorpion's Call",
@@ -2037,7 +2001,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "The Coward's Trial",
-    "base item": "Cursed Crypt Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Dancing Dervish",
@@ -2066,10 +2030,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "The Fourth Vow",
     "base item": "Devout Chainmail"
-  },
-  {
-    "name": "The Ghastly Theatre",
-    "base item": "Teak Round Shield"
   },
   {
     "name": "The Goddess Bound",
@@ -2153,7 +2113,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "The Putrid Cloister",
-    "base item": "Museum Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Rat Cage",
@@ -2217,7 +2177,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "The Twilight Temple",
-    "base item": "Moon Temple Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "The Warden's Brand",
@@ -2344,10 +2304,6 @@ export const allGlobalDropEnabledUniques = [
     "base item": "Viridian Jewel"
   },
   {
-    "name": "Untainted Paradise",
-    "base item": "Tropical Island Map"
-  },
-  {
     "name": "Usurper's Penance",
     "base item": "Eternal Burgonet"
   },
@@ -2373,7 +2329,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Vaults of Atziri",
-    "base item": "Vaal Pyramid Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Veil of the Night",
@@ -2485,7 +2441,7 @@ export const allGlobalDropEnabledUniques = [
   },
   {
     "name": "Whakawairua Tuahu",
-    "base item": "Strand Map"
+    "base item": "Map (Tier 1)"
   },
   {
     "name": "Wheel of the Stormsail",
@@ -2562,10 +2518,6 @@ export const allGlobalDropEnabledUniques = [
   {
     "name": "Wreath of Phrecia",
     "base item": "Iron Circlet"
-  },
-  {
-    "name": "Wurm's Molt",
-    "base item": "Leather Belt"
   },
   {
     "name": "Wurm's Molt",
