@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="uniquefilter">
+  <title>uniquefilter</title>
+  <defs>
+    <linearGradient id="unique" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#E4A055"/>
+      <stop offset="1" stop-color="#AF6025"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#181818"/>
+  <g fill="url(#unique)" stroke="url(#unique)" stroke-width="1.5" stroke-linejoin="round">
+    <!-- funnel: the filter -->
+    <path d="M6 5.6 H26 C22 9.7 18.3 11.6 18.3 14.8 V17.6 H13.7 V14.8 C13.7 11.6 10 9.7 6 5.6 Z"/>
+    <!-- the one unique that comes through -->
+    <path d="M16 20.9 L19.1 24 L16 27.1 L12.9 24 Z"/>
+  </g>
+</svg>
