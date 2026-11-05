@@ -1,15 +1,15 @@
 uniquefilter.dev {
-	root * /home/pi/uniquefilter/public
+	root * /srv/uniquefilter/public
 	
 	# Proxy API and special routes first (before file_server)
 	handle /api/* {
-		reverse_proxy localhost:8080
+		reverse_proxy localhost:18080
 	}
 	handle /update-filter {
-		reverse_proxy localhost:8080
+		reverse_proxy localhost:18080
 	}
 	handle /oauth2callback {
-		reverse_proxy localhost:8080
+		reverse_proxy localhost:18080
 	}
 	
 	# Security headers applied to every response (Node sets these too for proxied
