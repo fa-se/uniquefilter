@@ -11,7 +11,7 @@ import { updateUniqueLists } from './poe-uniques-updater.js';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
-const port = 8080;
+const port = Number(process.env.PORT) || 8080;
 const publicDirectory = path.join(__dirname, 'public');
 const leaguesCachePath = path.join(__dirname, 'leagues.json');
 
