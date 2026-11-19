@@ -21,23 +21,35 @@ export class NotAuthorizedError extends Error {
     }
 }
 
-// Turn an error body into one readable line. PoE (and our proxy, which forwards
-// PoE's error) send {error: {code, message, fields?: [{field, message}]}}; for
-// validation failures the useful part is in `fields` ("Line 7: Unknown rule type
-// Set") while `message` is only "Invalid query". Some routes send {error: string}.
-function describeErrorBody(parsed, response) {
-    const err = parsed?.error;
+// Split a PoE error object into a summary and one entry per problem. Validation
+// errors come in two shapes: newer ones put each problem in `fields`
+// ([{field: 'filter', message: 'Line 7: Unknown rule type Set'}]) with message
+// "Invalid query"; older ones pack everything into `message`
+// ("Invalid query; filter : Line 7717 : ...; Line 7886 : ...;"). Entries are
+// normalized to "Line N: ...".
+export function splitPoeError(err) {
+    const normalize = (text) => text.trim()
+        .replace(/;$/, '')
+        .replace(/^(?:\w+\s*:\s*)?Line (\d+)\s*:\s*/, 'Line $1: ');
+    const [summary, ...rest] = String(err?.message ?? '').split(/;\s*(?=(?:\w+\s*:\s*)?Line \d+\s*:)/);
+    const items = rest.map(normalize);
+    if (Array.isArray(err?.fields)) {
+        for (const f of err.fields) {
+            const text = normalize(String(f?.message ?? ''));
+            items.push(f?.field && f.field !== 'filter' ? `${f.field}: ${text}` : text);
+        }
+    }
+    return { summary: summary.trim().replace(/;$/, '') || 'Unknown error', items };
+}
+
+// One-line form of an error body, for the Error message and the console.
+function describeErrorBody(err, response) {
     let detail;
     if (typeof err === 'string') {
         detail = err;
     } else if (err && typeof err === 'object') {
-        detail = err.message || 'Unknown error';
-        if (Array.isArray(err.fields) && err.fields.length > 0) {
-            const fieldText = err.fields
-                .map(f => (f?.field ? `${f.field}: ` : '') + (f?.message ?? ''))
-                .join('; ');
-            detail += ` (${fieldText})`;
-        }
+        const { summary, items } = splitPoeError(err);
+        detail = summary + (items.length > 0 ? ` (${items.join('; ')})` : '');
         if (err.code != null) detail += ` [PoE code ${err.code}]`;
     } else {
         detail = response.statusText || 'no error details in response';
@@ -45,33 +57,38 @@ function describeErrorBody(parsed, response) {
     return `HTTP ${response.status}: ${detail}`;
 }
 
-// A non-2xx response. Keeps the status and PoE's parsed error object so callers can
-// inspect them (e.g. Filter reads validation line numbers) without re-parsing the message.
+// A non-2xx response. `poeError` is the parsed error object (Filter reads validation
+// line numbers from it). `fromPoe` says whether PoE wrote it, as opposed to our own
+// server, so the UI can label it.
 export class PoeApiError extends Error {
-    constructor(message, status, poeError) {
+    constructor(message, status, poeError, fromPoe) {
         super(message);
         this.name = 'PoeApiError';
         this.status = status;
         this.poeError = poeError;
+        this.fromPoe = fromPoe;
     }
 }
 
-// Throw a useful Error when fetch returns a non-2xx response. The message carries
-// the HTTP status and PoE's own error text so a user's screenshot is enough to debug.
-// 429 maps to RateLimitError so existing retry logic can resume.
+// Throw a useful Error when fetch returns a non-2xx response. 429 maps to
+// RateLimitError so existing retry logic can resume.
 async function ensureOk(response) {
     if (response.ok) return;
     let bodyText = '';
     try { bodyText = await response.text(); } catch { /* ignore */ }
     let parsed = null;
     try { parsed = bodyText ? JSON.parse(bodyText) : null; } catch { /* not JSON */ }
-    const message = describeErrorBody(parsed, response);
+    const err = parsed?.error;
+    const message = describeErrorBody(err, response);
     if (response.status === 429) {
         const retryAfter = Number(response.headers.get('retry-after')) || 60;
         throw new RateLimitError(retryAfter, message);
     }
-    const poeError = (parsed?.error && typeof parsed.error === 'object') ? parsed.error : null;
-    throw new PoeApiError(message, response.status, poeError);
+    const poeError = (err && typeof err === 'object') ? err : null;
+    // Direct calls go to api.pathofexile.com; proxied ones are marked by cors-proxy.js.
+    let fromPoe = poeError?.origin === 'poe';
+    try { fromPoe ||= new URL(response.url).hostname === 'api.pathofexile.com'; } catch { /* no url */ }
+    throw new PoeApiError(message, response.status, poeError, fromPoe && poeError !== null);
 }
 
 const wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));

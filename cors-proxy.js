@@ -11,7 +11,9 @@ import got from "got";
  * (network failure, HTML error page), the client gets a generic message.
  * @param {string|undefined} body
  * @param {number} statusCode
- * @returns {{code: (number|null), message: string, fields?: {field: string, message: string}[]}}
+ * `origin: 'poe'` marks text that PoE wrote, so the UI can tell it apart from the
+ * proxy's own errors ("Invalid filter ID", the generic fallback).
+ * @returns {{origin?: 'poe', code: (number|null), message: string, fields?: {field: string, message: string}[]}}
  */
 function extractPoeError(body, statusCode) {
     const str = (v, max) => String(v ?? '').slice(0, max);
@@ -23,6 +25,7 @@ function extractPoeError(body, statusCode) {
         return {code: null, message: statusCode >= 500 ? 'External service error' : 'Request failed'};
     }
     const result = {
+        origin: 'poe',
         code: Number.isFinite(poeError.code) ? poeError.code : null,
         message: str(poeError.message, 2000) || 'Request failed',
     };

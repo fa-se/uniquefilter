@@ -7,6 +7,69 @@ function renderText(element, text) {
     }
 }
 
+function el(tag, className, text) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+}
+
+// Error box, built from main.js's errorState(): title, hints (what to do), then the
+// raw error collapsed. All text goes through textContent, since it includes PoE's
+// response and the user's custom style.
+function renderError(error) {
+    const box = el('div', 'status-message status-error status-detailed');
+    box.setAttribute('role', 'alert');
+    box.appendChild(el('div', 'status-title', error.title));
+
+    for (const hint of error.hints) {
+        box.appendChild(el('p', 'status-text', hint.text));
+        if (hint.items?.length > 0) {
+            const list = el('ul', 'status-items');
+            for (const item of hint.items) {
+                const li = el('li');
+                li.appendChild(el('code', null, item));
+                list.appendChild(li);
+            }
+            box.appendChild(list);
+        }
+        if (hint.after) box.appendChild(el('p', 'status-text', hint.after));
+    }
+    if (error.hints.length === 0) {
+        box.appendChild(el('p', 'status-text', error.poe
+            ? `The Path of Exile API rejected the request: ${error.poe.summary}`
+            : error.message));
+    }
+
+    if (error.poe) {
+        const details = el('details', 'status-details');
+        // render() rebuilds the box on every state change; keep it open if the user opened it.
+        details.open = !!error.detailsOpen;
+        details.addEventListener('toggle', () => { error.detailsOpen = details.open; });
+        const summary = el('summary');
+        summary.appendChild(el('span', 'source-badge', 'PoE API'));
+        const codeText = error.poe.code != null ? `, error code ${error.poe.code}` : '';
+        summary.appendChild(document.createTextNode(` Response from the Path of Exile API (HTTP ${error.poe.status}${codeText})`));
+        details.appendChild(summary);
+        const body = el('div', 'status-details-body');
+        body.appendChild(el('div', null, error.poe.summary));
+        if (error.poe.items.length > 0) {
+            const list = el('ul', 'status-details-list');
+            for (const item of error.poe.items) list.appendChild(el('li', null, item));
+            body.appendChild(list);
+        }
+        details.appendChild(body);
+        box.appendChild(details);
+    } else if (error.hints.length > 0) {
+        // Hints replaced the message above, so keep the raw text reachable.
+        const details = el('details', 'status-details');
+        details.appendChild(el('summary', null, 'Technical details'));
+        details.appendChild(el('div', 'status-details-body', error.message));
+        box.appendChild(details);
+    }
+    return box;
+}
+
 function renderOptions(selectElement, items, key, value) {
     if (!selectElement) return;
     const options = items.map(item => {
@@ -52,8 +115,7 @@ export function render(state) {
         primaryMessage = state.rateLimitMessage;
         primaryClass = 'status-rate-limit';
     } else if (state.error) {
-        primaryMessage = state.error;
-        primaryClass = 'status-error';
+        statusContainer.appendChild(renderError(state.error));
     } else if (state.warningMessage) {
         primaryMessage = state.warningMessage;
         primaryClass = 'status-warning';

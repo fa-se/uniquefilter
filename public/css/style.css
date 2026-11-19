@@ -189,6 +189,87 @@ button:disabled, input[type="button"]:disabled {
     border: 1px solid #8a4a4a;
 }
 
+/* Error box with title, hints and collapsible details (ui.js renderError) */
+.status-detailed {
+    text-align: left;
+    font-weight: normal;
+    max-width: 46em;
+    line-height: 1.45;
+}
+
+.status-detailed .status-title {
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #f0b0b0;
+    margin-bottom: 0.3em;
+}
+
+.status-detailed .status-text {
+    margin: 0.4em 0;
+    color: #e8c4c4;
+}
+
+.status-detailed .status-items {
+    margin: 0.3em 0 0.5em;
+    padding-left: 1.4em;
+}
+
+.status-detailed code,
+.status-details-list {
+    font-family: ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.88em;
+}
+
+.status-detailed code {
+    background-color: #2e1c1c;
+    border: 1px solid #6a3a3a;
+    border-radius: 3px;
+    padding: 0.05em 0.35em;
+    color: #f0d0d0;
+}
+
+.status-details {
+    margin-top: 0.7em;
+    padding-top: 0.5em;
+    border-top: 1px solid #6a3a3a;
+    font-size: 0.9em;
+}
+
+.status-details summary {
+    cursor: pointer;
+    color: #c89090;
+}
+
+.status-details summary:hover {
+    color: #e0a0a0;
+}
+
+.source-badge {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    padding: 0 0.45em;
+    border-radius: 3px;
+    background-color: #6a3a3a;
+    color: #f0d0d0;
+}
+
+.status-details-body {
+    margin-top: 0.4em;
+    color: #d8b0b0;
+    overflow-wrap: anywhere;
+}
+
+.status-details-list {
+    margin: 0.3em 0 0;
+    padding-left: 1.4em;
+}
+
+.status-details-list li {
+    margin: 0.15em 0;
+}
+
 .status-rate-limit {
     background-color: #4a4a2a;
     color: #e0e0a0;

@@ -1,10 +1,23 @@
 "use strict";
-import poeApi from "./poe-api-interface.js";
+import poeApi, { PoeApiError, splitPoeError } from "./poe-api-interface.js";
 import { PoeApiAuth } from "./poe-api-auth.js";
 import { Filter } from "./filter.js";
 import { appState, setState } from "./state.js";
 import { render, updateLeagueOptions } from "./ui.js";
 import { withRateLimitHandling } from "./utils.js";
+
+// The error box's content: what failed (title), what to do about it (hints, from
+// Filter's validation check), and, collapsed, the raw error. When PoE wrote the error
+// it's labeled as such, so users can tell PoE's rejection from a bug on our side.
+function errorState(title, error) {
+    const fromPoe = error instanceof PoeApiError && error.fromPoe;
+    return {
+        title,
+        hints: error.hints ?? [],
+        message: error.message,
+        poe: fromPoe ? { status: error.status, code: error.poeError.code ?? null, ...splitPoeError(error.poeError) } : null,
+    };
+}
 
 async function handleLeagueChange(league) {
     setState({ league: league, isLoading: true, infoMessage: 'Fetching stashes...', error: null });
@@ -15,7 +28,7 @@ async function handleLeagueChange(league) {
         const uniqueStashes = accountStashes.getAllUniqueStashes();
         setState({ stashes: Object.values(uniqueStashes), selectedStashId: uniqueStashes[0]?.id, isLoading: false, infoMessage: null });
     } catch (error) {
-        setState({ isLoading: false, error: `Failed to fetch stashes: ${error.message}` });
+        setState({ isLoading: false, error: errorState("Couldn't load your stash tabs", error) });
         console.error(error);
     }
     render(appState);
@@ -75,8 +88,7 @@ async function handleUpdateFilter() {
         }
 
     } catch (error) {
-        const hint = error.hint ? `\n\n${error.hint}` : '';
-        setState({ isLoading: false, error: `Error: ${error.message}${hint}`, warningMessage: null });
+        setState({ isLoading: false, error: errorState('Filter update failed', error), warningMessage: null });
         console.error(error);
     }
     render(appState);
@@ -167,7 +179,7 @@ async function main() {
             infoMessage: null
         });
     } catch (error) {
-        setState({ isLoading: false, error: `Failed to fetch initial data: ${error.message}` });
+        setState({ isLoading: false, error: errorState("Couldn't load your leagues, stash tabs and filters", error) });
         console.error(error);
     }
     
