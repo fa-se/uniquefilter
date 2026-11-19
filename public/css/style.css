@@ -530,3 +530,15 @@ button:disabled, input[type="button"]:disabled {
     border-color: #666;
 }
 
+
+/* Message next to the authorize button (poe-api-auth.js, ?auth_error=...) */
+.auth-message {
+    max-width: 36em;
+    margin: 0.8em auto 0;
+    padding: 0.6em 1em;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #4a3a1a;
+    color: #e8c890;
+    border: 1px solid #a07840;
+}

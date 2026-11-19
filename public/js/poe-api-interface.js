@@ -43,10 +43,12 @@ export function splitPoeError(err) {
 }
 
 // One-line form of an error body, for the Error message and the console.
-function describeErrorBody(err, response) {
+function describeErrorBody(parsed, response) {
+    const err = parsed?.error;
     let detail;
     if (typeof err === 'string') {
-        detail = err;
+        // OAuth format: {error: "invalid_token", error_description: "..."}
+        detail = parsed.error_description || err;
     } else if (err && typeof err === 'object') {
         const { summary, items } = splitPoeError(err);
         detail = summary + (items.length > 0 ? ` (${items.join('; ')})` : '');
@@ -79,7 +81,7 @@ async function ensureOk(response) {
     let parsed = null;
     try { parsed = bodyText ? JSON.parse(bodyText) : null; } catch { /* not JSON */ }
     const err = parsed?.error;
-    const message = describeErrorBody(err, response);
+    const message = describeErrorBody(parsed, response);
     if (response.status === 429) {
         const retryAfter = Number(response.headers.get('retry-after')) || 60;
         throw new RateLimitError(retryAfter, message);
@@ -88,6 +90,10 @@ async function ensureOk(response) {
     // Direct calls go to api.pathofexile.com; proxied ones are marked by cors-proxy.js.
     let fromPoe = poeError?.origin === 'poe';
     try { fromPoe ||= new URL(response.url).hostname === 'api.pathofexile.com'; } catch { /* no url */ }
+    if (response.status === 401 && fromPoe) {
+        // Navigates away; the throw below only stops the current call chain.
+        PoeApiAuth.handleRejectedToken();
+    }
     throw new PoeApiError(message, response.status, poeError, fromPoe && poeError !== null);
 }
 
