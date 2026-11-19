@@ -1,6 +1,6 @@
 uniquefilter.dev {
 	root * /srv/uniquefilter/public
-	
+
 	# Proxy API and special routes first (before file_server)
 	handle /api/* {
 		reverse_proxy localhost:18080
@@ -15,7 +15,7 @@ uniquefilter.dev {
 	handle /json/* {
 		reverse_proxy localhost:18080
 	}
-	
+
 	# Security headers applied to every response (Node sets these too for proxied
 	# routes, but file_server responses bypass the Node app entirely).
 	header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self' https://api.pathofexile.com https://www.pathofexile.com"
@@ -30,7 +30,7 @@ uniquefilter.dev {
 	# Serve static files
 	handle {
 		file_server
-		
+
 		# Fallback to main.html for SPA routing (only for paths that don't exist)
 		@notFound {
 			not file
@@ -41,4 +41,3 @@ uniquefilter.dev {
 		rewrite @notFound /html/main.html
 	}
 }
-
