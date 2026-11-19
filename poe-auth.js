@@ -38,8 +38,12 @@ export default {
      * @returns {Promise<{access_token: string, refresh_token: string, expires_in: number, token_type: string, scope: string}>}
      */
     async exchangeCodeForTokens(code) {
-        const response = await fetch('https://pathofexile.com/oauth/token', {
+        // www. on purpose: pathofexile.com answers with a 302 to www., and fetch (per
+        // spec) turns a redirected POST into a GET, which the endpoint rejects with 405.
+        // redirect: 'error' makes any future redirect fail loudly instead.
+        const response = await fetch('https://www.pathofexile.com/oauth/token', {
             method: 'POST',
+            redirect: 'error',
             headers: { 'User-Agent': USER_AGENT },
             body: new URLSearchParams({
                 code,
