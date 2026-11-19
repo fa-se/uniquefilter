@@ -115,7 +115,14 @@ export default {
                 // a bare "Response code 400" with no hint at which rule PoE disliked.
                 console.error('PoE API error:', error.message, '- body:', error.response?.body ?? '<none>');
                 const statusCode = error.response?.statusCode || 500;
-                res.writeHead(statusCode, {"Content-Type": "application/json"});
+                const headers = {"Content-Type": "application/json"};
+                // On 429 the client waits Retry-After seconds (ensureOk in
+                // poe-api-interface.js). Without it, it falls back to a guessed 60s.
+                const retryAfter = error.response?.headers?.["retry-after"];
+                if (retryAfter && /^\d{1,6}$/.test(retryAfter)) {
+                    headers["Retry-After"] = retryAfter;
+                }
+                res.writeHead(statusCode, headers);
                 res.end(JSON.stringify({error: extractPoeError(error.response?.body, statusCode)}));
             }
         });
