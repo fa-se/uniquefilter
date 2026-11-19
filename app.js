@@ -7,7 +7,7 @@ import got from 'got';
 
 import poeAuth from './poe-auth.js';
 import corsProxy from "./cors-proxy.js";
-import { updateUniqueLists } from './poe-uniques-updater.js';
+import { ensureUniqueListsExist, updateUniqueLists } from './poe-uniques-updater.js';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
@@ -293,3 +293,7 @@ const server = http.createServer(async (request, response) => {
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+// Not awaited: if the wiki is unreachable the server still runs, and a later start
+// or new-league detection retries. updateUniqueLists already logs the failure.
+ensureUniqueListsExist().catch(() => {});

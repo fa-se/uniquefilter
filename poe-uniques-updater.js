@@ -70,6 +70,8 @@ async function fetchAndSaveList(listType, url, paths) {
     const jsonContent = JSON.stringify(data, null, 2);
     const jsContent = `export const all${listType.charAt(0).toUpperCase() + listType.slice(1)}Uniques = ${jsonContent};`;
 
+    // public/json/ holds only these generated files, so a fresh clone lacks the directory.
+    await fs.mkdir(path.join(projectRoot, path.dirname(paths.json)), {recursive: true});
     await fs.writeFile(path.join(projectRoot, paths.json), jsonContent);
     await fs.writeFile(path.join(projectRoot, paths.js), jsContent);
     console.log(`Successfully saved ${listType} uniques to ${paths.json} and ${paths.js}`);
@@ -86,6 +88,26 @@ export async function updateUniqueLists() {
     } catch (error) {
         console.error('Error updating unique item lists:', error);
         throw error; // Re-throw to be handled by the caller
+    }
+}
+
+// The lists aren't in the repo, and the page imports them statically, so without
+// them the frontend's module graph fails to load. The page then never calls
+// /api/leagues, which is the only other place that triggers an update. A fresh
+// install would stay stuck, so the server calls this at startup.
+export async function ensureUniqueListsExist() {
+    const files = Object.values(OUTPUT_PATHS).flatMap(p => [p.json, p.js]);
+    const missing = [];
+    for (const file of files) {
+        try {
+            await fs.access(path.join(projectRoot, file));
+        } catch {
+            missing.push(file);
+        }
+    }
+    if (missing.length > 0) {
+        console.log(`Unique lists missing (${missing.join(', ')}), fetching them now.`);
+        await updateUniqueLists();
     }
 }
 
