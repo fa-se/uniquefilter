@@ -11,6 +11,10 @@ uniquefilter.dev {
 	handle /oauth2callback {
 		reverse_proxy localhost:18080
 	}
+	# Generated unique lists live in the app's state directory, not in public/
+	handle /json/* {
+		reverse_proxy localhost:18080
+	}
 	
 	# Security headers applied to every response (Node sets these too for proxied
 	# routes, but file_server responses bypass the Node app entirely).
