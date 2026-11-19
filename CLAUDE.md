@@ -41,6 +41,7 @@ node poe-uniques-updater.js
 - **utils.js**: `withRateLimitHandling` retry wrapper
 
 ### Key Data Files
+Generated at runtime and not tracked in git. `app.js` creates missing unique lists at startup and refreshes them when a new league appears.
 - **public/json/drop-enabled-uniques.json**: All unique items that can drop
 - **public/json/global-drop-enabled-uniques.json**: Only globally-available unique items
 - **leagues.json**: Cached league data for detecting new leagues
