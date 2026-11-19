@@ -75,7 +75,8 @@ async function handleUpdateFilter() {
         }
 
     } catch (error) {
-        setState({ isLoading: false, error: `Error: ${error.message}`, warningMessage: null });
+        const hint = error.hint ? `\n\n${error.hint}` : '';
+        setState({ isLoading: false, error: `Error: ${error.message}${hint}`, warningMessage: null });
         console.error(error);
     }
     render(appState);

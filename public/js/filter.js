@@ -1,5 +1,19 @@
 'use strict';
-import poeApi from "./poe-api-interface.js";
+import poeApi, {PoeApiError} from "./poe-api-interface.js";
+
+// Shown when PoE rejects lines outside our block. The usual cause is a base filter
+// written for the previous game version: new leagues add, rename and remove base
+// types, and PoE validates the whole filter on upload.
+const BASE_FILTER_HINT =
+	'PoE rejected lines in your base filter, outside the uniquefilter.dev block. ' +
+	'After a new league or game patch this usually means the filter still uses base types from the previous version. ' +
+	'Update the base filter first. If you use FilterBlade, load the filter there and save it again ' +
+	'(once FilterBlade supports the current patch), then run the update here again.';
+
+const OWN_BLOCK_HINT =
+	'PoE rejected lines inside the uniquefilter.dev block. ' +
+	'If you set a custom style, check it for typos: every line must be a valid filter action such as "SetFontSize 45". ' +
+	'If you use the default style, please report this error.';
 
 export class Filter {
 	constructor(apiResponse) {
@@ -11,6 +25,10 @@ export class Filter {
 		this.version = apiResponse.version;
 	}
 
+	// 1-based, inclusive line range of our block in this.filter, set by
+	// #insertMissingUniquesRule. Used to locate PoE's validation errors.
+	#ruleLineRange = null;
+
 	setCustomStyle(styleText) {
 		styleText = this.#sanitizeStyleText(styleText);
 		this.customStyle = styleText;
@@ -20,8 +38,33 @@ export class Filter {
 		let ruleString = this.#generateMissingUniquesRule(uniques);
 		this.#insertMissingUniquesRule(ruleString);
 		this.#updateVersionAndDescription();
-		const response = await this.#uploadFilter();
+		let response;
+		try {
+			response = await this.#uploadFilter();
+		} catch (error) {
+			if (error instanceof PoeApiError && error.status === 400) {
+				error.hint = this.#validationHint(error.poeError);
+			}
+			throw error;
+		}
 		return Filter.#interpretUploadResponse(response);
+	}
+
+	// PoE reports validation failures as "Line N: ..." in error.message (older format,
+	// "...; filter : Line N : ...") or in error.fields[].message. Line numbers decide
+	// whose problem it is: outside our block it's the user's base filter, inside it's
+	// the custom style or our generated rule. Returns null when no line is named.
+	#validationHint(poeError) {
+		if (!poeError || !this.#ruleLineRange) return null;
+		const texts = [poeError.message, ...(Array.isArray(poeError.fields) ? poeError.fields.map(f => f?.message) : [])]
+			.filter(t => typeof t === 'string');
+		const lines = texts.flatMap(t => [...t.matchAll(/\bLine (\d+)/g)].map(m => Number(m[1])));
+		if (lines.length === 0) return null;
+		const {start, end} = this.#ruleLineRange;
+		const hints = [];
+		if (lines.some(l => l < start || l > end)) hints.push(BASE_FILTER_HINT);
+		if (lines.some(l => l >= start && l <= end)) hints.push(OWN_BLOCK_HINT);
+		return hints.join('\n\n');
 	}
 
 	// Normalize PoE's filter-update response into a tagged status. The 'delayed' path
@@ -99,6 +142,9 @@ ${style}\n`;
 		}
 
 		this.filter = priorSegment + ruleSegment + posteriorSegment;
+		const countNewlines = (text) => text.split('\n').length - 1;
+		const start = countNewlines(priorSegment) + 1;
+		this.#ruleLineRange = {start, end: start + countNewlines(ruleSegment) - 1};
 	}
 
 	async #uploadFilter() {

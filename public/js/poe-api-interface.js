@@ -45,6 +45,17 @@ function describeErrorBody(parsed, response) {
     return `HTTP ${response.status}: ${detail}`;
 }
 
+// A non-2xx response. Keeps the status and PoE's parsed error object so callers can
+// inspect them (e.g. Filter reads validation line numbers) without re-parsing the message.
+export class PoeApiError extends Error {
+    constructor(message, status, poeError) {
+        super(message);
+        this.name = 'PoeApiError';
+        this.status = status;
+        this.poeError = poeError;
+    }
+}
+
 // Throw a useful Error when fetch returns a non-2xx response. The message carries
 // the HTTP status and PoE's own error text so a user's screenshot is enough to debug.
 // 429 maps to RateLimitError so existing retry logic can resume.
@@ -59,7 +70,8 @@ async function ensureOk(response) {
         const retryAfter = Number(response.headers.get('retry-after')) || 60;
         throw new RateLimitError(retryAfter, message);
     }
-    throw new Error(message);
+    const poeError = (parsed?.error && typeof parsed.error === 'object') ? parsed.error : null;
+    throw new PoeApiError(message, response.status, poeError);
 }
 
 const wait = (seconds = 1) => new Promise((r) => setTimeout(r, seconds * 1000));
