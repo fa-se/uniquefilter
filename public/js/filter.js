@@ -30,8 +30,8 @@ export class Filter {
 	// the game client"}}. Despite the `error` key, PoE has accepted and stored the
 	// upload — only the push to the game client is deferred. Recognizable only by text
 	// because PoE doesn't expose a distinct code for it. A genuine rejection comes back
-	// as a non-2xx, which cors-proxy.js replaces with {error: 'Request failed'}, so it
-	// falls through to 'error' below.
+	// as a non-2xx, which ensureOk() in poe-api-interface.js throws (with PoE's error
+	// text) before this runs; the 'error' branch only covers a 2xx with an unknown error.
 	static #interpretUploadResponse(response) {
 		if (!response || !response.error) {
 			return { status: 'success' };

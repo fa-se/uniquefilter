@@ -2,6 +2,39 @@ import secrets from "./secrets.js";
 import {URL} from "url";
 import got from "got";
 
+/**
+ * Build the error object sent to the client from PoE's error body
+ * ({error: {code, message, fields?: [{field, message}]}}). PoE's message is about the
+ * caller's own request (e.g. which filter line failed validation), so it goes back to
+ * the client. Only these whitelisted fields are copied, as bounded strings. got's own
+ * error (stack, request options) is never forwarded. If there's no parseable PoE body
+ * (network failure, HTML error page), the client gets a generic message.
+ * @param {string|undefined} body
+ * @param {number} statusCode
+ * @returns {{code: (number|null), message: string, fields?: {field: string, message: string}[]}}
+ */
+function extractPoeError(body, statusCode) {
+    const str = (v, max) => String(v ?? '').slice(0, max);
+    let poeError = null;
+    try {
+        poeError = JSON.parse(body)?.error;
+    } catch { /* not JSON, or no body */ }
+    if (!poeError || typeof poeError !== 'object') {
+        return {code: null, message: statusCode >= 500 ? 'External service error' : 'Request failed'};
+    }
+    const result = {
+        code: Number.isFinite(poeError.code) ? poeError.code : null,
+        message: str(poeError.message, 2000) || 'Request failed',
+    };
+    if (Array.isArray(poeError.fields)) {
+        result.fields = poeError.fields.slice(0, 20).map(f => ({
+            field: str(f?.field, 100),
+            message: str(f?.message, 500),
+        }));
+    }
+    return result;
+}
+
 export default {
     /**
      * Gets called by POE server after user authorization.
@@ -83,13 +116,7 @@ export default {
                 console.error('PoE API error:', error.message, '- body:', error.response?.body ?? '<none>');
                 const statusCode = error.response?.statusCode || 500;
                 res.writeHead(statusCode, {"Content-Type": "application/json"});
-                
-                // Sanitize error response - don't expose detailed API errors
-                const sanitizedError = {
-                    error: statusCode >= 500 ? 'External service error' : 'Request failed',
-                    code: statusCode
-                };
-                res.end(JSON.stringify(sanitizedError));
+                res.end(JSON.stringify({error: extractPoeError(error.response?.body, statusCode)}));
             }
         });
     }

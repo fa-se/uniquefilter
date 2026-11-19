@@ -21,8 +21,32 @@ export class NotAuthorizedError extends Error {
     }
 }
 
-// Throw a useful Error when fetch returns a non-2xx response. PoE returns JSON
-// errors as {error: {code, message}}; our own proxy returns {error: string, code}.
+// Turn an error body into one readable line. PoE (and our proxy, which forwards
+// PoE's error) send {error: {code, message, fields?: [{field, message}]}}; for
+// validation failures the useful part is in `fields` ("Line 7: Unknown rule type
+// Set") while `message` is only "Invalid query". Some routes send {error: string}.
+function describeErrorBody(parsed, response) {
+    const err = parsed?.error;
+    let detail;
+    if (typeof err === 'string') {
+        detail = err;
+    } else if (err && typeof err === 'object') {
+        detail = err.message || 'Unknown error';
+        if (Array.isArray(err.fields) && err.fields.length > 0) {
+            const fieldText = err.fields
+                .map(f => (f?.field ? `${f.field}: ` : '') + (f?.message ?? ''))
+                .join('; ');
+            detail += ` (${fieldText})`;
+        }
+        if (err.code != null) detail += ` [PoE code ${err.code}]`;
+    } else {
+        detail = response.statusText || 'no error details in response';
+    }
+    return `HTTP ${response.status}: ${detail}`;
+}
+
+// Throw a useful Error when fetch returns a non-2xx response. The message carries
+// the HTTP status and PoE's own error text so a user's screenshot is enough to debug.
 // 429 maps to RateLimitError so existing retry logic can resume.
 async function ensureOk(response) {
     if (response.ok) return;
@@ -30,10 +54,7 @@ async function ensureOk(response) {
     try { bodyText = await response.text(); } catch { /* ignore */ }
     let parsed = null;
     try { parsed = bodyText ? JSON.parse(bodyText) : null; } catch { /* not JSON */ }
-    const message =
-        parsed?.error?.message ??
-        (typeof parsed?.error === 'string' ? parsed.error : null) ??
-        `HTTP ${response.status} ${response.statusText}`;
+    const message = describeErrorBody(parsed, response);
     if (response.status === 429) {
         const retryAfter = Number(response.headers.get('retry-after')) || 60;
         throw new RateLimitError(retryAfter, message);
