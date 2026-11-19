@@ -15,7 +15,7 @@ async function handleLeagueChange(league) {
         const uniqueStashes = accountStashes.getAllUniqueStashes();
         setState({ stashes: Object.values(uniqueStashes), selectedStashId: uniqueStashes[0]?.id, isLoading: false, infoMessage: null });
     } catch (error) {
-        setState({ isLoading: false, error: 'Failed to fetch stashes.' });
+        setState({ isLoading: false, error: `Failed to fetch stashes: ${error.message}` });
         console.error(error);
     }
     render(appState);
@@ -166,7 +166,7 @@ async function main() {
             infoMessage: null
         });
     } catch (error) {
-        setState({ isLoading: false, error: 'Failed to fetch initial data.' });
+        setState({ isLoading: false, error: `Failed to fetch initial data: ${error.message}` });
         console.error(error);
     }
     
