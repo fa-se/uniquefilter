@@ -16,10 +16,16 @@ import {USER_AGENT} from "./user-agent.js";
  */
 function extractPoeError(body, statusCode) {
     const str = (v, max) => String(v ?? '').slice(0, max);
-    let poeError = null;
+    let parsed = null;
     try {
-        poeError = JSON.parse(body)?.error;
+        parsed = JSON.parse(body);
     } catch { /* not JSON, or no body */ }
+    const poeError = parsed?.error;
+    // PoE's OAuth layer (e.g. an expired token) answers in the OAuth format instead:
+    // {error: "invalid_token", error_description: "The access token provided is ..."}.
+    if (typeof poeError === 'string' && poeError !== '') {
+        return {origin: 'poe', code: null, message: str(parsed.error_description || poeError, 2000)};
+    }
     if (!poeError || typeof poeError !== 'object') {
         return {code: null, message: statusCode >= 500 ? 'External service error' : 'Request failed'};
     }
