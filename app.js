@@ -165,7 +165,9 @@ function serveFile(filePath, response) {
 }
 
 const server = http.createServer(async (request, response) => {
-    console.log(new Date().toISOString(), request.method, request.url);
+    // The OAuth callback's query holds the authorization code and state; keep them out of the journal.
+    const loggedUrl = request.url.startsWith('/oauth2callback?') ? '/oauth2callback?<redacted>' : request.url;
+    console.log(new Date().toISOString(), request.method, loggedUrl);
     
     // Get client IP
     const clientIP = request.headers['x-forwarded-for'] || request.connection.remoteAddress || 'unknown';
