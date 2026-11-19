@@ -28,6 +28,8 @@ node poe-uniques-updater.js
 - **poe-uniques-updater.js**: Fetches and updates unique item lists from PoE Wiki
 - **secrets.js**: Configuration file (use secrets.js.sample as template)
 
+No npm dependencies on purpose: HTTP calls use Node's built-in `fetch` (Node >= 20), so production needs no `node_modules`. Think twice before adding one.
+
 ### Frontend (Vanilla JavaScript ES6 modules)
 - **main.js**: Application entry point and main controller
 - **poe-api-interface.js**: Path of Exile API client (wraps fetch, gates on auth, exports `NotAuthorizedError`)

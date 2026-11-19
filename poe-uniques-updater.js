@@ -1,8 +1,8 @@
 
-import got from 'got';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
+import { USER_AGENT } from './user-agent.js';
 
 // Output paths below are repo-relative; resolve them against this file rather than
 // the cwd so a manual `node poe-uniques-updater.js` works from any directory.
@@ -64,7 +64,11 @@ function decodeEntry(entry) {
 
 async function fetchAndSaveList(listType, url, paths) {
     console.log(`Fetching ${listType} uniques from ${url}`);
-    const data = (await got(url).json()).map(decodeEntry);
+    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(60_000) });
+    if (!response.ok) {
+        throw new Error(`poewiki answered HTTP ${response.status}`);
+    }
+    const data = (await response.json()).map(decodeEntry);
     console.log(`Successfully fetched ${data.length} ${listType} uniques.`);
 
     const jsonContent = JSON.stringify(data, null, 2);

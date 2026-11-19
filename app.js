@@ -3,11 +3,11 @@ import http from 'http';
 import path from 'path';
 import fs from 'fs';
 import { URL } from 'url';
-import got from 'got';
 
 import poeAuth from './poe-auth.js';
 import corsProxy from "./cors-proxy.js";
 import { ensureUniqueListsExist, updateUniqueLists } from './poe-uniques-updater.js';
+import { USER_AGENT } from './user-agent.js';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
@@ -255,24 +255,33 @@ const server = http.createServer(async (request, response) => {
             response.end('Invalid JSON');
         }
     } else if (pathname === '/api/leagues') {
+        let leagues;
         try {
-            const poeApiResponse = await got('https://api.pathofexile.com/leagues').json();
-            await checkForNewLeagues(poeApiResponse);
-            response.setHeader('Content-Type', contentTypes['.json']);
-            response.statusCode = 200;
-            response.end(JSON.stringify(poeApiResponse));
-        } catch (error) {
-            console.error("Error handling /api/leagues:", error);
-            // If we fail to get data from PoE API, we can still serve from cors-proxy as a fallback
-            // to not break the client completely.
-            try {
-                await corsProxy.getLeagues(request, response);
-            } catch (proxyError) {
-                console.error("Fallback to corsProxy also failed:", proxyError);
-                response.statusCode = 500;
-                response.end('Internal Server Error');
+            const poeResponse = await fetch('https://api.pathofexile.com/leagues', {
+                headers: { 'User-Agent': USER_AGENT },
+                signal: AbortSignal.timeout(15_000),
+            });
+            if (!poeResponse.ok) {
+                throw new Error(`PoE answered HTTP ${poeResponse.status}`);
             }
+            leagues = await poeResponse.json();
+        } catch (error) {
+            console.error("Error fetching leagues:", error.message);
+            response.setHeader('Content-Type', contentTypes['.json']);
+            response.statusCode = 502;
+            response.end(JSON.stringify({ error: "Failed to fetch leagues" }));
+            return;
         }
+        // A failed unique-list update shouldn't hide the leagues from the client; the
+        // next request retries it, since leagues.json is only written on success.
+        try {
+            await checkForNewLeagues(leagues);
+        } catch (error) {
+            console.error("Error checking for new leagues:", error.message);
+        }
+        response.setHeader('Content-Type', contentTypes['.json']);
+        response.statusCode = 200;
+        response.end(JSON.stringify(leagues));
     } else {
         // Serve static files from the public directory
         const filePath = path.join(publicDirectory, pathname);
