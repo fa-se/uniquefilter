@@ -313,6 +313,14 @@ const server = http.createServer(async (request, response) => {
     }
 });
 
+try {
+    poeAuth.checkClientSecret();
+    console.log('PoE client secret available.');
+} catch (error) {
+    // Logged, not fatal: everything except login still works.
+    console.error(`${colors.red}${error.message}${colors.reset}`);
+}
+
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });

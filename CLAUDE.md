@@ -26,7 +26,6 @@ node poe-uniques-updater.js
 - **poe-auth.js**: OAuth2 authentication flow with Path of Exile API
 - **cors-proxy.js**: CORS proxy for Path of Exile API requests
 - **poe-uniques-updater.js**: Fetches and updates unique item lists from PoE Wiki
-- **secrets.js**: Configuration file (use secrets.js.sample as template)
 - **state-directory.js**: Where runtime data goes (`$STATE_DIRECTORY`, default `./state`)
 
 No npm dependencies on purpose: HTTP calls use Node's built-in `fetch` (Node >= 20), so production needs no `node_modules`. Think twice before adding one.
@@ -82,9 +81,7 @@ The frontend uses a simple state management pattern:
 
 ## Configuration
 
-Copy `secrets.js.sample` to `secrets.js` and configure:
-- `client_secret`: PoE API OAuth client secret
-- Other API credentials as needed
+The PoE OAuth client secret is read from the systemd credential `poe-client-secret` (`$CREDENTIALS_DIRECTORY/poe-client-secret`), or from the `POE_CLIENT_SECRET` environment variable when running locally. Without it, everything but login works.
 
 ## Testing
 
