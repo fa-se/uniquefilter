@@ -7,13 +7,14 @@ import { URL } from 'url';
 import poeAuth from './poe-auth.js';
 import corsProxy from "./cors-proxy.js";
 import { ensureUniqueListsExist, updateUniqueLists } from './poe-uniques-updater.js';
+import { stateDirectory, uniqueListsDirectory } from './state-directory.js';
 import { USER_AGENT } from './user-agent.js';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const hostname = '127.0.0.1';
 const port = Number(process.env.PORT) || 8080;
 const publicDirectory = path.join(__dirname, 'public');
-const leaguesCachePath = path.join(__dirname, 'leagues.json');
+const leaguesCachePath = path.join(stateDirectory, 'leagues.json');
 
 // Rate limiting store
 const rateLimits = new Map(); // ip -> {count, resetTime}
@@ -104,6 +105,7 @@ async function checkForNewLeagues(leaguesFromApi) {
         
         const allLeagues = [...cachedLeagues, ...newLeagues];
 
+        await fs.promises.mkdir(stateDirectory, { recursive: true });
         await fs.promises.writeFile(leaguesCachePath, JSON.stringify(allLeagues, null, 2));
         console.log("leagues.json updated.");
     }
@@ -282,6 +284,18 @@ const server = http.createServer(async (request, response) => {
         response.setHeader('Content-Type', contentTypes['.json']);
         response.statusCode = 200;
         response.end(JSON.stringify(leagues));
+    } else if (pathname.startsWith('/json/')) {
+        // Generated unique lists live in the state directory, not in public/.
+        const filePath = path.resolve(uniqueListsDirectory, '.' + pathname.slice('/json'.length));
+        if (!filePath.startsWith(uniqueListsDirectory + path.sep)) {
+            console.error(`${colors.red}BLOCKED - 403 Path traversal attempt from ${clientIP}: ${pathname}${colors.reset}`);
+            response.statusCode = 403;
+            response.end('403 Forbidden');
+            return;
+        }
+        // Lists change when a new league starts; make browsers revalidate.
+        response.setHeader('Cache-Control', 'no-cache');
+        serveFile(filePath, response);
     } else {
         // Serve static files from the public directory
         const filePath = path.join(publicDirectory, pathname);

@@ -27,6 +27,7 @@ node poe-uniques-updater.js
 - **cors-proxy.js**: CORS proxy for Path of Exile API requests
 - **poe-uniques-updater.js**: Fetches and updates unique item lists from PoE Wiki
 - **secrets.js**: Configuration file (use secrets.js.sample as template)
+- **state-directory.js**: Where runtime data goes (`$STATE_DIRECTORY`, default `./state`)
 
 No npm dependencies on purpose: HTTP calls use Node's built-in `fetch` (Node >= 20), so production needs no `node_modules`. Think twice before adding one.
 
@@ -43,9 +44,9 @@ No npm dependencies on purpose: HTTP calls use Node's built-in `fetch` (Node >= 
 - **utils.js**: `withRateLimitHandling` retry wrapper
 
 ### Key Data Files
-Generated at runtime and not tracked in git. `app.js` creates missing unique lists at startup and refreshes them when a new league appears.
-- **public/json/drop-enabled-uniques.json**: All unique items that can drop
-- **public/json/global-drop-enabled-uniques.json**: Only globally-available unique items
+Generated at runtime into the state directory, not tracked in git. `app.js` creates missing unique lists at startup and refreshes them when a new league appears. The code checkout is read-only for the service in production.
+- **json/drop-enabled-uniques.json**: All unique items that can drop (served at `/json/`)
+- **json/global-drop-enabled-uniques.json**: Only globally-available unique items
 - **leagues.json**: Cached league data for detecting new leagues
 
 ## Authentication Flow

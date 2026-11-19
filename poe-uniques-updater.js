@@ -1,12 +1,9 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { pathToFileURL } from 'url';
+import { uniqueListsDirectory } from './state-directory.js';
 import { USER_AGENT } from './user-agent.js';
-
-// Output paths below are repo-relative; resolve them against this file rather than
-// the cwd so a manual `node poe-uniques-updater.js` works from any directory.
-const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const URLS = {
     all: 'https://www.poewiki.net/index.php?title=Special:CargoExport&tables=items%2C&&fields=items.name%2C+items.base_item%2C&where=items.rarity+%3D+%22Unique%22+AND+items.drop_enabled+%3D+true&order+by=&limit=5000&format=json',
@@ -15,12 +12,12 @@ const URLS = {
 
 const OUTPUT_PATHS = {
     all: {
-        json: 'public/json/drop-enabled-uniques.json',
-        js: 'public/json/drop-enabled-uniques.js',
+        json: path.join(uniqueListsDirectory, 'drop-enabled-uniques.json'),
+        js: path.join(uniqueListsDirectory, 'drop-enabled-uniques.js'),
     },
     global: {
-        json: 'public/json/global-drop-enabled-uniques.json',
-        js: 'public/json/global-drop-enabled-uniques.js',
+        json: path.join(uniqueListsDirectory, 'global-drop-enabled-uniques.json'),
+        js: path.join(uniqueListsDirectory, 'global-drop-enabled-uniques.js'),
     }
 };
 
@@ -74,10 +71,9 @@ async function fetchAndSaveList(listType, url, paths) {
     const jsonContent = JSON.stringify(data, null, 2);
     const jsContent = `export const all${listType.charAt(0).toUpperCase() + listType.slice(1)}Uniques = ${jsonContent};`;
 
-    // public/json/ holds only these generated files, so a fresh clone lacks the directory.
-    await fs.mkdir(path.join(projectRoot, path.dirname(paths.json)), {recursive: true});
-    await fs.writeFile(path.join(projectRoot, paths.json), jsonContent);
-    await fs.writeFile(path.join(projectRoot, paths.js), jsContent);
+    await fs.mkdir(uniqueListsDirectory, {recursive: true});
+    await fs.writeFile(paths.json, jsonContent);
+    await fs.writeFile(paths.js, jsContent);
     console.log(`Successfully saved ${listType} uniques to ${paths.json} and ${paths.js}`);
 }
 
@@ -104,7 +100,7 @@ export async function ensureUniqueListsExist() {
     const missing = [];
     for (const file of files) {
         try {
-            await fs.access(path.join(projectRoot, file));
+            await fs.access(file);
         } catch {
             missing.push(file);
         }
