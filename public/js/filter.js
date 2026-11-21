@@ -1,5 +1,6 @@
 'use strict';
 import poeApi, {PoeApiError, splitPoeError} from "./poe-api-interface.js";
+import {withRateLimitHandling} from "./utils.js";
 
 // Hints explain a validation error in terms of what the user should do. Each is
 // {text, items?, after?}; items are shown as a list of code-formatted lines.
@@ -185,8 +186,10 @@ ${style}\n`;
 		};
 	}
 
+	// A 429 (from PoE or our own server) waits out Retry-After and retries. Safe to
+	// repeat: the upload replaces the whole filter.
 	async #uploadFilter() {
-		return await poeApi.updateItemFilter(this);
+		return await withRateLimitHandling(() => poeApi.updateItemFilter(this));
 	}
 
 	#updateVersionAndDescription() {
