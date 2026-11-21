@@ -16,8 +16,9 @@ const port = Number(process.env.PORT) || 8080;
 const publicDirectory = path.join(__dirname, 'public');
 const leaguesCachePath = path.join(stateDirectory, 'leagues.json');
 
-// Rate limiting store
-const rateLimits = new Map(); // ip -> {count, resetTime}
+// Rate limiting store. Keys are the client IP, or "<scope>:<ip>" for a stricter
+// per-route limit, so each limit counts only its own requests.
+const rateLimits = new Map(); // key -> {count, resetTime}
 
 // ANSI color codes for console output
 const colors = {
@@ -32,9 +33,9 @@ function addSecurityHeaders(response) {
     response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self' https://api.pathofexile.com https://www.pathofexile.com");
 }
 
-function checkRateLimit(ip, limit = 60) {
+function checkRateLimit(key, limit = 60) {
     const now = Date.now();
-    const entry = rateLimits.get(ip) || {count: 0, resetTime: now + 60000};
+    const entry = rateLimits.get(key) || {count: 0, resetTime: now + 60000};
     
     if (now > entry.resetTime) {
         entry.count = 0;
@@ -42,12 +43,12 @@ function checkRateLimit(ip, limit = 60) {
     }
     
     if (entry.count >= limit) {
-        console.error(`${colors.red}BLOCKED - Rate limit exceeded for IP ${ip}: ${entry.count}/${limit} requests${colors.reset}`);
+        console.error(`${colors.red}BLOCKED - Rate limit exceeded for ${key}: ${entry.count}/${limit} requests${colors.reset}`);
         return false;
     }
     
     entry.count++;
-    rateLimits.set(ip, entry);
+    rateLimits.set(key, entry);
     return true;
 }
 
@@ -59,9 +60,9 @@ function validateLeagueName(name) {
 // Cleanup old rate limit entries every hour
 setInterval(() => {
     const now = Date.now();
-    for (const [ip, entry] of rateLimits.entries()) {
+    for (const [key, entry] of rateLimits.entries()) {
         if (now > entry.resetTime) {
-            rateLimits.delete(ip);
+            rateLimits.delete(key);
         }
     }
 }, 3600000);
@@ -218,8 +219,10 @@ const server = http.createServer(async (request, response) => {
             response.end(renderOauthErrorPage('token_exchange_failed'));
         }
     } else if (pathname === '/update-filter') {
-        // Stricter rate limiting for expensive operations
-        if (!checkRateLimit(clientIP, 10)) { // 10 requests per minute
+        // Stricter rate limiting for expensive operations. Own counter: sharing the
+        // global one meant a fresh login (two page loads plus the OAuth callback)
+        // used up the 10 before the first upload.
+        if (!checkRateLimit(`update-filter:${clientIP}`, 10)) { // 10 requests per minute
             console.error(`${colors.red}BLOCKED - 429 Too Many Requests for /update-filter from ${clientIP}${colors.reset}`);
             response.statusCode = 429;
             response.end('Too Many Requests');
