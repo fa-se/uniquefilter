@@ -33,6 +33,8 @@ function addSecurityHeaders(response) {
     response.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self' https://api.pathofexile.com https://www.pathofexile.com");
 }
 
+// Fixed one-minute window per key. Returns 0 if the request may go ahead, otherwise
+// the seconds until the window resets.
 function checkRateLimit(key, limit = 60) {
     const now = Date.now();
     const entry = rateLimits.get(key) || {count: 0, resetTime: now + 60000};
@@ -44,12 +46,22 @@ function checkRateLimit(key, limit = 60) {
     
     if (entry.count >= limit) {
         console.error(`${colors.red}BLOCKED - Rate limit exceeded for ${key}: ${entry.count}/${limit} requests${colors.reset}`);
-        return false;
+        return Math.max(1, Math.ceil((entry.resetTime - now) / 1000));
     }
     
     entry.count++;
     rateLimits.set(key, entry);
-    return true;
+    return 0;
+}
+
+// Answer in the same shape as cors-proxy.js's errors, with Retry-After, so the client
+// shows a readable message and its retry logic waits as long as needed.
+function sendTooManyRequests(response, retryAfter) {
+    response.writeHead(429, {"Content-Type": "application/json", "Retry-After": String(retryAfter)});
+    response.end(JSON.stringify({error: {
+        code: null,
+        message: `Too many requests to uniquefilter.dev. Try again in ${retryAfter} seconds.`,
+    }}));
 }
 
 function validateLeagueName(name) {
@@ -174,10 +186,10 @@ const server = http.createServer(async (request, response) => {
     const clientIP = request.headers['x-forwarded-for'] || request.connection.remoteAddress || 'unknown';
     
     // Apply rate limiting
-    if (!checkRateLimit(clientIP)) {
+    const retryAfter = checkRateLimit(clientIP);
+    if (retryAfter > 0) {
         console.error(`${colors.red}BLOCKED - 429 Too Many Requests from ${clientIP}${colors.reset}`);
-        response.statusCode = 429;
-        response.end('Too Many Requests');
+        sendTooManyRequests(response, retryAfter);
         return;
     }
     
@@ -222,10 +234,10 @@ const server = http.createServer(async (request, response) => {
         // Stricter rate limiting for expensive operations. Own counter: sharing the
         // global one meant a fresh login (two page loads plus the OAuth callback)
         // used up the 10 before the first upload.
-        if (!checkRateLimit(`update-filter:${clientIP}`, 10)) { // 10 requests per minute
+        const uploadRetryAfter = checkRateLimit(`update-filter:${clientIP}`, 10); // 10 requests per minute
+        if (uploadRetryAfter > 0) {
             console.error(`${colors.red}BLOCKED - 429 Too Many Requests for /update-filter from ${clientIP}${colors.reset}`);
-            response.statusCode = 429;
-            response.end('Too Many Requests');
+            sendTooManyRequests(response, uploadRetryAfter);
             return;
         }
         
